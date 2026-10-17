@@ -1,0 +1,4 @@
+Model,CV_Score,Test_Score,Train_Score,Generalization_Gap,Overfitting_Status,Train_Time_s
+RandomForest,0.9339,0.8611,0.9477,0.0865,HEALTHY,22.14
+SVM,0.9474,0.7847,0.9477,0.1630,POSSIBLE_OVERFITTING,2.50
+SimulatedQML,0.6248,0.6591,0.8514,0.1923,POSSIBLE_OVERFITTING,0.45

@@ -1,0 +1,216 @@
+{
+  "Rice": {
+    "duration": "120 days",
+    "stages": [
+      {"day": 1, "title": "Seed Preparation & Nursery Sowing", "description": "Select certified disease-free seeds. Soak seeds for 24 hours, incubate for 48 hours, and sow on raised nursery beds."},
+      {"day": 20, "title": "Transplanting", "description": "Transplant 20-25 day old seedlings into puddled fields. Maintain a shallow water depth of 2-3 cm."},
+      {"day": 45, "title": "Active Tillering & Top Dressing", "description": "Apply first top-dressing of Nitrogen (Urea). Perform mechanical weeding and monitor for stem borer."},
+      {"day": 90, "title": "Panicle Initiation & Flowering", "description": "Ensure standing water depth of 5 cm. Apply phosphorus and potassium. Keep pests monitored."},
+      {"day": 120, "title": "Drainage & Harvesting", "description": "Drain water 10 days before harvest. Harvest when 85% of panicles turn golden brown and grains are firm."}
+    ]
+  },
+  "Maize": {
+    "duration": "100-110 days",
+    "stages": [
+      {"day": 1, "title": "Sowing", "description": "Sow seeds at 5 cm depth with 60cm x 20cm spacing. Ensure optimum moisture in soil beds."},
+      {"day": 15, "title": "Seedling Stage & Thinning", "description": "Thin out weak seedlings. Perform first weeding. Monitor for fall armyworm emergence."},
+      {"day": 45, "title": "Knee-High Stage & Top Dressing", "description": "Apply urea near the base. Earth up plants to provide support. Apply second irrigation."},
+      {"day": 75, "title": "Tasseling & Silking", "description": "Maintain constant soil moisture. Avoid drought stress as it directly impacts pollination efficiency."},
+      {"day": 105, "title": "Harvesting", "description": "Harvest when grain moisture drops to 20% and husks turn straw-colored."}
+    ]
+  },
+  "Jute": {
+    "duration": "120-150 days",
+    "stages": [
+      {"day": 1, "title": "Land Prep & Sowing", "description": "Broadcast seeds in fine tilth soil. Maintain moisture for germination."},
+      {"day": 25, "title": "Thinning & Weeding", "description": "Thin plants to keep 10-15 cm spacing. Manual weeding is critical."},
+      {"day": 60, "title": "Vegetative Growth", "description": "Apply top dressing of Nitrogen. Monitor for yellow mites and semilooper."},
+      {"day": 120, "title": "Harvesting & Retting", "description": "Harvest at small-pod stage. Tie in bundles and submerge in slow-running water for retting (15-20 days)."},
+      {"day": 145, "title": "Fiber Extraction", "description": "Extract fibers from retted stems, wash in clean water, and hang on bamboo frames to dry."}
+    ]
+  },
+  "Cotton": {
+    "duration": "150-180 days",
+    "stages": [
+      {"day": 1, "title": "Sowing", "description": "Sow in ridges. Apply pre-emergence herbicide if weed pressure is high."},
+      {"day": 30, "title": "Squaring Phase", "description": "Flower buds (squares) begin to appear. Perform weeding and apply first split of nitrogen."},
+      {"day": 75, "title": "Flowering & Boll formation", "description": "White flowers turn pink and fall off, leaving bolls. Keep pests (bollworm) monitored closely."},
+      {"day": 120, "title": "Boll Bursting", "description": "Bolls split open revealing white cotton fibers. Suspend irrigation to allow drying."},
+      {"day": 160, "title": "Picking & Harvesting", "description": "Perform handpicking of clean dry cotton. Avoid picking damp or leaf-mixed bolls."}
+    ]
+  },
+  "Coconut": {
+    "duration": "Perennial (Continuous)",
+    "stages": [
+      {"day": 1, "title": "Seedling Planting", "description": "Plant selected 9-12 month old seedlings in 1m x 1m x 1m pits filled with topsoil, organic manure, and sand."},
+      {"day": 180, "title": "Young Palm Care", "description": "Provide regular watering during dry seasons. Mulch basin to retain moisture. Spray against red palm weevil."},
+      {"day": 365, "title": "Annual Manuring", "description": "Apply organic compost, neem cake, and recommended chemical NPK dose in the circular basin."},
+      {"day": 1460, "title": "Flowering & Fruit Set", "description": "Infestation monitoring. Regular fertilizer application continues. First inflorescence appears around year 4-5."},
+      {"day": 1825, "title": "Harvesting Cycle", "description": "Harvest mature coconuts every 45-60 days. Select nuts based on brown husk maturity markers."}
+    ]
+  },
+  "Papaya": {
+    "duration": "8-10 months",
+    "stages": [
+      {"day": 1, "title": "Sowing & Transplanting", "description": "Sow in bags, transplant healthy seedlings after 45 days into pits with compost."},
+      {"day": 60, "title": "Establishment Phase", "description": "Keep base weed-free. Water daily. Apply light nitrogen and phosphorus."},
+      {"day": 120, "title": "Flowering & Sex Determination", "description": "Identify male/female plants. Maintain 1 male palm per 10 female palms. Spray boron."},
+      {"day": 180, "title": "Fruit Development", "description": "Thin out crowded fruits. Support heavy trunks. Water heavily during dry periods."},
+      {"day": 270, "title": "Harvesting", "description": "Harvest when skin starts turning yellow starting from the base of the fruit."}
+    ]
+  },
+  "Orange": {
+    "duration": "Perennial (Continuous)",
+    "stages": [
+      {"day": 1, "title": "Sapling Planting", "description": "Plant in well-drained loamy soil. Leave bud joint 10cm above soil line."},
+      {"day": 90, "title": "Irrigation & Mulching", "description": "Mulch basin with leaf litter. Apply drip irrigation to avoid water logging."},
+      {"day": 365, "title": "Pruning & Training", "description": "Remove water sprouts, dead shoots, and lower rootstock growth."},
+      {"day": 1095, "title": "Blossom Management", "description": "Apply balanced micronutrients (zinc, iron). Perform light pruning after harvest."},
+      {"day": 1460, "title": "Harvest Cycle", "description": "Pick fruits individually when skin turns orange-yellow and skin feels firm."}
+    ]
+  },
+  "Apple": {
+    "duration": "Perennial (Continuous)",
+    "stages": [
+      {"day": 1, "title": "Planting & Training", "description": "Plant bare-root or container-grown trees in late winter. Secure support trellis."},
+      {"day": 90, "title": "Spring Budbreak", "description": "Monitor for powdery mildew. Apply preventive copper spray. Clear weeds."},
+      {"day": 180, "title": "Fruit Thinning", "description": "Thin out clusters to 1 apple per cluster to secure size and tree health."},
+      {"day": 240, "title": "Pre-harvest Care", "description": "Protect canopy from birds. Stop nitrogen. Harvest when seeds inside turn dark brown."},
+      {"day": 365, "title": "Winter Pruning", "description": "Prune during dormancy to open center and allow sunlight penetration."}
+    ]
+  },
+  "Muskmelon": {
+    "duration": "80-90 days",
+    "stages": [
+      {"day": 1, "title": "Direct Sowing", "description": "Sow seeds on raised beds. Keep soil warm and moist."},
+      {"day": 20, "title": "Vining & Weeding", "description": "Perform weeding. Mulch vines with straw. Guide vines along the bed."},
+      {"day": 40, "title": "Flowering & Pollination", "description": "Introduce honeybees if needed. Restrict overhead watering to prevent flower drop."},
+      {"day": 60, "title": "Netting Stage", "description": "Nets form on the rind. Apply potash. Keep watering consistent but not excessive."},
+      {"day": 85, "title": "Harvesting", "description": "Harvest at 'full-slip' stage when the stem detaches easily from the fruit."}
+    ]
+  },
+  "Watermelon": {
+    "duration": "85-95 days",
+    "stages": [
+      {"day": 1, "title": "Sowing", "description": "Sow in sandy loam mounds. Space plants 2 meters apart."},
+      {"day": 25, "title": "Vine Spreading", "description": "Irrigate deeply. Avoid watering foliage to prevent downy mildew."},
+      {"day": 50, "title": "Fruit Set", "description": "Select 2-3 main fruits per vine and remove others. Place straw under developing melons."},
+      {"day": 75, "title": "Sizing & Potash", "description": "High water demand. Apply potash fertilizer to increase sugar content."},
+      {"day": 90, "title": "Harvesting", "description": "Harvest when underside turns creamy yellow and tendrils near fruit dry up."}
+    ]
+  },
+  "Grapes": {
+    "duration": "Perennial (Continuous)",
+    "stages": [
+      {"day": 1, "title": "Trellising & Planting", "description": "Plant rootstocks near trellises. Tie main cane to support wire."},
+      {"day": 90, "title": "Shoot Thinning", "description": "Thin vegetative shoots to keep canopy open. Apply copper oxychloride."},
+      {"day": 180, "title": "Pruning & Training", "description": "Prune spurs leaving 2-4 buds. Secure healthy trunks."},
+      {"day": 270, "title": "Veraison (Color Change)", "description": "Grapes soften and turn purple/yellow. Restrict watering to concentrate sugars."},
+      {"day": 330, "title": "Harvesting", "description": "Test sugar levels (Brix). Harvest bunches with sharp shears during cool mornings."}
+    ]
+  },
+  "Mango": {
+    "duration": "Perennial (Continuous)",
+    "stages": [
+      {"day": 1, "title": "Grafted Sapling Planting", "description": "Plant grafts in 1m pits with compost and rock phosphate. Stake seedling."},
+      {"day": 90, "title": "Training young plants", "description": "Prune shoots below 1m to establish strong main trunk canopy framework."},
+      {"day": 365, "title": "Watering & Care", "description": "Irrigate weekly during dry spells. Mulch basin. Spray neem oil against hoppers."},
+      {"day": 1095, "title": "Flowering & Fruit Set", "description": "First blooms appear. Spray fungicide before flower opening to control anthracnose."},
+      {"day": 1200, "title": "Harvest Cycle", "description": "Harvest fruits with pedicel attached when shoulder swells and color turns pale green."}
+    ]
+  },
+  "Banana": {
+    "duration": "11-13 months",
+    "stages": [
+      {"day": 1, "title": "Sucker Planting", "description": "Plant healthy sword suckers in deep pits. Incorporate cow dung manure."},
+      {"day": 90, "title": "Desuckering & Weeding", "description": "Keep only one follower sucker with parent plant. Apply heavy nitrogen dose."},
+      {"day": 180, "title": "Earthing Up", "description": "Heap soil around the stem base to prevent lodging. Maintain soil moisture."},
+      {"day": 270, "title": "Bunch Emergence", "description": "Bunch emerges from crown. Support stem with bamboo props. Denavel male bud."},
+      {"day": 340, "title": "Harvesting", "description": "Harvest bunch when ridges on fingers turn round and color turns light green."}
+    ]
+  },
+  "Pomegranate": {
+    "duration": "Perennial (Continuous)",
+    "stages": [
+      {"day": 1, "title": "Planting Cuttings", "description": "Plant rooted cuttings in well-drained soils. Shape into multi-stem palm."},
+      {"day": 90, "title": "Pruning & Training", "description": "Remove suckers regularly. Keep 3-4 main branches on the plant."},
+      {"day": 365, "title": "Bahar Treatment", "description": "Withhold water for 30 days to induce dormancy, then prune and irrigate heavily."},
+      {"day": 450, "title": "Flowering & Fruit Bagging", "description": "Bag fruits with paper/bags to prevent butterfly infestation. Apply potash."},
+      {"day": 520, "title": "Harvest Cycle", "description": "Harvest when rind turns yellow-red and metallic sound is produced upon tapping."}
+    ]
+  },
+  "Lentil": {
+    "duration": "110-120 days",
+    "stages": [
+      {"day": 1, "title": "Sowing", "description": "Sow in rows with 25cm spacing. Seed inoculation with Rhizobium is highly recommended."},
+      {"day": 30, "title": "Weeding & Irrigation", "description": "Perform first weeding. Apply light irrigation if winter rainfall fails."},
+      {"day": 60, "title": "Podding Phase", "description": "Pods begin to form. Inspect crop for aphid vectors and wilt disease."},
+      {"day": 115, "title": "Harvesting", "description": "Harvest when plants turn yellow and pods produce rattling sound when shaken."}
+    ]
+  },
+  "Blackgram": {
+    "duration": "75-85 days",
+    "stages": [
+      {"day": 1, "title": "Sowing", "description": "Sow seeds at 3-4 cm depth. Seed treatment with Trichoderma is recommended."},
+      {"day": 20, "title": "Thinning & Weeding", "description": "Maintain plant spacing of 10 cm. Apply post-emergence herbicide if needed."},
+      {"day": 45, "title": "Flowering & Podding", "description": "Critical water phase. Ensure moisture. Monitor for whiteflies carrying YMV."},
+      {"day": 80, "title": "Harvesting", "description": "Harvest when pods turn dark brown/black. Sun-dry threshing to extract seeds."}
+    ]
+  },
+  "Mungbean": {
+    "duration": "70-80 days",
+    "stages": [
+      {"day": 1, "title": "Sowing", "description": "Sow in rows. Apply light starter nitrogen along with phosphate."},
+      {"day": 20, "title": "Weeding", "description": "Keep weed-free. Perform manual hoeing. Irrigate if soil dries out."},
+      {"day": 40, "title": "Peak Flowering", "description": "Ensure moisture. Protect flowers from thrips. Apply potassium sulfate spray."},
+      {"day": 75, "title": "Harvesting", "description": "Harvest pods in 2-3 pickings as they ripen and turn black."}
+    ]
+  },
+  "Mothbeans": {
+    "duration": "75-90 days",
+    "stages": [
+      {"day": 1, "title": "Dry Sowing", "description": "Sow seeds directly in sandy arid soils at the onset of monsoon."},
+      {"day": 25, "title": "Weeding & Spacing", "description": "Provide light weeding. Extremely drought resistant, restrict irrigation."},
+      {"day": 50, "title": "Flowering & Pod Set", "description": "Keep crop protected from pod borer larvae. Avoid waterlogging at all costs."},
+      {"day": 80, "title": "Harvesting", "description": "Harvest plants when pods dry up. Dry on threshing yard and winnow."}
+    ]
+  },
+  "Kidneybeans": {
+    "duration": "100-110 days",
+    "stages": [
+      {"day": 1, "title": "Sowing", "description": "Sow seeds in warm loamy soil. Rhizobium inoculant is recommended."},
+      {"day": 25, "title": "Staking & Weeding", "description": "Provide support stakes for climbing varieties. Keep soil weed-free."},
+      {"day": 55, "title": "Flowering & Podding", "description": "Regular watering. Apply phosphorus and potassium. Monitor for anthracnose."},
+      {"day": 105, "title": "Harvesting", "description": "Harvest when pods turn dry and brittle. Shell seeds and store at low moisture."}
+    ]
+  },
+  "Pigeonpeas": {
+    "duration": "160-180 days",
+    "stages": [
+      {"day": 1, "title": "Sowing & Intercropping", "description": "Sow with wide spacing. Often intercropped with sorghum or pearl millet."},
+      {"day": 45, "title": "Vegetative Growth", "description": "Slow early growth. Keep weeds down. Apply organic compost and phosphate."},
+      {"day": 90, "title": "Branching & Canopy", "description": "Deep taproot secures moisture. Monitor for wilt disease and leaf rollers."},
+      {"day": 140, "title": "Flowering & Pod formation", "description": "Spray neem extract against pod borer complex. Keep soil slightly moist."},
+      {"day": 170, "title": "Harvesting", "description": "Cut entire plants when 80% pods turn brown. Stack to dry, then thresh."}
+    ]
+  },
+  "Chickpea": {
+    "duration": "110-120 days",
+    "stages": [
+      {"day": 1, "title": "Sowing", "description": "Sow seeds deep (8-10 cm) to protect against wilt disease."},
+      {"day": 30, "title": "Nipping & Weeding", "description": "Nip off top vegetative buds to promote branching. Perform first weeding."},
+      {"day": 60, "title": "Flowering & Podding", "description": "Do not irrigate during peak flowering. Protect pods from pod borer larvae."},
+      {"day": 115, "title": "Harvesting", "description": "Harvest when leaves turn yellow and drop off. Dry and thresh."}
+    ]
+  },
+  "Coffee": {
+    "duration": "Perennial (Continuous)",
+    "stages": [
+      {"day": 1, "title": "Pit Prep & Planting", "description": "Plant 1-year-old healthy nursery seedlings under shade trees with compost."},
+      {"day": 180, "title": "Shade & Weed Control", "description": "Maintain 2-tier shade canopy trees. Slash weeds regularly. Mulch plant base."},
+      {"day": 365, "title": "Training & Pruning", "description": "Prune main stem at 1.5m to facilitate lateral primary branch growth."},
+      {"day": 1095, "title": "Blossom Shower & Harvest", "description": "Irrigate to trigger uniform blossom. Harvest ripe red cherries in pickings."},
+      {"day": 1150, "title": "Processing", "description": "Pulp the harvested cherries, ferment for 24-36 hours, wash and sun-dry."}
+    ]
+  }
+}

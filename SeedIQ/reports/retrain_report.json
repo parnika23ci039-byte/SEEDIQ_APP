@@ -1,0 +1,608 @@
+{
+  "run_id": "RUN-20261008-003331",
+  "timestamp": "2026-10-08 00:33:31",
+  "success": true,
+  "error": null,
+  "quantum_mode": "simulated",
+  "datasets": [
+    {
+      "domain": "crop",
+      "path": "data/Crop_recommendation.csv",
+      "records": 2200,
+      "features": 7,
+      "classes": 22,
+      "synthetic": false,
+      "sha256_16": "808e1d84a544647f",
+      "provenance": "provided",
+      "missing_values": 0,
+      "duplicate_rows": 0,
+      "input_only_cv": 0.582273,
+      "input_only_cv_metric": "accuracy",
+      "target_largely_derivable_from_inputs": false,
+      "derivation_kind": null,
+      "target_exactly_determined_by_inputs": null,
+      "within_cell_yield_per_ha_std_max": null,
+      "distinct_yield_per_ha_values": null,
+      "quality_note": "A shallow tree using only the inputs reaches 0.582 CV accuracy, clearly below a perfect score: the target is not recoverable from the inputs alone, so model scores reflect genuine input-to-target structure.",
+      "target_cardinality": 22,
+      "max_abs_target_input_correlation": null,
+      "best_simple_rule_agreement": null,
+      "duplicate_feature_vectors": 0,
+      "constant_target_group_fraction": null,
+      "majority_class_rate": 0.045455
+    },
+    {
+      "domain": "yield",
+      "path": "data/yield_icrisat_karnataka.csv",
+      "records": 5585,
+      "features": 4,
+      "classes": null,
+      "synthetic": false,
+      "sha256_16": "ab26727463a3390d",
+      "provenance": "provided (ICRISAT \u2014 ICRISAT-District Level Data.csv)",
+      "missing_values": 0,
+      "duplicate_rows": 0,
+      "crops": 22,
+      "districts": 19,
+      "year_range": [
+        2000,
+        2017
+      ],
+      "season_column": false,
+      "season_is_feature": false,
+      "feature_columns": [
+        "Crop",
+        "Area_Hectares"
+      ],
+      "target_column": "Yield_Tonnes",
+      "input_only_cv": 0.891118,
+      "input_only_cv_metric": "r2",
+      "target_largely_derivable_from_inputs": false,
+      "derivation_kind": null,
+      "target_exactly_determined_by_inputs": false,
+      "within_cell_yield_per_ha_std_max": 2.378123199190828,
+      "distinct_yield_per_ha_values": 4744,
+      "quality_note": "A shallow tree using only the inputs reaches 0.891 CV r2, clearly below a perfect score: the target is not recoverable from the inputs alone, so model scores reflect genuine input-to-target structure.",
+      "target_cardinality": 3078,
+      "max_abs_target_input_correlation": 0.56783,
+      "best_simple_rule_agreement": null,
+      "duplicate_feature_vectors": 681,
+      "constant_target_group_fraction": 0.065395,
+      "majority_class_rate": null
+    },
+    {
+      "domain": "seed",
+      "path": "data/seed_viability_data.csv",
+      "records": 100,
+      "features": 2,
+      "classes": 2,
+      "synthetic": true,
+      "sha256_16": "7bf4c361926b49a6",
+      "provenance": "synthetic-generated",
+      "missing_values": 0,
+      "duplicate_rows": 0,
+      "input_only_cv": 0.9,
+      "input_only_cv_metric": "accuracy",
+      "target_largely_derivable_from_inputs": true,
+      "derivation_kind": "generator_derivable",
+      "target_exactly_determined_by_inputs": null,
+      "within_cell_yield_per_ha_std_max": null,
+      "distinct_yield_per_ha_values": null,
+      "quality_note": "A shallow tree using only this dataset's own input columns already reaches 0.900 CV accuracy on the target. The target is therefore effectively a deterministic function of the inputs, so this score is a property of the synthetic generator that produced the rows, not of real-world agricultural outcomes.",
+      "target_cardinality": 2,
+      "max_abs_target_input_correlation": 0.209604,
+      "best_simple_rule_agreement": 0.92,
+      "duplicate_feature_vectors": 0,
+      "constant_target_group_fraction": null,
+      "majority_class_rate": null
+    }
+  ],
+  "data_integrity": {
+    "synthetic_fallback_allowed": false,
+    "synthetic_fallback_generated": [],
+    "datasets_missing": [],
+    "synthetic_domains": [
+      "seed"
+    ],
+    "targets_derivable_from_inputs": [
+      "seed"
+    ],
+    "generator_derivable_domains": [
+      "seed"
+    ],
+    "real_data_domains": [
+      "crop",
+      "yield"
+    ],
+    "warning": "Metrics for seed are measured on synthetic, generator-derived data and must not be presented as real-world agricultural performance."
+  },
+  "models": [
+    {
+      "domain": "crop",
+      "name": "Random Forest Classifier",
+      "artifact": "models/rf_model.pkl",
+      "task": "classification",
+      "train": {
+        "accuracy": 1.0,
+        "precision_macro": 1.0,
+        "recall_macro": 1.0,
+        "f1_macro": 1.0
+      },
+      "cv": {
+        "accuracy_mean": 0.992614,
+        "accuracy_std": 0.00612,
+        "folds": [
+          1.0,
+          0.997159,
+          0.982955,
+          0.988636,
+          0.994318
+        ]
+      },
+      "test": {
+        "accuracy": 0.993182,
+        "precision_macro": 0.993506,
+        "recall_macro": 0.993182,
+        "f1_macro": 0.993178
+      },
+      "params": {
+        "max_depth": null,
+        "min_samples_leaf": 2,
+        "n_estimators": 200
+      },
+      "gap": 0.006818,
+      "gap_status": "good",
+      "simulated_quantum": false,
+      "dataset_provenance": "provided",
+      "features": 7,
+      "classes": 22,
+      "sample_counts": {
+        "train": 1760,
+        "test": 440
+      }
+    },
+    {
+      "domain": "crop",
+      "name": "Simulated Quantum Classifier (recorded-feature projection + linear learner)",
+      "artifact": "models/vqc_crop_model.pkl",
+      "task": "classification",
+      "train": {
+        "accuracy": 0.922727,
+        "precision_macro": 0.923193,
+        "recall_macro": 0.922727,
+        "f1_macro": 0.920498
+      },
+      "cv": {
+        "accuracy_mean": 0.869886,
+        "accuracy_std": 0.017823,
+        "folds": [
+          0.880682,
+          0.889205,
+          0.840909,
+          0.857955,
+          0.880682
+        ]
+      },
+      "test": {
+        "accuracy": 0.877273,
+        "precision_macro": 0.883852,
+        "recall_macro": 0.877273,
+        "f1_macro": 0.870662
+      },
+      "params": {
+        "n_components": 12,
+        "alpha": 0.001,
+        "epochs": 150
+      },
+      "gap": 0.045454,
+      "gap_status": "good",
+      "simulated_quantum": true,
+      "dataset_provenance": "provided",
+      "features": 7,
+      "classes": 22,
+      "sample_counts": {
+        "train": 1760,
+        "test": 440
+      }
+    },
+    {
+      "domain": "yield",
+      "name": "HistGradientBoostingRegressor on log(Yield_Tonnes / Area_Hectares) (Model M; exp(pred) * area)",
+      "artifact": "models/yield_prediction/randomforest_model.pkl",
+      "task": "regression",
+      "train": {
+        "r2": 0.94758,
+        "mae": 11477.798329,
+        "rmse": 32872.686399
+      },
+      "cv": {
+        "r2_mean": 0.920568,
+        "r2_std": 0.018511,
+        "folds": [
+          0.919493,
+          0.911912,
+          0.932209,
+          0.89223,
+          0.946998
+        ],
+        "scheme": "GroupKFold(5) grouped by district-year (TRAIN only)"
+      },
+      "test": {
+        "r2": 0.908842,
+        "mae": 15415.732177,
+        "rmse": 38587.029896
+      },
+      "params": {
+        "max_iter": 400,
+        "learning_rate": 0.08,
+        "fit_target": "log(Yield_Tonnes / Area_Hectares)",
+        "inverse": "exp(pred) * Area_Hectares",
+        "selection": "fixed approved config; grouped CV by district-year (5-fold) on TRAIN only"
+      },
+      "gap": 0.038738,
+      "gap_status": "good",
+      "simulated_quantum": false,
+      "dataset_provenance": "provided (ICRISAT \u2014 ICRISAT-District Level Data.csv)",
+      "features": 23,
+      "classes": null,
+      "sample_counts": {
+        "train": 4423,
+        "test": 1162,
+        "train_groups": 273,
+        "test_groups": 69
+      }
+    },
+    {
+      "domain": "yield",
+      "name": "Gradient Boosting Regressor (XGBoost unavailable on this host)",
+      "artifact": "models/xgb_model.pkl",
+      "task": "regression",
+      "train": {
+        "r2": 0.959134,
+        "mae": 13474.700081,
+        "rmse": 29024.676799
+      },
+      "cv": {
+        "r2_mean": 0.911088,
+        "r2_std": 0.020857,
+        "folds": [
+          0.902859,
+          0.904355,
+          0.923292,
+          0.881569,
+          0.943364
+        ],
+        "scheme": "GroupKFold(5) grouped by district-year (TRAIN only)"
+      },
+      "test": {
+        "r2": 0.903461,
+        "mae": 17837.541481,
+        "rmse": 39709.571784
+      },
+      "params": {
+        "n_estimators": 150,
+        "max_depth": 3,
+        "learning_rate": 0.08,
+        "cv": "GroupKFold(5) by district-year on TRAIN only"
+      },
+      "gap": 0.055673,
+      "gap_status": "moderate",
+      "simulated_quantum": false,
+      "dataset_provenance": "provided (ICRISAT \u2014 ICRISAT-District Level Data.csv)",
+      "features": 23,
+      "classes": null,
+      "sample_counts": {
+        "train": 4423,
+        "test": 1162
+      }
+    },
+    {
+      "domain": "yield",
+      "name": "Simulated Quantum Regressor (recorded-feature projection + gradient boosting)",
+      "artifact": "models/vqc_yield_model.pkl",
+      "task": "regression",
+      "train": {
+        "r2": 0.977152,
+        "mae": 9995.090529,
+        "rmse": 21702.692769
+      },
+      "cv": {
+        "r2_mean": 0.901391,
+        "r2_std": 0.028882,
+        "folds": [
+          0.850947,
+          0.909338,
+          0.926345,
+          0.89033,
+          0.929993
+        ],
+        "scheme": "GroupKFold(5) grouped by district-year (TRAIN only)"
+      },
+      "test": {
+        "r2": 0.910708,
+        "mae": 16377.004066,
+        "rmse": 38190.086913
+      },
+      "params": {
+        "n_components": 8,
+        "alpha": 0.01,
+        "epochs": 40
+      },
+      "gap": 0.066444,
+      "gap_status": "moderate",
+      "simulated_quantum": true,
+      "dataset_provenance": "provided (ICRISAT \u2014 ICRISAT-District Level Data.csv)",
+      "features": 23,
+      "classes": null,
+      "sample_counts": {
+        "train": 4423,
+        "test": 1162
+      }
+    },
+    {
+      "domain": "seed",
+      "name": "Random Forest Classifier (raw features)",
+      "artifact": "models/seed_viability/randomforest_model.pkl",
+      "task": "classification",
+      "train": {
+        "accuracy": 1.0,
+        "precision_macro": 1.0,
+        "recall_macro": 1.0,
+        "f1_macro": 1.0
+      },
+      "cv": {
+        "accuracy_mean": 0.95,
+        "accuracy_std": 0.025,
+        "folds": [
+          0.9375,
+          0.9375,
+          0.9375,
+          1.0,
+          0.9375
+        ]
+      },
+      "test": {
+        "accuracy": 0.9,
+        "precision_macro": 0.89011,
+        "recall_macro": 0.89011,
+        "f1_macro": 0.89011
+      },
+      "params": {
+        "max_depth": 6,
+        "min_samples_leaf": 1
+      },
+      "gap": 0.1,
+      "gap_status": "moderate",
+      "simulated_quantum": false,
+      "dataset_provenance": "synthetic-generated",
+      "features": 2,
+      "classes": 2,
+      "sample_counts": {
+        "train": 80,
+        "test": 20
+      }
+    },
+    {
+      "domain": "seed",
+      "name": "Support Vector Classifier",
+      "artifact": "models/svm_model.pkl",
+      "task": "classification",
+      "train": {
+        "accuracy": 0.95,
+        "precision_macro": 0.962963,
+        "recall_macro": 0.933333,
+        "f1_macro": 0.945055
+      },
+      "cv": {
+        "accuracy_mean": 0.9375,
+        "accuracy_std": null,
+        "folds": [],
+        "best_params": {
+          "C": 10,
+          "gamma": "scale",
+          "kernel": "rbf"
+        }
+      },
+      "test": {
+        "accuracy": 0.85,
+        "precision_macro": 0.845238,
+        "recall_macro": 0.818681,
+        "f1_macro": 0.82906
+      },
+      "params": {
+        "C": 10,
+        "gamma": "scale",
+        "kernel": "rbf"
+      },
+      "gap": 0.1,
+      "gap_status": "moderate",
+      "simulated_quantum": false,
+      "dataset_provenance": "synthetic-generated",
+      "features": 2,
+      "classes": 2,
+      "sample_counts": {
+        "train": 80,
+        "test": 20
+      }
+    },
+    {
+      "domain": "seed",
+      "name": "Simulated Quantum Classifier (recorded-feature projection + linear learner)",
+      "artifact": "models/vqc_seed_model.pkl",
+      "task": "classification",
+      "train": {
+        "accuracy": 0.9375,
+        "precision_macro": 0.943746,
+        "recall_macro": 0.923333,
+        "f1_macro": 0.931869
+      },
+      "cv": {
+        "accuracy_mean": 0.9,
+        "accuracy_std": 0.063738,
+        "folds": [
+          0.8125,
+          0.875,
+          0.875,
+          1.0,
+          0.9375
+        ]
+      },
+      "test": {
+        "accuracy": 0.85,
+        "precision_macro": 0.845238,
+        "recall_macro": 0.818681,
+        "f1_macro": 0.82906
+      },
+      "params": {
+        "n_components": 12,
+        "alpha": 0.001,
+        "epochs": 100
+      },
+      "gap": 0.0875,
+      "gap_status": "moderate",
+      "simulated_quantum": true,
+      "dataset_provenance": "synthetic-generated",
+      "features": 2,
+      "classes": 2,
+      "sample_counts": {
+        "train": 80,
+        "test": 20
+      }
+    },
+    {
+      "domain": "meta",
+      "key": "meta_model",
+      "name": "Meta Ensemble (OOF stacking, RandomForestClassifier(n_estimators=100, max_depth=3, min_samples_leaf=5))",
+      "task": "classification",
+      "artifact": "models/meta_model.pkl",
+      "simulated_quantum": false,
+      "records": 2200,
+      "features": 6,
+      "classes": 2,
+      "params": {
+        "selected": "RandomForestClassifier(n_estimators=100, max_depth=3, min_samples_leaf=5)",
+        "random_state": 42,
+        "candidates_evaluated": 12
+      },
+      "sample_counts": {
+        "train": 1760,
+        "test": 440
+      },
+      "train": {
+        "accuracy": 0.607955,
+        "precision_macro": 0.623304,
+        "recall_macro": 0.606492,
+        "f1_macro": 0.593489
+      },
+      "cv": {
+        "accuracy_mean": 0.574432,
+        "accuracy_std": 0.019133,
+        "folds": [
+          0.576705,
+          0.579545,
+          0.602273,
+          0.542614,
+          0.571023
+        ],
+        "scheme": "StratifiedGroupKFold(5) grouped by yield row (TRAIN only)",
+        "base_rate": 0.496023,
+        "lift_over_base_rate": 0.078409
+      },
+      "test": {
+        "accuracy": 0.586364,
+        "precision_macro": 0.578453,
+        "recall_macro": 0.569789,
+        "f1_macro": 0.564773
+      },
+      "confusion_matrix": [
+        [
+          178,
+          64
+        ],
+        [
+          118,
+          80
+        ]
+      ],
+      "base_rate_train": 0.496023,
+      "base_rate_test": 0.45,
+      "gap": 0.021591,
+      "gap_status": "good",
+      "label_definition": "the three user-facing classical outputs are correct: crop RF correct, yield classical within 25% per hectare, seed RF correct"
+    }
+  ],
+  "generalization": {
+    "status": "moderate",
+    "max_gap_model": "Random Forest Classifier (raw features)",
+    "max_gap": 0.1,
+    "summary": "Some models show a moderate train/test gap \u2014 inspect the per-model metrics."
+  },
+  "registry_entries_added": 9,
+  "notes": [],
+  "yield_derivation": {
+    "status": "exists",
+    "path": "data/yield_icrisat_karnataka.csv"
+  },
+  "meta": {
+    "domain": "meta",
+    "key": "meta_model",
+    "name": "Meta Ensemble (OOF stacking, RandomForestClassifier(n_estimators=100, max_depth=3, min_samples_leaf=5))",
+    "task": "classification",
+    "artifact": "models/meta_model.pkl",
+    "simulated_quantum": false,
+    "records": 2200,
+    "features": 6,
+    "classes": 2,
+    "params": {
+      "selected": "RandomForestClassifier(n_estimators=100, max_depth=3, min_samples_leaf=5)",
+      "random_state": 42,
+      "candidates_evaluated": 12
+    },
+    "sample_counts": {
+      "train": 1760,
+      "test": 440
+    },
+    "train": {
+      "accuracy": 0.607955,
+      "precision_macro": 0.623304,
+      "recall_macro": 0.606492,
+      "f1_macro": 0.593489
+    },
+    "cv": {
+      "accuracy_mean": 0.574432,
+      "accuracy_std": 0.019133,
+      "folds": [
+        0.576705,
+        0.579545,
+        0.602273,
+        0.542614,
+        0.571023
+      ],
+      "scheme": "StratifiedGroupKFold(5) grouped by yield row (TRAIN only)",
+      "base_rate": 0.496023,
+      "lift_over_base_rate": 0.078409
+    },
+    "test": {
+      "accuracy": 0.586364,
+      "precision_macro": 0.578453,
+      "recall_macro": 0.569789,
+      "f1_macro": 0.564773
+    },
+    "confusion_matrix": [
+      [
+        178,
+        64
+      ],
+      [
+        118,
+        80
+      ]
+    ],
+    "base_rate_train": 0.496023,
+    "base_rate_test": 0.45,
+    "gap": 0.021591,
+    "gap_status": "good",
+    "label_definition": "the three user-facing classical outputs are correct: crop RF correct, yield classical within 25% per hectare, seed RF correct"
+  },
+  "duration_seconds": 121.0
+}

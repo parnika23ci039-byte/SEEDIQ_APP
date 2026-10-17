@@ -1,0 +1,9 @@
+Task,Class,Count,Percentage
+Crop_Recommendation,Rice,20,20.00%
+Crop_Recommendation,Wheat,20,20.00%
+Crop_Recommendation,Maize,20,20.00%
+Crop_Recommendation,Sugarcane,20,20.00%
+Crop_Recommendation,Cotton,20,20.00%
+Yield_Prediction,Continuous Target,100,100%
+Seed_Viability,0,63,63.00%
+Seed_Viability,1,37,37.00%

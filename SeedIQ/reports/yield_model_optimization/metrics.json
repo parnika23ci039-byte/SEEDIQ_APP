@@ -1,0 +1,34 @@
+{
+    "experiment_id": "SEEDIQ-EXP-20260817-194124-YIELD_OPTIMIZATION",
+    "task": "Yield_Prediction",
+    "best_model": "Tuned_Regularized_XGBoost",
+    "baseline_dummy_r2": -191.74357277975827,
+    "best_cv_r2": -0.037629293160238664,
+    "test_r2": -281.4301414638943,
+    "train_r2": 0.4520833044780642,
+    "mae": 102.51906130125165,
+    "rmse": 128.52863960842413,
+    "generalization_gap": 281.88222476837234,
+    "overfitting_status": "SEVERE_OVERFITTING",
+    "multi_seed_robustness": {
+        "seeds": [
+            42,
+            123,
+            2026
+        ],
+        "cv_r2_scores": [
+            -0.037629293160238664,
+            -0.30721311267838103,
+            0.05477273178743984
+        ],
+        "mean_cv_r2": -0.09668989135039328,
+        "std_cv_r2": 0.1535676910298138,
+        "test_r2_scores": [
+            -281.4301414638943,
+            0.5270742174649999,
+            -148.79672820443844
+        ],
+        "mean_test_r2": -143.23326515028927,
+        "std_test_r2": 115.17575543363371
+    }
+}

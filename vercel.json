@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "cd seediq-frontend && npm install && npm run build && cp -r .vercel/output ../.vercel/ 2>/dev/null || true",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://seediq-api.onrender.com/api/$1"
+    }
+  ]
+}

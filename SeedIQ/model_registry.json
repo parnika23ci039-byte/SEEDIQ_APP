@@ -1,0 +1,12 @@
+[
+    {
+        "dataset": "seed",
+        "best_model": "LogisticRegression",
+        "cv_score": 0.9717725686765935,
+        "test_score": 0.9721739130434782,
+        "robustness": {
+            "mean": 0.9387703118137901,
+            "std": 0.020862207195362692
+        }
+    }
+]

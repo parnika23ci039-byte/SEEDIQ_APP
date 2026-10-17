@@ -1,0 +1,35 @@
+{
+    "experiment_id": "SEEDIQ-EXP-20260817-190231-SEED_VIABILITY",
+    "dataset_version": "v001",
+    "best_model": "RandomForest",
+    "test_score": 0.8611111111111112,
+    "train_score": 0.9476600985221675,
+    "generalization_gap": 0.08654898741105632,
+    "overfitting_status": "HEALTHY",
+    "all_evaluations": [
+        {
+            "model": "RandomForest",
+            "cv_score": 0.9339262187088273,
+            "test_score": 0.8611111111111112,
+            "train_score": 0.9476600985221675,
+            "gen_gap": 0.08654898741105632,
+            "overfit_status": "HEALTHY"
+        },
+        {
+            "model": "SVM",
+            "cv_score": 0.947364953886693,
+            "test_score": 0.784688995215311,
+            "train_score": 0.9476600985221675,
+            "gen_gap": 0.1629711033068565,
+            "overfit_status": "POSSIBLE_OVERFITTING"
+        },
+        {
+            "model": "SimulatedQML",
+            "cv_score": 0.6247659925214105,
+            "test_score": 0.6590909090909092,
+            "train_score": 0.8513986013986015,
+            "gen_gap": 0.1923076923076923,
+            "overfit_status": "POSSIBLE_OVERFITTING"
+        }
+    ]
+}

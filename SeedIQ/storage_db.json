@@ -1,0 +1,200 @@
+{
+  "Rice": {
+    "temp": "15-20°C",
+    "hum": "60%",
+    "pres": "Fumigation recommended. Silo storage with aeration.",
+    "shelf_life": "12-18 months",
+    "fungus": "Blast disease, Aflatoxin risk if wet.",
+    "insects": "Rice weevil, Lesser grain borer.",
+    "risk_score": 15
+  },
+  "Wheat": {
+    "temp": "15-18°C",
+    "hum": "50-60%",
+    "pres": "Silo storage, keep dry. Check moisture levels before loading.",
+    "shelf_life": "12-24 months",
+    "fungus": "Rust, Fusarium head blight.",
+    "insects": "Granary weevil, Flour beetle.",
+    "risk_score": 10
+  },
+  "Maize": {
+    "temp": "10-15°C",
+    "hum": "50%",
+    "pres": "Cold storage to prevent aflatoxin. Aerated metal bins.",
+    "shelf_life": "10-15 months",
+    "fungus": "Aspergillus flavus, Ear rot.",
+    "insects": "Maize weevil, Angoumois grain moth.",
+    "risk_score": 25
+  },
+  "Cotton": {
+    "temp": "20-25°C",
+    "hum": "55-65%",
+    "pres": "Dry bale warehouse, prevent dampness. Fire protection active.",
+    "shelf_life": "18-36 months",
+    "fungus": "Boll rot, Aspergillus niger.",
+    "insects": "Pink bollworm, Cotton stainer.",
+    "risk_score": 35
+  },
+  "Sugarcane": {
+    "temp": "12-16°C",
+    "hum": "85-90%",
+    "pres": "Controlled atmosphere storage, keep cool. Process within 24 hours.",
+    "shelf_life": "1-2 weeks",
+    "fungus": "Red rot, Pineapple disease.",
+    "insects": "Borer complex, Mealybugs.",
+    "risk_score": 60
+  },
+  "Coffee": {
+    "temp": "15-20°C",
+    "hum": "60-65%",
+    "pres": "Store in hermetic bags. Maintain consistent moisture below 12%.",
+    "shelf_life": "12-18 months",
+    "fungus": "Coffee berry disease, Ochratoxin A.",
+    "insects": "Coffee berry borer.",
+    "risk_score": 20
+  },
+  "Banana": {
+    "temp": "13-14°C",
+    "hum": "90-95%",
+    "pres": "Store green. Ethylene scrubbing. Avoid temperatures below 13°C.",
+    "shelf_life": "2-4 weeks",
+    "fungus": "Crown rot, Anthracnose.",
+    "insects": "Banana weevil.",
+    "risk_score": 75
+  },
+  "Apple": {
+    "temp": "0-2°C",
+    "hum": "90-95%",
+    "pres": "Controlled atmosphere (low O2, high CO2). Rapid cooling.",
+    "shelf_life": "4-10 months",
+    "fungus": "Blue mold, Gray mold, Bitter rot.",
+    "insects": "Codling moth.",
+    "risk_score": 30
+  },
+  "Coconut": {
+    "temp": "0-15°C",
+    "hum": "80-85%",
+    "pres": "Dry ventilated store. Keep husk intact. Prevent direct rain.",
+    "shelf_life": "3-6 months",
+    "fungus": "Stem bleeding, Bud rot.",
+    "insects": "Rhinoceros beetle.",
+    "risk_score": 15
+  },
+  "Papaya": {
+    "temp": "10-12°C",
+    "hum": "85-90%",
+    "pres": "Handle carefully. Store at 10°C to slow ripening without chilling injury.",
+    "shelf_life": "1-3 weeks",
+    "fungus": "Anthracnose, Phytophthora fruit rot.",
+    "insects": "Fruit fly.",
+    "risk_score": 80
+  },
+  "Orange": {
+    "temp": "3-8°C",
+    "hum": "85-90%",
+    "pres": "Wash, wax, and keep ventilated. Chilled warehouse recommended.",
+    "shelf_life": "3-8 weeks",
+    "fungus": "Green mold, Blue mold, Stem-end rot.",
+    "insects": "Citrus rust mite.",
+    "risk_score": 45
+  },
+  "Jute": {
+    "temp": "25-30°C",
+    "hum": "65-75%",
+    "pres": "Bale storage in covered dry sheds. Keep off the floor.",
+    "shelf_life": "24-48 months",
+    "fungus": "Black band disease.",
+    "insects": "Jute stem weevil.",
+    "risk_score": 10
+  },
+  "Chickpea": {
+    "temp": "15-20°C",
+    "hum": "50-60%",
+    "pres": "Hermetic silos. Monitor moisture content (<12%).",
+    "shelf_life": "18-24 months",
+    "fungus": "Ascochyta blight.",
+    "insects": "Pulse beetle.",
+    "risk_score": 15
+  },
+  "Lentil": {
+    "temp": "15-20°C",
+    "hum": "50-60%",
+    "pres": "Store in clean bags or silos. Keep away from direct sunlight.",
+    "shelf_life": "18-24 months",
+    "fungus": "Anthracnose.",
+    "insects": "Callosobruchus (weevil).",
+    "risk_score": 15
+  },
+  "Mango": {
+    "temp": "12-13°C",
+    "hum": "85-90%",
+    "pres": "Hot water treatment, wax, ethylene control.",
+    "shelf_life": "2-3 weeks",
+    "fungus": "Anthracnose, Stem-end rot.",
+    "insects": "Mango seed weevil, Fruit fly.",
+    "risk_score": 85
+  },
+  "Grapes": {
+    "temp": "-1 to 0°C",
+    "hum": "90-95%",
+    "pres": "SO2 pads generator sheets, rapid precooling.",
+    "shelf_life": "2-6 weeks",
+    "fungus": "Gray mold (Botrytis).",
+    "insects": "Mealybugs.",
+    "risk_score": 70
+  },
+  "Pomegranate": {
+    "temp": "5-6°C",
+    "hum": "90-95%",
+    "pres": "Store in plastic liners. Chilled atmosphere.",
+    "shelf_life": "2-3 months",
+    "fungus": "Heart rot, Gray mold.",
+    "insects": "Pomegranate butterfly.",
+    "risk_score": 40
+  },
+  "Watermelon": {
+    "temp": "10-15°C",
+    "hum": "85-90%",
+    "pres": "Well ventilated store. Do not stack too high.",
+    "shelf_life": "2-3 weeks",
+    "fungus": "Gummy stem blight.",
+    "insects": "Spider mites.",
+    "risk_score": 60
+  },
+  "Muskmelon": {
+    "temp": "3-7°C",
+    "hum": "90-95%",
+    "pres": "Rapid cooling to 3°C. High humidity critical.",
+    "shelf_life": "1-2 weeks",
+    "fungus": "Fusarium rot.",
+    "insects": "Melon aphid.",
+    "risk_score": 75
+  },
+  "Peach": {
+    "temp": "-0.5 to 0°C",
+    "hum": "90-95%",
+    "pres": "Hydrocooling. Store immediately at 0°C to prevent woolliness.",
+    "shelf_life": "2-4 weeks",
+    "fungus": "Brown rot.",
+    "insects": "Plum curculio.",
+    "risk_score": 90
+  },
+  "Potato": {
+    "temp": "4-10°C",
+    "hum": "90-95%",
+    "pres": "Well-ventilated dark room to prevent greening and sprouting.",
+    "shelf_life": "5-10 months",
+    "fungus": "Late blight, Silver scurf.",
+    "insects": "Potato tuber moth.",
+    "risk_score": 50
+  },
+  "Tomato": {
+    "temp": "12-15°C",
+    "hum": "85-90%",
+    "pres": "Do not refrigerate under 10°C. Avoid direct sunlight.",
+    "shelf_life": "1-2 weeks",
+    "fungus": "Early blight, Late blight.",
+    "insects": "Tomato fruit borer.",
+    "risk_score": 80
+  }
+}

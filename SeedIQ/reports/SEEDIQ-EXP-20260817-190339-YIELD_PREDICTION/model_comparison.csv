@@ -1,0 +1,4 @@
+Model,CV_Score,Test_Score,Train_Score,Generalization_Gap,Overfitting_Status,Train_Time_s
+XGBoost,-0.0412,-216.4897,0.2798,216.7695,UNDERFITTING,9.72
+RandomForest,-0.2229,-288.6295,0.7157,289.3453,SEVERE_OVERFITTING,2.96
+SimulatedQML,-0.4929,-1631.0350,1.0000,1632.0350,SEVERE_OVERFITTING,5.69

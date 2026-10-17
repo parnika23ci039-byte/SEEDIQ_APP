@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Yield Model Optimization & Regularization Report</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #0d1012; color: #e2e8f0; margin: 0; padding: 40px; }
+        .card { background: #1e293b; border-radius: 12px; padding: 24px; margin-bottom: 24px; border: 1px solid #334155; }
+        h1 { color: #10b981; font-size: 28px; margin-bottom: 8px; }
+        h2 { color: #38bdf8; font-size: 20px; border-bottom: 1px solid #334155; padding-bottom: 8px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+        th, td { border: 1px solid #334155; padding: 12px; text-align: left; }
+        th { background-color: #0f172a; color: #10b981; }
+        .highlight { color: #f59e0b; font-weight: bold; }
+        .badge { display: inline-block; padding: 4px 12px; border-radius: 9999px; background: #065f46; color: #34d399; font-weight: 600; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🌾 SeedIQ Yield Model Optimization Report</h1>
+        <p><strong>Experiment ID:</strong> SEEDIQ-EXP-20260817-194124-YIELD_OPTIMIZATION | <strong>Task:</strong> Yield Prediction</p>
+        <p><span class="badge">STATUS: COMPLETED</span></p>
+    </div>
+
+    <div class="card">
+        <h2>Executive Summary</h2>
+        <p><strong>Baseline Mean Dummy R2:</strong> -191.7436</p>
+        <p><strong>Best Selected Model:</strong> <span class="highlight">Tuned_Regularized_XGBoost</span></p>
+        <p><strong>CV R2:</strong> -0.0376 | <strong>Test R2:</strong> -281.4301</p>
+        <p><strong>Generalization Gap:</strong> 281.8822 (SEVERE_OVERFITTING)</p>
+        <p><strong>Multi-Seed Robustness (Mean Test R2):</strong> -143.2333 ± 115.1758</p>
+    </div>
+
+    <div class="card">
+        <h2>Model Comparison Matrix</h2>
+        <table border="1" class="dataframe table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Model</th>
+      <th>CV_R2</th>
+      <th>Train_R2</th>
+      <th>Test_R2</th>
+      <th>MAE</th>
+      <th>RMSE</th>
+      <th>Gen_Gap</th>
+      <th>Overfit_Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Current_RandomForest_Baseline</td>
+      <td>-0.3125</td>
+      <td>0.8092</td>
+      <td>-312.2526</td>
+      <td>70.2054</td>
+      <td>135.3604</td>
+      <td>313.0618</td>
+      <td>SEVERE_OVERFITTING</td>
+    </tr>
+    <tr>
+      <td>Tuned_Regularized_RandomForest</td>
+      <td>-0.0775</td>
+      <td>0.4651</td>
+      <td>-352.5074</td>
+      <td>107.2735</td>
+      <td>143.7949</td>
+      <td>352.9724</td>
+      <td>SEVERE_OVERFITTING</td>
+    </tr>
+    <tr>
+      <td>Tuned_Regularized_XGBoost</td>
+      <td>-0.0376</td>
+      <td>0.4521</td>
+      <td>-281.4301</td>
+      <td>102.5191</td>
+      <td>128.5286</td>
+      <td>281.8822</td>
+      <td>SEVERE_OVERFITTING</td>
+    </tr>
+    <tr>
+      <td>SimulatedQML_Regressor</td>
+      <td>-0.4323</td>
+      <td>1.0000</td>
+      <td>-1705.5188</td>
+      <td>181.0773</td>
+      <td>315.9366</td>
+      <td>1706.5188</td>
+      <td>SEVERE_OVERFITTING</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+</body>
+</html>

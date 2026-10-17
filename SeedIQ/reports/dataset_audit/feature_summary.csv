@@ -1,0 +1,16 @@
+Task,Column,DataType,MissingValues,UniqueValues,Min,Max,Mean,Std
+Crop_Recommendation,Nitrogen,int64,0,56,50.0,128.0,87.4300,19.9435
+Crop_Recommendation,Phosphorus,int64,0,32,30.0,69.0,48.9700,8.1395
+Crop_Recommendation,Potassium,int64,0,36,21.0,74.0,40.5100,12.6607
+Crop_Recommendation,Temperature,float64,0,100,15.12365293223094,33.9437183689544,25.5172,4.6616
+Crop_Recommendation,Humidity,float64,0,100,40.55232801453987,94.74846328710184,68.3300,14.6943
+Crop_Recommendation,pH,float64,0,100,5.53231595110965,7.495831375029371,6.5439,0.4740
+Crop_Recommendation,Rainfall,float64,0,100,50.4785187689449,251.68730399387945,133.6741,63.9457
+Crop_Recommendation,Crop,str,0,5,N/A,N/A,N/A,N/A
+Yield_Prediction,Crop,str,0,5,N/A,N/A,N/A,N/A
+Yield_Prediction,Season,str,0,3,N/A,N/A,N/A,N/A
+Yield_Prediction,Area_Hectares,float64,0,100,1.0416882070414255,9.971868266613528,5.0271,2.6807
+Yield_Prediction,Yield_Tonnes,float64,0,100,3.2160517657315077,767.4557905241421,106.6236,201.3832
+Seed_Viability,Moisture_Level,float64,0,100,8.001662665031192,14.876313605560572,11.7968,2.1095
+Seed_Viability,Weight_g,float64,0,100,30.09357562503113,69.56739639253436,50.5297,11.2519
+Seed_Viability,Viable,int64,0,2,0.0,1.0,0.3700,0.4852

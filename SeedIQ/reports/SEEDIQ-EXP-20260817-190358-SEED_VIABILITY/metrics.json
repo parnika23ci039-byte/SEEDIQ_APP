@@ -1,0 +1,21 @@
+{
+    "experiment_id": "SEEDIQ-EXP-20260817-190358-SEED_VIABILITY",
+    "task": "Seed_Viability",
+    "status": "SUCCESS",
+    "best_model": "RandomForest",
+    "metrics": {
+        "accuracy": 0.8666666666666667,
+        "precision": 0.8611111111111112,
+        "recall": 0.8611111111111112,
+        "f1": 0.8611111111111112
+    },
+    "training_time": 22.14299511909485,
+    "inference_time": 0.010999917984008789,
+    "env_metadata": {
+        "python_version": "3.12.9",
+        "sklearn_version": "1.9.0",
+        "xgboost_version": "3.3.0",
+        "numpy_version": "2.4.6",
+        "pandas_version": "3.0.3"
+    }
+}

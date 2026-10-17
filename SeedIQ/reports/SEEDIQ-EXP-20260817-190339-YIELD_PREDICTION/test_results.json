@@ -1,0 +1,35 @@
+{
+    "experiment_id": "SEEDIQ-EXP-20260817-190339-YIELD_PREDICTION",
+    "dataset_version": "v001",
+    "best_model": "XGBoost",
+    "test_score": -216.48971082395633,
+    "train_score": 0.27982639468377113,
+    "generalization_gap": 216.7695372186401,
+    "overfitting_status": "UNDERFITTING",
+    "all_evaluations": [
+        {
+            "model": "XGBoost",
+            "cv_score": -0.041156375351307006,
+            "test_score": -216.48971082395633,
+            "train_score": 0.27982639468377113,
+            "gen_gap": 216.7695372186401,
+            "overfit_status": "UNDERFITTING"
+        },
+        {
+            "model": "RandomForest",
+            "cv_score": -0.2228537428959633,
+            "test_score": -288.6295362710711,
+            "train_score": 0.7157205583356572,
+            "gen_gap": 289.34525682940676,
+            "overfit_status": "SEVERE_OVERFITTING"
+        },
+        {
+            "model": "SimulatedQML",
+            "cv_score": -0.49294099063549757,
+            "test_score": -1631.0349569913433,
+            "train_score": 0.9999940699869305,
+            "gen_gap": 1632.0349510613303,
+            "overfit_status": "SEVERE_OVERFITTING"
+        }
+    ]
+}

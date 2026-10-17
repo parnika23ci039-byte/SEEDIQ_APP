@@ -1,0 +1,35 @@
+{
+    "experiment_id": "SEEDIQ-EXP-20260817-191122-CROP_RECOMMENDATION",
+    "dataset_version": "v001",
+    "best_model": "RandomForest",
+    "test_score": 1.0,
+    "train_score": 1.0,
+    "generalization_gap": 0.0,
+    "overfitting_status": "HEALTHY",
+    "all_evaluations": [
+        {
+            "model": "RandomForest",
+            "cv_score": 0.9875555555555555,
+            "test_score": 1.0,
+            "train_score": 1.0,
+            "gen_gap": 0.0,
+            "overfit_status": "HEALTHY"
+        },
+        {
+            "model": "SVM",
+            "cv_score": 0.9738412698412698,
+            "test_score": 1.0,
+            "train_score": 0.9764705882352942,
+            "gen_gap": -0.0235294117647058,
+            "overfit_status": "HEALTHY"
+        },
+        {
+            "model": "SimulatedQML",
+            "cv_score": 0.2693333333333333,
+            "test_score": 0.18158730158730158,
+            "train_score": 0.7766479334440985,
+            "gen_gap": 0.595060631856797,
+            "overfit_status": "SEVERE_OVERFITTING"
+        }
+    ]
+}

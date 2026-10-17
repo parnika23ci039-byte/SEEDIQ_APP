@@ -1,0 +1,21 @@
+{
+    "experiment_id": "SEEDIQ-EXP-20260817-190106-CROP_RECOMMENDATION",
+    "task": "Crop_Recommendation",
+    "status": "SUCCESS",
+    "best_model": "RandomForest",
+    "metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+    },
+    "training_time": 25.802429676055908,
+    "inference_time": 0.01900315284729004,
+    "env_metadata": {
+        "python_version": "3.12.9",
+        "sklearn_version": "1.9.0",
+        "xgboost_version": "3.3.0",
+        "numpy_version": "2.4.6",
+        "pandas_version": "3.0.3"
+    }
+}

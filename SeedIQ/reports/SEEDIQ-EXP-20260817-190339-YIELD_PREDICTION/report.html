@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SeedIQ Experiment Report - SEEDIQ-EXP-20260817-190339-YIELD_PREDICTION</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #0d1012; color: #e2e8f0; margin: 0; padding: 40px; }
+        .card { background: #1e293b; border-radius: 12px; padding: 24px; margin-bottom: 24px; border: 1px solid #334155; }
+        h1 { color: #10b981; font-size: 28px; margin-bottom: 8px; }
+        h2 { color: #38bdf8; font-size: 20px; border-bottom: 1px solid #334155; padding-bottom: 8px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+        th, td { border: 1px solid #334155; padding: 12px; text-align: left; }
+        th { background-color: #0f172a; color: #10b981; }
+        .highlight { color: #f59e0b; font-weight: bold; }
+        .badge { display: inline-block; padding: 4px 12px; border-radius: 9999px; background: #065f46; color: #34d399; font-weight: 600; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🌱 SeedIQ Model Evaluation Report</h1>
+        <p><strong>Experiment ID:</strong> SEEDIQ-EXP-20260817-190339-YIELD_PREDICTION | <strong>Task:</strong> Yield_Prediction | <strong>Dataset Version:</strong> v001</p>
+        <p><span class="badge">STATUS: SUCCESS</span></p>
+    </div>
+
+    <div class="card">
+        <h2>Executive Summary</h2>
+        <p><strong>Selected Best Model:</strong> <span class="highlight">XGBoost</span></p>
+        <p><strong>Test Performance Score:</strong> -216.4897</p>
+        <p><strong>Overfitting Status:</strong> UNDERFITTING (Generalization Gap: 216.7695)</p>
+        <p><strong>Best Hyperparameters:</strong> <code>{"learning_rate": 0.01, "max_depth": 3, "n_estimators": 50}</code></p>
+    </div>
+
+    <div class="card">
+        <h2>Model Comparison Matrix</h2>
+        <table border="1" class="dataframe table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Model</th>
+      <th>CV_Score</th>
+      <th>Test_Score</th>
+      <th>Train_Score</th>
+      <th>Generalization_Gap</th>
+      <th>Overfitting_Status</th>
+      <th>Train_Time_s</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>XGBoost</td>
+      <td>-0.0412</td>
+      <td>-216.4897</td>
+      <td>0.2798</td>
+      <td>216.7695</td>
+      <td>UNDERFITTING</td>
+      <td>9.72</td>
+    </tr>
+    <tr>
+      <td>RandomForest</td>
+      <td>-0.2229</td>
+      <td>-288.6295</td>
+      <td>0.7157</td>
+      <td>289.3453</td>
+      <td>SEVERE_OVERFITTING</td>
+      <td>2.96</td>
+    </tr>
+    <tr>
+      <td>SimulatedQML</td>
+      <td>-0.4929</td>
+      <td>-1631.0350</td>
+      <td>1.0000</td>
+      <td>1632.0350</td>
+      <td>SEVERE_OVERFITTING</td>
+      <td>5.69</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+</body>
+</html>

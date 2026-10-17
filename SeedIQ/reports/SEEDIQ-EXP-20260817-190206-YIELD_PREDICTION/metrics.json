@@ -1,0 +1,21 @@
+{
+    "experiment_id": "SEEDIQ-EXP-20260817-190206-YIELD_PREDICTION",
+    "task": "Yield_Prediction",
+    "status": "SUCCESS",
+    "best_model": "XGBoost",
+    "metrics": {
+        "mae": 104.87463533689619,
+        "mse": 12721.182817460716,
+        "rmse": 112.78822109360851,
+        "r2": -216.48971082395633
+    },
+    "training_time": 12.196226835250854,
+    "inference_time": 0.0039997100830078125,
+    "env_metadata": {
+        "python_version": "3.12.9",
+        "sklearn_version": "1.9.0",
+        "xgboost_version": "3.3.0",
+        "numpy_version": "2.4.6",
+        "pandas_version": "3.0.3"
+    }
+}

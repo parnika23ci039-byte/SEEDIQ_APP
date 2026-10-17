@@ -1,0 +1,24 @@
+# Render Infrastructure Blueprint for SeedIQ
+# Automatically configured when pushed to GitHub and connected to Render.
+services:
+  - type: web
+    name: seediq-api
+    runtime: python
+    rootDir: SeedIQ
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --timeout 120
+    envVars:
+      - key: FLASK_SECRET_KEY
+        generateValue: true
+      - key: RESEND_API_KEY
+        sync: false
+      - key: RESEND_SENDER_EMAIL
+        value: onboarding@resend.dev
+      - key: SUPABASE_URL
+        value: https://cqcdfvetexaqqcfogcds.supabase.co
+      - key: SUPABASE_PUBLISHABLE_KEY
+        value: sb_publishable_ysdQ2JVY5i7PY-plyOmh3w_ORe-Wr1e
+      - key: SUPABASE_SECRET_KEY
+        sync: false
+      - key: PYTHON_VERSION
+        value: 3.11.9

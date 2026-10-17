@@ -1,0 +1,1226 @@
+{
+  "Rice": {
+    "temp": "12-15°C",
+    "hum": "60-65%",
+    "pres": "Silo / hermetic bags. Fumigate against weevils.",
+    "shelf_life": "12-18 months",
+    "fungus": "Aspergillus spp. (Low risk if moisture < 12%)",
+    "insects": "Rice Weevil (Sitophilus oryzae)",
+    "risk_score": 15
+  },
+  "Maize": {
+    "temp": "10-12°C",
+    "hum": "55-60%",
+    "pres": "Dry bulk aeration silos. Maintain low moisture.",
+    "shelf_life": "9-12 months",
+    "fungus": "Aspergillus flavus (Aflatoxin risk if warm/wet)",
+    "insects": "Maize Weevil, Angoumois Grain Moth",
+    "risk_score": 25
+  },
+  "Jute": {
+    "temp": "15-20°C",
+    "hum": "65-70%",
+    "pres": "Store in dry ventilated warehouse bay away from moisture.",
+    "shelf_life": "12 months",
+    "fungus": "Penicillium mold on damp fibers",
+    "insects": "Warehouse beetles",
+    "risk_score": 20
+  },
+  "Cotton": {
+    "temp": "18-22°C",
+    "hum": "55-62%",
+    "pres": "Store baled cotton in dry ventilated bays with fire protection.",
+    "shelf_life": "24 months",
+    "fungus": "Mildew under damp storage conditions",
+    "insects": "Pink bollworm larvae residual controls",
+    "risk_score": 10
+  },
+  "Coconut": {
+    "temp": "0-2°C (copra) or 15°C (whole)",
+    "hum": "75-80%",
+    "pres": "Keep whole nuts in dry well-ventilated crates.",
+    "shelf_life": "3-4 months",
+    "fungus": "Copra mold, Thielaviopsis rot",
+    "insects": "Red palm weevil residual larvae",
+    "risk_score": 30
+  },
+  "Papaya": {
+    "temp": "10-12°C",
+    "hum": "85-90%",
+    "pres": "Crate store with ethylene absorbents.",
+    "shelf_life": "1-3 weeks",
+    "fungus": "Anthracnose fruit rot",
+    "insects": "Fruit flies",
+    "risk_score": 85
+  },
+  "Orange": {
+    "temp": "5-8°C",
+    "hum": "85-90%",
+    "pres": "Ventilated plastic crates. Avoid stack pressure.",
+    "shelf_life": "3-8 weeks",
+    "fungus": "Penicillium digitatum (Green mold)",
+    "insects": "Citrus fruit borer",
+    "risk_score": 45
+  },
+  "Apple": {
+    "temp": "0-2°C",
+    "hum": "90-95%",
+    "pres": "Controlled atmosphere storage (low oxygen, high CO2).",
+    "shelf_life": "6-10 months",
+    "fungus": "Blue mold, bitter rot",
+    "insects": "Codling moth residual larvae",
+    "risk_score": 20
+  },
+  "Muskmelon": {
+    "temp": "3-5°C",
+    "hum": "85-90%",
+    "pres": "Chilled ventilated crates. Avoid stacking.",
+    "shelf_life": "2-3 weeks",
+    "fungus": "Fusarium rot, Alternaria rot",
+    "insects": "Fruit fly pupae",
+    "risk_score": 70
+  },
+  "Watermelon": {
+    "temp": "10-15°C",
+    "hum": "85-90%",
+    "pres": "Single layer straw bedding in ventilated shade rooms.",
+    "shelf_life": "2-3 weeks",
+    "fungus": "Anthracnose, Phytophthora fruit rot",
+    "insects": "Melon fruit fly",
+    "risk_score": 50
+  },
+  "Grapes": {
+    "temp": "-1 to 0°C",
+    "hum": "90-95%",
+    "pres": "Chilled store with sulfur dioxide pad sheets.",
+    "shelf_life": "2-6 months",
+    "fungus": "Botrytis cinerea (Gray mold)",
+    "insects": "Mealybugs residual",
+    "risk_score": 60
+  },
+  "Mango": {
+    "temp": "12-13°C",
+    "hum": "85-90%",
+    "pres": "Hot water treated fruit crates. Ethylene scrubbers.",
+    "shelf_life": "2-4 weeks",
+    "fungus": "Anthracnose, Stem-end rot",
+    "insects": "Mango pulp weevil",
+    "risk_score": 75
+  },
+  "Banana": {
+    "temp": "13-14°C",
+    "hum": "85-90%",
+    "pres": "Store green bunches hanging or in padded boxes.",
+    "shelf_life": "2-4 weeks",
+    "fungus": "Crown rot disease (Colletotrichum)",
+    "insects": "Banana weevil residues",
+    "risk_score": 65
+  },
+  "Pomegranate": {
+    "temp": "5-6°C",
+    "hum": "90-95%",
+    "pres": "Chilled store in paper wrap crates.",
+    "shelf_life": "2-4 months",
+    "fungus": "Heart rot (Alternaria)",
+    "insects": "Pomegranate butterfly larvae residues",
+    "risk_score": 40
+  },
+  "Lentil": {
+    "temp": "12-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry moisture-proof gunny bags.",
+    "shelf_life": "18-24 months",
+    "fungus": "Rhizoctonia seed decay",
+    "insects": "Pulse beetle (Callosobruchus)",
+    "risk_score": 15
+  },
+  "Blackgram": {
+    "temp": "12-15°C",
+    "hum": "50-60%",
+    "pres": "Hermetic bag storage to prevent insect hatching.",
+    "shelf_life": "18-24 months",
+    "fungus": "Macrophomina seed decay",
+    "insects": "Pulse beetle",
+    "risk_score": 15
+  },
+  "Mungbean": {
+    "temp": "12-15°C",
+    "hum": "50-60%",
+    "pres": "Hermetic silos or standard gunny bags with Neem leaves.",
+    "shelf_life": "18-24 months",
+    "fungus": "Fusarium decay",
+    "insects": "Bruchin beetle",
+    "risk_score": 20
+  },
+  "Mothbeans": {
+    "temp": "15-18°C",
+    "hum": "45-55%",
+    "pres": "Extremely dry storage. Standard bags inside aerated warehouses.",
+    "shelf_life": "18-24 months",
+    "fungus": "Seed rot (Low risk)",
+    "insects": "Pulse beetles",
+    "risk_score": 10
+  },
+  "Kidneybeans": {
+    "temp": "10-12°C",
+    "hum": "50-60%",
+    "pres": "Dry store in air-tight bins or cold dry rooms.",
+    "shelf_life": "12-18 months",
+    "fungus": "Anthracnose seed spot",
+    "insects": "Bean weevil (Acanthoscelides)",
+    "risk_score": 20
+  },
+  "Pigeonpeas": {
+    "temp": "12-15°C",
+    "hum": "50-60%",
+    "pres": "Gunny bag stacks inside ventilated brick warehouses.",
+    "shelf_life": "12-18 months",
+    "fungus": "Fusarium seed decay",
+    "insects": "Pulse beetles, pod borers residual pupae",
+    "risk_score": 15
+  },
+  "Chickpea": {
+    "temp": "12-15°C",
+    "hum": "50-60%",
+    "pres": "Silo bulk storage. Fumigate with Aluminum Phosphide.",
+    "shelf_life": "18-24 months",
+    "fungus": "Ascochyta blight spore residues",
+    "insects": "Pulse beetle",
+    "risk_score": 15
+  },
+  "Coffee": {
+    "temp": "15-20°C",
+    "hum": "60-65%",
+    "pres": "Jute bags lined with GrainPro hermetic barriers. Keep dry.",
+    "shelf_life": "12 months (green beans)",
+    "fungus": "Aspergillus ochraceus (Ochratoxin A risk)",
+    "insects": "Coffee Berry Borer (Hypothenemus)",
+    "risk_score": 25
+  },
+  "Wheat": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Bulk storage in silos or warehouses with aeration.",
+    "shelf_life": "12-24 months",
+    "fungus": "Fusarium, Aspergillus (moisture < 12% required)",
+    "insects": "Granary weevil, Rust red flour beetle",
+    "risk_score": 20
+  },
+  "Groundnut": {
+    "temp": "10-15°C",
+    "hum": "55-65%",
+    "pres": "Store in dry ventilated areas to prevent aflatoxin formation.",
+    "shelf_life": "6-12 months",
+    "fungus": "Aspergillus flavus (Aflatoxin risk above 8% moisture)",
+    "insects": "Groundnut bruchid",
+    "risk_score": 35
+  },
+  "Sunflower": {
+    "temp": "10-12°C",
+    "hum": "50-60%",
+    "pres": "Dry storage in moisture-proof containers.",
+    "shelf_life": "8-12 months",
+    "fungus": "Aspergillus species (seed decay)",
+    "insects": "Sunflower moth larvae",
+    "risk_score": 25
+  },
+  "Soybean": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Bulk storage in silos with proper aeration.",
+    "shelf_life": "12-18 months",
+    "fungus": "Aspergillus, Penicillium (moisture < 13%)",
+    "insects": "Soybean beetle, Indian meal moth",
+    "risk_score": 20
+  },
+  "Sugarcane": {
+    "temp": "Not applicable (fresh use)",
+    "hum": "N/A",
+    "pres": "Process within 24-48 hours of harvest. No long-term storage.",
+    "shelf_life": "2-3 days (fresh)",
+    "fungus": "Red rot (during field growth)",
+    "insects": "Sugarcane borers (field pests)",
+    "risk_score": 80
+  },
+  "Sorghum": {
+    "temp": "12-15°C",
+    "hum": "50-60%",
+    "pres": "Bulk storage in silos or bags with aeration.",
+    "shelf_life": "12-18 months",
+    "fungus": "Aspergillus flavus (low moisture required)",
+    "insects": "Sorghum midge, Rice weevil",
+    "risk_score": 15
+  },
+  "Pearl Millet": {
+    "temp": "12-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry bags in ventilated warehouses.",
+    "shelf_life": "12-18 months",
+    "fungus": "Aspergillus species (moisture < 12%)",
+    "insects": "Pearl millet head miner",
+    "risk_score": 15
+  },
+  "Finger Millet": {
+    "temp": "12-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry moisture-proof bags.",
+    "shelf_life": "18-24 months",
+    "fungus": "Grain mold (low risk if dry)",
+    "insects": "Less susceptible to storage insects",
+    "risk_score": 10
+  },
+  "Barley": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Bulk storage in silos with proper aeration.",
+    "shelf_life": "12-24 months",
+    "fungus": "Fusarium, Aspergillus (moisture < 13%)",
+    "insects": "Granary weevil",
+    "risk_score": 15
+  },
+  "Oats": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry ventilated bins.",
+    "shelf_life": "12-18 months",
+    "fungus": "Storage mold (keep moisture < 12%)",
+    "insects": "Grain beetles",
+    "risk_score": 15
+  },
+  "Rye": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Bulk storage similar to wheat.",
+    "shelf_life": "12-24 months",
+    "fungus": "Ergot risk (field contamination)",
+    "insects": "Grain weevils",
+    "risk_score": 15
+  },
+  "Mustard": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry bags in cool locations.",
+    "shelf_life": "12-18 months",
+    "fungus": "Aspergillus (low risk if dry)",
+    "insects": "Mustard aphid (field pest)",
+    "risk_score": 15
+  },
+  "Sesame": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in hermetic bags to prevent oil oxidation.",
+    "shelf_life": "6-12 months",
+    "fungus": "Seed mold (low risk if dry)",
+    "insects": "Less susceptible",
+    "risk_score": 20
+  },
+  "Castor": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry bags to prevent moisture absorption.",
+    "shelf_life": "12-18 months",
+    "fungus": "Aspergillus (keep dry)",
+    "insects": "Castor semilooper",
+    "risk_score": 20
+  },
+  "Tea": {
+    "temp": "Cool, dry conditions",
+    "hum": "50-60%",
+    "pres": "Store in moisture-proof packaging after processing.",
+    "shelf_life": "12-18 months (processed)",
+    "fungus": "Mold growth if moisture high",
+    "insects": "Tea tortrix (field pest)",
+    "risk_score": 15
+  },
+  "Potato": {
+    "temp": "7-10°C",
+    "hum": "85-90%",
+    "pres": "Store in dark, humid conditions to prevent sprouting.",
+    "shelf_life": "2-4 months",
+    "fungus": "Late blight, Dry rot",
+    "insects": "Potato tuber moth",
+    "risk_score": 40
+  },
+  "Onion": {
+    "temp": "0-2°C",
+    "hum": "65-70%",
+    "pres": "Cure at 25-30°C for 2 weeks, then cool store.",
+    "shelf_life": "6-8 months",
+    "fungus": "Neck rot, Black mold",
+    "insects": "Onion maggot (field pest)",
+    "risk_score": 25
+  },
+  "Tomato": {
+    "temp": "12-15°C (green), 10-12°C (ripe)",
+    "hum": "85-90%",
+    "pres": "Store in ventilated crates; avoid chilling injury.",
+    "shelf_life": "1-3 weeks",
+    "fungus": "Alternaria rot, Gray mold",
+    "insects": "Tomato fruit worm",
+    "risk_score": 70
+  },
+  "Turmeric": {
+    "temp": "10-15°C",
+    "hum": "60-70%",
+    "pres": "Store in dry conditions after curing.",
+    "shelf_life": "12-18 months",
+    "fungus": "Storage mold (keep dry)",
+    "insects": "Less susceptible",
+    "risk_score": 15
+  },
+  "Ginger": {
+    "temp": "12-15°C",
+    "hum": "70-75%",
+    "pres": "Store in well-ventilated areas after curing.",
+    "shelf_life": "6-9 months",
+    "fungus": "Rhizome rot (moisture sensitive)",
+    "insects": "Less susceptible",
+    "risk_score": 25
+  },
+  "Black Pepper": {
+    "temp": "10-15°C",
+    "hum": "60-70%",
+    "pres": "Store in dry, well-ventilated bags.",
+    "shelf_life": "18-24 months",
+    "fungus": "Mold growth (keep moisture < 10%)",
+    "insects": "Pepper weevil",
+    "risk_score": 15
+  },
+  "Flax": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry bags to prevent oil rancidity.",
+    "shelf_life": "8-12 months",
+    "fungus": "Seed mold (low risk if dry)",
+    "insects": "Less susceptible",
+    "risk_score": 20
+  },
+  "Hemp": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry conditions to preserve seed viability.",
+    "shelf_life": "12-18 months",
+    "fungus": "Seed mold (keep dry)",
+    "insects": "Less susceptible",
+    "risk_score": 15
+  },
+  "Green Gram": {
+    "temp": "12-15°C",
+    "hum": "50-60%",
+    "pres": "Hermetic bag storage with Neem leaves.",
+    "shelf_life": "18-24 months",
+    "fungus": "Fusarium decay",
+    "insects": "Bruchin beetle",
+    "risk_score": 20
+  },
+  "Cowpea": {
+    "temp": "12-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry gunny bags with aeration.",
+    "shelf_life": "12-18 months",
+    "fungus": "Seed rot (low risk if dry)",
+    "insects": "Cowpea weevil",
+    "risk_score": 20
+  },
+  "Horse Gram": {
+    "temp": "15-18°C",
+    "hum": "45-55%",
+    "pres": "Extremely dry storage. Standard bags.",
+    "shelf_life": "18-24 months",
+    "fungus": "Seed rot (low risk)",
+    "insects": "Pulse beetles",
+    "risk_score": 10
+  },
+  "Peas": {
+    "temp": "0-2°C",
+    "hum": "85-90%",
+    "pres": "Cool store in breathable bags.",
+    "shelf_life": "1-2 weeks (fresh), 12 months (dry)",
+    "fungus": "Ascochyta blight (field disease)",
+    "insects": "Pea weevil",
+    "risk_score": 30
+  },
+  "Chili": {
+    "temp": "10-12°C",
+    "hum": "85-90%",
+    "pres": "Store in well-ventilated areas.",
+    "shelf_life": "2-4 weeks (fresh)",
+    "fungus": "Anthracnose fruit rot",
+    "insects": "Fruit fly",
+    "risk_score": 65
+  },
+  "Cucumber": {
+    "temp": "10-12°C",
+    "hum": "85-90%",
+    "pres": "Cool store with ventilation.",
+    "shelf_life": "1-2 weeks",
+    "fungus": "Gray mold, Downy mildew",
+    "insects": "Cucumber beetle (field pest)",
+    "risk_score": 70
+  },
+  "Pumpkin": {
+    "temp": "10-15°C",
+    "hum": "70-75%",
+    "pres": "Store in cool, dry conditions.",
+    "shelf_life": "2-3 months",
+    "fungus": "Fusarium fruit rot",
+    "insects": "Pumpkin fruit fly",
+    "risk_score": 30
+  },
+  "Bitter Gourd": {
+    "temp": "10-12°C",
+    "hum": "85-90%",
+    "pres": "Cool store with ventilation.",
+    "shelf_life": "1-2 weeks",
+    "fungus": "Anthracnose, Downy mildew",
+    "insects": "Fruit fly",
+    "risk_score": 70
+  },
+  "Cabbage": {
+    "temp": "0-2°C",
+    "hum": "90-95%",
+    "pres": "Cold store with high humidity.",
+    "shelf_life": "3-6 weeks",
+    "fungus": "Black rot, Alternaria",
+    "insects": "Cabbage looper (field pest)",
+    "risk_score": 30
+  },
+  "Cauliflower": {
+    "temp": "0-2°C",
+    "hum": "90-95%",
+    "pres": "Cold store wrapped in plastic.",
+    "shelf_life": "2-4 weeks",
+    "fungus": "Downy mildew",
+    "insects": "Cabbage looper (field pest)",
+    "risk_score": 35
+  },
+  "Spinach": {
+    "temp": "0-2°C",
+    "hum": "90-95%",
+    "pres": "Cold store with high humidity.",
+    "shelf_life": "1-2 weeks",
+    "fungus": "Downy mildew",
+    "insects": "Leaf miners (field pest)",
+    "risk_score": 60
+  },
+  "Guava": {
+    "temp": "5-10°C",
+    "hum": "85-90%",
+    "pres": "Store in ventilated crates.",
+    "shelf_life": "2-4 weeks",
+    "fungus": "Anthracnose fruit rot",
+    "insects": "Fruit fly",
+    "risk_score": 55
+  },
+  "Strawberry": {
+    "temp": "0-2°C",
+    "hum": "90-95%",
+    "pres": "Cold store immediately after harvest.",
+    "shelf_life": "1-2 weeks",
+    "fungus": "Gray mold, Botrytis",
+    "insects": "Strawberry sap beetle",
+    "risk_score": 85
+  },
+  "Cherry": {
+    "temp": "0-2°C",
+    "hum": "85-90%",
+    "pres": "Cold store with high humidity.",
+    "shelf_life": "1-3 weeks",
+    "fungus": "Brown rot",
+    "insects": "Cherry fruit fly",
+    "risk_score": 60
+  },
+  "Peach": {
+    "temp": "0-2°C",
+    "hum": "85-90%",
+    "pres": "Cold store with controlled atmosphere.",
+    "shelf_life": "2-4 weeks",
+    "fungus": "Brown rot",
+    "insects": "Oriental fruit moth",
+    "risk_score": 55
+  },
+  "Plum": {
+    "temp": "0-2°C",
+    "hum": "85-90%",
+    "pres": "Cold store with ventilation.",
+    "shelf_life": "2-5 weeks",
+    "fungus": "Brown rot",
+    "insects": "Plum curculio",
+    "risk_score": 45
+  },
+  "Pear": {
+    "temp": "-1 to 0°C",
+    "hum": "90-95%",
+    "pres": "Controlled atmosphere storage.",
+    "shelf_life": "3-6 months",
+    "fungus": "Blue mold",
+    "insects": "Codling moth (field pest)",
+    "risk_score": 25
+  },
+  "Almond": {
+    "temp": "0-5°C",
+    "hum": "50-60%",
+    "pres": "Store in dry, cool conditions.",
+    "shelf_life": "12-18 months",
+    "fungus": "Mold (low risk if dry)",
+    "insects": "Navel orangeworm (field pest)",
+    "risk_score": 15
+  },
+  "Walnut": {
+    "temp": "0-5°C",
+    "hum": "50-60%",
+    "pres": "Store in cool, dry conditions to prevent rancidity.",
+    "shelf_life": "12-18 months",
+    "fungus": "Mold (low risk if dry)",
+    "insects": "Walnut husk fly (field pest)",
+    "risk_score": 15
+  },
+  "Cashew": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry, well-ventilated containers.",
+    "shelf_life": "12-18 months",
+    "fungus": "Mold (low risk if dry)",
+    "insects": "Cashew nut borer (field pest)",
+    "risk_score": 20
+  },
+  "Pistachio": {
+    "temp": "0-5°C",
+    "hum": "50-60%",
+    "pres": "Store in cool, dry conditions.",
+    "shelf_life": "12-18 months",
+    "fungus": "Mold (low risk if dry)",
+    "insects": "Navel orangeworm (field pest)",
+    "risk_score": 15
+  },
+  "Hazelnut": {
+    "temp": "0-5°C",
+    "hum": "50-60%",
+    "pres": "Store in cool, dry conditions.",
+    "shelf_life": "12-18 months",
+    "fungus": "Mold (low risk if dry)",
+    "insects": "Less susceptible",
+    "risk_score": 15
+  },
+  "Macadamia": {
+    "temp": "0-5°C",
+    "hum": "50-60%",
+    "pres": "Store in cool, dry conditions to prevent rancidity.",
+    "shelf_life": "12-18 months",
+    "fungus": "Mold (low risk if dry)",
+    "insects": "Less susceptible",
+    "risk_score": 15
+  },
+  "Clove": {
+    "temp": "15-20°C",
+    "hum": "60-70%",
+    "pres": "Store in dry, well-ventilated conditions.",
+    "shelf_life": "24 months",
+    "fungus": "Mold (low risk if dry)",
+    "insects": "Less susceptible",
+    "risk_score": 10
+  },
+  "Cinnamon": {
+    "temp": "15-20°C",
+    "hum": "60-70%",
+    "pres": "Store in dry, well-ventilated conditions.",
+    "shelf_life": "24 months",
+    "fungus": "Mold (low risk if dry)",
+    "insects": "Less susceptible",
+    "risk_score": 10
+  },
+  "Nutmeg": {
+    "temp": "15-20°C",
+    "hum": "60-70%",
+    "pres": "Store in dry, well-ventilated conditions.",
+    "shelf_life": "24 months",
+    "fungus": "Mold (low risk if dry)",
+    "insects": "Less susceptible",
+    "risk_score": 10
+  },
+  "Saffron": {
+    "temp": "15-20°C",
+    "hum": "50-60%",
+    "pres": "Store in airtight containers away from light.",
+    "shelf_life": "24-36 months",
+    "fungus": "Mold (low risk if dry)",
+    "insects": "Less susceptible",
+    "risk_score": 5
+  },
+  "Coriander": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry, airtight containers.",
+    "shelf_life": "12-18 months",
+    "fungus": "Mold (low risk if dry)",
+    "insects": "Less susceptible",
+    "risk_score": 15
+  },
+  "Cumin": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry, airtight containers.",
+    "shelf_life": "18-24 months",
+    "fungus": "Mold (low risk if dry)",
+    "insects": "Less susceptible",
+    "risk_score": 10
+  },
+  "Fennel": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry, airtight containers.",
+    "shelf_life": "12-18 months",
+    "fungus": "Mold (low risk if dry)",
+    "insects": "Less susceptible",
+    "risk_score": 15
+  },
+  "Fenugreek": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry, airtight containers.",
+    "shelf_life": "18-24 months",
+    "fungus": "Mold (low risk if dry)",
+    "insects": "Less susceptible",
+    "risk_score": 15
+  },
+  "Mustard Seed": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry bags in cool locations.",
+    "shelf_life": "12-18 months",
+    "fungus": "Aspergillus (low risk if dry)",
+    "insects": "Mustard aphid (field pest)",
+    "risk_score": 15
+  },
+  "Pineapple": {
+    "temp": "7-10°C",
+    "hum": "85-90%",
+    "pres": "Store in cool, ventilated conditions.",
+    "shelf_life": "1-3 weeks",
+    "fungus": "Black rot, Fusarium",
+    "insects": "Pineapple mealybug",
+    "risk_score": 60
+  },
+  "Blueberry": {
+    "temp": "0-2°C",
+    "hum": "90-95%",
+    "pres": "Cold store immediately after harvest.",
+    "shelf_life": "1-2 weeks",
+    "fungus": "Botrytis, Alternaria",
+    "insects": "Blueberry maggot",
+    "risk_score": 80
+  },
+  "Raspberry": {
+    "temp": "0-2°C",
+    "hum": "90-95%",
+    "pres": "Cold store immediately after harvest.",
+    "shelf_life": "1-3 days",
+    "fungus": "Botrytis, Gray mold",
+    "insects": "Raspberry fruit worm",
+    "risk_score": 85
+  },
+  "Blackberry": {
+    "temp": "0-2°C",
+    "hum": "90-95%",
+    "pres": "Cold store immediately after harvest.",
+    "shelf_life": "1-3 days",
+    "fungus": "Botrytis, Gray mold",
+    "insects": "Raspberry fruit worm",
+    "risk_score": 85
+  },
+  "Tobacco": {
+    "temp": "15-20°C",
+    "hum": "60-70%",
+    "pres": "Store in controlled humidity bales.",
+    "shelf_life": "24 months (cured)",
+    "fungus": "Blue mold, Black rot",
+    "insects": "Tobacco hornworm (field pest)",
+    "risk_score": 20
+  },
+  "Rubber": {
+    "temp": "Not applicable (latex)",
+    "hum": "N/A",
+    "pres": "Process latex within hours of tapping.",
+    "shelf_life": "Hours (fresh latex)",
+    "fungus": "Latex coagulation (not storage fungus)",
+    "insects": "Rubber tree pests (field)",
+    "risk_score": 90
+  },
+  "Safflower": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry bags to prevent oil rancidity.",
+    "shelf_life": "12-18 months",
+    "fungus": "Aspergillus (low risk if dry)",
+    "insects": "Less susceptible",
+    "risk_score": 20
+  },
+  "Niger Seed": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry bags in cool locations.",
+    "shelf_life": "12-18 months",
+    "fungus": "Aspergillus (low risk if dry)",
+    "insects": "Less susceptible",
+    "risk_score": 20
+  },
+  "Olive": {
+    "temp": "5-10°C",
+    "hum": "60-70%",
+    "pres": "Process within 24-48 hours for oil extraction.",
+    "shelf_life": "2-3 days (fresh)",
+    "fungus": "Mold growth if delayed",
+    "insects": "Olive fruit fly (field pest)",
+    "risk_score": 75
+  },
+  "Oil Palm": {
+    "temp": "Not applicable (fresh fruit)",
+    "hum": "N/A",
+    "pres": "Process within 24-48 hours of harvest.",
+    "shelf_life": "1-2 days (fresh fruit)",
+    "fungus": "Fruit rot (field disease)",
+    "insects": "Oil palm pests (field)",
+    "risk_score": 85
+  },
+  "Yam": {
+    "temp": "12-15°C",
+    "hum": "70-75%",
+    "pres": "Cure and store in ventilated areas.",
+    "shelf_life": "3-6 months",
+    "fungus": "Dry rot, Soft rot",
+    "insects": "Yam beetles",
+    "risk_score": 35
+  },
+  "Taro": {
+    "temp": "12-15°C",
+    "hum": "70-75%",
+    "pres": "Cure and store in ventilated areas.",
+    "shelf_life": "2-4 months",
+    "fungus": "Dry rot, Soft rot",
+    "insects": "Taro beetles",
+    "risk_score": 40
+  },
+  "Beetroot": {
+    "temp": "0-2°C",
+    "hum": "90-95%",
+    "pres": "Remove tops and store in high humidity.",
+    "shelf_life": "2-4 weeks",
+    "fungus": "Storage rot",
+    "insects": "Less susceptible",
+    "risk_score": 30
+  },
+  "Turnip": {
+    "temp": "0-2°C",
+    "hum": "90-95%",
+    "pres": "Remove tops and store in high humidity.",
+    "shelf_life": "2-4 weeks",
+    "fungus": "Storage rot",
+    "insects": "Less susceptible",
+    "risk_score": 30
+  },
+  "Radish": {
+    "temp": "0-2°C",
+    "hum": "90-95%",
+    "pres": "Remove tops and store in high humidity.",
+    "shelf_life": "1-2 weeks",
+    "fungus": "Storage rot",
+    "insects": "Root maggot (field pest)",
+    "risk_score": 35
+  },
+  "Carrot": {
+    "temp": "0-2°C",
+    "hum": "90-95%",
+    "pres": "Remove tops and store in high humidity.",
+    "shelf_life": "2-4 weeks",
+    "fungus": "Sclerotinia rot, Alternaria",
+    "insects": "Carrot rust fly (field pest)",
+    "risk_score": 30
+  },
+  "Garlic": {
+    "temp": "0-2°C",
+    "hum": "60-70%",
+    "pres": "Cure and store in dry, well-ventilated conditions.",
+    "shelf_life": "6-8 months",
+    "fungus": "Blue mold (moisture sensitive)",
+    "insects": "Less susceptible",
+    "risk_score": 10
+  },
+  "Leek": {
+    "temp": "0-2°C",
+    "hum": "90-95%",
+    "pres": "Store in high humidity.",
+    "shelf_life": "2-4 weeks",
+    "fungus": "Storage rot",
+    "insects": "Less susceptible",
+    "risk_score": 30
+  },
+  "Shallot": {
+    "temp": "0-2°C",
+    "hum": "60-70%",
+    "pres": "Cure and store in dry conditions.",
+    "shelf_life": "6-8 months",
+    "fungus": "Blue mold (moisture sensitive)",
+    "insects": "Less susceptible",
+    "risk_score": 10
+  },
+  "Eggplant": {
+    "temp": "10-12°C",
+    "hum": "85-90%",
+    "pres": "Store in ventilated crates; avoid chilling injury.",
+    "shelf_life": "1-2 weeks",
+    "fungus": "Phomopsis rot",
+    "insects": "Eggplant fruit borer",
+    "risk_score": 65
+  },
+  "Capsicum": {
+    "temp": "7-10°C",
+    "hum": "85-90%",
+    "pres": "Store in ventilated crates.",
+    "shelf_life": "1-3 weeks",
+    "fungus": "Anthracnose, Bacterial soft rot",
+    "insects": "Pepper maggot",
+    "risk_score": 60
+  },
+  "Squash": {
+    "temp": "10-15°C",
+    "hum": "70-75%",
+    "pres": "Store in cool, dry conditions.",
+    "shelf_life": "2-3 months",
+    "fungus": "Fusarium fruit rot",
+    "insects": "Squash vine borer (field pest)",
+    "risk_score": 30
+  },
+  "Zucchini": {
+    "temp": "7-10°C",
+    "hum": "85-90%",
+    "pres": "Store in ventilated crates.",
+    "shelf_life": "1-2 weeks",
+    "fungus": "Powdery mildew (field disease)",
+    "insects": "Squash vine borer (field pest)",
+    "risk_score": 65
+  },
+  "Bottle Gourd": {
+    "temp": "10-12°C",
+    "hum": "85-90%",
+    "pres": "Store in ventilated crates.",
+    "shelf_life": "1-2 weeks",
+    "fungus": "Downy mildew",
+    "insects": "Fruit fly",
+    "risk_score": 70
+  },
+  "Ridge Gourd": {
+    "temp": "10-12°C",
+    "hum": "85-90%",
+    "pres": "Store in ventilated crates.",
+    "shelf_life": "1-2 weeks",
+    "fungus": "Downy mildew",
+    "insects": "Fruit fly",
+    "risk_score": 70
+  },
+  "Sponge Gourd": {
+    "temp": "10-12°C",
+    "hum": "85-90%",
+    "pres": "Store in ventilated crates.",
+    "shelf_life": "1-2 weeks",
+    "fungus": "Downy mildew",
+    "insects": "Fruit fly",
+    "risk_score": 70
+  },
+  "Ash Gourd": {
+    "temp": "10-15°C",
+    "hum": "85-90%",
+    "pres": "Store in ventilated crates.",
+    "shelf_life": "1-3 months",
+    "fungus": "Fusarium rot",
+    "insects": "Fruit fly",
+    "risk_score": 50
+  },
+  "Snake Gourd": {
+    "temp": "10-12°C",
+    "hum": "85-90%",
+    "pres": "Store in ventilated crates.",
+    "shelf_life": "1-2 weeks",
+    "fungus": "Downy mildew",
+    "insects": "Fruit fly",
+    "risk_score": 70
+  },
+  "Broccoli": {
+    "temp": "0-2°C",
+    "hum": "90-95%",
+    "pres": "Cold store with high humidity.",
+    "shelf_life": "1-2 weeks",
+    "fungus": "Downy mildew, Black rot",
+    "insects": "Cabbage looper (field pest)",
+    "risk_score": 40
+  },
+  "Brussels Sprouts": {
+    "temp": "0-2°C",
+    "hum": "90-95%",
+    "pres": "Cold store with high humidity.",
+    "shelf_life": "2-4 weeks",
+    "fungus": "Downy mildew",
+    "insects": "Cabbage looper (field pest)",
+    "risk_score": 35
+  },
+  "Kohlrabi": {
+    "temp": "0-2°C",
+    "hum": "90-95%",
+    "pres": "Cold store with high humidity.",
+    "shelf_life": "2-4 weeks",
+    "fungus": "Downy mildew",
+    "insects": "Cabbage looper (field pest)",
+    "risk_score": 35
+  },
+  "Kale": {
+    "temp": "0-2°C",
+    "hum": "90-95%",
+    "pres": "Cold store with high humidity.",
+    "shelf_life": "1-2 weeks",
+    "fungus": "Downy mildew",
+    "insects": "Less susceptible",
+    "risk_score": 35
+  },
+  "Lettuce": {
+    "temp": "0-2°C",
+    "hum": "90-95%",
+    "pres": "Cold store with high humidity.",
+    "shelf_life": "1-2 weeks",
+    "fungus": "Downy mildew, Bottom rot",
+    "insects": "Less susceptible",
+    "risk_score": 50
+  },
+  "Celery": {
+    "temp": "0-2°C",
+    "hum": "90-95%",
+    "pres": "Cold store with high humidity.",
+    "shelf_life": "2-4 weeks",
+    "fungus": "Pink rot",
+    "insects": "Less susceptible",
+    "risk_score": 40
+  },
+  "Asparagus": {
+    "temp": "0-2°C",
+    "hum": "90-95%",
+    "pres": "Cold store immediately after harvest.",
+    "shelf_life": "1-2 weeks",
+    "fungus": "Fusarium crown rot",
+    "insects": "Asparagus beetle (field pest)",
+    "risk_score": 55
+  },
+  "Artichoke": {
+    "temp": "0-2°C",
+    "hum": "90-95%",
+    "pres": "Cold store with high humidity.",
+    "shelf_life": "1-2 weeks",
+    "fungus": "Gray mold",
+    "insects": "Artichoke plume moth (field pest)",
+    "risk_score": 45
+  },
+  "Buckwheat": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry bags in ventilated warehouses.",
+    "shelf_life": "12-18 months",
+    "fungus": "Storage mold (low risk if dry)",
+    "insects": "Less susceptible",
+    "risk_score": 15
+  },
+  "Quinoa": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry, moisture-proof containers.",
+    "shelf_life": "18-24 months",
+    "fungus": "Storage mold (low risk if dry)",
+    "insects": "Less susceptible",
+    "risk_score": 10
+  },
+  "Amaranth": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry bags in ventilated warehouses.",
+    "shelf_life": "12-18 months",
+    "fungus": "Storage mold (low risk if dry)",
+    "insects": "Less susceptible",
+    "risk_score": 15
+  },
+  "Teff": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry bags in ventilated warehouses.",
+    "shelf_life": "18-24 months",
+    "fungus": "Storage mold (low risk if dry)",
+    "insects": "Less susceptible",
+    "risk_score": 10
+  },
+  "Wild Rice": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store similar to rice: hermetic bags or silos.",
+    "shelf_life": "12-18 months",
+    "fungus": "Aspergillus spp. (Low risk if moisture < 12%)",
+    "insects": "Rice weevil",
+    "risk_score": 20
+  },
+  "Spelt": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Bulk storage similar to wheat.",
+    "shelf_life": "12-24 months",
+    "fungus": "Fusarium, Aspergillus (moisture < 13%)",
+    "insects": "Grain weevils",
+    "risk_score": 15
+  },
+  "Triticale": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Bulk storage similar to wheat.",
+    "shelf_life": "12-24 months",
+    "fungus": "Fusarium, Aspergillus (moisture < 13%)",
+    "insects": "Grain weevils",
+    "risk_score": 15
+  },
+  "Canola": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry bins to prevent oil rancidity.",
+    "shelf_life": "8-12 months",
+    "fungus": "Aspergillus (low risk if dry)",
+    "insects": "Less susceptible",
+    "risk_score": 20
+  },
+  "Dragon Fruit": {
+    "temp": "5-10°C",
+    "hum": "85-90%",
+    "pres": "Store in ventilated crates.",
+    "shelf_life": "2-4 weeks",
+    "fungus": "Anthracnose fruit rot",
+    "insects": "Fruit fly",
+    "risk_score": 55
+  },
+  "Ivy Gourd": {
+    "temp": "10-12°C",
+    "hum": "85-90%",
+    "pres": "Store in ventilated crates.",
+    "shelf_life": "1-2 weeks",
+    "fungus": "Downy mildew",
+    "insects": "Fruit fly",
+    "risk_score": 70
+  },
+  "Arecanut": {
+    "temp": "15-20°C",
+    "hum": "60-70%",
+    "pres": "Store in dry, well-ventilated conditions.",
+    "shelf_life": "12-18 months",
+    "fungus": "Mold (low risk if dry)",
+    "insects": "Arecanut nut borer",
+    "risk_score": 20
+  },
+  "Faba Bean": {
+    "temp": "0-2°C",
+    "hum": "85-90%",
+    "pres": "Cool store in breathable bags.",
+    "shelf_life": "1-2 weeks (fresh), 12 months (dry)",
+    "fungus": "Ascochyta blight (field disease)",
+    "insects": "Pea weevil",
+    "risk_score": 30
+  },
+  "Lupin": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry bags in ventilated warehouses.",
+    "shelf_life": "12-18 months",
+    "fungus": "Storage mold (low risk if dry)",
+    "insects": "Less susceptible",
+    "risk_score": 15
+  },
+  "Alfalfa": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry bales with proper ventilation.",
+    "shelf_life": "12-24 months (hay)",
+    "fungus": "Mold growth (moisture sensitive)",
+    "insects": "Alfalfa weevil (field pest)",
+    "risk_score": 20
+  },
+  "Clover": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry bales with proper ventilation.",
+    "shelf_life": "12-24 months (hay)",
+    "fungus": "Mold growth (moisture sensitive)",
+    "insects": "Less susceptible",
+    "risk_score": 20
+  },
+  "Timothy Grass": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry bales with proper ventilation.",
+    "shelf_life": "12-24 months (hay)",
+    "fungus": "Mold growth (moisture sensitive)",
+    "insects": "Less susceptible",
+    "risk_score": 15
+  },
+  "Bermuda Grass": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry bales with proper ventilation.",
+    "shelf_life": "12-24 months (hay)",
+    "fungus": "Mold growth (moisture sensitive)",
+    "insects": "Less susceptible",
+    "risk_score": 15
+  },
+  "Ryegrass": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry bales with proper ventilation.",
+    "shelf_life": "12-24 months (hay)",
+    "fungus": "Mold growth (moisture sensitive)",
+    "insects": "Less susceptible",
+    "risk_score": 15
+  },
+  "Fescue": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry bales with proper ventilation.",
+    "shelf_life": "12-24 months (hay)",
+    "fungus": "Mold growth (moisture sensitive)",
+    "insects": "Less susceptible",
+    "risk_score": 15
+  },
+  "Brome": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry bales with proper ventilation.",
+    "shelf_life": "12-24 months (hay)",
+    "fungus": "Mold growth (moisture sensitive)",
+    "insects": "Less susceptible",
+    "risk_score": 15
+  },
+  "Vetch": {
+    "temp": "10-15°C",
+    "hum": "50-60%",
+    "pres": "Store in dry bags in ventilated warehouses.",
+    "shelf_life": "12-18 months",
+    "fungus": "Storage mold (low risk if dry)",
+    "insects": "Less susceptible",
+    "risk_score": 15
+  },
+  "Sweet Potato": {
+    "temp": "13-15°C",
+    "hum": "85-90%",
+    "pres": "Cure and store in warm, humid conditions.",
+    "shelf_life": "4-6 months",
+    "fungus": "Black rot, Soft rot",
+    "insects": "Sweet potato weevil",
+    "risk_score": 35
+  },
+  "Cassava": {
+    "temp": "Not applicable (fresh use)",
+    "hum": "N/A",
+    "pres": "Process within 24-48 hours or store as dried chips.",
+    "shelf_life": "2-3 days (fresh), 6-12 months (dried)",
+    "fungus": "Rot (fresh)",
+    "insects": "Cassava mealybug (field pest)",
+    "risk_score": 85
+  }
+}

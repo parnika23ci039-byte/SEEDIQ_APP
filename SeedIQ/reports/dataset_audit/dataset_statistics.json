@@ -1,0 +1,26 @@
+{
+    "Crop_Recommendation": {
+        "total_rows": 100,
+        "total_columns": 8,
+        "target": "Crop",
+        "missing_values": 0,
+        "exact_duplicates": 0,
+        "duplicate_feature_vectors": 0
+    },
+    "Yield_Prediction": {
+        "total_rows": 100,
+        "total_columns": 4,
+        "target": "Yield_Tonnes",
+        "missing_values": 0,
+        "exact_duplicates": 0,
+        "duplicate_feature_vectors": 0
+    },
+    "Seed_Viability": {
+        "total_rows": 100,
+        "total_columns": 3,
+        "target": "Viable",
+        "missing_values": 0,
+        "exact_duplicates": 0,
+        "duplicate_feature_vectors": 0
+    }
+}

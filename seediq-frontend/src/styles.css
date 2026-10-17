@@ -1,0 +1,446 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================================
+   SeedIQ — Noir · Emerald · Champagne · Quantum
+   All tokens use HSL/oklch. Never hardcode colors in components.
+   ============================================================ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-emerald-glow: var(--emerald-glow);
+  --color-quantum: var(--quantum);
+  --color-sage: var(--sage);
+  --color-danger: var(--danger);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-sans: "Outfit", sans-serif;
+  --font-serif: "Instrument Serif", serif;
+
+  --shadow-glass: 0 1px 0 0 hsl(46 60% 65% / 0.08) inset, 0 20px 60px -20px hsl(0 0% 0% / 0.7);
+  --shadow-gold: 0 0 40px -10px hsl(46 60% 55% / 0.35);
+  --shadow-emerald: 0 0 60px -12px hsl(155 70% 40% / 0.4);
+}
+
+:root, .dark {
+  --radius: 1rem;
+
+  /* Canvas */
+  --background: 200 8% 6%;              /* #0d1012 deep graphite */
+  --foreground: 45 25% 92%;
+
+  /* Glass surfaces */
+  --card: 200 10% 8%;
+  --card-foreground: 45 25% 92%;
+  --popover: 200 10% 7%;
+  --popover-foreground: 45 25% 92%;
+
+  /* Emerald primary (nature) */
+  --primary: 155 70% 42%;
+  --primary-foreground: 200 15% 6%;
+
+  /* Champagne gold accent */
+  --secondary: 46 55% 55%;
+  --secondary-foreground: 200 15% 6%;
+
+  --muted: 200 8% 12%;
+  --muted-foreground: 45 10% 65%;
+
+  --accent: 200 60% 45%;                /* quantum blue accent */
+  --accent-foreground: 45 25% 95%;
+
+  --destructive: 5 85% 65%;
+  --destructive-foreground: 45 25% 95%;
+
+  --border: 46 40% 55% / 0.14;
+  --input: 200 15% 10%;
+  --ring: 46 60% 55%;
+
+  /* Extended luxury tokens */
+  --gold: 46 60% 55%;                   /* #d4af37 champagne */
+  --gold-soft: 46 70% 70%;              /* #f0d78c */
+  --emerald-glow: 155 75% 45%;
+  --quantum: 210 80% 55%;               /* electric quantum blue */
+  --sage: 145 40% 72%;                  /* #a0d1b8 */
+  --danger: 5 85% 75%;                  /* #ffb4ab */
+
+  /* Sidebar */
+  --sidebar: 200 12% 5%;
+  --sidebar-foreground: 45 20% 85%;
+  --sidebar-primary: 155 70% 42%;
+  --sidebar-primary-foreground: 200 15% 5%;
+  --sidebar-accent: 200 15% 10%;
+  --sidebar-accent-foreground: 46 60% 60%;
+  --sidebar-border: 46 40% 55% / 0.1;
+  --sidebar-ring: 46 60% 55%;
+
+  /* Gradients */
+  --grad-nature-quantum: linear-gradient(135deg, hsl(155 70% 45%) 0%, hsl(210 80% 55%) 100%);
+  --grad-gold: linear-gradient(135deg, hsl(46 70% 65%) 0%, hsl(38 80% 45%) 100%);
+  --grad-noir: radial-gradient(ellipse at top, hsl(200 15% 10%) 0%, hsl(200 8% 5%) 55%);
+  --grad-glass: linear-gradient(135deg, hsl(46 40% 55% / 0.06), hsl(200 15% 5% / 0.4));
+}
+
+@font-face {
+  font-family: 'Garamond';
+  src: url('https://db.onlinewebfonts.com/t/2bf40ab72ea4897a3fd9b6e48b233a19.eot');
+  src: url('https://db.onlinewebfonts.com/t/2bf40ab72ea4897a3fd9b6e48b233a19.eot?#iefix') format('embedded-opentype'),
+       url('https://db.onlinewebfonts.com/t/2bf40ab72ea4897a3fd9b6e48b233a19.woff2') format('woff2'),
+       url('https://db.onlinewebfonts.com/t/2bf40ab72ea4897a3fd9b6e48b233a19.woff') format('woff'),
+       url('https://db.onlinewebfonts.com/t/2bf40ab72ea4897a3fd9b6e48b233a19.ttf') format('truetype'),
+       url('https://db.onlinewebfonts.com/t/2bf40ab72ea4897a3fd9b6e48b233a19.svg#Garamond') format('svg');
+}
+
+.font-garamond {
+  font-family: 'Garamond', 'Times New Roman', serif;
+}
+
+.mobile-menu-glass {
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.plant-card-border {
+  position: relative;
+  background: rgba(8, 14, 10, 0.72);
+  backdrop-filter: blur(28px) saturate(140%);
+  -webkit-backdrop-filter: blur(28px) saturate(140%);
+  border-radius: 2rem;
+  border: 1.5px solid rgba(52, 211, 153, 0.35);
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.65),
+    0 0 35px rgba(16, 185, 129, 0.18),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    inset 0 0 30px rgba(16, 185, 129, 0.08);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.plant-card-border::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(52, 211, 153, 0.8) 25%, 
+    rgba(16, 185, 129, 1) 50%, 
+    rgba(52, 211, 153, 0.8) 75%, 
+    transparent 100%);
+  box-shadow: 0 0 15px rgba(52, 211, 153, 0.8);
+}
+
+.plant-card-border:hover {
+  border-color: rgba(52, 211, 153, 0.65);
+  transform: translateY(-4px);
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.75),
+    0 0 45px rgba(16, 185, 129, 0.3),
+    inset 0 1px 2px rgba(255, 255, 255, 0.25),
+    inset 0 0 40px rgba(16, 185, 129, 0.15);
+}
+
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.01);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: none;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.15) 20%,
+    rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%,
+    rgba(255,255,255,0.15) 80%, rgba(255,255,255,0.45) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.liquid-glass:hover {
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.15);
+}
+
+.liquid-glass:active {
+  transform: scale(0.98);
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-color: hsl(var(--border));
+  }
+
+  html { color-scheme: dark; }
+  body {
+    background-color: #010101;
+    color: #ffffff;
+    font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display { font-family: var(--font-display); letter-spacing: -0.02em; }
+  .font-serif { font-family: var(--font-serif); font-style: italic; }
+
+  /* Ambient noise/grain */
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    background-image: radial-gradient(hsl(46 60% 55% / 0.08) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    z-index: 0;
+    mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
+  }
+
+  ::selection { background: hsl(var(--gold) / 0.35); color: hsl(var(--gold-soft)); }
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: hsl(var(--background)); }
+  ::-webkit-scrollbar-thumb { background: hsl(var(--gold) / 0.25); border-radius: 8px; }
+  ::-webkit-scrollbar-thumb:hover { background: hsl(var(--gold) / 0.5); }
+}
+
+/* ============================================================
+   Utilities — glassmorphism, gold, quantum, motion
+   ============================================================ */
+
+@utility glass {
+  background: var(--grad-glass);
+  backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid hsl(var(--gold) / 0.15);
+  box-shadow: var(--shadow-glass);
+}
+
+@utility glass-strong {
+  background: linear-gradient(135deg, hsl(200 15% 10% / 0.7), hsl(200 15% 5% / 0.85));
+  backdrop-filter: blur(28px) saturate(160%);
+  border: 1px solid hsl(var(--gold) / 0.2);
+  box-shadow: var(--shadow-glass);
+}
+
+@utility glass-hover {
+  transition: transform 0.5s cubic-bezier(.2,.8,.2,1), box-shadow 0.5s, border-color 0.5s;
+  &:hover {
+    transform: translateY(-4px) scale(1.015);
+    border-color: hsl(var(--gold) / 0.45);
+    box-shadow: var(--shadow-glass), var(--shadow-gold);
+  }
+}
+
+@utility gold-text {
+  background: var(--grad-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility nature-quantum-text {
+  background: var(--grad-nature-quantum);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility gold-border {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
+    var(--grad-gold) border-box;
+}
+
+@utility gold-glow {
+  box-shadow: 0 0 0 1px hsl(var(--gold) / 0.3), 0 0 40px -8px hsl(var(--gold) / 0.5);
+}
+
+@utility emerald-glow {
+  box-shadow: 0 0 0 1px hsl(var(--emerald-glow) / 0.3), 0 0 40px -8px hsl(var(--emerald-glow) / 0.55);
+}
+
+@utility quantum-glow {
+  box-shadow: 0 0 0 1px hsl(var(--quantum) / 0.3), 0 0 40px -8px hsl(var(--quantum) / 0.55);
+}
+
+@utility tilt-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.6s cubic-bezier(.2,.8,.2,1);
+}
+
+@utility noir-bg {
+  background: var(--grad-noir);
+}
+
+@utility grid-lines {
+  background-image:
+    linear-gradient(hsl(var(--gold) / 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--gold) / 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Keyframes */
+@keyframes float-slow {
+  0%,100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(3deg); }
+}
+@keyframes pulse-gold {
+  0%,100% { box-shadow: 0 0 0 0 hsl(var(--gold) / 0.5); }
+  50% { box-shadow: 0 0 0 18px hsl(var(--gold) / 0); }
+}
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scan {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+@utility animate-float-slow  { animation: float-slow 7s ease-in-out infinite; }
+@utility animate-pulse-gold  { animation: pulse-gold 2.4s cubic-bezier(.66,0,0,1) infinite; }
+@utility animate-orbit       { animation: orbit 14s linear infinite; }
+@utility animate-shimmer     { background: linear-gradient(90deg, transparent, hsl(var(--gold) / 0.25), transparent); background-size: 200% 100%; animation: shimmer 3s linear infinite; }
+@utility animate-rise        { animation: rise 0.8s cubic-bezier(.2,.8,.2,1) both; }
+@utility animate-scan        { animation: scan 3s ease-in-out infinite; }
+
+/* ============================================================
+   Hardware Acceleration & Performance Optimizations
+   ============================================================ */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* ============================================================
+   Publication-Grade Executive Print Stylesheet
+   ============================================================ */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 14mm;
+  }
+
+  /* Reset body and document canvas for pristine printing */
+  html, body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide app navigation chrome, background glows, and interactive controls */
+  aside,
+  header,
+  nav,
+  .no-print,
+  [data-no-print="true"],
+  .pointer-events-none,
+  button,
+  .interactive-bg,
+  [role="dialog"] > div:not(.print-target) {
+    display: none !important;
+  }
+
+  /* If a dedicated report modal is open during print, expand it cleanly to full page */
+  .printable-report-sheet {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #09090b !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Clean contrast for text and badges */
+  .printable-report-sheet * {
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  .print-break-avoid {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Ensure tables render crisply on paper */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  th, td {
+    border-color: #cbd5e1 !important;
+    color: #0f172a !important;
+  }
+}
+

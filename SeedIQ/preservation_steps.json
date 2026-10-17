@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Harvesting",
+    "icon": "fa-seedling",
+    "description": "Harvest crops at maximum maturity level under dry weather conditions.",
+    "animation_text": "Field collection complete."
+  },
+  {
+    "title": "Cleaning & Sorting",
+    "icon": "fa-filter",
+    "description": "Remove stones, debris, damaged grains, or spoiled fruits from crop harvest batches.",
+    "animation_text": "Debris filters active."
+  },
+  {
+    "title": "Moisture Drying",
+    "icon": "fa-sun",
+    "description": "Reduce seed moisture levels to below critical boundaries (e.g. 12% for grains) to inhibit fungal growth.",
+    "animation_text": "Driers warming up... Dry state reached."
+  },
+  {
+    "title": "Disinfection",
+    "icon": "fa-shield-virus",
+    "description": "Sanitize containers and warehouse bays. Treat seeds with biological protectants.",
+    "animation_text": "Fumigation complete."
+  },
+  {
+    "title": "Warehousing & Silo Storing",
+    "icon": "fa-warehouse",
+    "description": "Store inside hermetic silos or cold preservation chambers based on crop guidelines.",
+    "animation_text": "Chambers locked."
+  },
+  {
+    "title": "Telemetry Monitoring",
+    "icon": "fa-thermometer-half",
+    "description": "Keep monitoring temperature and humidity sensors regularly using the digital dashboard.",
+    "animation_text": "Sensors calibration online."
+  }
+]

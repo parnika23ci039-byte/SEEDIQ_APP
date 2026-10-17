@@ -1,0 +1,33 @@
+Flask==3.1.3
+Werkzeug==3.1.9
+# NOTE: the numeric/ML stack is pinned on purpose. Every committed model
+# artifact in models/ was serialized with scikit-learn 1.6.1, and newer
+# releases are not unpickle-compatible (sklearn >= 1.7 no longer provides the
+# private `_loss` module that yield_prediction/randomforest_model.pkl
+# references, which makes /api/yield-prediction fail with HTTP 503). These are
+# the versions the models were trained and contract-tested against; changing
+# any of them requires re-validating every model artifact first.
+numpy==2.0.2
+pandas==2.3.3
+scipy==1.13.1
+scikit-learn==1.6.1
+xgboost==2.1.4
+joblib==1.5.3
+# NOTE: Qiskit is intentionally NOT a dependency. The current quantum layer
+# (qml_model.py) has no Qiskit import; it uses PennyLane when available and
+# otherwise a pure-sklearn "simulated quantum" fallback. Results are therefore
+# simulated, never real quantum-hardware execution. Installing qiskit/
+# qiskit-machine-learning here would be a no-op dependency.
+matplotlib
+seaborn
+pymongo
+shap
+pdfkit
+Flask-PyMongo
+gunicorn
+flask-cors
+python-dotenv
+requests
+joblib
+cryptography
+

@@ -1,0 +1,240 @@
+{
+  "Rice": {
+    "diseases": [
+      {
+        "name": "Blast (Magnaporthe oryzae)",
+        "symptoms": "Spindle-shaped lesions on leaves with gray centers, collar rot, and neck rot leading to broken panicles.",
+        "prevention": "Avoid excess nitrogen fertilizer, use resistant varieties, and maintain proper water levels.",
+        "pesticide": "Spray Tricyclazole 75% WP @ 120g/acre or Azoxystrobin @ 200ml/acre."
+      },
+      {
+        "name": "Bacterial Leaf Blight (Xanthomonas oryzae)",
+        "symptoms": "Wavy yellow-to-white stripes on leaf margins starting from tips, leaf wilting (kresek stage).",
+        "prevention": "Secure balanced NPK application, avoid field flooding from infected source, and clip leaf tips before transplanting.",
+        "pesticide": "Spray Streptocycline @ 6g + Copper Oxychloride @ 300g per acre."
+      }
+    ]
+  },
+  "Maize": {
+    "diseases": [
+      {
+        "name": "Turcicum Leaf Blight",
+        "symptoms": "Long, elliptical, grayish-green or tan lesions on leaves, starting from lower leaves moving upwards.",
+        "prevention": "Crop rotation with legumes, destroy crop debris, and plant early during season.",
+        "pesticide": "Spray Mancozeb 75% WP @ 400g/acre or Metalaxyl."
+      },
+      {
+        "name": "Maydis Leaf Blight",
+        "symptoms": "Small, rectangular lesions bounded by leaf veins, turning tan or straw-colored.",
+        "prevention": "Clean cultivation, resistant hybrids, and proper weed management.",
+        "pesticide": "Foliar spray of Propiconazole 25% EC @ 200ml/acre."
+      }
+    ]
+  },
+  "Jute": {
+    "diseases": [
+      {
+        "name": "Stem Rot (Macrophomina phaseolina)",
+        "symptoms": "Brownish-black spots on the stem, stem splitting, and dark pycnidia forming on lesions.",
+        "prevention": "Ensure good drainage, avoid acidic soils, apply potash, and treat seeds with Carbendazim.",
+        "pesticide": "Spray Carbendazim @ 1g/L or Mancozeb @ 2g/L."
+      }
+    ]
+  },
+  "Cotton": {
+    "diseases": [
+      {
+        "name": "Boll Rot Complex",
+        "symptoms": "Dark brown water-soaked lesions on bolls, bolls turning black and failing to open.",
+        "prevention": "Avoid high dense planting, remove weeds, and secure proper aeration in canopy.",
+        "pesticide": "Spray Copper Oxychloride @ 600g + Streptocycline @ 10g per acre."
+      },
+      {
+        "name": "Fusarium Wilt",
+        "symptoms": "Yellowing and wilting of leaves, browning of internal vascular tissues (vascular discoloration).",
+        "prevention": "Grow wilt-resistant cultivars, rotate with sorghum, and apply organic compost.",
+        "pesticide": "Soil drenching with Carbendazim @ 1g/L near root zones."
+      }
+    ]
+  },
+  "Coconut": {
+    "diseases": [
+      {
+        "name": "Bud Rot (Phytophthora palmivora)",
+        "symptoms": "Rotting of the central spindle leaf, foul smell, yellowing of younger leaves.",
+        "prevention": "Clean crown regularly, cut and burn severely infected trees, and improve drainage.",
+        "pesticide": "Apply Bordeaux paste on the cut surface or spray Bordeaux mixture 1%."
+      }
+    ]
+  },
+  "Papaya": {
+    "diseases": [
+      {
+        "name": "Papaya Ringspot Virus (PRSV)",
+        "symptoms": "Mottle and mosaic patterns on leaves, dark green streaks on petioles, ringspots on fruits.",
+        "prevention": "Control aphid vectors using yellow sticky traps, rogue infected plants, and plant barriers.",
+        "pesticide": "Spray Dimethoate 30% EC @ 2ml/L to control aphid vector populations."
+      }
+    ]
+  },
+  "Orange": {
+    "diseases": [
+      {
+        "name": "Citrus Canker (Xanthomonas citri)",
+        "symptoms": "Raised, corky, brown lesions on leaves, twigs, and fruits, surrounded by a yellow halo.",
+        "prevention": "Prune infected twigs before monsoon, spray windbreaks, and use disease-free budwood.",
+        "pesticide": "Spray Copper Oxychloride @ 3g/L + Streptocycline @ 0.1g/L."
+      }
+    ]
+  },
+  "Apple": {
+    "diseases": [
+      {
+        "name": "Apple Scab (Venturia inaequalis)",
+        "symptoms": "Olive-green to brown velvety spots on leaves and scabby lesions on fruits leading to cracking.",
+        "prevention": "Clear fallen leaves in autumn, prune canopy for airflow, and apply urea spray to leaves on ground.",
+        "pesticide": "Spray Difenoconazole 25% EC @ 100ml/acre or Captan 50% WP @ 400g/acre."
+      }
+    ]
+  },
+  "Muskmelon": {
+    "diseases": [
+      {
+        "name": "Powdery Mildew",
+        "symptoms": "White powdery growth on both surfaces of leaf, leaf chlorosis, and premature drying.",
+        "prevention": "Remove crop residues, avoid high humidity around canopy, and use drip irrigation.",
+        "pesticide": "Spray Dinocap @ 1ml/L or Wettable Sulfur @ 2g/L."
+      }
+    ]
+  },
+  "Watermelon": {
+    "diseases": [
+      {
+        "name": "Downy Mildew (Pseudoperonospora)",
+        "symptoms": "Angular yellow spots on upper leaf surfaces, purple-gray mold on the underside of leaves.",
+        "prevention": "Avoid overhead irrigation, secure spacing, and use resistant varieties.",
+        "pesticide": "Spray Metalaxyl + Mancozeb @ 2g/L or Cymoxanil @ 2g/L."
+      }
+    ]
+  },
+  "Grapes": {
+    "diseases": [
+      {
+        "name": "Anthracnose (Bird's Eye Rot)",
+        "symptoms": "Sunken dark spots on shoots, circular spots with gray centers and dark borders on berries.",
+        "prevention": "Prune out infected canes during dormancy, burn prunings, and keep canopy open.",
+        "pesticide": "Spray Bordeaux mixture 1% or Carbendazim @ 1g/L."
+      }
+    ]
+  },
+  "Mango": {
+    "diseases": [
+      {
+        "name": "Anthracnose (Colletotrichum)",
+        "symptoms": "Dark brown tear-stain spots on fruits, blossom blight, and leaf spots.",
+        "prevention": "Prune dry twigs, carry out post-harvest hot water treatment, and avoid canopy crowding.",
+        "pesticide": "Spray Carbendazim @ 1g/L or Copper Oxychloride @ 3g/L."
+      }
+    ]
+  },
+  "Banana": {
+    "diseases": [
+      {
+        "name": "Sigatoka Leaf Spot",
+        "symptoms": "Narrow dark brown streaks on leaves, merging to form large dry necrotic zones.",
+        "prevention": "Remove infected leaves regularly, secure drainage, and keep weeds down.",
+        "pesticide": "Spray Propiconazole 25% EC @ 1ml/L + mineral oil or Carbendazim."
+      }
+    ]
+  },
+  "Pomegranate": {
+    "diseases": [
+      {
+        "name": "Bacterial Blight (Oily Spot)",
+        "symptoms": "Water-soaked dark spots on leaves, stems, and fruits, cracking of fruit skin in L-shape.",
+        "prevention": "Sterilize pruning tools, use pathogen-free cuttings, and avoid pruning in rainy weather.",
+        "pesticide": "Spray Streptocycline @ 0.5g/L + Copper Oxychloride @ 2.5g/L."
+      }
+    ]
+  },
+  "Lentil": {
+    "diseases": [
+      {
+        "name": "Rust (Uromyces viciae-fabae)",
+        "symptoms": "Orange-brown pustules on leaves and stems, leaf drop, and poor seed development.",
+        "prevention": "Avoid early sowing, destroy weed hosts, and rotate with non-legumes.",
+        "pesticide": "Spray Mancozeb @ 2.5g/L or Hexaconazole @ 1ml/L."
+      }
+    ]
+  },
+  "Blackgram": {
+    "diseases": [
+      {
+        "name": "Yellow Mosaic Disease (YMV)",
+        "symptoms": "Bright yellow patches on leaves, leaf crumpling, and reduced pod count.",
+        "prevention": "Rogue infected plants, sow resistant varieties, and control whiteflies.",
+        "pesticide": "Spray Imidacloprid 17.8% SL @ 100ml/acre to manage vector insect populations."
+      }
+    ]
+  },
+  "Mungbean": {
+    "diseases": [
+      {
+        "name": "Cercospora Leaf Spot",
+        "symptoms": "Sub-circular brown spots with reddish-purple borders on leaves.",
+        "prevention": "Rotate crops, destroy plant debris, and use seed treatment.",
+        "pesticide": "Spray Carbendazim @ 1g/L or Mancozeb @ 2g/L."
+      }
+    ]
+  },
+  "Mothbeans": {
+    "diseases": [
+      {
+        "name": "Seedling Wilt & Root Rot",
+        "symptoms": "Sudden wilting of seedlings, black discoloration of roots, stem rot near soil line.",
+        "prevention": "Seed treatment with Trichoderma, ensure proper soil aeration, avoid waterlogging.",
+        "pesticide": "Soil drench with Carbendazim @ 1g/L."
+      }
+    ]
+  },
+  "Kidneybeans": {
+    "diseases": [
+      {
+        "name": "Anthracnose (Colletotrichum)",
+        "symptoms": "Dark red to black lesions on leaf veins, sunken spots on pods with dark margins.",
+        "prevention": "Use certified clean seed, avoid working in wet fields, and burn crop debris.",
+        "pesticide": "Spray Mancozeb @ 2g/L or Carbendazim @ 1g/L."
+      }
+    ]
+  },
+  "Pigeonpeas": {
+    "diseases": [
+      {
+        "name": "Wilt (Fusarium udum)",
+        "symptoms": "Gradual yellowing and wilting of plants, black streaks on wood under bark of stems.",
+        "prevention": "Rotate with sorghum, apply Trichoderma viride to soil, and grow resistant cultivars.",
+        "pesticide": "Seed treatment with Carbendazim + Thiram @ 2g/kg seed."
+      }
+    ]
+  },
+  "Chickpea": {
+    "diseases": [
+      {
+        "name": "Ascochyta Blight",
+        "symptoms": "Circular spots on leaves and pods with dark brown margins and pycnidia arranged in rings.",
+        "prevention": "Intercrop with barley/mustard, use clean seeds, and destroy field stubble.",
+        "pesticide": "Spray Chlorothalonil @ 2g/L or Mancozeb @ 2.5g/L."
+      }
+    ]
+  },
+  "Coffee": {
+    "diseases": [
+      {
+        "name": "Coffee Leaf Rust (Hemileia vastatrix)",
+        "symptoms": "Yellow-orange powdery spots on the lower surface of leaves, leaf drop, and dieback.",
+        "prevention": "Maintain proper shade, apply organic compost, and spray Bordeaux mixture before monsoon.",
+        "pesticide": "Spray Hexaconazole @ 1ml/L or Copper Oxychloride @ 3g/L."
+      }
+    ]
+  }
+}

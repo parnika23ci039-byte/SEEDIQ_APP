@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SeedIQ Experiment Report - SEEDIQ-EXP-20260817-191122-CROP_RECOMMENDATION</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #0d1012; color: #e2e8f0; margin: 0; padding: 40px; }
+        .card { background: #1e293b; border-radius: 12px; padding: 24px; margin-bottom: 24px; border: 1px solid #334155; }
+        h1 { color: #10b981; font-size: 28px; margin-bottom: 8px; }
+        h2 { color: #38bdf8; font-size: 20px; border-bottom: 1px solid #334155; padding-bottom: 8px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+        th, td { border: 1px solid #334155; padding: 12px; text-align: left; }
+        th { background-color: #0f172a; color: #10b981; }
+        .highlight { color: #f59e0b; font-weight: bold; }
+        .badge { display: inline-block; padding: 4px 12px; border-radius: 9999px; background: #065f46; color: #34d399; font-weight: 600; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🌱 SeedIQ Model Evaluation Report</h1>
+        <p><strong>Experiment ID:</strong> SEEDIQ-EXP-20260817-191122-CROP_RECOMMENDATION | <strong>Task:</strong> Crop_Recommendation | <strong>Dataset Version:</strong> v001</p>
+        <p><span class="badge">STATUS: SUCCESS</span></p>
+    </div>
+
+    <div class="card">
+        <h2>Executive Summary</h2>
+        <p><strong>Selected Best Model:</strong> <span class="highlight">RandomForest</span></p>
+        <p><strong>Test Performance Score:</strong> 1.0000</p>
+        <p><strong>Overfitting Status:</strong> HEALTHY (Generalization Gap: 0.0000)</p>
+        <p><strong>Best Hyperparameters:</strong> <code>{"max_depth": null, "min_samples_split": 2, "n_estimators": 100}</code></p>
+    </div>
+
+    <div class="card">
+        <h2>Model Comparison Matrix</h2>
+        <table border="1" class="dataframe table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Model</th>
+      <th>CV_Score</th>
+      <th>Test_Score</th>
+      <th>Train_Score</th>
+      <th>Generalization_Gap</th>
+      <th>Overfitting_Status</th>
+      <th>Train_Time_s</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>RandomForest</td>
+      <td>0.9876</td>
+      <td>1.0000</td>
+      <td>1.0000</td>
+      <td>0.0000</td>
+      <td>HEALTHY</td>
+      <td>21.59</td>
+    </tr>
+    <tr>
+      <td>SVM</td>
+      <td>0.9738</td>
+      <td>1.0000</td>
+      <td>0.9765</td>
+      <td>-0.0235</td>
+      <td>HEALTHY</td>
+      <td>4.90</td>
+    </tr>
+    <tr>
+      <td>SimulatedQML</td>
+      <td>0.2693</td>
+      <td>0.1816</td>
+      <td>0.7766</td>
+      <td>0.5951</td>
+      <td>SEVERE_OVERFITTING</td>
+      <td>0.50</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+</body>
+</html>

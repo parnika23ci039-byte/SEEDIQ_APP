@@ -1,0 +1,4 @@
+Task,Total_Rows,Exact_Duplicates,Duplicate_Feature_Vectors,Leakage_Risk
+Crop_Recommendation,100,0,0,None
+Yield_Prediction,100,0,0,None
+Seed_Viability,100,0,0,None

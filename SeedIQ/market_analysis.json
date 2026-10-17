@@ -1,0 +1,222 @@
+{
+  "Rice": {
+    "price_per_tonne": 22000,
+    "demand": "High",
+    "trend": "Rising",
+    "profit": "Good",
+    "best_season": "Kharif",
+    "best_state": "Punjab",
+    "export_value": "High",
+    "market_risk": "Low"
+  },
+  "Maize": {
+    "price_per_tonne": 18500,
+    "demand": "Moderate",
+    "trend": "Rising",
+    "profit": "Good",
+    "best_season": "Kharif",
+    "best_state": "Karnataka",
+    "export_value": "Moderate",
+    "market_risk": "Moderate"
+  },
+  "Jute": {
+    "price_per_tonne": 42000,
+    "demand": "Moderate",
+    "trend": "Stable",
+    "profit": "Good",
+    "best_season": "Kharif",
+    "best_state": "West Bengal",
+    "export_value": "Moderate",
+    "market_risk": "Moderate"
+  },
+  "Cotton": {
+    "price_per_tonne": 62000,
+    "demand": "High",
+    "trend": "Stable",
+    "profit": "Excellent",
+    "best_season": "Kharif",
+    "best_state": "Gujarat",
+    "export_value": "High",
+    "market_risk": "Moderate"
+  },
+  "Coconut": {
+    "price_per_tonne": 32000,
+    "demand": "High",
+    "trend": "Rising",
+    "profit": "Good",
+    "best_season": "Year-Round",
+    "best_state": "Kerala",
+    "export_value": "Moderate",
+    "market_risk": "Low"
+  },
+  "Papaya": {
+    "price_per_tonne": 25000,
+    "demand": "Moderate",
+    "trend": "Stable",
+    "profit": "Good",
+    "best_season": "Year-Round",
+    "best_state": "Karnataka",
+    "export_value": "Low",
+    "market_risk": "High"
+  },
+  "Orange": {
+    "price_per_tonne": 45000,
+    "demand": "High",
+    "trend": "Rising",
+    "profit": "Good",
+    "best_season": "Rabi",
+    "best_state": "Maharashtra",
+    "export_value": "Moderate",
+    "market_risk": "Moderate"
+  },
+  "Apple": {
+    "price_per_tonne": 95000,
+    "demand": "High",
+    "trend": "Rising",
+    "profit": "Excellent",
+    "best_season": "Rabi",
+    "best_state": "Jammu & Kashmir",
+    "export_value": "Moderate",
+    "market_risk": "Moderate"
+  },
+  "Muskmelon": {
+    "price_per_tonne": 28000,
+    "demand": "Moderate",
+    "trend": "Stable",
+    "profit": "Good",
+    "best_season": "Zaid",
+    "best_state": "Uttar Pradesh",
+    "export_value": "Low",
+    "market_risk": "High"
+  },
+  "Watermelon": {
+    "price_per_tonne": 15000,
+    "demand": "High",
+    "trend": "Rising",
+    "profit": "Good",
+    "best_season": "Zaid",
+    "best_state": "Tamil Nadu",
+    "export_value": "Low",
+    "market_risk": "Moderate"
+  },
+  "Grapes": {
+    "price_per_tonne": 85000,
+    "demand": "High",
+    "trend": "Rising",
+    "profit": "Excellent",
+    "best_season": "Rabi",
+    "best_state": "Maharashtra",
+    "export_value": "High",
+    "market_risk": "High"
+  },
+  "Mango": {
+    "price_per_tonne": 65000,
+    "demand": "High",
+    "trend": "Rising",
+    "profit": "Excellent",
+    "best_season": "Kharif",
+    "best_state": "Uttar Pradesh",
+    "export_value": "High",
+    "market_risk": "High"
+  },
+  "Banana": {
+    "price_per_tonne": 18000,
+    "demand": "High",
+    "trend": "Stable",
+    "profit": "Good",
+    "best_season": "Year-Round",
+    "best_state": "Tamil Nadu",
+    "export_value": "Moderate",
+    "market_risk": "Low"
+  },
+  "Pomegranate": {
+    "price_per_tonne": 75000,
+    "demand": "High",
+    "trend": "Rising",
+    "profit": "Excellent",
+    "best_season": "Rabi",
+    "best_state": "Maharashtra",
+    "export_value": "High",
+    "market_risk": "Moderate"
+  },
+  "Lentil": {
+    "price_per_tonne": 52000,
+    "demand": "High",
+    "trend": "Stable",
+    "profit": "Good",
+    "best_season": "Rabi",
+    "best_state": "Madhya Pradesh",
+    "export_value": "Moderate",
+    "market_risk": "Low"
+  },
+  "Blackgram": {
+    "price_per_tonne": 60000,
+    "demand": "High",
+    "trend": "Rising",
+    "profit": "Excellent",
+    "best_season": "Rabi",
+    "best_state": "Madhya Pradesh",
+    "export_value": "Low",
+    "market_risk": "Moderate"
+  },
+  "Mungbean": {
+    "price_per_tonne": 65000,
+    "demand": "High",
+    "trend": "Rising",
+    "profit": "Excellent",
+    "best_season": "Zaid",
+    "best_state": "Rajasthan",
+    "export_value": "Moderate",
+    "market_risk": "Moderate"
+  },
+  "Mothbeans": {
+    "price_per_tonne": 55000,
+    "demand": "Moderate",
+    "trend": "Stable",
+    "profit": "Good",
+    "best_season": "Kharif",
+    "best_state": "Rajasthan",
+    "export_value": "Low",
+    "market_risk": "Moderate"
+  },
+  "Kidneybeans": {
+    "price_per_tonne": 78000,
+    "demand": "High",
+    "trend": "Rising",
+    "profit": "Excellent",
+    "best_season": "Rabi",
+    "best_state": "Maharashtra",
+    "export_value": "Moderate",
+    "market_risk": "Moderate"
+  },
+  "Pigeonpeas": {
+    "price_per_tonne": 70000,
+    "demand": "High",
+    "trend": "Rising",
+    "profit": "Excellent",
+    "best_season": "Kharif",
+    "best_state": "Maharashtra",
+    "export_value": "Low",
+    "market_risk": "Low"
+  },
+  "Chickpea": {
+    "price_per_tonne": 48000,
+    "demand": "High",
+    "trend": "Stable",
+    "profit": "Good",
+    "best_season": "Rabi",
+    "best_state": "Madhya Pradesh",
+    "export_value": "Moderate",
+    "market_risk": "Low"
+  },
+  "Coffee": {
+    "price_per_tonne": 185000,
+    "demand": "High",
+    "trend": "Rising",
+    "profit": "Excellent",
+    "best_season": "Rabi",
+    "best_state": "Karnataka",
+    "export_value": "High",
+    "market_risk": "Moderate"
+  }
+}

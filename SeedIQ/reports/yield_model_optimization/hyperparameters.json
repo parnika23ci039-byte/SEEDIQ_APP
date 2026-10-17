@@ -1,0 +1,34 @@
+{
+    "experiment_id": "SEEDIQ-EXP-20260817-194124-YIELD_OPTIMIZATION",
+    "best_model": "Tuned_Regularized_XGBoost",
+    "best_hyperparameters": {
+        "learning_rate": 0.05,
+        "max_depth": 2,
+        "n_estimators": 50,
+        "reg_alpha": 1.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0
+    },
+    "all_candidate_hyperparameters": {
+        "Current_RandomForest_Baseline": {},
+        "Tuned_Regularized_RandomForest": {
+            "rf__max_depth": 3,
+            "rf__max_features": "sqrt",
+            "rf__min_samples_leaf": 2,
+            "rf__min_samples_split": 8,
+            "rf__n_estimators": 50
+        },
+        "Tuned_Regularized_XGBoost": {
+            "learning_rate": 0.05,
+            "max_depth": 2,
+            "n_estimators": 50,
+            "reg_alpha": 1.0,
+            "reg_lambda": 1.0,
+            "subsample": 1.0
+        },
+        "SimulatedQML_Regressor": {
+            "alpha": 0.01,
+            "n_components": 4
+        }
+    }
+}

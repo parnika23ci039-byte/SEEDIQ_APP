@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SeedIQ Dataset Quality & Leakage Audit Report</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #0d1012; color: #e2e8f0; margin: 0; padding: 40px; }
+        .card { background: #1e293b; border-radius: 12px; padding: 24px; margin-bottom: 24px; border: 1px solid #334155; }
+        h1 { color: #10b981; font-size: 28px; margin-bottom: 8px; }
+        h2 { color: #38bdf8; font-size: 20px; border-bottom: 1px solid #334155; padding-bottom: 8px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+        th, td { border: 1px solid #334155; padding: 12px; text-align: left; }
+        th { background-color: #0f172a; color: #10b981; }
+        .badge-green { display: inline-block; padding: 4px 12px; border-radius: 9999px; background: #065f46; color: #34d399; font-weight: 600; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🔍 SeedIQ Dataset Quality & Leakage Audit Report</h1>
+        <p><span class="badge-green">AUDIT STATUS: PASSED</span> | Generated automatically during MLOps validation</p>
+    </div>
+
+    <div class="card">
+        <h2>Duplicate Vector & Leakage Analysis</h2>
+        <table border="1" class="dataframe table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Task</th>
+      <th>Total_Rows</th>
+      <th>Exact_Duplicates</th>
+      <th>Duplicate_Feature_Vectors</th>
+      <th>Leakage_Risk</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Crop_Recommendation</td>
+      <td>100</td>
+      <td>0</td>
+      <td>0</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <td>Yield_Prediction</td>
+      <td>100</td>
+      <td>0</td>
+      <td>0</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <td>Seed_Viability</td>
+      <td>100</td>
+      <td>0</td>
+      <td>0</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+    <div class="card">
+        <h2>Class Distribution</h2>
+        <table border="1" class="dataframe table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Task</th>
+      <th>Class</th>
+      <th>Count</th>
+      <th>Percentage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Crop_Recommendation</td>
+      <td>Rice</td>
+      <td>20</td>
+      <td>20.00%</td>
+    </tr>
+    <tr>
+      <td>Crop_Recommendation</td>
+      <td>Wheat</td>
+      <td>20</td>
+      <td>20.00%</td>
+    </tr>
+    <tr>
+      <td>Crop_Recommendation</td>
+      <td>Maize</td>
+      <td>20</td>
+      <td>20.00%</td>
+    </tr>
+    <tr>
+      <td>Crop_Recommendation</td>
+      <td>Sugarcane</td>
+      <td>20</td>
+      <td>20.00%</td>
+    </tr>
+    <tr>
+      <td>Crop_Recommendation</td>
+      <td>Cotton</td>
+      <td>20</td>
+      <td>20.00%</td>
+    </tr>
+    <tr>
+      <td>Yield_Prediction</td>
+      <td>Continuous Target</td>
+      <td>100</td>
+      <td>100%</td>
+    </tr>
+    <tr>
+      <td>Seed_Viability</td>
+      <td>0</td>
+      <td>63</td>
+      <td>63.00%</td>
+    </tr>
+    <tr>
+      <td>Seed_Viability</td>
+      <td>1</td>
+      <td>37</td>
+      <td>37.00%</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+    <div class="card">
+        <h2>Feature Summary & Statistics</h2>
+        <table border="1" class="dataframe table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Task</th>
+      <th>Column</th>
+      <th>DataType</th>
+      <th>MissingValues</th>
+      <th>UniqueValues</th>
+      <th>Min</th>
+      <th>Max</th>
+      <th>Mean</th>
+      <th>Std</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Crop_Recommendation</td>
+      <td>Nitrogen</td>
+      <td>int64</td>
+      <td>0</td>
+      <td>56</td>
+      <td>50.0</td>
+      <td>128.0</td>
+      <td>87.4300</td>
+      <td>19.9435</td>
+    </tr>
+    <tr>
+      <td>Crop_Recommendation</td>
+      <td>Phosphorus</td>
+      <td>int64</td>
+      <td>0</td>
+      <td>32</td>
+      <td>30.0</td>
+      <td>69.0</td>
+      <td>48.9700</td>
+      <td>8.1395</td>
+    </tr>
+    <tr>
+      <td>Crop_Recommendation</td>
+      <td>Potassium</td>
+      <td>int64</td>
+      <td>0</td>
+      <td>36</td>
+      <td>21.0</td>
+      <td>74.0</td>
+      <td>40.5100</td>
+      <td>12.6607</td>
+    </tr>
+    <tr>
+      <td>Crop_Recommendation</td>
+      <td>Temperature</td>
+      <td>float64</td>
+      <td>0</td>
+      <td>100</td>
+      <td>15.123653</td>
+      <td>33.943718</td>
+      <td>25.5172</td>
+      <td>4.6616</td>
+    </tr>
+    <tr>
+      <td>Crop_Recommendation</td>
+      <td>Humidity</td>
+      <td>float64</td>
+      <td>0</td>
+      <td>100</td>
+      <td>40.552328</td>
+      <td>94.748463</td>
+      <td>68.3300</td>
+      <td>14.6943</td>
+    </tr>
+    <tr>
+      <td>Crop_Recommendation</td>
+      <td>pH</td>
+      <td>float64</td>
+      <td>0</td>
+      <td>100</td>
+      <td>5.532316</td>
+      <td>7.495831</td>
+      <td>6.5439</td>
+      <td>0.4740</td>
+    </tr>
+    <tr>
+      <td>Crop_Recommendation</td>
+      <td>Rainfall</td>
+      <td>float64</td>
+      <td>0</td>
+      <td>100</td>
+      <td>50.478519</td>
+      <td>251.687304</td>
+      <td>133.6741</td>
+      <td>63.9457</td>
+    </tr>
+    <tr>
+      <td>Crop_Recommendation</td>
+      <td>Crop</td>
+      <td>str</td>
+      <td>0</td>
+      <td>5</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Yield_Prediction</td>
+      <td>Crop</td>
+      <td>str</td>
+      <td>0</td>
+      <td>5</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Yield_Prediction</td>
+      <td>Season</td>
+      <td>str</td>
+      <td>0</td>
+      <td>3</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Yield_Prediction</td>
+      <td>Area_Hectares</td>
+      <td>float64</td>
+      <td>0</td>
+      <td>100</td>
+      <td>1.041688</td>
+      <td>9.971868</td>
+      <td>5.0271</td>
+      <td>2.6807</td>
+    </tr>
+    <tr>
+      <td>Yield_Prediction</td>
+      <td>Yield_Tonnes</td>
+      <td>float64</td>
+      <td>0</td>
+      <td>100</td>
+      <td>3.216052</td>
+      <td>767.455791</td>
+      <td>106.6236</td>
+      <td>201.3832</td>
+    </tr>
+    <tr>
+      <td>Seed_Viability</td>
+      <td>Moisture_Level</td>
+      <td>float64</td>
+      <td>0</td>
+      <td>100</td>
+      <td>8.001663</td>
+      <td>14.876314</td>
+      <td>11.7968</td>
+      <td>2.1095</td>
+    </tr>
+    <tr>
+      <td>Seed_Viability</td>
+      <td>Weight_g</td>
+      <td>float64</td>
+      <td>0</td>
+      <td>100</td>
+      <td>30.093576</td>
+      <td>69.567396</td>
+      <td>50.5297</td>
+      <td>11.2519</td>
+    </tr>
+    <tr>
+      <td>Seed_Viability</td>
+      <td>Viable</td>
+      <td>int64</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.3700</td>
+      <td>0.4852</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+{
+  "Nitrogen": {
+    "Low": {
+      "status": "Nitrogen Deficient",
+      "fertilizer": "Urea / Ammonium Sulfate",
+      "dosage": "50 kg per acre",
+      "advice": "Incorporate organic compost manure or grow nitrogen-fixing legume green cover crops."
+    },
+    "Medium": {
+      "status": "Optimum Nitrogen",
+      "fertilizer": "NPK (19:19:19)",
+      "dosage": "25 kg per acre",
+      "advice": "Maintain current organic matter levels. Standard maintenance dosing applies."
+    },
+    "High": {
+      "status": "Excessive Nitrogen",
+      "fertilizer": "None (Suspend N)",
+      "dosage": "0 kg per acre",
+      "advice": "Excess nitrogen promotes vegetative foliage at the cost of grain yield. Suspend nitrogen applications."
+    }
+  },
+  "Phosphorus": {
+    "Low": {
+      "status": "Phosphorus Deficient",
+      "fertilizer": "Single Super Phosphate (SSP) / DAP",
+      "dosage": "40 kg per acre",
+      "advice": "Apply near the root zone during sowing to improve early root establishment and seed development."
+    },
+    "Medium": {
+      "status": "Optimum Phosphorus",
+      "fertilizer": "NPK (10:26:26)",
+      "dosage": "20 kg per acre",
+      "advice": "Standard crop-specific maintenance application is sufficient."
+    },
+    "High": {
+      "status": "Excessive Phosphorus",
+      "fertilizer": "None (Suspend P)",
+      "dosage": "0 kg per acre",
+      "advice": "High phosphorus can tie up trace elements like Zinc and Iron, inducing micro-nutrient deficiencies."
+    }
+  },
+  "Potassium": {
+    "Low": {
+      "status": "Potassium Deficient",
+      "fertilizer": "Muriate of Potash (MOP)",
+      "dosage": "30 kg per acre",
+      "advice": "Potassium deficiency reduces drought resistance and grain weight. Apply potash before flowering."
+    },
+    "Medium": {
+      "status": "Optimum Potassium",
+      "fertilizer": "Potassium Sulfate",
+      "dosage": "15 kg per acre",
+      "advice": "Standard dose is sufficient for cell walls strengthening and pest resistance."
+    },
+    "High": {
+      "status": "Excessive Potassium",
+      "fertilizer": "None",
+      "dosage": "0 kg per acre",
+      "advice": "High potassium levels are safe but unnecessary. Additional potash application will not increase yield."
+    }
+  },
+  "pH": {
+    "Acidic": {
+      "status": "Acidic Soil (pH < 6.0)",
+      "treatment": "Agricultural Lime (Calcium Carbonate)",
+      "dosage": "500 kg per acre",
+      "advice": "Acidic soils bind phosphorus. Adding lime neutralizes acidity and raises pH to optimal ranges."
+    },
+    "Neutral": {
+      "status": "Neutral Soil (pH 6.0 - 7.5)",
+      "treatment": "None Required",
+      "dosage": "0 kg",
+      "advice": "Ideal soil environment. High nutrient availability across all micro and macro plant elements."
+    },
+    "Alkaline": {
+      "status": "Alkaline Soil (pH > 7.5)",
+      "treatment": "Agricultural Gypsum / Elemental Sulfur",
+      "dosage": "400 kg per acre",
+      "advice": "Alkaline soils tie up iron and zinc. Gypsum reduces soil alkalinity, improving micro-nutrient uptake."
+    }
+  }
+}

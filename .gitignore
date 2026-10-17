@@ -1,0 +1,137 @@
+# Environment variables & secrets
+.env
+.env.*
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+/lib/
+/lib64/
+!**/src/lib/**
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+instance/
+*.db
+*.sqlite
+*.sqlite3
+
+# Node & Frontend
+node_modules/
+.output/
+.vercel/
+.wrangler/
+.nitro/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# SeedIQ mobile (Expo)
+seediq-mobile/.expo/
+
+# Executables & binaries
+*.exe
+powershell.exe
+
+# IDE & OS
+.workspace/
+**/.workspace/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# Backups & Temporary files
+*.bak
+backups/
+SeedIQ/backups/
+SeedIQ/data/temp_uploads/
+SeedIQ/data/2026*
+SeedIQ/data/*_processed.csv
+data/
+*.tmp
+
+# SeedIQ reports — keep locally, do not upload
+/ANDROID-INSTALL-DIAGNOSIS.md
+/CLIENT-INSTALL-INSTRUCTIONS.md
+/SEEDIQ-ACCURACY-INVESTIGATION-FINAL-REPORT.md
+/SEEDIQ-CLIENT-CLAIM-VERIFICATION-DRAFT.md
+/SEEDIQ-META-MODEL-ACCURACY-INVESTIGATION-REPORT.md
+/SEEDIQ-META-MODEL-EMPIRICAL-INVESTIGATION-REPORT.md
+/SEEDIQ-PRODUCTION-DEPLOYMENT-REPORT.md
+/SEEDIQ-PRODUCTION-READINESS-REPORT.md
+
+# APK release files — keep locally, do not upload
+/SeedIQ-ANDROID14-v1.2.3-VALIDATED.apk
+/SeedIQ-ARM64-v1.2.3.apk
+/SeedIQ-FINAL-ANDROID14-v1.2.3.apk
+/SeedIQ-FINAL-WORKING-RELEASE.apk
+/SeedIQ-PRODUCTION-v1.2.3-RELEASE.apk
+/SeedIQ-PRODUCTION-v1.2.3.apk
+
+# Android signing credentials — never upload
+/keystores/
+*.keystore
+*.jks
+KEYSTORE-CREDENTIALS.txt
+
+# Temporary local agent and preview files
+/.freebuff/
+/.iconwork/
+/SeedIQ/.freebuff/
+/iconwork-preview.html
+/preview.html
+/shot-preview.html
+
+# Reports to keep locally
+/ANDROID-INSTALL-DIAGNOSIS.md
+/CLIENT-INSTALL-INSTRUCTIONS.md
+/SEEDIQ-ACCURACY-INVESTIGATION-FINAL-REPORT.md
+/SEEDIQ-CLIENT-CLAIM-VERIFICATION-DRAFT.md
+/SEEDIQ-META-MODEL-ACCURACY-INVESTIGATION-REPORT.md
+/SEEDIQ-META-MODEL-EMPIRICAL-INVESTIGATION-REPORT.md
+/SEEDIQ-PRODUCTION-DEPLOYMENT-REPORT.md
+/SEEDIQ-PRODUCTION-READINESS-REPORT.md
+
+# APK files to keep locally
+/SeedIQ-ANDROID14-v1.2.3-VALIDATED.apk
+/SeedIQ-ARM64-v1.2.3.apk
+/SeedIQ-FINAL-ANDROID14-v1.2.3.apk
+/SeedIQ-FINAL-WORKING-RELEASE.apk
+/SeedIQ-PRODUCTION-v1.2.3-RELEASE.apk
+/SeedIQ-PRODUCTION-v1.2.3.apk
+
+# Never upload signing credentials
+/keystores/
+*.keystore
+*.jks
+KEYSTORE-CREDENTIALS.txt
+
+# Local temporary files
+/.freebuff/
+/.iconwork/
+/SeedIQ/.freebuff/
+/iconwork-preview.html
+/preview.html
+/shot-preview.html
