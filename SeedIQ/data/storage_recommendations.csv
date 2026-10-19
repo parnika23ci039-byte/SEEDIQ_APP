@@ -1,0 +1,12 @@
+Crop,Ideal_Temperature_C,Ideal_Humidity_percent,Storage_Method,Max_Duration_months
+Rice,15,12,Airtight Container,12
+Wheat,10,10,Sealed Bags,18
+Jowar,12,11,Airtight Container,15
+Cotton,20,8,Dry Storage,6
+Sugarcane,4,90,Cold Storage,1
+Groundnut,5,8,Vacuum Sealed,10
+Ragi,12,12,Airtight Container,12
+Sunflower,10,9,Sealed Bags,8
+Gram,15,10,Airtight Container,14
+Areca,25,65,Controlled Atmosphere,3
+Coffee,20,60,Hermetic Bags,12

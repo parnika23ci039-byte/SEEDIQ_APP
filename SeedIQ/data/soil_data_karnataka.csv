@@ -1,0 +1,32 @@
+District,Nitrogen_N,Phosphorus_P,Potassium_K,pH,Organic_Carbon,Soil_Type
+Bagalkot,210,40,190,7.2,0.60,Black Soil
+Ballari,195,35,175,7.8,0.55,Black Soil
+Belagavi,245,35,185,6.8,0.65,Red Sandy Loam
+Bengaluru Rural,260,42,205,6.5,0.72,Red Loam
+Bengaluru Urban,265,40,195,6.6,0.70,Red Loam
+Bidar,215,30,170,7.4,0.60,Laterite Soil
+Chamarajanagara,280,45,215,6.4,0.75,Red Loam
+Chikkaballapur,255,38,190,6.7,0.68,Red Sandy Loam
+Chikkamagaluru,305,52,235,6.2,0.85,Laterite Soil
+Chitradurga,205,30,160,7.1,0.55,Red Sandy Loam
+Dakshina Kannada,315,55,245,5.8,0.90,Laterite Soil
+Davanagere,220,32,170,7.0,0.60,Black Soil
+Dharwad,210,28,165,7.2,0.58,Black Soil
+Gadag,195,25,150,7.6,0.52,Black Soil
+Hassan,290,45,215,6.4,0.75,Red Loam
+Haveri,225,32,175,6.9,0.62,Red Sandy Loam
+Kalaburagi,205,28,165,7.5,0.58,Black Soil
+Kodagu,320,58,255,5.5,0.95,Laterite Soil
+Kolar,245,35,185,6.8,0.65,Red Sandy Loam
+Koppal,190,24,145,7.7,0.50,Black Soil
+Mandya,295,48,220,6.7,0.78,Red Loam
+Mysuru,280,42,205,6.5,0.72,Red Loam
+Raichur,195,25,155,7.5,0.52,Red Sandy Loam
+Ramanagara,275,40,200,6.6,0.70,Red Loam
+Shivamogga,305,52,235,6.2,0.85,Laterite Soil
+Tumakuru,225,32,175,6.9,0.62,Red Sandy Loam
+Udupi,310,54,240,5.9,0.88,Laterite Soil
+Uttara Kannada,315,55,245,5.8,0.90,Laterite Soil
+Vijayanagara,200,28,155,7.5,0.54,Black Soil
+Vijayapura,195,26,150,7.6,0.53,Black Soil
+Yadgir,200,29,160,7.4,0.59,Black Soil
