@@ -1,0 +1,56 @@
+[
+  {
+    "n": 4497,
+    "within_25pct": 0.667556,
+    "mae": 0.2612,
+    "rmse": 0.4902,
+    "r2": 0.936293,
+    "candidate": "hgb_500_log",
+    "description": "HistGBR 500 log-per-ha + early stop (candidate default)"
+  },
+  {
+    "n": 4497,
+    "within_25pct": 0.655993,
+    "mae": 0.2665,
+    "rmse": 0.4923,
+    "r2": 0.935746,
+    "candidate": "gb_300_log",
+    "description": "Skl GBR 300 log-per-ha depth 4"
+  },
+  {
+    "n": 4497,
+    "within_25pct": 0.649989,
+    "mae": 0.2731,
+    "rmse": 0.5339,
+    "r2": 0.924417,
+    "candidate": "rf_300_log",
+    "description": "RandomForest 300, log-per-ha fit"
+  },
+  {
+    "n": 4497,
+    "within_25pct": 0.636869,
+    "mae": 0.2808,
+    "rmse": 0.5668,
+    "r2": 0.91481,
+    "candidate": "et_400_log",
+    "description": "ExtraTrees 400 log-per-ha fit"
+  },
+  {
+    "n": 4497,
+    "within_25pct": 0.502335,
+    "mae": 0.3897,
+    "rmse": 0.7518,
+    "r2": 0.850109,
+    "candidate": "ridge_log",
+    "description": "Ridge on log(t/ha), exp inverse \u2014 baseline linear"
+  },
+  {
+    "n": 4497,
+    "within_25pct": 0.497887,
+    "mae": 0.3917,
+    "rmse": 0.7401,
+    "r2": 0.854748,
+    "candidate": "crop_geomean_ref",
+    "description": "Per-crop train geometric-mean t/ha (no district/weather/year feature)"
+  }
+]

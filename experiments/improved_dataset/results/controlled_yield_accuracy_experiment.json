@@ -1,0 +1,311 @@
+{
+  "timestamp_utc": "2026-10-10T09:39:22.817473",
+  "baseline_reproduced": {
+    "within_25pct_tph": 0.655331,
+    "denominator": 1088,
+    "numerator": 713,
+    "mae": 0.2562,
+    "r2": 0.9512
+  },
+  "selected_candidate": "Candidate 2: HistGBR Absolute Error (Tabular GBDT)",
+  "selection_rule": "5-fold GroupKFold OOF within_25pct_tph on TRAIN groups only",
+  "candidates": [
+    {
+      "name": "Candidate 1: RF 500 Tail-Weighted (Current Baseline)",
+      "cv_overall": {
+        "within_25pct_tph": 0.670669,
+        "within_10pct_tph": 0.327996,
+        "mae": 0.253444,
+        "rmse": 0.478825,
+        "r2": 0.939205,
+        "mean_bias": -9.2e-05,
+        "over_pred_pct": 0.521903,
+        "n_samples": 4497
+      },
+      "cv_folds": [
+        {
+          "within_25pct_tph": 0.641509,
+          "within_10pct_tph": 0.331853,
+          "mae": 0.276466,
+          "rmse": 0.582832,
+          "r2": 0.894619,
+          "mean_bias": 0.056279,
+          "over_pred_pct": 0.579356,
+          "n_samples": 901
+        },
+        {
+          "within_25pct_tph": 0.672606,
+          "within_10pct_tph": 0.335189,
+          "mae": 0.254851,
+          "rmse": 0.465077,
+          "r2": 0.944632,
+          "mean_bias": -0.035966,
+          "over_pred_pct": 0.445434,
+          "n_samples": 898
+        },
+        {
+          "within_25pct_tph": 0.678889,
+          "within_10pct_tph": 0.316667,
+          "mae": 0.242663,
+          "rmse": 0.440291,
+          "r2": 0.952604,
+          "mean_bias": 0.029575,
+          "over_pred_pct": 0.616667,
+          "n_samples": 900
+        },
+        {
+          "within_25pct_tph": 0.697105,
+          "within_10pct_tph": 0.316258,
+          "mae": 0.244168,
+          "rmse": 0.447691,
+          "r2": 0.950777,
+          "mean_bias": -0.042848,
+          "over_pred_pct": 0.473274,
+          "n_samples": 898
+        },
+        {
+          "within_25pct_tph": 0.663333,
+          "within_10pct_tph": 0.34,
+          "mae": 0.24903,
+          "rmse": 0.442583,
+          "r2": 0.944945,
+          "mean_bias": -0.007738,
+          "over_pred_pct": 0.494444,
+          "n_samples": 900
+        }
+      ],
+      "holdout_metrics": {
+        "within_25pct_tph": 0.64614,
+        "within_10pct_tph": 0.328125,
+        "mae": 0.255483,
+        "rmse": 0.441369,
+        "r2": 0.951136,
+        "mean_bias": -0.008747,
+        "over_pred_pct": 0.522978,
+        "n_samples": 1088
+      },
+      "holdout_per_crop": {
+        "Castor": 0.708333,
+        "Chickpea": 0.62069,
+        "Cotton": 0.55102,
+        "Finger Millet": 0.744186,
+        "Groundnut": 0.656716,
+        "Kharif Sorghum": 0.530612,
+        "Linseed": 0.565217,
+        "Maize": 0.661538,
+        "Minor Pulses": 0.602941,
+        "Oilseeds": 0.631579,
+        "Pearl Millet": 0.571429,
+        "Pigeonpea": 0.473684,
+        "Rabi Sorghum": 0.666667,
+        "Rapeseed and Mustard": 0.757576,
+        "Rice": 0.84058,
+        "Safflower": 0.633333,
+        "Sesamum": 0.568966,
+        "Sorghum": 0.607843,
+        "Soyabean": 0.434783,
+        "Sugarcane": 0.863636,
+        "Sunflower": 0.724138,
+        "Wheat": 0.515152
+      }
+    },
+    {
+      "name": "Candidate 2: HistGBR Absolute Error (Tabular GBDT)",
+      "cv_overall": {
+        "within_25pct_tph": 0.674227,
+        "within_10pct_tph": 0.33489,
+        "mae": 0.250507,
+        "rmse": 0.471672,
+        "r2": 0.941007,
+        "mean_bias": -0.031948,
+        "over_pred_pct": 0.507449,
+        "n_samples": 4497
+      },
+      "cv_folds": [
+        {
+          "within_25pct_tph": 0.669256,
+          "within_10pct_tph": 0.338513,
+          "mae": 0.259638,
+          "rmse": 0.539543,
+          "r2": 0.909692,
+          "mean_bias": 0.0128,
+          "over_pred_pct": 0.529412,
+          "n_samples": 901
+        },
+        {
+          "within_25pct_tph": 0.660356,
+          "within_10pct_tph": 0.329621,
+          "mae": 0.248743,
+          "rmse": 0.433261,
+          "r2": 0.951948,
+          "mean_bias": -0.079268,
+          "over_pred_pct": 0.422049,
+          "n_samples": 898
+        },
+        {
+          "within_25pct_tph": 0.678889,
+          "within_10pct_tph": 0.337778,
+          "mae": 0.238404,
+          "rmse": 0.430787,
+          "r2": 0.954628,
+          "mean_bias": 0.003088,
+          "over_pred_pct": 0.597778,
+          "n_samples": 900
+        },
+        {
+          "within_25pct_tph": 0.675947,
+          "within_10pct_tph": 0.324053,
+          "mae": 0.25754,
+          "rmse": 0.480598,
+          "r2": 0.943275,
+          "mean_bias": -0.069284,
+          "over_pred_pct": 0.466592,
+          "n_samples": 898
+        },
+        {
+          "within_25pct_tph": 0.686667,
+          "within_10pct_tph": 0.344444,
+          "mae": 0.24821,
+          "rmse": 0.46569,
+          "r2": 0.939046,
+          "mean_bias": -0.027314,
+          "over_pred_pct": 0.521111,
+          "n_samples": 900
+        }
+      ],
+      "holdout_metrics": {
+        "within_25pct_tph": 0.659007,
+        "within_10pct_tph": 0.293199,
+        "mae": 0.257916,
+        "rmse": 0.472013,
+        "r2": 0.944116,
+        "mean_bias": -0.035775,
+        "over_pred_pct": 0.511949,
+        "n_samples": 1088
+      },
+      "holdout_per_crop": {
+        "Castor": 0.708333,
+        "Chickpea": 0.724138,
+        "Cotton": 0.653061,
+        "Finger Millet": 0.744186,
+        "Groundnut": 0.731343,
+        "Kharif Sorghum": 0.510204,
+        "Linseed": 0.478261,
+        "Maize": 0.661538,
+        "Minor Pulses": 0.647059,
+        "Oilseeds": 0.719298,
+        "Pearl Millet": 0.542857,
+        "Pigeonpea": 0.508772,
+        "Rabi Sorghum": 0.645833,
+        "Rapeseed and Mustard": 0.606061,
+        "Rice": 0.898551,
+        "Safflower": 0.533333,
+        "Sesamum": 0.517241,
+        "Sorghum": 0.588235,
+        "Soyabean": 0.478261,
+        "Sugarcane": 0.848485,
+        "Sunflower": 0.672414,
+        "Wheat": 0.636364
+      }
+    },
+    {
+      "name": "Candidate 3: RF 500 Calibrated Inverse-Yield + Tail Weighted",
+      "cv_overall": {
+        "within_25pct_tph": 0.67356,
+        "within_10pct_tph": 0.33111,
+        "mae": 0.262019,
+        "rmse": 0.507016,
+        "r2": 0.931835,
+        "mean_bias": -0.039058,
+        "over_pred_pct": 0.482544,
+        "n_samples": 4497
+      },
+      "cv_folds": [
+        {
+          "within_25pct_tph": 0.651498,
+          "within_10pct_tph": 0.337403,
+          "mae": 0.275879,
+          "rmse": 0.583285,
+          "r2": 0.894456,
+          "mean_bias": 0.028588,
+          "over_pred_pct": 0.54495,
+          "n_samples": 901
+        },
+        {
+          "within_25pct_tph": 0.66147,
+          "within_10pct_tph": 0.326281,
+          "mae": 0.264344,
+          "rmse": 0.481433,
+          "r2": 0.940669,
+          "mean_bias": -0.076003,
+          "over_pred_pct": 0.4098,
+          "n_samples": 898
+        },
+        {
+          "within_25pct_tph": 0.691111,
+          "within_10pct_tph": 0.325556,
+          "mae": 0.251926,
+          "rmse": 0.49004,
+          "r2": 0.941289,
+          "mean_bias": -0.017474,
+          "over_pred_pct": 0.577778,
+          "n_samples": 900
+        },
+        {
+          "within_25pct_tph": 0.699332,
+          "within_10pct_tph": 0.324053,
+          "mae": 0.260484,
+          "rmse": 0.490785,
+          "r2": 0.940845,
+          "mean_bias": -0.084651,
+          "over_pred_pct": 0.417595,
+          "n_samples": 898
+        },
+        {
+          "within_25pct_tph": 0.664444,
+          "within_10pct_tph": 0.342222,
+          "mae": 0.257449,
+          "rmse": 0.481804,
+          "r2": 0.934755,
+          "mean_bias": -0.046012,
+          "over_pred_pct": 0.462222,
+          "n_samples": 900
+        }
+      ],
+      "holdout_metrics": {
+        "within_25pct_tph": 0.647059,
+        "within_10pct_tph": 0.320772,
+        "mae": 0.266203,
+        "rmse": 0.486644,
+        "r2": 0.940597,
+        "mean_bias": -0.05076,
+        "over_pred_pct": 0.480699,
+        "n_samples": 1088
+      },
+      "holdout_per_crop": {
+        "Castor": 0.708333,
+        "Chickpea": 0.62069,
+        "Cotton": 0.571429,
+        "Finger Millet": 0.744186,
+        "Groundnut": 0.671642,
+        "Kharif Sorghum": 0.510204,
+        "Linseed": 0.565217,
+        "Maize": 0.692308,
+        "Minor Pulses": 0.632353,
+        "Oilseeds": 0.614035,
+        "Pearl Millet": 0.6,
+        "Pigeonpea": 0.578947,
+        "Rabi Sorghum": 0.645833,
+        "Rapeseed and Mustard": 0.787879,
+        "Rice": 0.84058,
+        "Safflower": 0.666667,
+        "Sesamum": 0.482759,
+        "Sorghum": 0.607843,
+        "Soyabean": 0.347826,
+        "Sugarcane": 0.787879,
+        "Sunflower": 0.724138,
+        "Wheat": 0.545455
+      }
+    }
+  ]
+}

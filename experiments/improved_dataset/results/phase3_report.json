@@ -1,0 +1,504 @@
+{
+  "generated_utc": "2026-10-09T18:12:40Z",
+  "phase": 3,
+  "seed_domains": {
+    "SYNTHETIC_100": {
+      "provenance_tag": "SYNTHETIC_100",
+      "granularity": "INDIVIDUAL_MEASURED",
+      "validation_info": {
+        "csv_name": "seed_contract_synthetic_100.csv",
+        "n_rows_raw": 100,
+        "required_cols_ok": true,
+        "n_rows_after_contract_clean": 100,
+        "n_rows_dropped_range_or_missing": 0,
+        "duplicate_sample_id_count": 0,
+        "full_row_duplicates": 0,
+        "provenance_cols_present": {
+          "Viable_label_source": true,
+          "weight_moisture_source": true,
+          "provenance_source": true
+        },
+        "viable_label_source_values": [
+          "synthetic_rule_moisture_10_3_to_13_4_weight_decorated_5pct_flip"
+        ],
+        "n_species": 1,
+        "unique_feat_pairs_total": 100,
+        "unique_feat_pairs_per_species_max": 100,
+        "labels_are_aggregate": false,
+        "features_are_species_constant": false,
+        "labels_are_synthetic_with_rule": true,
+        "granularity": "INDIVIDUAL_MEASURED"
+      },
+      "validation_warnings": [],
+      "n_rows": 100,
+      "n_train": 80,
+      "n_test": 20,
+      "class_balance": {
+        "0": 63,
+        "1": 37
+      },
+      "status": "EVALUATED",
+      "baselines": {
+        "baseline_most_frequent": {
+          "accuracy": 0.75,
+          "precision_macro": 0.375,
+          "recall_macro": 0.5,
+          "f1_macro": 0.428571,
+          "per_class_recall": [
+            1.0,
+            0.0
+          ],
+          "per_class_precision": [
+            0.75,
+            0.0
+          ],
+          "per_class_f1": [
+            0.857143,
+            0.0
+          ],
+          "confusion_matrix": [
+            [
+              15,
+              0
+            ],
+            [
+              5,
+              0
+            ]
+          ],
+          "n_test": 20
+        },
+        "baseline_stratified": {
+          "accuracy": 0.6,
+          "precision_macro": 0.527473,
+          "recall_macro": 0.533333,
+          "f1_macro": 0.52381,
+          "per_class_recall": [
+            0.666667,
+            0.4
+          ],
+          "per_class_precision": [
+            0.769231,
+            0.285714
+          ],
+          "per_class_f1": [
+            0.714286,
+            0.333333
+          ],
+          "confusion_matrix": [
+            [
+              10,
+              5
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "n_test": 20
+        }
+      },
+      "candidates": [
+        {
+          "candidate": "Random Forest 300",
+          "cv_train_f1_mean": null,
+          "cv_train_f1_std": null,
+          "train": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "per_class_recall": [
+              1.0,
+              1.0
+            ],
+            "per_class_precision": [
+              1.0,
+              1.0
+            ],
+            "per_class_f1": [
+              1.0,
+              1.0
+            ],
+            "confusion_matrix": [
+              [
+                48,
+                0
+              ],
+              [
+                0,
+                32
+              ]
+            ],
+            "n_test": 80
+          },
+          "test": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "per_class_recall": [
+              1.0,
+              1.0
+            ],
+            "per_class_precision": [
+              1.0,
+              1.0
+            ],
+            "per_class_f1": [
+              1.0,
+              1.0
+            ],
+            "confusion_matrix": [
+              [
+                15,
+                0
+              ],
+              [
+                0,
+                5
+              ]
+            ],
+            "n_test": 20
+          }
+        },
+        {
+          "candidate": "SVM RBF C=10",
+          "cv_train_f1_mean": null,
+          "cv_train_f1_std": null,
+          "train": {
+            "accuracy": 0.9375,
+            "precision_macro": 0.943543,
+            "recall_macro": 0.927083,
+            "f1_macro": 0.933764,
+            "per_class_recall": [
+              0.979167,
+              0.875
+            ],
+            "per_class_precision": [
+              0.921569,
+              0.965517
+            ],
+            "per_class_f1": [
+              0.949495,
+              0.918033
+            ],
+            "confusion_matrix": [
+              [
+                47,
+                1
+              ],
+              [
+                4,
+                28
+              ]
+            ],
+            "n_test": 80
+          },
+          "test": {
+            "accuracy": 0.8,
+            "precision_macro": 0.777778,
+            "recall_macro": 0.866667,
+            "f1_macro": 0.78022,
+            "per_class_recall": [
+              0.733333,
+              1.0
+            ],
+            "per_class_precision": [
+              1.0,
+              0.555556
+            ],
+            "per_class_f1": [
+              0.846154,
+              0.714286
+            ],
+            "confusion_matrix": [
+              [
+                11,
+                4
+              ],
+              [
+                0,
+                5
+              ]
+            ],
+            "n_test": 20
+          }
+        },
+        {
+          "candidate": "SeedIQ Meta (Stacking)",
+          "cv_train_f1_mean": null,
+          "cv_train_f1_std": null,
+          "train": {
+            "accuracy": 0.9375,
+            "precision_macro": 0.943543,
+            "recall_macro": 0.927083,
+            "f1_macro": 0.933764,
+            "per_class_recall": [
+              0.979167,
+              0.875
+            ],
+            "per_class_precision": [
+              0.921569,
+              0.965517
+            ],
+            "per_class_f1": [
+              0.949495,
+              0.918033
+            ],
+            "confusion_matrix": [
+              [
+                47,
+                1
+              ],
+              [
+                4,
+                28
+              ]
+            ],
+            "n_test": 80
+          },
+          "test": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "per_class_recall": [
+              1.0,
+              1.0
+            ],
+            "per_class_precision": [
+              1.0,
+              1.0
+            ],
+            "per_class_f1": [
+              1.0,
+              1.0
+            ],
+            "confusion_matrix": [
+              [
+                15,
+                0
+              ],
+              [
+                0,
+                5
+              ]
+            ],
+            "n_test": 20
+          }
+        }
+      ],
+      "best_candidate": "Random Forest 300",
+      "best_selection_criterion": "cv_train_f1_mean (5-fold group-aware CV on train split only; test used for one-shot reporting)",
+      "best_test": {
+        "accuracy": 1.0,
+        "precision_macro": 1.0,
+        "recall_macro": 1.0,
+        "f1_macro": 1.0,
+        "per_class_recall": [
+          1.0,
+          1.0
+        ],
+        "per_class_precision": [
+          1.0,
+          1.0
+        ],
+        "per_class_f1": [
+          1.0,
+          1.0
+        ],
+        "confusion_matrix": [
+          [
+            15,
+            0
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "n_test": 20
+      }
+    },
+    "REAL_MENDELEY_2449": {
+      "provenance_tag": "REAL_MENDELEY_2449",
+      "granularity": "AGGREGATE_ONLY",
+      "validation_info": {
+        "csv_name": "seed_measured_mendeley_germination.csv",
+        "n_rows_raw": 2449,
+        "required_cols_ok": true,
+        "n_rows_after_contract_clean": 2449,
+        "n_rows_dropped_range_or_missing": 0,
+        "duplicate_sample_id_count": 0,
+        "full_row_duplicates": 2443,
+        "provenance_cols_present": {
+          "Viable_label_source": true,
+          "weight_moisture_source": true,
+          "provenance_source": true
+        },
+        "viable_label_source_values": [
+          "species_level_published_aggregate_rates"
+        ],
+        "n_species": 3,
+        "unique_feat_pairs_total": 3,
+        "unique_feat_pairs_per_species_max": 1,
+        "labels_are_aggregate": true,
+        "features_are_species_constant": true,
+        "labels_are_synthetic_with_rule": false,
+        "granularity": "AGGREGATE_ONLY"
+      },
+      "validation_warnings": [],
+      "n_rows": 2449,
+      "n_train": 1905,
+      "n_test": 544,
+      "class_balance": {
+        "0": 200,
+        "1": 2249
+      },
+      "status": "NOT_EVALUABLE",
+      "not_evaluable_reasons": [
+        "Viable labels are aggregate-expanded from paper counts/percents (not per-individual measured). Sources = ['species_level_published_aggregate_rates']",
+        "Features are species-constant (unique (Moisture,Weight) pairs = 3 across 3 species; max per-species = 1). No per-individual feature variance \u2014 a classifier has no individual signal to learn beyond species-level base rates."
+      ],
+      "honest_summary": "File contains 2449 rows but each row is not an independent measured observation. Features per species are literature-constant references; labels were stochastically assigned from published paper-level aggregate germination percentages. We cannot report per-individual test accuracy and do not deploy a model from these data.",
+      "candidates": [],
+      "best_candidate": null,
+      "best_test": {
+        "status": "NOT_EVALUABLE",
+        "n_test": 0,
+        "accuracy": null,
+        "f1_macro": null,
+        "recall_macro": null
+      },
+      "baselines": {}
+    }
+  },
+  "alignment_validator": {
+    "allowed_keys": [
+      "sample_id",
+      "farm_id",
+      "plot_id"
+    ],
+    "crop_ds_columns_found": {
+      "sample_id": false,
+      "farm_id": false,
+      "plot_id": false
+    },
+    "yield_ds_columns_found": {
+      "sample_id": false,
+      "farm_id": false,
+      "plot_id": false
+    },
+    "seed_ds_columns_found": {
+      "sample_id": "True",
+      "farm_id": false,
+      "plot_id": false
+    },
+    "crop_name_join_attempted": true,
+    "crop_name_join_REJECTED_reason": "A shared crop-name column exists in all three datasets but a crop-name join would pair a 'Rice NPK-benchmark row' from the Kaggle crop table with a 'Rice \u00d7 Mandya \u00d7 2015 district-year aggregate' yield row with a measured 'Rice 1000-seed viability' row \u2014 these describe DIFFERENT populations, not the same farm/plot sample. Using it as a joint denominator inflates counts. Rejected per alignment policy; the policy requires one of: ['sample_id', 'farm_id', 'plot_id'].",
+    "usable_shared_keys": [],
+    "aligned_rows_per_key": {},
+    "best_key": null,
+    "denominator": 0,
+    "passed": false,
+    "failure_reason": "No allowed join-key ['sample_id', 'farm_id', 'plot_id'] present in all three populations. Missing-by-source:\n  crop_ds: ['sample_id', 'farm_id', 'plot_id']\n  yield_ds: ['sample_id', 'farm_id', 'plot_id']\n  seed_ds: ['farm_id', 'plot_id']"
+  },
+  "joint_measured": {
+    "status": "NOT EVALUABLE",
+    "denominator": 0,
+    "numerator": 0,
+    "reason": "No allowed join-key ['sample_id', 'farm_id', 'plot_id'] present in all three populations. Missing-by-source:\n  crop_ds: ['sample_id', 'farm_id', 'plot_id']\n  yield_ds: ['sample_id', 'farm_id', 'plot_id']\n  seed_ds: ['farm_id', 'plot_id']"
+  },
+  "yield_tail_improvements": {
+    "train_rows": 4497,
+    "test_rows": 1088,
+    "train_groups": 273,
+    "test_groups": 69,
+    "baselines": {
+      "dummy_mean_train": {
+        "r2": 0.0,
+        "mae": 1.145947,
+        "rmse": 1.941967,
+        "within_25pct_tph": 0.127196,
+        "within_10pct_tph": 0.052702,
+        "n_test": 4497
+      },
+      "dummy_mean_test": {
+        "r2": -0.000464,
+        "mae": 1.188312,
+        "rmse": 1.997143,
+        "within_25pct_tph": 0.125,
+        "within_10pct_tph": 0.048713,
+        "n_test": 1088
+      }
+    },
+    "phase2_rf300_reference_test_within_25pct_tph": 0.647978,
+    "best_candidate": "RF 300 baseline",
+    "best_selection_criterion": "cv_group_train_oof['within_25pct_tph'] (5-fold GroupKFold on train district-year groups only; test reported one-shot)",
+    "best_test": {
+      "r2": 0.950999,
+      "mae": 0.257869,
+      "rmse": 0.44199,
+      "within_25pct_tph": 0.647978,
+      "within_10pct_tph": 0.324449,
+      "n_test": 1088
+    },
+    "best_test_per_crop_within_25": {
+      "Castor": 0.708333,
+      "Chickpea": 0.62069,
+      "Cotton": 0.55102,
+      "Finger Millet": 0.767442,
+      "Groundnut": 0.656716,
+      "Kharif Sorghum": 0.530612,
+      "Linseed": 0.652174,
+      "Maize": 0.630769,
+      "Minor Pulses": 0.661765,
+      "Oilseeds": 0.649123,
+      "Pearl Millet": 0.571429,
+      "Pigeonpea": 0.491228,
+      "Rabi Sorghum": 0.6875,
+      "Rapeseed and Mustard": 0.757576,
+      "Rice": 0.869565,
+      "Safflower": 0.633333,
+      "Sesamum": 0.517241,
+      "Sorghum": 0.588235,
+      "Soyabean": 0.434783,
+      "Sugarcane": 0.833333,
+      "Sunflower": 0.706897,
+      "Wheat": 0.484848
+    },
+    "best_cv_train_oof": {
+      "r2": 0.938825,
+      "mae": 0.254946,
+      "rmse": 0.480318,
+      "within_25pct_tph": 0.668446,
+      "within_10pct_tph": 0.332666,
+      "n_test": 4497
+    },
+    "worst_crops_phase2_lift": {
+      "Soyabean": {
+        "phase2": 0.4348,
+        "phase3_best": 0.4348,
+        "delta_pp": -0.0
+      },
+      "Pigeonpea": {
+        "phase2": 0.4912,
+        "phase3_best": 0.4912,
+        "delta_pp": 0.0
+      },
+      "Wheat": {
+        "phase2": 0.5152,
+        "phase3_best": 0.4848,
+        "delta_pp": -3.04
+      },
+      "Sesamum": {
+        "phase2": 0.5172,
+        "phase3_best": 0.5172,
+        "delta_pp": 0.0
+      }
+    },
+    "candidates_count": 3
+  },
+  "wall_time_min": 5.04
+}

@@ -1,0 +1,198 @@
+{
+  "weather_features": [
+    "wx_annual_rain",
+    "wx_kharif_rain",
+    "wx_rabi_rain",
+    "wx_summer_rain",
+    "wx_winter_rain",
+    "wx_annual_tmean",
+    "wx_kharif_tmean",
+    "wx_rabi_tmean",
+    "wx_annual_tmax",
+    "wx_annual_tmin",
+    "wx_rainy_days",
+    "wx_extreme_rain_days",
+    "wx_max_daily_rain",
+    "wx_gdd_base10",
+    "wx_diurnal_range"
+  ],
+  "n_weather_features": 15,
+  "missing_values_after_merge": 0,
+  "coverage": "100% (all yield rows matched to district-year weather)",
+  "feature_units": {
+    "wx_annual_rain": "mm",
+    "wx_kharif_rain": "mm",
+    "wx_rabi_rain": "mm",
+    "wx_summer_rain": "mm",
+    "wx_winter_rain": "mm",
+    "wx_annual_tmean": "\u00b0C",
+    "wx_kharif_tmean": "\u00b0C",
+    "wx_rabi_tmean": "\u00b0C",
+    "wx_annual_tmax": "\u00b0C",
+    "wx_annual_tmin": "\u00b0C",
+    "wx_rainy_days": "count (precip \u2265 2.5mm)",
+    "wx_extreme_rain_days": "count (precip \u2265 50mm)",
+    "wx_max_daily_rain": "mm",
+    "wx_gdd_base10": "\u00b0C-days (sum of max(0, tmean-10))",
+    "wx_diurnal_range": "\u00b0C (mean of tmax-tmin)"
+  },
+  "aggregation": "daily \u2192 district-year",
+  "season_definitions": {
+    "winter": "Jan-Feb",
+    "summer": "Mar-May",
+    "kharif": "Jun-Sep",
+    "rabi": "Oct-Dec"
+  },
+  "weather_summary_stats": {
+    "wx_annual_rain": {
+      "count": 342.0,
+      "mean": 1186.12,
+      "std": 713.33,
+      "min": 308.4,
+      "25%": 731.65,
+      "50%": 932.4,
+      "75%": 1264.85,
+      "max": 3963.3
+    },
+    "wx_kharif_rain": {
+      "count": 342.0,
+      "mean": 839.46,
+      "std": 616.82,
+      "min": 185.6,
+      "25%": 459.12,
+      "50%": 612.65,
+      "75%": 910.28,
+      "max": 3572.0
+    },
+    "wx_rabi_rain": {
+      "count": 342.0,
+      "mean": 193.78,
+      "std": 107.32,
+      "min": 12.8,
+      "25%": 113.62,
+      "50%": 178.95,
+      "75%": 252.85,
+      "max": 633.5
+    },
+    "wx_summer_rain": {
+      "count": 342.0,
+      "mean": 144.04,
+      "std": 114.58,
+      "min": 2.3,
+      "25%": 59.92,
+      "50%": 117.8,
+      "75%": 186.62,
+      "max": 860.4
+    },
+    "wx_winter_rain": {
+      "count": 342.0,
+      "mean": 8.84,
+      "std": 13.36,
+      "min": 0.0,
+      "25%": 0.5,
+      "50%": 2.9,
+      "75%": 11.85,
+      "max": 77.1
+    },
+    "wx_annual_tmean": {
+      "count": 342.0,
+      "mean": 24.47,
+      "std": 1.88,
+      "min": 20.26,
+      "25%": 23.2,
+      "50%": 24.25,
+      "75%": 26.46,
+      "max": 28.06
+    },
+    "wx_kharif_tmean": {
+      "count": 342.0,
+      "mean": 23.7,
+      "std": 1.94,
+      "min": 19.24,
+      "25%": 22.52,
+      "50%": 23.5,
+      "75%": 25.37,
+      "max": 27.77
+    },
+    "wx_rabi_tmean": {
+      "count": 342.0,
+      "mean": 22.95,
+      "std": 1.89,
+      "min": 19.75,
+      "25%": 21.49,
+      "50%": 22.62,
+      "75%": 24.31,
+      "max": 27.47
+    },
+    "wx_annual_tmax": {
+      "count": 342.0,
+      "mean": 29.48,
+      "std": 1.84,
+      "min": 24.99,
+      "25%": 28.47,
+      "50%": 29.5,
+      "75%": 30.41,
+      "max": 33.51
+    },
+    "wx_annual_tmin": {
+      "count": 342.0,
+      "mean": 20.32,
+      "std": 1.9,
+      "min": 16.97,
+      "25%": 18.95,
+      "50%": 19.95,
+      "75%": 21.7,
+      "max": 24.56
+    },
+    "wx_rainy_days": {
+      "count": 342.0,
+      "mean": 97.86,
+      "std": 34.93,
+      "min": 29.0,
+      "25%": 69.25,
+      "50%": 93.0,
+      "75%": 121.0,
+      "max": 208.0
+    },
+    "wx_extreme_rain_days": {
+      "count": 342.0,
+      "mean": 1.71,
+      "std": 3.44,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%": 0.0,
+      "75%": 1.75,
+      "max": 23.0
+    },
+    "wx_max_daily_rain": {
+      "count": 342.0,
+      "mean": 59.67,
+      "std": 35.38,
+      "min": 16.7,
+      "25%": 35.7,
+      "50%": 49.55,
+      "75%": 73.95,
+      "max": 263.3
+    },
+    "wx_gdd_base10": {
+      "count": 342.0,
+      "mean": 5283.85,
+      "std": 687.83,
+      "min": 3745.5,
+      "25%": 4825.88,
+      "50%": 5203.9,
+      "75%": 6010.88,
+      "max": 6591.6
+    },
+    "wx_diurnal_range": {
+      "count": 342.0,
+      "mean": 9.16,
+      "std": 1.31,
+      "min": 4.94,
+      "25%": 8.92,
+      "50%": 9.53,
+      "75%": 9.99,
+      "max": 10.87
+    }
+  }
+}

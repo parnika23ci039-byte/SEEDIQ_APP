@@ -1,0 +1,146 @@
+{
+  "candidates": {
+    "A": {
+      "cv_within25_pct": 68.7569,
+      "holdout_correct": 720,
+      "holdout_total": 1088,
+      "holdout_within25_pct": 66.1765,
+      "holdout_mae": 0.243629,
+      "holdout_r2": 0.957859,
+      "holdout_bias": -0.009916
+    },
+    "B": {
+      "cv_within25_pct": 68.6902,
+      "holdout_correct": 728,
+      "holdout_total": 1088,
+      "holdout_within25_pct": 66.9118,
+      "holdout_mae": 0.246796,
+      "holdout_r2": 0.950404,
+      "holdout_bias": -0.024918
+    },
+    "C": {
+      "cv_within25_pct": 69.4463,
+      "holdout_correct": 733,
+      "holdout_total": 1088,
+      "holdout_within25_pct": 67.3713,
+      "holdout_mae": 0.238235,
+      "holdout_r2": 0.958926,
+      "holdout_bias": -0.012917
+    }
+  },
+  "winner": "C",
+  "best_blend_alpha": 0.8,
+  "baseline_frozen_holdout_pct": 65.5331,
+  "per_crop_winner": {
+    "Castor": {
+      "correct": 33,
+      "total": 48,
+      "pct": 68.75
+    },
+    "Chickpea": {
+      "correct": 33,
+      "total": 58,
+      "pct": 56.9
+    },
+    "Cotton": {
+      "correct": 27,
+      "total": 49,
+      "pct": 55.1
+    },
+    "Finger Millet": {
+      "correct": 31,
+      "total": 43,
+      "pct": 72.09
+    },
+    "Groundnut": {
+      "correct": 47,
+      "total": 67,
+      "pct": 70.15
+    },
+    "Kharif Sorghum": {
+      "correct": 28,
+      "total": 49,
+      "pct": 57.14
+    },
+    "Linseed": {
+      "correct": 15,
+      "total": 23,
+      "pct": 65.22
+    },
+    "Maize": {
+      "correct": 45,
+      "total": 65,
+      "pct": 69.23
+    },
+    "Minor Pulses": {
+      "correct": 43,
+      "total": 68,
+      "pct": 63.24
+    },
+    "Oilseeds": {
+      "correct": 39,
+      "total": 57,
+      "pct": 68.42
+    },
+    "Pearl Millet": {
+      "correct": 20,
+      "total": 35,
+      "pct": 57.14
+    },
+    "Pigeonpea": {
+      "correct": 31,
+      "total": 57,
+      "pct": 54.39
+    },
+    "Rabi Sorghum": {
+      "correct": 34,
+      "total": 48,
+      "pct": 70.83
+    },
+    "Rapeseed and Mustard": {
+      "correct": 27,
+      "total": 33,
+      "pct": 81.82
+    },
+    "Rice": {
+      "correct": 60,
+      "total": 69,
+      "pct": 86.96
+    },
+    "Safflower": {
+      "correct": 22,
+      "total": 30,
+      "pct": 73.33
+    },
+    "Sesamum": {
+      "correct": 34,
+      "total": 58,
+      "pct": 58.62
+    },
+    "Sorghum": {
+      "correct": 31,
+      "total": 51,
+      "pct": 60.78
+    },
+    "Soyabean": {
+      "correct": 12,
+      "total": 23,
+      "pct": 52.17
+    },
+    "Sugarcane": {
+      "correct": 59,
+      "total": 66,
+      "pct": 89.39
+    },
+    "Sunflower": {
+      "correct": 41,
+      "total": 58,
+      "pct": 70.69
+    },
+    "Wheat": {
+      "correct": 21,
+      "total": 33,
+      "pct": 63.64
+    }
+  }
+}

@@ -1,0 +1,464 @@
+{
+  "benchmark_phase6_f3": {
+    "correct_25": 742,
+    "total": 1088,
+    "pct_25": 68.1985,
+    "correct_10": 395,
+    "pct_10": 36.3051,
+    "mae": 0.237763,
+    "mse": 0.163658,
+    "rmse": 0.404546,
+    "r2": 0.958949,
+    "bias": -0.011872
+  },
+  "cv_scores": {
+    "F3(Phase6)": 69.5352,
+    "SVR": 61.0185,
+    "RF": 67.0447,
+    "Stacking": 69.1795,
+    "Per-crop-best": 69.8021
+  },
+  "cv_winner": "Per-crop-best",
+  "holdout": {
+    "F3(Phase6)": {
+      "correct_25": 742,
+      "total": 1088,
+      "pct_25": 68.1985,
+      "correct_10": 395,
+      "pct_10": 36.3051,
+      "mae": 0.237763,
+      "mse": 0.163658,
+      "rmse": 0.404546,
+      "r2": 0.958949,
+      "bias": -0.011872
+    },
+    "SVR": {
+      "correct_25": 652,
+      "total": 1088,
+      "pct_25": 59.9265,
+      "correct_10": 315,
+      "pct_10": 28.9522,
+      "mae": 0.298305,
+      "mse": 0.298674,
+      "rmse": 0.546511,
+      "r2": 0.925083,
+      "bias": -0.007817
+    },
+    "RF": {
+      "correct_25": 714,
+      "total": 1088,
+      "pct_25": 65.625,
+      "correct_10": 338,
+      "pct_10": 31.0662,
+      "mae": 0.25213,
+      "mse": 0.190143,
+      "rmse": 0.436054,
+      "r2": 0.952306,
+      "bias": -0.020358
+    },
+    "Stacking": {
+      "correct_25": 734,
+      "total": 1088,
+      "pct_25": 67.4632,
+      "correct_10": 383,
+      "pct_10": 35.2022,
+      "mae": 0.236391,
+      "mse": 0.160508,
+      "rmse": 0.400634,
+      "r2": 0.95974,
+      "bias": -0.00856
+    },
+    "Per-crop-best": {
+      "correct_25": 738,
+      "total": 1088,
+      "pct_25": 67.8309,
+      "correct_10": 386,
+      "pct_10": 35.4779,
+      "mae": 0.23961,
+      "mse": 0.164355,
+      "rmse": 0.405407,
+      "r2": 0.958775,
+      "bias": -0.010537
+    }
+  },
+  "meta_model_coefficients": {
+    "HistGBR(C)": 0.8415,
+    "RF": 0.2039,
+    "SVR": -0.0377,
+    "intercept": -0.0049
+  },
+  "per_crop_model_choice": {
+    "Castor": "HistGBR(C)",
+    "Chickpea": "RF",
+    "Cotton": "HistGBR(C)",
+    "Finger Millet": "RF",
+    "Groundnut": "HistGBR(C)",
+    "Kharif Sorghum": "HistGBR(C)",
+    "Linseed": "HistGBR(C)",
+    "Maize": "HistGBR(C)",
+    "Minor Pulses": "HistGBR(C)",
+    "Oilseeds": "HistGBR(C)",
+    "Pearl Millet": "RF",
+    "Pigeonpea": "HistGBR(C)",
+    "Rabi Sorghum": "HistGBR(C)",
+    "Rapeseed and Mustard": "HistGBR(C)",
+    "Rice": "HistGBR(C)",
+    "Safflower": "HistGBR(C)",
+    "Sesamum": "HistGBR(C)",
+    "Sorghum": "RF",
+    "Soyabean": "HistGBR(C)",
+    "Sugarcane": "HistGBR(C)",
+    "Sunflower": "HistGBR(C)",
+    "Wheat": "HistGBR(C)"
+  },
+  "model_selection_counts": {
+    "HistGBR(C)": 18,
+    "RF": 4
+  },
+  "per_crop": {
+    "F3(Phase6)": {
+      "Castor": {
+        "correct": 33,
+        "total": 48,
+        "pct": 68.75
+      },
+      "Chickpea": {
+        "correct": 42,
+        "total": 58,
+        "pct": 72.41
+      },
+      "Cotton": {
+        "correct": 27,
+        "total": 49,
+        "pct": 55.1
+      },
+      "Finger Millet": {
+        "correct": 31,
+        "total": 43,
+        "pct": 72.09
+      },
+      "Groundnut": {
+        "correct": 47,
+        "total": 67,
+        "pct": 70.15
+      },
+      "Kharif Sorghum": {
+        "correct": 28,
+        "total": 49,
+        "pct": 57.14
+      },
+      "Linseed": {
+        "correct": 15,
+        "total": 23,
+        "pct": 65.22
+      },
+      "Maize": {
+        "correct": 45,
+        "total": 65,
+        "pct": 69.23
+      },
+      "Minor Pulses": {
+        "correct": 43,
+        "total": 68,
+        "pct": 63.24
+      },
+      "Oilseeds": {
+        "correct": 39,
+        "total": 57,
+        "pct": 68.42
+      },
+      "Pearl Millet": {
+        "correct": 20,
+        "total": 35,
+        "pct": 57.14
+      },
+      "Pigeonpea": {
+        "correct": 31,
+        "total": 57,
+        "pct": 54.39
+      },
+      "Rabi Sorghum": {
+        "correct": 34,
+        "total": 48,
+        "pct": 70.83
+      },
+      "Rapeseed and Mustard": {
+        "correct": 27,
+        "total": 33,
+        "pct": 81.82
+      },
+      "Rice": {
+        "correct": 60,
+        "total": 69,
+        "pct": 86.96
+      },
+      "Safflower": {
+        "correct": 22,
+        "total": 30,
+        "pct": 73.33
+      },
+      "Sesamum": {
+        "correct": 34,
+        "total": 58,
+        "pct": 58.62
+      },
+      "Sorghum": {
+        "correct": 31,
+        "total": 51,
+        "pct": 60.78
+      },
+      "Soyabean": {
+        "correct": 12,
+        "total": 23,
+        "pct": 52.17
+      },
+      "Sugarcane": {
+        "correct": 59,
+        "total": 66,
+        "pct": 89.39
+      },
+      "Sunflower": {
+        "correct": 41,
+        "total": 58,
+        "pct": 70.69
+      },
+      "Wheat": {
+        "correct": 21,
+        "total": 33,
+        "pct": 63.64
+      }
+    },
+    "Stacking": {
+      "Castor": {
+        "correct": 34,
+        "total": 48,
+        "pct": 70.83
+      },
+      "Chickpea": {
+        "correct": 36,
+        "total": 58,
+        "pct": 62.07
+      },
+      "Cotton": {
+        "correct": 27,
+        "total": 49,
+        "pct": 55.1
+      },
+      "Finger Millet": {
+        "correct": 31,
+        "total": 43,
+        "pct": 72.09
+      },
+      "Groundnut": {
+        "correct": 46,
+        "total": 67,
+        "pct": 68.66
+      },
+      "Kharif Sorghum": {
+        "correct": 29,
+        "total": 49,
+        "pct": 59.18
+      },
+      "Linseed": {
+        "correct": 15,
+        "total": 23,
+        "pct": 65.22
+      },
+      "Maize": {
+        "correct": 46,
+        "total": 65,
+        "pct": 70.77
+      },
+      "Minor Pulses": {
+        "correct": 46,
+        "total": 68,
+        "pct": 67.65
+      },
+      "Oilseeds": {
+        "correct": 40,
+        "total": 57,
+        "pct": 70.18
+      },
+      "Pearl Millet": {
+        "correct": 20,
+        "total": 35,
+        "pct": 57.14
+      },
+      "Pigeonpea": {
+        "correct": 31,
+        "total": 57,
+        "pct": 54.39
+      },
+      "Rabi Sorghum": {
+        "correct": 32,
+        "total": 48,
+        "pct": 66.67
+      },
+      "Rapeseed and Mustard": {
+        "correct": 26,
+        "total": 33,
+        "pct": 78.79
+      },
+      "Rice": {
+        "correct": 58,
+        "total": 69,
+        "pct": 84.06
+      },
+      "Safflower": {
+        "correct": 21,
+        "total": 30,
+        "pct": 70.0
+      },
+      "Sesamum": {
+        "correct": 33,
+        "total": 58,
+        "pct": 56.9
+      },
+      "Sorghum": {
+        "correct": 31,
+        "total": 51,
+        "pct": 60.78
+      },
+      "Soyabean": {
+        "correct": 12,
+        "total": 23,
+        "pct": 52.17
+      },
+      "Sugarcane": {
+        "correct": 58,
+        "total": 66,
+        "pct": 87.88
+      },
+      "Sunflower": {
+        "correct": 42,
+        "total": 58,
+        "pct": 72.41
+      },
+      "Wheat": {
+        "correct": 20,
+        "total": 33,
+        "pct": 60.61
+      }
+    },
+    "Per-crop-best": {
+      "Castor": {
+        "correct": 33,
+        "total": 48,
+        "pct": 68.75
+      },
+      "Chickpea": {
+        "correct": 42,
+        "total": 58,
+        "pct": 72.41
+      },
+      "Cotton": {
+        "correct": 27,
+        "total": 49,
+        "pct": 55.1
+      },
+      "Finger Millet": {
+        "correct": 31,
+        "total": 43,
+        "pct": 72.09
+      },
+      "Groundnut": {
+        "correct": 47,
+        "total": 67,
+        "pct": 70.15
+      },
+      "Kharif Sorghum": {
+        "correct": 28,
+        "total": 49,
+        "pct": 57.14
+      },
+      "Linseed": {
+        "correct": 15,
+        "total": 23,
+        "pct": 65.22
+      },
+      "Maize": {
+        "correct": 45,
+        "total": 65,
+        "pct": 69.23
+      },
+      "Minor Pulses": {
+        "correct": 43,
+        "total": 68,
+        "pct": 63.24
+      },
+      "Oilseeds": {
+        "correct": 39,
+        "total": 57,
+        "pct": 68.42
+      },
+      "Pearl Millet": {
+        "correct": 19,
+        "total": 35,
+        "pct": 54.29
+      },
+      "Pigeonpea": {
+        "correct": 31,
+        "total": 57,
+        "pct": 54.39
+      },
+      "Rabi Sorghum": {
+        "correct": 34,
+        "total": 48,
+        "pct": 70.83
+      },
+      "Rapeseed and Mustard": {
+        "correct": 27,
+        "total": 33,
+        "pct": 81.82
+      },
+      "Rice": {
+        "correct": 60,
+        "total": 69,
+        "pct": 86.96
+      },
+      "Safflower": {
+        "correct": 22,
+        "total": 30,
+        "pct": 73.33
+      },
+      "Sesamum": {
+        "correct": 34,
+        "total": 58,
+        "pct": 58.62
+      },
+      "Sorghum": {
+        "correct": 28,
+        "total": 51,
+        "pct": 54.9
+      },
+      "Soyabean": {
+        "correct": 12,
+        "total": 23,
+        "pct": 52.17
+      },
+      "Sugarcane": {
+        "correct": 59,
+        "total": 66,
+        "pct": 89.39
+      },
+      "Sunflower": {
+        "correct": 41,
+        "total": 58,
+        "pct": 70.69
+      },
+      "Wheat": {
+        "correct": 21,
+        "total": 33,
+        "pct": 63.64
+      }
+    }
+  },
+  "pp_gain_vs_phase6": {
+    "SVR": -8.272,
+    "RF": -2.5735,
+    "Stacking": -0.7353,
+    "Per-crop-best": -0.3676
+  },
+  "xgboost_available": false,
+  "xgboost_note": "XGBoost could not be loaded (libomp OpenMP symbols missing; sandbox blocks brew install libomp). Used HistGradientBoostingRegressor as GBDT equivalent."
+}

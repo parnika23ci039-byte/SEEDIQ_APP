@@ -1,0 +1,222 @@
+{
+  "benchmark_phase6_f3": {
+    "correct_25": 742,
+    "total": 1088,
+    "pct_25": 68.1985,
+    "correct_10": 395,
+    "pct_10": 36.3051,
+    "mae": 0.237763,
+    "r2": 0.958949,
+    "bias": -0.011872
+  },
+  "cv_scores": {
+    "C(Phase5)": 69.4463,
+    "F3(Phase6)": 69.5352,
+    "B2": 68.2677,
+    "B3": 68.7125,
+    "C1(sq_loss)": 66.5555,
+    "C2(blend)": 69.2684,
+    "C3(sq+B3)": 65.9328,
+    "C4(RF_weak)": 69.5352
+  },
+  "cv_winner": "F3(Phase6)",
+  "holdout": {
+    "F3(Phase6)": {
+      "correct_25": 742,
+      "total": 1088,
+      "pct_25": 68.1985,
+      "correct_10": 395,
+      "pct_10": 36.3051,
+      "mae": 0.237763,
+      "r2": 0.958949,
+      "bias": -0.011872
+    },
+    "B3": {
+      "correct_25": 727,
+      "total": 1088,
+      "pct_25": 66.8199,
+      "correct_10": 395,
+      "pct_10": 36.3051,
+      "mae": 0.23921,
+      "r2": 0.95655,
+      "bias": -0.029645
+    },
+    "C1(sq_loss)": {
+      "correct_25": 707,
+      "total": 1088,
+      "pct_25": 64.9816,
+      "correct_10": 361,
+      "pct_10": 33.1801,
+      "mae": 0.251953,
+      "r2": 0.946972,
+      "bias": -0.021877
+    },
+    "C3(sq+B3)": {
+      "correct_25": 706,
+      "total": 1088,
+      "pct_25": 64.8897,
+      "correct_10": 350,
+      "pct_10": 32.1691,
+      "mae": 0.253812,
+      "r2": 0.947983,
+      "bias": -0.029441
+    },
+    "C4(RF_weak)": {
+      "correct_25": 742,
+      "total": 1088,
+      "pct_25": 68.1985,
+      "correct_10": 395,
+      "pct_10": 36.3051,
+      "mae": 0.237763,
+      "r2": 0.958949,
+      "bias": -0.011872
+    }
+  },
+  "holdout_best": "F3(Phase6)",
+  "rf_winners_weak_crops": {
+    "Chickpea": 161
+  },
+  "per_crop": {
+    "F3(Phase6)": {
+      "Castor": {
+        "correct": 33,
+        "total": 48,
+        "pct": 68.75
+      },
+      "Chickpea": {
+        "correct": 42,
+        "total": 58,
+        "pct": 72.41
+      },
+      "Cotton": {
+        "correct": 27,
+        "total": 49,
+        "pct": 55.1
+      },
+      "Finger Millet": {
+        "correct": 31,
+        "total": 43,
+        "pct": 72.09
+      },
+      "Groundnut": {
+        "correct": 47,
+        "total": 67,
+        "pct": 70.15
+      },
+      "Kharif Sorghum": {
+        "correct": 28,
+        "total": 49,
+        "pct": 57.14
+      },
+      "Linseed": {
+        "correct": 15,
+        "total": 23,
+        "pct": 65.22
+      },
+      "Maize": {
+        "correct": 45,
+        "total": 65,
+        "pct": 69.23
+      },
+      "Minor Pulses": {
+        "correct": 43,
+        "total": 68,
+        "pct": 63.24
+      },
+      "Oilseeds": {
+        "correct": 39,
+        "total": 57,
+        "pct": 68.42
+      },
+      "Pearl Millet": {
+        "correct": 20,
+        "total": 35,
+        "pct": 57.14
+      },
+      "Pigeonpea": {
+        "correct": 31,
+        "total": 57,
+        "pct": 54.39
+      },
+      "Rabi Sorghum": {
+        "correct": 34,
+        "total": 48,
+        "pct": 70.83
+      },
+      "Rapeseed and Mustard": {
+        "correct": 27,
+        "total": 33,
+        "pct": 81.82
+      },
+      "Rice": {
+        "correct": 60,
+        "total": 69,
+        "pct": 86.96
+      },
+      "Safflower": {
+        "correct": 22,
+        "total": 30,
+        "pct": 73.33
+      },
+      "Sesamum": {
+        "correct": 34,
+        "total": 58,
+        "pct": 58.62
+      },
+      "Sorghum": {
+        "correct": 31,
+        "total": 51,
+        "pct": 60.78
+      },
+      "Soyabean": {
+        "correct": 12,
+        "total": 23,
+        "pct": 52.17
+      },
+      "Sugarcane": {
+        "correct": 59,
+        "total": 66,
+        "pct": 89.39
+      },
+      "Sunflower": {
+        "correct": 41,
+        "total": 58,
+        "pct": 70.69
+      },
+      "Wheat": {
+        "correct": 21,
+        "total": 33,
+        "pct": 63.64
+      }
+    }
+  },
+  "rainfall_forward_filled": {
+    "train": 480,
+    "test": 81
+  },
+  "pp_gain_vs_phase6": {
+    "B3": -1.3786,
+    "C1(sq_loss)": -3.2169,
+    "C3(sq+B3)": -3.3088,
+    "C4(RF_weak)": 0.0
+  },
+  "additional_experiments": {
+    "log_target_abs_error": {
+      "cv_pct": 68.0454,
+      "holdout": {
+        "correct_25": 728,
+        "total": 1088,
+        "pct_25": 66.9118
+      }
+    },
+    "blend_F3_plus_log_abs_50_50": {
+      "cv_pct": 69.3796,
+      "holdout": {
+        "correct_25": 743,
+        "total": 1088,
+        "pct_25": 68.2904
+      }
+    }
+  },
+  "conclusion": "No candidate reliably beats Phase 6 F3 (68.20%) on grouped CV. The log-target blend shows +1 holdout prediction but worse CV (69.38% vs 69.45%), within noise. 90% target not achievable with current data due to lack of district-level year-specific weather."
+}

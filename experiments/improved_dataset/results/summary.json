@@ -1,0 +1,48 @@
+{
+  "generated": "2026-10-09T15:25:56Z",
+  "enriched_dataset_rows": 5585,
+  "feature_width": 56,
+  "yield_best_cv_oof": {
+    "candidate": "hgb_500_log",
+    "within_25pct": 0.667556,
+    "r2": 0.936293,
+    "mae": 0.2612
+  },
+  "yield_best_untouched_test": {
+    "candidate": "hgb_500_log",
+    "within_25pct": 0.626838,
+    "r2": 0.943873,
+    "mae": 0.2652,
+    "rmse": 0.473
+  },
+  "baseline_comparison": {
+    "baseline_contract_within_25pct": 0.497418,
+    "candidate_contract_within_25pct": 0.51463,
+    "enriched_dataset_within_25pct": 0.626838,
+    "delta_over_baseline_contract_pp": 12.94
+  },
+  "joint_metric": {
+    "status": "NOT EVALUABLE",
+    "reason": "The three test populations (crop recs, enriched yield district\u00d7year rows, seed viability) still describe unrelated samples: no shared plot / farm / sample_id join key exists. Per-crop alignment (join on Crop name) would pair a 'Rice soil NPK rec' row with a 'Rice Karnataka district-year' yield row \u2014 different populations, not the same underlying observation.  Reporting a joint rate would be fabrication.",
+    "component_marginals_independence_bound": {
+      "note": "Assumes independence across components \u2014 NOT a measurement.",
+      "crop_held_out_accuracy": 0.9932,
+      "yield_within_25pct": 0.626838,
+      "seed_held_out_accuracy": 0.9,
+      "independence_product": 0.560318
+    },
+    "target_90pct_bound_even_perfect_yield": 0.89388,
+    "target_achievable_given_components": "NO \u2014 even a perfect yield model + unchanged crop 99.32% + unchanged seed 90.00% \u2192 independence product 89.39% < 90%. Genuinely reaching 90% requires field-level data where all three labels are measured on the SAME plot and at least one of crop / seed is improved to \u226595% with the yield within \u00b125% condition holding."
+  },
+  "seed_viability": {
+    "status": "NO GENIUNE MEASURED DATA AVAILABLE LOCALLY",
+    "current_local_file": "SeedIQ/data/seed_viability_data.csv",
+    "rows": 100,
+    "label_generation": "Confirmed deterministic rule from the prior audit: Viable = 1 iff Moisture_Level \u2248 10.3\u201313.4 range, else 0. Weight_g and 5% noise do not materially change the rule. This is NOT measured germination data.",
+    "synthetic": true,
+    "contract_features": [
+      "Moisture_Level",
+      "Weight_g"
+    ]
+  }
+}

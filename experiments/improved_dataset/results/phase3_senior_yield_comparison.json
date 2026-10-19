@@ -1,0 +1,1470 @@
+{
+  "generated_utc": "2026-10-09T18:59:35Z",
+  "scope": "phase3_yield_senior_tune \u2014 controlled 3-candidate comparison, same exact split as Phase-2, GroupKFold district-year CV on TRAIN groups only for selection, untouched 1088-row holdout.",
+  "phase2_rf300_reference_test_within_25pct_tph": 0.647978,
+  "split": {
+    "train_rows": 4497,
+    "test_rows": 1088,
+    "train_groups": 273,
+    "test_groups": 69,
+    "features": 56
+  },
+  "dummy_baselines": {
+    "train": {
+      "r2": 0.0,
+      "mae": 1.145947,
+      "rmse": 1.941967,
+      "within_25pct_tph": 0.127196,
+      "within_10pct_tph": 0.052702,
+      "n_test": 4497
+    },
+    "test": {
+      "r2": -0.000464,
+      "mae": 1.188312,
+      "rmse": 1.997143,
+      "within_25pct_tph": 0.125,
+      "within_10pct_tph": 0.048713,
+      "n_test": 1088
+    }
+  },
+  "candidates": [
+    {
+      "candidate": "RF 300 (Phase 2 baseline)",
+      "cv_group_train_oof": {
+        "r2": 0.938825,
+        "mae": 0.254946,
+        "rmse": 0.480318,
+        "within_25pct_tph": 0.668446,
+        "within_10pct_tph": 0.332666,
+        "n_test": 4497
+      },
+      "cv_group_train_oof_per_crop": {
+        "Castor": {
+          "within_25pct_tph": 0.690821,
+          "within_10pct_tph": 0.318841,
+          "mae": 0.168121,
+          "n_test": 207
+        },
+        "Chickpea": {
+          "within_25pct_tph": 0.692982,
+          "within_10pct_tph": 0.337719,
+          "mae": 0.122498,
+          "n_test": 228
+        },
+        "Cotton": {
+          "within_25pct_tph": 0.587678,
+          "within_10pct_tph": 0.2891,
+          "mae": 0.09512,
+          "n_test": 211
+        },
+        "Finger Millet": {
+          "within_25pct_tph": 0.673267,
+          "within_10pct_tph": 0.321782,
+          "mae": 0.287355,
+          "n_test": 202
+        },
+        "Groundnut": {
+          "within_25pct_tph": 0.690299,
+          "within_10pct_tph": 0.302239,
+          "mae": 0.169813,
+          "n_test": 268
+        },
+        "Kharif Sorghum": {
+          "within_25pct_tph": 0.595349,
+          "within_10pct_tph": 0.27907,
+          "mae": 0.300952,
+          "n_test": 215
+        },
+        "Linseed": {
+          "within_25pct_tph": 0.602041,
+          "within_10pct_tph": 0.295918,
+          "mae": 0.072938,
+          "n_test": 98
+        },
+        "Maize": {
+          "within_25pct_tph": 0.717472,
+          "within_10pct_tph": 0.356877,
+          "mae": 0.566675,
+          "n_test": 269
+        },
+        "Minor Pulses": {
+          "within_25pct_tph": 0.568773,
+          "within_10pct_tph": 0.267658,
+          "mae": 0.105485,
+          "n_test": 269
+        },
+        "Oilseeds": {
+          "within_25pct_tph": 0.77027,
+          "within_10pct_tph": 0.351351,
+          "mae": 0.127269,
+          "n_test": 222
+        },
+        "Pearl Millet": {
+          "within_25pct_tph": 0.640719,
+          "within_10pct_tph": 0.311377,
+          "mae": 0.167491,
+          "n_test": 167
+        },
+        "Pigeonpea": {
+          "within_25pct_tph": 0.605691,
+          "within_10pct_tph": 0.256098,
+          "mae": 0.13971,
+          "n_test": 246
+        },
+        "Rabi Sorghum": {
+          "within_25pct_tph": 0.664975,
+          "within_10pct_tph": 0.28934,
+          "mae": 0.207792,
+          "n_test": 197
+        },
+        "Rapeseed and Mustard": {
+          "within_25pct_tph": 0.776119,
+          "within_10pct_tph": 0.470149,
+          "mae": 0.042448,
+          "n_test": 134
+        },
+        "Rice": {
+          "within_25pct_tph": 0.824176,
+          "within_10pct_tph": 0.630037,
+          "mae": 0.257482,
+          "n_test": 273
+        },
+        "Safflower": {
+          "within_25pct_tph": 0.584615,
+          "within_10pct_tph": 0.246154,
+          "mae": 0.176287,
+          "n_test": 130
+        },
+        "Sesamum": {
+          "within_25pct_tph": 0.493392,
+          "within_10pct_tph": 0.251101,
+          "mae": 0.161912,
+          "n_test": 227
+        },
+        "Sorghum": {
+          "within_25pct_tph": 0.712329,
+          "within_10pct_tph": 0.347032,
+          "mae": 0.210285,
+          "n_test": 219
+        },
+        "Soyabean": {
+          "within_25pct_tph": 0.590476,
+          "within_10pct_tph": 0.304762,
+          "mae": 0.187304,
+          "n_test": 105
+        },
+        "Sugarcane": {
+          "within_25pct_tph": 0.81746,
+          "within_10pct_tph": 0.400794,
+          "mae": 1.234986,
+          "n_test": 252
+        },
+        "Sunflower": {
+          "within_25pct_tph": 0.604348,
+          "within_10pct_tph": 0.291304,
+          "mae": 0.162966,
+          "n_test": 230
+        },
+        "Wheat": {
+          "within_25pct_tph": 0.695312,
+          "within_10pct_tph": 0.304688,
+          "mae": 0.202135,
+          "n_test": 128
+        }
+      },
+      "train": {
+        "r2": 0.992037,
+        "mae": 0.089614,
+        "rmse": 0.173297,
+        "within_25pct_tph": 0.931065,
+        "within_10pct_tph": 0.725595,
+        "n_test": 4497
+      },
+      "test": {
+        "r2": 0.950999,
+        "mae": 0.257869,
+        "rmse": 0.44199,
+        "within_25pct_tph": 0.647978,
+        "within_10pct_tph": 0.324449,
+        "n_test": 1088
+      },
+      "test_per_crop_within_25": {
+        "Castor": 0.708333,
+        "Chickpea": 0.62069,
+        "Cotton": 0.55102,
+        "Finger Millet": 0.767442,
+        "Groundnut": 0.656716,
+        "Kharif Sorghum": 0.530612,
+        "Linseed": 0.652174,
+        "Maize": 0.630769,
+        "Minor Pulses": 0.661765,
+        "Oilseeds": 0.649123,
+        "Pearl Millet": 0.571429,
+        "Pigeonpea": 0.491228,
+        "Rabi Sorghum": 0.6875,
+        "Rapeseed and Mustard": 0.757576,
+        "Rice": 0.869565,
+        "Safflower": 0.633333,
+        "Sesamum": 0.517241,
+        "Sorghum": 0.588235,
+        "Soyabean": 0.434783,
+        "Sugarcane": 0.833333,
+        "Sunflower": 0.706897,
+        "Wheat": 0.484848
+      },
+      "test_per_crop_full": {
+        "Castor": {
+          "within_25pct_tph": 0.708333,
+          "within_10pct_tph": 0.270833,
+          "mae": 0.208503,
+          "n_test": 48
+        },
+        "Chickpea": {
+          "within_25pct_tph": 0.62069,
+          "within_10pct_tph": 0.396552,
+          "mae": 0.126619,
+          "n_test": 58
+        },
+        "Cotton": {
+          "within_25pct_tph": 0.55102,
+          "within_10pct_tph": 0.244898,
+          "mae": 0.087465,
+          "n_test": 49
+        },
+        "Finger Millet": {
+          "within_25pct_tph": 0.767442,
+          "within_10pct_tph": 0.372093,
+          "mae": 0.248725,
+          "n_test": 43
+        },
+        "Groundnut": {
+          "within_25pct_tph": 0.656716,
+          "within_10pct_tph": 0.313433,
+          "mae": 0.180846,
+          "n_test": 67
+        },
+        "Kharif Sorghum": {
+          "within_25pct_tph": 0.530612,
+          "within_10pct_tph": 0.265306,
+          "mae": 0.314977,
+          "n_test": 49
+        },
+        "Linseed": {
+          "within_25pct_tph": 0.652174,
+          "within_10pct_tph": 0.26087,
+          "mae": 0.071432,
+          "n_test": 23
+        },
+        "Maize": {
+          "within_25pct_tph": 0.630769,
+          "within_10pct_tph": 0.338462,
+          "mae": 0.551579,
+          "n_test": 65
+        },
+        "Minor Pulses": {
+          "within_25pct_tph": 0.661765,
+          "within_10pct_tph": 0.338235,
+          "mae": 0.083109,
+          "n_test": 68
+        },
+        "Oilseeds": {
+          "within_25pct_tph": 0.649123,
+          "within_10pct_tph": 0.315789,
+          "mae": 0.148426,
+          "n_test": 57
+        },
+        "Pearl Millet": {
+          "within_25pct_tph": 0.571429,
+          "within_10pct_tph": 0.285714,
+          "mae": 0.189084,
+          "n_test": 35
+        },
+        "Pigeonpea": {
+          "within_25pct_tph": 0.491228,
+          "within_10pct_tph": 0.263158,
+          "mae": 0.144202,
+          "n_test": 57
+        },
+        "Rabi Sorghum": {
+          "within_25pct_tph": 0.6875,
+          "within_10pct_tph": 0.25,
+          "mae": 0.212593,
+          "n_test": 48
+        },
+        "Rapeseed and Mustard": {
+          "within_25pct_tph": 0.757576,
+          "within_10pct_tph": 0.545455,
+          "mae": 0.063544,
+          "n_test": 33
+        },
+        "Rice": {
+          "within_25pct_tph": 0.869565,
+          "within_10pct_tph": 0.623188,
+          "mae": 0.268866,
+          "n_test": 69
+        },
+        "Safflower": {
+          "within_25pct_tph": 0.633333,
+          "within_10pct_tph": 0.333333,
+          "mae": 0.171985,
+          "n_test": 30
+        },
+        "Sesamum": {
+          "within_25pct_tph": 0.517241,
+          "within_10pct_tph": 0.155172,
+          "mae": 0.147877,
+          "n_test": 58
+        },
+        "Sorghum": {
+          "within_25pct_tph": 0.588235,
+          "within_10pct_tph": 0.27451,
+          "mae": 0.248125,
+          "n_test": 51
+        },
+        "Soyabean": {
+          "within_25pct_tph": 0.434783,
+          "within_10pct_tph": 0.217391,
+          "mae": 0.263147,
+          "n_test": 23
+        },
+        "Sugarcane": {
+          "within_25pct_tph": 0.833333,
+          "within_10pct_tph": 0.378788,
+          "mae": 1.112547,
+          "n_test": 66
+        },
+        "Sunflower": {
+          "within_25pct_tph": 0.706897,
+          "within_10pct_tph": 0.310345,
+          "mae": 0.122809,
+          "n_test": 58
+        },
+        "Wheat": {
+          "within_25pct_tph": 0.484848,
+          "within_10pct_tph": 0.212121,
+          "mae": 0.314735,
+          "n_test": 33
+        }
+      },
+      "phase2_vs_current_test_within_25_delta_pp": 0.0
+    },
+    {
+      "candidate": "RF 500 (tail-crops 3x weight, 4 crops)",
+      "cv_group_train_oof": {
+        "r2": 0.939334,
+        "mae": 0.253125,
+        "rmse": 0.478318,
+        "within_25pct_tph": 0.672671,
+        "within_10pct_tph": 0.337558,
+        "n_test": 4497
+      },
+      "cv_group_train_oof_per_crop": {
+        "Castor": {
+          "within_25pct_tph": 0.719807,
+          "within_10pct_tph": 0.333333,
+          "mae": 0.161937,
+          "n_test": 207
+        },
+        "Chickpea": {
+          "within_25pct_tph": 0.684211,
+          "within_10pct_tph": 0.324561,
+          "mae": 0.120106,
+          "n_test": 228
+        },
+        "Cotton": {
+          "within_25pct_tph": 0.597156,
+          "within_10pct_tph": 0.298578,
+          "mae": 0.092672,
+          "n_test": 211
+        },
+        "Finger Millet": {
+          "within_25pct_tph": 0.678218,
+          "within_10pct_tph": 0.306931,
+          "mae": 0.286946,
+          "n_test": 202
+        },
+        "Groundnut": {
+          "within_25pct_tph": 0.682836,
+          "within_10pct_tph": 0.298507,
+          "mae": 0.165721,
+          "n_test": 268
+        },
+        "Kharif Sorghum": {
+          "within_25pct_tph": 0.581395,
+          "within_10pct_tph": 0.274419,
+          "mae": 0.301689,
+          "n_test": 215
+        },
+        "Linseed": {
+          "within_25pct_tph": 0.571429,
+          "within_10pct_tph": 0.214286,
+          "mae": 0.08561,
+          "n_test": 98
+        },
+        "Maize": {
+          "within_25pct_tph": 0.724907,
+          "within_10pct_tph": 0.364312,
+          "mae": 0.564489,
+          "n_test": 269
+        },
+        "Minor Pulses": {
+          "within_25pct_tph": 0.591078,
+          "within_10pct_tph": 0.234201,
+          "mae": 0.109889,
+          "n_test": 269
+        },
+        "Oilseeds": {
+          "within_25pct_tph": 0.77027,
+          "within_10pct_tph": 0.369369,
+          "mae": 0.127267,
+          "n_test": 222
+        },
+        "Pearl Millet": {
+          "within_25pct_tph": 0.652695,
+          "within_10pct_tph": 0.353293,
+          "mae": 0.163324,
+          "n_test": 167
+        },
+        "Pigeonpea": {
+          "within_25pct_tph": 0.613821,
+          "within_10pct_tph": 0.276423,
+          "mae": 0.136394,
+          "n_test": 246
+        },
+        "Rabi Sorghum": {
+          "within_25pct_tph": 0.654822,
+          "within_10pct_tph": 0.294416,
+          "mae": 0.205795,
+          "n_test": 197
+        },
+        "Rapeseed and Mustard": {
+          "within_25pct_tph": 0.723881,
+          "within_10pct_tph": 0.425373,
+          "mae": 0.048024,
+          "n_test": 134
+        },
+        "Rice": {
+          "within_25pct_tph": 0.824176,
+          "within_10pct_tph": 0.630037,
+          "mae": 0.257421,
+          "n_test": 273
+        },
+        "Safflower": {
+          "within_25pct_tph": 0.6,
+          "within_10pct_tph": 0.284615,
+          "mae": 0.170002,
+          "n_test": 130
+        },
+        "Sesamum": {
+          "within_25pct_tph": 0.528634,
+          "within_10pct_tph": 0.299559,
+          "mae": 0.159813,
+          "n_test": 227
+        },
+        "Sorghum": {
+          "within_25pct_tph": 0.69863,
+          "within_10pct_tph": 0.333333,
+          "mae": 0.210326,
+          "n_test": 219
+        },
+        "Soyabean": {
+          "within_25pct_tph": 0.638095,
+          "within_10pct_tph": 0.333333,
+          "mae": 0.184539,
+          "n_test": 105
+        },
+        "Sugarcane": {
+          "within_25pct_tph": 0.821429,
+          "within_10pct_tph": 0.416667,
+          "mae": 1.232472,
+          "n_test": 252
+        },
+        "Sunflower": {
+          "within_25pct_tph": 0.630435,
+          "within_10pct_tph": 0.313043,
+          "mae": 0.150047,
+          "n_test": 230
+        },
+        "Wheat": {
+          "within_25pct_tph": 0.679688,
+          "within_10pct_tph": 0.335938,
+          "mae": 0.19973,
+          "n_test": 128
+        }
+      },
+      "train": {
+        "r2": 0.992106,
+        "mae": 0.089165,
+        "rmse": 0.172541,
+        "within_25pct_tph": 0.930398,
+        "within_10pct_tph": 0.72137,
+        "n_test": 4497
+      },
+      "test": {
+        "r2": 0.95121,
+        "mae": 0.256169,
+        "rmse": 0.441036,
+        "within_25pct_tph": 0.655331,
+        "within_10pct_tph": 0.328125,
+        "n_test": 1088
+      },
+      "test_per_crop_within_25": {
+        "Castor": 0.6875,
+        "Chickpea": 0.672414,
+        "Cotton": 0.55102,
+        "Finger Millet": 0.767442,
+        "Groundnut": 0.671642,
+        "Kharif Sorghum": 0.510204,
+        "Linseed": 0.608696,
+        "Maize": 0.630769,
+        "Minor Pulses": 0.632353,
+        "Oilseeds": 0.649123,
+        "Pearl Millet": 0.571429,
+        "Pigeonpea": 0.491228,
+        "Rabi Sorghum": 0.6875,
+        "Rapeseed and Mustard": 0.787879,
+        "Rice": 0.869565,
+        "Safflower": 0.633333,
+        "Sesamum": 0.568966,
+        "Sorghum": 0.588235,
+        "Soyabean": 0.478261,
+        "Sugarcane": 0.848485,
+        "Sunflower": 0.724138,
+        "Wheat": 0.545455
+      },
+      "test_per_crop_full": {
+        "Castor": {
+          "within_25pct_tph": 0.6875,
+          "within_10pct_tph": 0.354167,
+          "mae": 0.200447,
+          "n_test": 48
+        },
+        "Chickpea": {
+          "within_25pct_tph": 0.672414,
+          "within_10pct_tph": 0.344828,
+          "mae": 0.127615,
+          "n_test": 58
+        },
+        "Cotton": {
+          "within_25pct_tph": 0.55102,
+          "within_10pct_tph": 0.244898,
+          "mae": 0.087286,
+          "n_test": 49
+        },
+        "Finger Millet": {
+          "within_25pct_tph": 0.767442,
+          "within_10pct_tph": 0.302326,
+          "mae": 0.249508,
+          "n_test": 43
+        },
+        "Groundnut": {
+          "within_25pct_tph": 0.671642,
+          "within_10pct_tph": 0.343284,
+          "mae": 0.176936,
+          "n_test": 67
+        },
+        "Kharif Sorghum": {
+          "within_25pct_tph": 0.510204,
+          "within_10pct_tph": 0.244898,
+          "mae": 0.315941,
+          "n_test": 49
+        },
+        "Linseed": {
+          "within_25pct_tph": 0.608696,
+          "within_10pct_tph": 0.217391,
+          "mae": 0.07984,
+          "n_test": 23
+        },
+        "Maize": {
+          "within_25pct_tph": 0.630769,
+          "within_10pct_tph": 0.338462,
+          "mae": 0.551747,
+          "n_test": 65
+        },
+        "Minor Pulses": {
+          "within_25pct_tph": 0.632353,
+          "within_10pct_tph": 0.382353,
+          "mae": 0.081001,
+          "n_test": 68
+        },
+        "Oilseeds": {
+          "within_25pct_tph": 0.649123,
+          "within_10pct_tph": 0.315789,
+          "mae": 0.148187,
+          "n_test": 57
+        },
+        "Pearl Millet": {
+          "within_25pct_tph": 0.571429,
+          "within_10pct_tph": 0.314286,
+          "mae": 0.196165,
+          "n_test": 35
+        },
+        "Pigeonpea": {
+          "within_25pct_tph": 0.491228,
+          "within_10pct_tph": 0.22807,
+          "mae": 0.139295,
+          "n_test": 57
+        },
+        "Rabi Sorghum": {
+          "within_25pct_tph": 0.6875,
+          "within_10pct_tph": 0.270833,
+          "mae": 0.20941,
+          "n_test": 48
+        },
+        "Rapeseed and Mustard": {
+          "within_25pct_tph": 0.787879,
+          "within_10pct_tph": 0.575758,
+          "mae": 0.05935,
+          "n_test": 33
+        },
+        "Rice": {
+          "within_25pct_tph": 0.869565,
+          "within_10pct_tph": 0.608696,
+          "mae": 0.270931,
+          "n_test": 69
+        },
+        "Safflower": {
+          "within_25pct_tph": 0.633333,
+          "within_10pct_tph": 0.266667,
+          "mae": 0.170819,
+          "n_test": 30
+        },
+        "Sesamum": {
+          "within_25pct_tph": 0.568966,
+          "within_10pct_tph": 0.224138,
+          "mae": 0.136403,
+          "n_test": 58
+        },
+        "Sorghum": {
+          "within_25pct_tph": 0.588235,
+          "within_10pct_tph": 0.294118,
+          "mae": 0.249702,
+          "n_test": 51
+        },
+        "Soyabean": {
+          "within_25pct_tph": 0.478261,
+          "within_10pct_tph": 0.217391,
+          "mae": 0.269336,
+          "n_test": 23
+        },
+        "Sugarcane": {
+          "within_25pct_tph": 0.848485,
+          "within_10pct_tph": 0.378788,
+          "mae": 1.111683,
+          "n_test": 66
+        },
+        "Sunflower": {
+          "within_25pct_tph": 0.724138,
+          "within_10pct_tph": 0.293103,
+          "mae": 0.122288,
+          "n_test": 58
+        },
+        "Wheat": {
+          "within_25pct_tph": 0.545455,
+          "within_10pct_tph": 0.242424,
+          "mae": 0.295539,
+          "n_test": 33
+        }
+      },
+      "phase2_vs_current_test_within_25_delta_pp": 0.735
+    },
+    {
+      "candidate": "HistGBR tuned 700 (depth 9, lr 0.08, l2 0.5)",
+      "cv_group_train_oof": {
+        "r2": 0.941826,
+        "mae": 0.258249,
+        "rmse": 0.468391,
+        "within_25pct_tph": 0.637536,
+        "within_10pct_tph": 0.313987,
+        "n_test": 4497
+      },
+      "cv_group_train_oof_per_crop": {
+        "Castor": {
+          "within_25pct_tph": 0.681159,
+          "within_10pct_tph": 0.318841,
+          "mae": 0.179389,
+          "n_test": 207
+        },
+        "Chickpea": {
+          "within_25pct_tph": 0.653509,
+          "within_10pct_tph": 0.311404,
+          "mae": 0.133467,
+          "n_test": 228
+        },
+        "Cotton": {
+          "within_25pct_tph": 0.521327,
+          "within_10pct_tph": 0.260664,
+          "mae": 0.107774,
+          "n_test": 211
+        },
+        "Finger Millet": {
+          "within_25pct_tph": 0.712871,
+          "within_10pct_tph": 0.29703,
+          "mae": 0.271396,
+          "n_test": 202
+        },
+        "Groundnut": {
+          "within_25pct_tph": 0.705224,
+          "within_10pct_tph": 0.354478,
+          "mae": 0.169157,
+          "n_test": 268
+        },
+        "Kharif Sorghum": {
+          "within_25pct_tph": 0.632558,
+          "within_10pct_tph": 0.288372,
+          "mae": 0.282813,
+          "n_test": 215
+        },
+        "Linseed": {
+          "within_25pct_tph": 0.479592,
+          "within_10pct_tph": 0.173469,
+          "mae": 0.103649,
+          "n_test": 98
+        },
+        "Maize": {
+          "within_25pct_tph": 0.717472,
+          "within_10pct_tph": 0.349442,
+          "mae": 0.567188,
+          "n_test": 269
+        },
+        "Minor Pulses": {
+          "within_25pct_tph": 0.501859,
+          "within_10pct_tph": 0.252788,
+          "mae": 0.117831,
+          "n_test": 269
+        },
+        "Oilseeds": {
+          "within_25pct_tph": 0.671171,
+          "within_10pct_tph": 0.265766,
+          "mae": 0.157604,
+          "n_test": 222
+        },
+        "Pearl Millet": {
+          "within_25pct_tph": 0.580838,
+          "within_10pct_tph": 0.239521,
+          "mae": 0.192791,
+          "n_test": 167
+        },
+        "Pigeonpea": {
+          "within_25pct_tph": 0.520325,
+          "within_10pct_tph": 0.231707,
+          "mae": 0.156104,
+          "n_test": 246
+        },
+        "Rabi Sorghum": {
+          "within_25pct_tph": 0.649746,
+          "within_10pct_tph": 0.269036,
+          "mae": 0.209021,
+          "n_test": 197
+        },
+        "Rapeseed and Mustard": {
+          "within_25pct_tph": 0.597015,
+          "within_10pct_tph": 0.276119,
+          "mae": 0.075119,
+          "n_test": 134
+        },
+        "Rice": {
+          "within_25pct_tph": 0.831502,
+          "within_10pct_tph": 0.619048,
+          "mae": 0.258647,
+          "n_test": 273
+        },
+        "Safflower": {
+          "within_25pct_tph": 0.523077,
+          "within_10pct_tph": 0.253846,
+          "mae": 0.197256,
+          "n_test": 130
+        },
+        "Sesamum": {
+          "within_25pct_tph": 0.475771,
+          "within_10pct_tph": 0.237885,
+          "mae": 0.169925,
+          "n_test": 227
+        },
+        "Sorghum": {
+          "within_25pct_tph": 0.726027,
+          "within_10pct_tph": 0.315068,
+          "mae": 0.2096,
+          "n_test": 219
+        },
+        "Soyabean": {
+          "within_25pct_tph": 0.638095,
+          "within_10pct_tph": 0.32381,
+          "mae": 0.181029,
+          "n_test": 105
+        },
+        "Sugarcane": {
+          "within_25pct_tph": 0.793651,
+          "within_10pct_tph": 0.468254,
+          "mae": 1.150543,
+          "n_test": 252
+        },
+        "Sunflower": {
+          "within_25pct_tph": 0.565217,
+          "within_10pct_tph": 0.269565,
+          "mae": 0.18073,
+          "n_test": 230
+        },
+        "Wheat": {
+          "within_25pct_tph": 0.640625,
+          "within_10pct_tph": 0.304688,
+          "mae": 0.215473,
+          "n_test": 128
+        }
+      },
+      "train": {
+        "r2": 0.991315,
+        "mae": 0.102813,
+        "rmse": 0.180983,
+        "within_25pct_tph": 0.877919,
+        "within_10pct_tph": 0.59284,
+        "n_test": 4497
+      },
+      "test": {
+        "r2": 0.953513,
+        "mae": 0.249071,
+        "rmse": 0.430502,
+        "within_25pct_tph": 0.651654,
+        "within_10pct_tph": 0.329963,
+        "n_test": 1088
+      },
+      "test_per_crop_within_25": {
+        "Castor": 0.708333,
+        "Chickpea": 0.655172,
+        "Cotton": 0.469388,
+        "Finger Millet": 0.813953,
+        "Groundnut": 0.671642,
+        "Kharif Sorghum": 0.571429,
+        "Linseed": 0.521739,
+        "Maize": 0.753846,
+        "Minor Pulses": 0.617647,
+        "Oilseeds": 0.649123,
+        "Pearl Millet": 0.628571,
+        "Pigeonpea": 0.614035,
+        "Rabi Sorghum": 0.583333,
+        "Rapeseed and Mustard": 0.545455,
+        "Rice": 0.884058,
+        "Safflower": 0.566667,
+        "Sesamum": 0.637931,
+        "Sorghum": 0.529412,
+        "Soyabean": 0.565217,
+        "Sugarcane": 0.80303,
+        "Sunflower": 0.655172,
+        "Wheat": 0.515152
+      },
+      "test_per_crop_full": {
+        "Castor": {
+          "within_25pct_tph": 0.708333,
+          "within_10pct_tph": 0.354167,
+          "mae": 0.209669,
+          "n_test": 48
+        },
+        "Chickpea": {
+          "within_25pct_tph": 0.655172,
+          "within_10pct_tph": 0.362069,
+          "mae": 0.124272,
+          "n_test": 58
+        },
+        "Cotton": {
+          "within_25pct_tph": 0.469388,
+          "within_10pct_tph": 0.244898,
+          "mae": 0.098144,
+          "n_test": 49
+        },
+        "Finger Millet": {
+          "within_25pct_tph": 0.813953,
+          "within_10pct_tph": 0.395349,
+          "mae": 0.196812,
+          "n_test": 43
+        },
+        "Groundnut": {
+          "within_25pct_tph": 0.671642,
+          "within_10pct_tph": 0.373134,
+          "mae": 0.166473,
+          "n_test": 67
+        },
+        "Kharif Sorghum": {
+          "within_25pct_tph": 0.571429,
+          "within_10pct_tph": 0.285714,
+          "mae": 0.292364,
+          "n_test": 49
+        },
+        "Linseed": {
+          "within_25pct_tph": 0.521739,
+          "within_10pct_tph": 0.391304,
+          "mae": 0.063472,
+          "n_test": 23
+        },
+        "Maize": {
+          "within_25pct_tph": 0.753846,
+          "within_10pct_tph": 0.384615,
+          "mae": 0.472211,
+          "n_test": 65
+        },
+        "Minor Pulses": {
+          "within_25pct_tph": 0.617647,
+          "within_10pct_tph": 0.235294,
+          "mae": 0.097007,
+          "n_test": 68
+        },
+        "Oilseeds": {
+          "within_25pct_tph": 0.649123,
+          "within_10pct_tph": 0.298246,
+          "mae": 0.143991,
+          "n_test": 57
+        },
+        "Pearl Millet": {
+          "within_25pct_tph": 0.628571,
+          "within_10pct_tph": 0.314286,
+          "mae": 0.191844,
+          "n_test": 35
+        },
+        "Pigeonpea": {
+          "within_25pct_tph": 0.614035,
+          "within_10pct_tph": 0.280702,
+          "mae": 0.130917,
+          "n_test": 57
+        },
+        "Rabi Sorghum": {
+          "within_25pct_tph": 0.583333,
+          "within_10pct_tph": 0.270833,
+          "mae": 0.227861,
+          "n_test": 48
+        },
+        "Rapeseed and Mustard": {
+          "within_25pct_tph": 0.545455,
+          "within_10pct_tph": 0.333333,
+          "mae": 0.097605,
+          "n_test": 33
+        },
+        "Rice": {
+          "within_25pct_tph": 0.884058,
+          "within_10pct_tph": 0.623188,
+          "mae": 0.252927,
+          "n_test": 69
+        },
+        "Safflower": {
+          "within_25pct_tph": 0.566667,
+          "within_10pct_tph": 0.2,
+          "mae": 0.191415,
+          "n_test": 30
+        },
+        "Sesamum": {
+          "within_25pct_tph": 0.637931,
+          "within_10pct_tph": 0.189655,
+          "mae": 0.125832,
+          "n_test": 58
+        },
+        "Sorghum": {
+          "within_25pct_tph": 0.529412,
+          "within_10pct_tph": 0.235294,
+          "mae": 0.251465,
+          "n_test": 51
+        },
+        "Soyabean": {
+          "within_25pct_tph": 0.565217,
+          "within_10pct_tph": 0.217391,
+          "mae": 0.274094,
+          "n_test": 23
+        },
+        "Sugarcane": {
+          "within_25pct_tph": 0.80303,
+          "within_10pct_tph": 0.409091,
+          "mae": 1.113535,
+          "n_test": 66
+        },
+        "Sunflower": {
+          "within_25pct_tph": 0.655172,
+          "within_10pct_tph": 0.431034,
+          "mae": 0.125863,
+          "n_test": 58
+        },
+        "Wheat": {
+          "within_25pct_tph": 0.515152,
+          "within_10pct_tph": 0.181818,
+          "mae": 0.280566,
+          "n_test": 33
+        }
+      },
+      "phase2_vs_current_test_within_25_delta_pp": 0.368
+    },
+    {
+      "candidate": "LinearSVR 56-d (scaled, C=5, epsilon 0.05)",
+      "cv_group_train_oof": {
+        "r2": 0.865809,
+        "mae": 0.373093,
+        "rmse": 0.711384,
+        "within_25pct_tph": 0.516567,
+        "within_10pct_tph": 0.216144,
+        "n_test": 4497
+      },
+      "cv_group_train_oof_per_crop": {
+        "Castor": {
+          "within_25pct_tph": 0.521739,
+          "within_10pct_tph": 0.198068,
+          "mae": 0.249897,
+          "n_test": 207
+        },
+        "Chickpea": {
+          "within_25pct_tph": 0.570175,
+          "within_10pct_tph": 0.254386,
+          "mae": 0.156093,
+          "n_test": 228
+        },
+        "Cotton": {
+          "within_25pct_tph": 0.417062,
+          "within_10pct_tph": 0.14218,
+          "mae": 0.12923,
+          "n_test": 211
+        },
+        "Finger Millet": {
+          "within_25pct_tph": 0.544554,
+          "within_10pct_tph": 0.237624,
+          "mae": 0.373439,
+          "n_test": 202
+        },
+        "Groundnut": {
+          "within_25pct_tph": 0.533582,
+          "within_10pct_tph": 0.212687,
+          "mae": 0.263889,
+          "n_test": 268
+        },
+        "Kharif Sorghum": {
+          "within_25pct_tph": 0.502326,
+          "within_10pct_tph": 0.167442,
+          "mae": 0.395686,
+          "n_test": 215
+        },
+        "Linseed": {
+          "within_25pct_tph": 0.367347,
+          "within_10pct_tph": 0.163265,
+          "mae": 0.121457,
+          "n_test": 98
+        },
+        "Maize": {
+          "within_25pct_tph": 0.605948,
+          "within_10pct_tph": 0.275093,
+          "mae": 0.710767,
+          "n_test": 269
+        },
+        "Minor Pulses": {
+          "within_25pct_tph": 0.408922,
+          "within_10pct_tph": 0.159851,
+          "mae": 0.144772,
+          "n_test": 269
+        },
+        "Oilseeds": {
+          "within_25pct_tph": 0.522523,
+          "within_10pct_tph": 0.238739,
+          "mae": 0.237723,
+          "n_test": 222
+        },
+        "Pearl Millet": {
+          "within_25pct_tph": 0.467066,
+          "within_10pct_tph": 0.227545,
+          "mae": 0.25092,
+          "n_test": 167
+        },
+        "Pigeonpea": {
+          "within_25pct_tph": 0.479675,
+          "within_10pct_tph": 0.199187,
+          "mae": 0.169659,
+          "n_test": 246
+        },
+        "Rabi Sorghum": {
+          "within_25pct_tph": 0.517766,
+          "within_10pct_tph": 0.177665,
+          "mae": 0.259781,
+          "n_test": 197
+        },
+        "Rapeseed and Mustard": {
+          "within_25pct_tph": 0.350746,
+          "within_10pct_tph": 0.164179,
+          "mae": 0.11384,
+          "n_test": 134
+        },
+        "Rice": {
+          "within_25pct_tph": 0.677656,
+          "within_10pct_tph": 0.326007,
+          "mae": 0.570387,
+          "n_test": 273
+        },
+        "Safflower": {
+          "within_25pct_tph": 0.384615,
+          "within_10pct_tph": 0.138462,
+          "mae": 0.258725,
+          "n_test": 130
+        },
+        "Sesamum": {
+          "within_25pct_tph": 0.414097,
+          "within_10pct_tph": 0.167401,
+          "mae": 0.208436,
+          "n_test": 227
+        },
+        "Sorghum": {
+          "within_25pct_tph": 0.552511,
+          "within_10pct_tph": 0.242009,
+          "mae": 0.284376,
+          "n_test": 219
+        },
+        "Soyabean": {
+          "within_25pct_tph": 0.580952,
+          "within_10pct_tph": 0.180952,
+          "mae": 0.218098,
+          "n_test": 105
+        },
+        "Sugarcane": {
+          "within_25pct_tph": 0.654762,
+          "within_10pct_tph": 0.309524,
+          "mae": 1.892181,
+          "n_test": 252
+        },
+        "Sunflower": {
+          "within_25pct_tph": 0.504348,
+          "within_10pct_tph": 0.213043,
+          "mae": 0.2303,
+          "n_test": 230
+        },
+        "Wheat": {
+          "within_25pct_tph": 0.578125,
+          "within_10pct_tph": 0.21875,
+          "mae": 0.276974,
+          "n_test": 128
+        }
+      },
+      "train": {
+        "r2": 0.866845,
+        "mae": 0.368657,
+        "rmse": 0.708633,
+        "within_25pct_tph": 0.525461,
+        "within_10pct_tph": 0.219257,
+        "n_test": 4497
+      },
+      "test": {
+        "r2": 0.894483,
+        "mae": 0.379322,
+        "rmse": 0.64859,
+        "within_25pct_tph": 0.475184,
+        "within_10pct_tph": 0.204044,
+        "n_test": 1088
+      },
+      "test_per_crop_within_25": {
+        "Castor": 0.5625,
+        "Chickpea": 0.482759,
+        "Cotton": 0.387755,
+        "Finger Millet": 0.418605,
+        "Groundnut": 0.522388,
+        "Kharif Sorghum": 0.306122,
+        "Linseed": 0.347826,
+        "Maize": 0.615385,
+        "Minor Pulses": 0.5,
+        "Oilseeds": 0.368421,
+        "Pearl Millet": 0.457143,
+        "Pigeonpea": 0.473684,
+        "Rabi Sorghum": 0.479167,
+        "Rapeseed and Mustard": 0.272727,
+        "Rice": 0.608696,
+        "Safflower": 0.3,
+        "Sesamum": 0.413793,
+        "Sorghum": 0.470588,
+        "Soyabean": 0.391304,
+        "Sugarcane": 0.69697,
+        "Sunflower": 0.448276,
+        "Wheat": 0.515152
+      },
+      "test_per_crop_full": {
+        "Castor": {
+          "within_25pct_tph": 0.5625,
+          "within_10pct_tph": 0.229167,
+          "mae": 0.283654,
+          "n_test": 48
+        },
+        "Chickpea": {
+          "within_25pct_tph": 0.482759,
+          "within_10pct_tph": 0.155172,
+          "mae": 0.182344,
+          "n_test": 58
+        },
+        "Cotton": {
+          "within_25pct_tph": 0.387755,
+          "within_10pct_tph": 0.122449,
+          "mae": 0.112264,
+          "n_test": 49
+        },
+        "Finger Millet": {
+          "within_25pct_tph": 0.418605,
+          "within_10pct_tph": 0.069767,
+          "mae": 0.42674,
+          "n_test": 43
+        },
+        "Groundnut": {
+          "within_25pct_tph": 0.522388,
+          "within_10pct_tph": 0.253731,
+          "mae": 0.285069,
+          "n_test": 67
+        },
+        "Kharif Sorghum": {
+          "within_25pct_tph": 0.306122,
+          "within_10pct_tph": 0.102041,
+          "mae": 0.482986,
+          "n_test": 49
+        },
+        "Linseed": {
+          "within_25pct_tph": 0.347826,
+          "within_10pct_tph": 0.217391,
+          "mae": 0.134385,
+          "n_test": 23
+        },
+        "Maize": {
+          "within_25pct_tph": 0.615385,
+          "within_10pct_tph": 0.292308,
+          "mae": 0.659265,
+          "n_test": 65
+        },
+        "Minor Pulses": {
+          "within_25pct_tph": 0.5,
+          "within_10pct_tph": 0.235294,
+          "mae": 0.137852,
+          "n_test": 68
+        },
+        "Oilseeds": {
+          "within_25pct_tph": 0.368421,
+          "within_10pct_tph": 0.122807,
+          "mae": 0.29185,
+          "n_test": 57
+        },
+        "Pearl Millet": {
+          "within_25pct_tph": 0.457143,
+          "within_10pct_tph": 0.2,
+          "mae": 0.254223,
+          "n_test": 35
+        },
+        "Pigeonpea": {
+          "within_25pct_tph": 0.473684,
+          "within_10pct_tph": 0.280702,
+          "mae": 0.170681,
+          "n_test": 57
+        },
+        "Rabi Sorghum": {
+          "within_25pct_tph": 0.479167,
+          "within_10pct_tph": 0.25,
+          "mae": 0.245519,
+          "n_test": 48
+        },
+        "Rapeseed and Mustard": {
+          "within_25pct_tph": 0.272727,
+          "within_10pct_tph": 0.090909,
+          "mae": 0.154948,
+          "n_test": 33
+        },
+        "Rice": {
+          "within_25pct_tph": 0.608696,
+          "within_10pct_tph": 0.246377,
+          "mae": 0.587963,
+          "n_test": 69
+        },
+        "Safflower": {
+          "within_25pct_tph": 0.3,
+          "within_10pct_tph": 0.233333,
+          "mae": 0.323295,
+          "n_test": 30
+        },
+        "Sesamum": {
+          "within_25pct_tph": 0.413793,
+          "within_10pct_tph": 0.12069,
+          "mae": 0.176651,
+          "n_test": 58
+        },
+        "Sorghum": {
+          "within_25pct_tph": 0.470588,
+          "within_10pct_tph": 0.156863,
+          "mae": 0.325646,
+          "n_test": 51
+        },
+        "Soyabean": {
+          "within_25pct_tph": 0.391304,
+          "within_10pct_tph": 0.043478,
+          "mae": 0.331906,
+          "n_test": 23
+        },
+        "Sugarcane": {
+          "within_25pct_tph": 0.69697,
+          "within_10pct_tph": 0.348485,
+          "mae": 1.623369,
+          "n_test": 66
+        },
+        "Sunflower": {
+          "within_25pct_tph": 0.448276,
+          "within_10pct_tph": 0.258621,
+          "mae": 0.194648,
+          "n_test": 58
+        },
+        "Wheat": {
+          "within_25pct_tph": 0.515152,
+          "within_10pct_tph": 0.242424,
+          "mae": 0.34028,
+          "n_test": 33
+        }
+      },
+      "phase2_vs_current_test_within_25_delta_pp": -17.279
+    }
+  ],
+  "best_candidate": "RF 500 (tail-crops 3x weight, 4 crops)",
+  "best_selection_criterion": "5-fold GroupKFold OOF within_25pct_tph on TRAIN district-year groups only (test used for one-shot reporting; tie-break: average OOF within_25pct of the 4 tail crops).",
+  "best_cv_train_oof": {
+    "r2": 0.939334,
+    "mae": 0.253125,
+    "rmse": 0.478318,
+    "within_25pct_tph": 0.672671,
+    "within_10pct_tph": 0.337558,
+    "n_test": 4497
+  },
+  "best_test": {
+    "r2": 0.95121,
+    "mae": 0.256169,
+    "rmse": 0.441036,
+    "within_25pct_tph": 0.655331,
+    "within_10pct_tph": 0.328125,
+    "n_test": 1088
+  },
+  "best_test_per_crop_full": {
+    "Castor": {
+      "within_25pct_tph": 0.6875,
+      "within_10pct_tph": 0.354167,
+      "mae": 0.200447,
+      "n_test": 48
+    },
+    "Chickpea": {
+      "within_25pct_tph": 0.672414,
+      "within_10pct_tph": 0.344828,
+      "mae": 0.127615,
+      "n_test": 58
+    },
+    "Cotton": {
+      "within_25pct_tph": 0.55102,
+      "within_10pct_tph": 0.244898,
+      "mae": 0.087286,
+      "n_test": 49
+    },
+    "Finger Millet": {
+      "within_25pct_tph": 0.767442,
+      "within_10pct_tph": 0.302326,
+      "mae": 0.249508,
+      "n_test": 43
+    },
+    "Groundnut": {
+      "within_25pct_tph": 0.671642,
+      "within_10pct_tph": 0.343284,
+      "mae": 0.176936,
+      "n_test": 67
+    },
+    "Kharif Sorghum": {
+      "within_25pct_tph": 0.510204,
+      "within_10pct_tph": 0.244898,
+      "mae": 0.315941,
+      "n_test": 49
+    },
+    "Linseed": {
+      "within_25pct_tph": 0.608696,
+      "within_10pct_tph": 0.217391,
+      "mae": 0.07984,
+      "n_test": 23
+    },
+    "Maize": {
+      "within_25pct_tph": 0.630769,
+      "within_10pct_tph": 0.338462,
+      "mae": 0.551747,
+      "n_test": 65
+    },
+    "Minor Pulses": {
+      "within_25pct_tph": 0.632353,
+      "within_10pct_tph": 0.382353,
+      "mae": 0.081001,
+      "n_test": 68
+    },
+    "Oilseeds": {
+      "within_25pct_tph": 0.649123,
+      "within_10pct_tph": 0.315789,
+      "mae": 0.148187,
+      "n_test": 57
+    },
+    "Pearl Millet": {
+      "within_25pct_tph": 0.571429,
+      "within_10pct_tph": 0.314286,
+      "mae": 0.196165,
+      "n_test": 35
+    },
+    "Pigeonpea": {
+      "within_25pct_tph": 0.491228,
+      "within_10pct_tph": 0.22807,
+      "mae": 0.139295,
+      "n_test": 57
+    },
+    "Rabi Sorghum": {
+      "within_25pct_tph": 0.6875,
+      "within_10pct_tph": 0.270833,
+      "mae": 0.20941,
+      "n_test": 48
+    },
+    "Rapeseed and Mustard": {
+      "within_25pct_tph": 0.787879,
+      "within_10pct_tph": 0.575758,
+      "mae": 0.05935,
+      "n_test": 33
+    },
+    "Rice": {
+      "within_25pct_tph": 0.869565,
+      "within_10pct_tph": 0.608696,
+      "mae": 0.270931,
+      "n_test": 69
+    },
+    "Safflower": {
+      "within_25pct_tph": 0.633333,
+      "within_10pct_tph": 0.266667,
+      "mae": 0.170819,
+      "n_test": 30
+    },
+    "Sesamum": {
+      "within_25pct_tph": 0.568966,
+      "within_10pct_tph": 0.224138,
+      "mae": 0.136403,
+      "n_test": 58
+    },
+    "Sorghum": {
+      "within_25pct_tph": 0.588235,
+      "within_10pct_tph": 0.294118,
+      "mae": 0.249702,
+      "n_test": 51
+    },
+    "Soyabean": {
+      "within_25pct_tph": 0.478261,
+      "within_10pct_tph": 0.217391,
+      "mae": 0.269336,
+      "n_test": 23
+    },
+    "Sugarcane": {
+      "within_25pct_tph": 0.848485,
+      "within_10pct_tph": 0.378788,
+      "mae": 1.111683,
+      "n_test": 66
+    },
+    "Sunflower": {
+      "within_25pct_tph": 0.724138,
+      "within_10pct_tph": 0.293103,
+      "mae": 0.122288,
+      "n_test": 58
+    },
+    "Wheat": {
+      "within_25pct_tph": 0.545455,
+      "within_10pct_tph": 0.242424,
+      "mae": 0.295539,
+      "n_test": 33
+    }
+  },
+  "delta_vs_phase2_ref_pp_within_25_pct": 0.74,
+  "post_hoc_avg_ensemble_note": "Average of RF+RF test within_25 = 65.07%  R\u00b2=0.9512  MAE=0.2566",
+  "stacking_regressor_status": "DROPPED \u2014 structural bias confirmed: inner-cv=5 plain KFold OOF meta-coefs then applied to refit estimators produced +0.50 t/ha mean prediction bias on 4,497-train; within_25 collapsed to 19.6% for Ridge(alpha=3..0.01) and for plain LinearRegression meta.",
+  "xgb_status": "UNAVAILABLE: xgboost 2.1.4 installed but missing libomp.dylib (Homebrew libomp installation was sandboxed with lock-permission denials). LightGBM 4.6.0 used as evidence-backed GBDT substitute (macOS x86_64 pip wheel bundles its own OpenMP runtime).",
+  "candidates_count": 4,
+  "wall_time_min": 1.83
+}

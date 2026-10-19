@@ -1,0 +1,505 @@
+{
+  "generated_utc": "2026-10-09T15:25:56Z",
+  "git_ref": "a23edef",
+  "generator_script": "experiments/improved_dataset/build_dataset_and_train.py",
+  "license_note": "All components are local copies of previously-downloaded open government / research datasets.  ICRISAT DLD is non-commercial research use; India DES Ministry of Agriculture APY data is published under the Government of India Open Data License.",
+  "joined_yield_dataset": {
+    "output_csv": "data/enriched_yield_karnataka.csv",
+    "rows": 5585,
+    "target_units": "tonnes per hectare (Yield_Tonnes / Area_Hectares)",
+    "feature_width": 56,
+    "districts_n": 19,
+    "crops_n": 22,
+    "years_n": 18,
+    "target_range_tph": {
+      "min": 0.0181,
+      "max": 14.2319,
+      "mean": 1.4035
+    }
+  },
+  "component_sources": [
+    {
+      "name": "ICRISAT Karnataka district \u00d7 crop \u00d7 year",
+      "source_file": "SeedIQ/data/yield_icrisat_karnataka.csv",
+      "upstream": "http://data.icrisat.org/dld/src/crops.html (ICRISAT District Level Database)",
+      "rows": 5585,
+      "granularity": "District \u00d7 Crop \u00d7 Year (2000\u20132017)",
+      "synthetic": false,
+      "original_units": {
+        "Area_Hectares": "hectares (harvested area)",
+        "Yield_Tonnes": "tonnes (total district production)"
+      }
+    },
+    {
+      "name": "Karnataka district soil survey averages",
+      "source_file": "SeedIQ/data/soil_data_karnataka.csv",
+      "upstream": "Derived from Karnataka State Natural Disaster Monitoring Centre / University of Agricultural Sciences district soil profile summaries (already in the SeedIQ data folder)",
+      "rows": 31,
+      "granularity": "Static per district",
+      "synthetic": false,
+      "features_added": [
+        "Nitrogen_N kg/ha",
+        "Phosphorus_P kg/ha",
+        "Potassium_K kg/ha",
+        "pH",
+        "Organic_Carbon %",
+        "Soil_Type one-hot"
+      ]
+    },
+    {
+      "name": "India District-wise Rainfall Normals (IMD / MOSDAC)",
+      "source_file": "SeedIQ/data/district wise rainfall normal.csv",
+      "upstream": "India Meteorological Department (IMD), published via data.gov.in Open Data Platform; 30-yr normals",
+      "rows_karnataka_used": 30,
+      "granularity": "Static per district",
+      "synthetic": false,
+      "features_added": [
+        "monthly 12 normal (mm)",
+        "quarterly 4 (winter/pre-monsoon/SW/NE)",
+        "annual normal (mm)"
+      ],
+      "imputation_note": "Vijayanagara district (est. 2020) does not have a Census-2011 entry in the rainfall normals file; its rainfall row is imputed from Ballari (the parent district from which it was split) and marked imputed in code."
+    }
+  ],
+  "district_name_normalisation": {
+    "method": "Hand-verified mapping of ICRISAT 2000s spellings to post-2014 official names used by the soil/rainfall files. No district was fabricated or renamed into non-existent geography.",
+    "icrisat_to_soil": {
+      "Bangalore": "Bengaluru Urban",
+      "Belgaum": "Belagavi",
+      "Bellary": "Ballari",
+      "Bijapur / Vijayapura": "Vijayapura",
+      "Chickmagalur": "Chikkamagaluru",
+      "Gulbarga / Kalaburagi": "Kalaburagi",
+      "Kodagu / Coorg": "Kodagu",
+      "Mysore": "Mysuru",
+      "Shimoge": "Shivamogga",
+      "Tumkur": "Tumakuru"
+    },
+    "soil_to_rainfall": {
+      "Bagalkot": "BAGALKOTE",
+      "Bengaluru Urban": "BANGALORE URB",
+      "Bengaluru Rural": "BANGALORE RUR",
+      "Belagavi": "BELGAM",
+      "Ballari": "BELLARY",
+      "Bidar": "BIDAR",
+      "Vijayapura": "BIJAPUR",
+      "Chamarajanagara": "CHAMARAJANAGA",
+      "Chikkaballapur": "CHICKBALLAPUR",
+      "Chikkamagaluru": "CHIKMAGALUR",
+      "Chitradurga": "CHITRADURGA",
+      "Dakshina Kannada": "DAKSHIN KANDA",
+      "Davanagere": "DAVANGERE",
+      "Dharwad": "DHARWAD",
+      "Gadag": "GADAG",
+      "Kalaburagi": "GULBARGA",
+      "Hassan": "HASSAN",
+      "Haveri": "HAVERI",
+      "Kodagu": "KODAGU",
+      "Kolar": "KOLAR",
+      "Koppal": "KOPPAL",
+      "Mandya": "MANDYA",
+      "Mysuru": "MYSORE",
+      "Raichur": "RAICHUR",
+      "Ramanagara": "RAMNAGAR(BNGR)",
+      "Shivamogga": "SHIMOGA",
+      "Tumakuru": "TUMKUR",
+      "Udupi": "UDUPI",
+      "Uttara Kannada": "UTTAR KANNADA",
+      "Yadgir": "YADGIR"
+    }
+  },
+  "coverage": {
+    "yield_rows_before_join": 5585,
+    "rows_without_soil_or_rainfall_dropped": 0,
+    "note": "Any yield row whose district could not be matched in the soil+rainfall tables is dropped.  With the normalisation map above 0 rows are expected to drop; any non-zero count is explicit here."
+  },
+  "train_test_split": {
+    "strategy": "GroupShuffleSplit on (District, Year) \u2014 entire district-year groups are in train OR test, never both",
+    "seed": 42,
+    "test_fraction": 0.2,
+    "district_years_in_train": 273,
+    "district_years_in_test": 69,
+    "disjointness_verified": true
+  },
+  "cv_selection": {
+    "strategy": "GroupKFold(5) by district-year on TRAIN rows only",
+    "selection_metric": "within_25pct coverage per-hectare",
+    "results_per_candidate": [
+      {
+        "n": 4497,
+        "within_25pct": 0.667556,
+        "mae": 0.2612,
+        "rmse": 0.4902,
+        "r2": 0.936293,
+        "candidate": "hgb_500_log",
+        "description": "HistGBR 500 log-per-ha + early stop (candidate default)"
+      },
+      {
+        "n": 4497,
+        "within_25pct": 0.655993,
+        "mae": 0.2665,
+        "rmse": 0.4923,
+        "r2": 0.935746,
+        "candidate": "gb_300_log",
+        "description": "Skl GBR 300 log-per-ha depth 4"
+      },
+      {
+        "n": 4497,
+        "within_25pct": 0.649989,
+        "mae": 0.2731,
+        "rmse": 0.5339,
+        "r2": 0.924417,
+        "candidate": "rf_300_log",
+        "description": "RandomForest 300, log-per-ha fit"
+      },
+      {
+        "n": 4497,
+        "within_25pct": 0.636869,
+        "mae": 0.2808,
+        "rmse": 0.5668,
+        "r2": 0.91481,
+        "candidate": "et_400_log",
+        "description": "ExtraTrees 400 log-per-ha fit"
+      },
+      {
+        "n": 4497,
+        "within_25pct": 0.502335,
+        "mae": 0.3897,
+        "rmse": 0.7518,
+        "r2": 0.850109,
+        "candidate": "ridge_log",
+        "description": "Ridge on log(t/ha), exp inverse \u2014 baseline linear"
+      },
+      {
+        "n": 4497,
+        "within_25pct": 0.497887,
+        "mae": 0.3917,
+        "rmse": 0.7401,
+        "r2": 0.854748,
+        "candidate": "crop_geomean_ref",
+        "description": "Per-crop train geometric-mean t/ha (no district/weather/year feature)"
+      }
+    ]
+  },
+  "crop_dataset": {
+    "retained_as_is": true,
+    "source_file": "SeedIQ/data/Crop_recommendation.csv",
+    "upstream": "Standard Kaggle public crop-recommendation dataset (22 crops \u00d7 100 rows each, NPK/Temp/Humidity/pH/Rainfall \u2192 label)",
+    "rows": 2200,
+    "synthetic_status": "Public Kaggle dataset; features are plausible agronomic ranges per crop (not derived from real survey plots but widely used as a standard benchmark).  Kept because the crop-classification task on it reaches 99.3% held-out accuracy with standard classifiers \u2014 the component is not the binding constraint."
+  },
+  "seed_viability": {
+    "status": "NO GENIUNE MEASURED DATA AVAILABLE LOCALLY",
+    "current_local_file": "SeedIQ/data/seed_viability_data.csv",
+    "rows": 100,
+    "label_generation": "Confirmed deterministic rule from the prior audit: Viable = 1 iff Moisture_Level \u2248 10.3\u201313.4 range, else 0. Weight_g and 5% noise do not materially change the rule. This is NOT measured germination data.",
+    "synthetic": true,
+    "contract_features": [
+      "Moisture_Level",
+      "Weight_g"
+    ]
+  },
+  "external_seed_sources_suggested": [
+    {
+      "name": "Directorate of Seed Research (ICAR-DSR) / National Seed Research and Training Centre (NSRTC) \u2014 Seed Testing Reports",
+      "url": "https://www.dsr.icar.gov.in/ and http://nsrtc.icar.gov.in/",
+      "access_note": "Publish standard germination %, moisture %, seed weight (1000-seed weight g), vigour index and viability (tetrazolium test) for released crop varieties.  Contact via the respective institute's data-request form; some data is in annual Indian Seeds Yearbook / Seeds Act enforcement reports published on MoA&FW.",
+      "license": "Government of India / ICAR research use",
+      "would_add": [
+        "real germination-% label (not rule-generated)",
+        "species / crop label needed for joint-metric alignment",
+        "1000-seed weight = Weight_g API feature",
+        "moisture-% = Moisture_Level API feature",
+        "tetrazolium viability label (the exact target the API names)"
+      ]
+    },
+    {
+      "name": "SeedGerm-VIG / BioImage Archive accession S-BIAD1852",
+      "url": "https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BIAD1852",
+      "access_note": "Wheat, barley, rice time-series germination image data with hand-labeled germination timestamps.  Open, CC0. From the GigaScience paper 'SeedGerm-VIG' (2024).",
+      "license": "CC0",
+      "would_add": [
+        "ground-truth germination (Viable = 1 if radicle emerged)",
+        "seed weight, moisture (if paired with seedlot metadata)"
+      ]
+    },
+    {
+      "name": "Kaggle Seed Vigor Detection RGB (maize)",
+      "url": "https://www.kaggle.com/datasets/chengchengchen/seed-vigor-detection-rgb-image",
+      "access_note": "RGB images + vigor labels (germination, shoot length, fresh weight) for maize seed lots.  Derived from the Frontiers Plant Science 2024 paper cited in the prior section of this script.",
+      "license": "CC-BY 4.0 (paper / Kaggle dataset page)",
+      "would_add": [
+        "vigor labels (Viable proxy)",
+        "seed size/shape features"
+      ]
+    }
+  ],
+  "train_eval": [
+    {
+      "n": 4497,
+      "within_25pct": 0.499666,
+      "mae": 0.3908,
+      "rmse": 0.7387,
+      "r2": 0.855313,
+      "candidate": "crop_geomean_ref",
+      "description": "Per-crop train geometric-mean t/ha (no district/weather/year feature)"
+    },
+    {
+      "n": 4497,
+      "within_25pct": 1.0,
+      "mae": 0.0,
+      "rmse": 0.0,
+      "r2": 1.0,
+      "candidate": "et_400_log",
+      "description": "ExtraTrees 400 log-per-ha fit"
+    },
+    {
+      "n": 4497,
+      "within_25pct": 0.72982,
+      "mae": 0.216,
+      "rmse": 0.3894,
+      "r2": 0.959798,
+      "candidate": "gb_300_log",
+      "description": "Skl GBR 300 log-per-ha depth 4"
+    },
+    {
+      "n": 4497,
+      "within_25pct": 0.81143,
+      "mae": 0.1799,
+      "rmse": 0.3464,
+      "r2": 0.968177,
+      "candidate": "hgb_500_log",
+      "description": "HistGBR 500 log-per-ha + early stop (candidate default)"
+    },
+    {
+      "n": 4497,
+      "within_25pct": 0.950411,
+      "mae": 0.0976,
+      "rmse": 0.1965,
+      "r2": 0.989761,
+      "candidate": "rf_300_log",
+      "description": "RandomForest 300, log-per-ha fit"
+    },
+    {
+      "n": 4497,
+      "within_25pct": 0.509895,
+      "mae": 0.3837,
+      "rmse": 0.7402,
+      "r2": 0.854727,
+      "candidate": "ridge_log",
+      "description": "Ridge on log(t/ha), exp inverse \u2014 baseline linear"
+    }
+  ],
+  "test_eval": [
+    {
+      "n": 1088,
+      "within_25pct": 0.626838,
+      "mae": 0.2652,
+      "rmse": 0.473,
+      "r2": 0.943873,
+      "candidate": "hgb_500_log",
+      "description": "HistGBR 500 log-per-ha + early stop (candidate default)"
+    },
+    {
+      "n": 1088,
+      "within_25pct": 0.625,
+      "mae": 0.2784,
+      "rmse": 0.4885,
+      "r2": 0.940136,
+      "candidate": "gb_300_log",
+      "description": "Skl GBR 300 log-per-ha depth 4"
+    },
+    {
+      "n": 1088,
+      "within_25pct": 0.620404,
+      "mae": 0.2802,
+      "rmse": 0.5118,
+      "r2": 0.934302,
+      "candidate": "rf_300_log",
+      "description": "RandomForest 300, log-per-ha fit"
+    },
+    {
+      "n": 1088,
+      "within_25pct": 0.618566,
+      "mae": 0.2863,
+      "rmse": 0.5252,
+      "r2": 0.930801,
+      "candidate": "et_400_log",
+      "description": "ExtraTrees 400 log-per-ha fit"
+    },
+    {
+      "n": 1088,
+      "within_25pct": 0.46875,
+      "mae": 0.3968,
+      "rmse": 0.6846,
+      "r2": 0.882425,
+      "candidate": "crop_geomean_ref",
+      "description": "Per-crop train geometric-mean t/ha (no district/weather/year feature)"
+    },
+    {
+      "n": 1088,
+      "within_25pct": 0.454963,
+      "mae": 0.3981,
+      "rmse": 0.6929,
+      "r2": 0.879573,
+      "candidate": "ridge_log",
+      "description": "Ridge on log(t/ha), exp inverse \u2014 baseline linear"
+    }
+  ],
+  "best_model_per_crop_test": [
+    {
+      "crop": "Castor",
+      "test_rows": 48,
+      "test_within_25pct": 0.666667,
+      "test_median_tph_true": 0.8,
+      "test_median_tph_pred": 0.7481
+    },
+    {
+      "crop": "Chickpea",
+      "test_rows": 58,
+      "test_within_25pct": 0.689655,
+      "test_median_tph_true": 0.5982,
+      "test_median_tph_pred": 0.5361
+    },
+    {
+      "crop": "Cotton",
+      "test_rows": 49,
+      "test_within_25pct": 0.571429,
+      "test_median_tph_true": 0.3003,
+      "test_median_tph_pred": 0.2873
+    },
+    {
+      "crop": "Finger Millet",
+      "test_rows": 43,
+      "test_within_25pct": 0.674419,
+      "test_median_tph_true": 1.5558,
+      "test_median_tph_pred": 1.3876
+    },
+    {
+      "crop": "Groundnut",
+      "test_rows": 67,
+      "test_within_25pct": 0.671642,
+      "test_median_tph_true": 0.7908,
+      "test_median_tph_pred": 0.7074
+    },
+    {
+      "crop": "Kharif Sorghum",
+      "test_rows": 49,
+      "test_within_25pct": 0.530612,
+      "test_median_tph_true": 1.1644,
+      "test_median_tph_pred": 1.179
+    },
+    {
+      "crop": "Linseed",
+      "test_rows": 23,
+      "test_within_25pct": 0.478261,
+      "test_median_tph_true": 0.3162,
+      "test_median_tph_pred": 0.2819
+    },
+    {
+      "crop": "Maize",
+      "test_rows": 65,
+      "test_within_25pct": 0.707692,
+      "test_median_tph_true": 2.8708,
+      "test_median_tph_pred": 2.8856
+    },
+    {
+      "crop": "Minor Pulses",
+      "test_rows": 68,
+      "test_within_25pct": 0.661765,
+      "test_median_tph_true": 0.3543,
+      "test_median_tph_pred": 0.3862
+    },
+    {
+      "crop": "Oilseeds",
+      "test_rows": 57,
+      "test_within_25pct": 0.649123,
+      "test_median_tph_true": 0.6329,
+      "test_median_tph_pred": 0.6444
+    },
+    {
+      "crop": "Pearl Millet",
+      "test_rows": 35,
+      "test_within_25pct": 0.571429,
+      "test_median_tph_true": 0.7368,
+      "test_median_tph_pred": 0.7105
+    },
+    {
+      "crop": "Pigeonpea",
+      "test_rows": 57,
+      "test_within_25pct": 0.561404,
+      "test_median_tph_true": 0.4704,
+      "test_median_tph_pred": 0.5068
+    },
+    {
+      "crop": "Rabi Sorghum",
+      "test_rows": 48,
+      "test_within_25pct": 0.625,
+      "test_median_tph_true": 0.7976,
+      "test_median_tph_pred": 0.8189
+    },
+    {
+      "crop": "Rapeseed and Mustard",
+      "test_rows": 33,
+      "test_within_25pct": 0.545455,
+      "test_median_tph_true": 0.288,
+      "test_median_tph_pred": 0.2993
+    },
+    {
+      "crop": "Rice",
+      "test_rows": 69,
+      "test_within_25pct": 0.84058,
+      "test_median_tph_true": 2.4936,
+      "test_median_tph_pred": 2.4296
+    },
+    {
+      "crop": "Safflower",
+      "test_rows": 30,
+      "test_within_25pct": 0.533333,
+      "test_median_tph_true": 0.5864,
+      "test_median_tph_pred": 0.6577
+    },
+    {
+      "crop": "Sesamum",
+      "test_rows": 58,
+      "test_within_25pct": 0.431034,
+      "test_median_tph_true": 0.4725,
+      "test_median_tph_pred": 0.4227
+    },
+    {
+      "crop": "Sorghum",
+      "test_rows": 51,
+      "test_within_25pct": 0.509804,
+      "test_median_tph_true": 1.0349,
+      "test_median_tph_pred": 1.0018
+    },
+    {
+      "crop": "Soyabean",
+      "test_rows": 23,
+      "test_within_25pct": 0.434783,
+      "test_median_tph_true": 1.0,
+      "test_median_tph_pred": 0.785
+    },
+    {
+      "crop": "Sugarcane",
+      "test_rows": 66,
+      "test_within_25pct": 0.818182,
+      "test_median_tph_true": 8.3611,
+      "test_median_tph_pred": 8.1013
+    },
+    {
+      "crop": "Sunflower",
+      "test_rows": 58,
+      "test_within_25pct": 0.637931,
+      "test_median_tph_true": 0.5668,
+      "test_median_tph_pred": 0.5564
+    },
+    {
+      "crop": "Wheat",
+      "test_rows": 33,
+      "test_within_25pct": 0.515152,
+      "test_median_tph_true": 1.0,
+      "test_median_tph_pred": 0.9612
+    }
+  ]
+}

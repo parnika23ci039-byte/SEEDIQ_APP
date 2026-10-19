@@ -1,0 +1,200 @@
+{
+  "Castor": {
+    "n": 207,
+    "oof_pct": 75.36,
+    "signed_bias": -0.0186,
+    "low_yield_overpred_pct": 74.0,
+    "pred_std": 0.2193,
+    "true_std": 0.3518,
+    "std_ratio_pred_over_true": 0.623
+  },
+  "Chickpea": {
+    "n": 228,
+    "oof_pct": 68.86,
+    "signed_bias": -0.0023,
+    "low_yield_overpred_pct": 83.3,
+    "pred_std": 0.1223,
+    "true_std": 0.1975,
+    "std_ratio_pred_over_true": 0.619
+  },
+  "Cotton": {
+    "n": 211,
+    "oof_pct": 65.88,
+    "signed_bias": -0.0143,
+    "low_yield_overpred_pct": 70.8,
+    "pred_std": 0.1065,
+    "true_std": 0.2032,
+    "std_ratio_pred_over_true": 0.524
+  },
+  "Finger Millet": {
+    "n": 202,
+    "oof_pct": 70.3,
+    "signed_bias": 0.0033,
+    "low_yield_overpred_pct": 75.2,
+    "pred_std": 0.379,
+    "true_std": 0.5041,
+    "std_ratio_pred_over_true": 0.752
+  },
+  "Groundnut": {
+    "n": 268,
+    "oof_pct": 68.28,
+    "signed_bias": -0.0115,
+    "low_yield_overpred_pct": 79.9,
+    "pred_std": 0.3187,
+    "true_std": 0.389,
+    "std_ratio_pred_over_true": 0.819
+  },
+  "Kharif Sorghum": {
+    "n": 215,
+    "oof_pct": 65.12,
+    "signed_bias": -0.0107,
+    "low_yield_overpred_pct": 75.9,
+    "pred_std": 0.3551,
+    "true_std": 0.5136,
+    "std_ratio_pred_over_true": 0.691
+  },
+  "Linseed": {
+    "n": 98,
+    "oof_pct": 64.29,
+    "signed_bias": -0.0037,
+    "low_yield_overpred_pct": 71.4,
+    "pred_std": 0.0746,
+    "true_std": 0.1185,
+    "std_ratio_pred_over_true": 0.629
+  },
+  "Maize": {
+    "n": 269,
+    "oof_pct": 73.61,
+    "signed_bias": 0.0027,
+    "low_yield_overpred_pct": 80.0,
+    "pred_std": 0.6688,
+    "true_std": 0.969,
+    "std_ratio_pred_over_true": 0.69
+  },
+  "Minor Pulses": {
+    "n": 269,
+    "oof_pct": 59.85,
+    "signed_bias": -0.0055,
+    "low_yield_overpred_pct": 67.4,
+    "pred_std": 0.1721,
+    "true_std": 0.2212,
+    "std_ratio_pred_over_true": 0.778
+  },
+  "Oilseeds": {
+    "n": 222,
+    "oof_pct": 72.07,
+    "signed_bias": -0.006,
+    "low_yield_overpred_pct": 66.7,
+    "pred_std": 0.317,
+    "true_std": 0.3617,
+    "std_ratio_pred_over_true": 0.877
+  },
+  "Pearl Millet": {
+    "n": 167,
+    "oof_pct": 67.07,
+    "signed_bias": -0.0154,
+    "low_yield_overpred_pct": 71.4,
+    "pred_std": 0.2583,
+    "true_std": 0.3493,
+    "std_ratio_pred_over_true": 0.739
+  },
+  "Pigeonpea": {
+    "n": 246,
+    "oof_pct": 59.35,
+    "signed_bias": -0.0087,
+    "low_yield_overpred_pct": 75.6,
+    "pred_std": 0.1546,
+    "true_std": 0.23,
+    "std_ratio_pred_over_true": 0.672
+  },
+  "Rabi Sorghum": {
+    "n": 197,
+    "oof_pct": 65.99,
+    "signed_bias": -0.015,
+    "low_yield_overpred_pct": 77.0,
+    "pred_std": 0.2535,
+    "true_std": 0.3658,
+    "std_ratio_pred_over_true": 0.693
+  },
+  "Rapeseed and Mustard": {
+    "n": 134,
+    "oof_pct": 79.85,
+    "signed_bias": -0.0049,
+    "low_yield_overpred_pct": 65.7,
+    "pred_std": 0.0739,
+    "true_std": 0.1046,
+    "std_ratio_pred_over_true": 0.707
+  },
+  "Rice": {
+    "n": 273,
+    "oof_pct": 84.98,
+    "signed_bias": 0.0113,
+    "low_yield_overpred_pct": 68.6,
+    "pred_std": 0.6633,
+    "true_std": 0.7604,
+    "std_ratio_pred_over_true": 0.872
+  },
+  "Safflower": {
+    "n": 130,
+    "oof_pct": 61.54,
+    "signed_bias": -0.0142,
+    "low_yield_overpred_pct": 61.5,
+    "pred_std": 0.2278,
+    "true_std": 0.3022,
+    "std_ratio_pred_over_true": 0.754
+  },
+  "Sesamum": {
+    "n": 227,
+    "oof_pct": 58.59,
+    "signed_bias": -0.0047,
+    "low_yield_overpred_pct": 77.2,
+    "pred_std": 0.1642,
+    "true_std": 0.2647,
+    "std_ratio_pred_over_true": 0.62
+  },
+  "Sorghum": {
+    "n": 219,
+    "oof_pct": 66.21,
+    "signed_bias": -0.0075,
+    "low_yield_overpred_pct": 75.5,
+    "pred_std": 0.2975,
+    "true_std": 0.408,
+    "std_ratio_pred_over_true": 0.729
+  },
+  "Soyabean": {
+    "n": 105,
+    "oof_pct": 69.52,
+    "signed_bias": -0.0064,
+    "low_yield_overpred_pct": 79.2,
+    "pred_std": 0.1719,
+    "true_std": 0.2913,
+    "std_ratio_pred_over_true": 0.59
+  },
+  "Sugarcane": {
+    "n": 252,
+    "oof_pct": 85.32,
+    "signed_bias": -0.0101,
+    "low_yield_overpred_pct": 69.8,
+    "pred_std": 1.7871,
+    "true_std": 2.4606,
+    "std_ratio_pred_over_true": 0.726
+  },
+  "Sunflower": {
+    "n": 230,
+    "oof_pct": 69.13,
+    "signed_bias": -0.0069,
+    "low_yield_overpred_pct": 71.3,
+    "pred_std": 0.3197,
+    "true_std": 0.4066,
+    "std_ratio_pred_over_true": 0.786
+  },
+  "Wheat": {
+    "n": 128,
+    "oof_pct": 71.88,
+    "signed_bias": -0.0071,
+    "low_yield_overpred_pct": 77.6,
+    "pred_std": 0.2767,
+    "true_std": 0.3832,
+    "std_ratio_pred_over_true": 0.722
+  }
+}
