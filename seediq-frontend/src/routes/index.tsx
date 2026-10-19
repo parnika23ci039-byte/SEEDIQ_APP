@@ -650,7 +650,7 @@ function SeedIQHomepage() {
             <div>
               <div className="relative h-48 w-full rounded-2xl overflow-hidden border border-white/10 mb-6 bg-black/40">
                 <img
-                  src="/crops/wheat/crop.webp"
+                  src="/crops/wheat/crop.jpg"
                   alt="Yield AI Forecasting"
                   loading="lazy"
                   decoding="async"
