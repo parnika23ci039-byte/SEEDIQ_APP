@@ -219,7 +219,10 @@ class Server:
                     f'/tmp/yield_guard_server.log'
                 )
             try:
-                status, _ = _request('GET', f'{self.base}/api/model_metrics', timeout=5)
+                # /api/model_metrics is session-gated (401 without a login), so it
+                # can never confirm readiness. /api/health is the public probe the
+                # Render/Railway orchestration uses.
+                status, _ = _request('GET', f'{self.base}/api/health', timeout=5)
                 if status == 200:
                     return self
                 last = f'HTTP {status}'

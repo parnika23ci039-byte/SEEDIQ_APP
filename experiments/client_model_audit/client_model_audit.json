@@ -1,0 +1,459 @@
+{
+  "audit_metadata": {
+    "title": "SeedIQ Client Claim Verification & Complete Model Training Audit",
+    "prepared_by": "Senior ML Auditor (automated evidence review)",
+    "date": "2026-10-11",
+    "scope": "Verify client-reported figures against existing repository evidence only. No new experiments, package installs, data fetches, or production changes.",
+    "repository_root": "/Users/apple/SeedIQ",
+    "constraint_honored": {
+      "no_new_experiments": true,
+      "no_new_packages": true,
+      "no_data_downloaded": true,
+      "production_artifacts_untouched": true,
+      "phase9_to_13_untouched": true,
+      "meta_model_improvement_untouched": true
+    }
+  },
+  "client_reported_figures": {
+    "random_forest": "92%",
+    "xgboost": "94%",
+    "svm": "89%",
+    "hybrid_meta_model": "96%",
+    "classification_aggregate": {
+      "accuracy": "92%",
+      "precision": "91%",
+      "recall": "90%",
+      "f1": "91%"
+    },
+    "yield_regression": {
+      "mse": 0.05,
+      "rmse": 0.22,
+      "r2": 0.95
+    }
+  },
+  "verified_results": {
+    "crop_classification_rf": {
+      "status": "VERIFIED_MEASURED_NUMBER_DOES_NOT_MATCH_client_92pct",
+      "artifact": "SeedIQ/models/rf_model.pkl (live registry entry)",
+      "production_artifact_also_inspected": "SeedIQ/models/crop_recommendation/randomforest_model.pkl (different object: 5 classes, 7 soil/weather features)",
+      "task": "crop classification",
+      "algorithm": "Random Forest Classifier",
+      "dataset_provenance": "provided",
+      "records": 2200,
+      "classes": 22,
+      "features_count": 7,
+      "evaluation_method": "80/20 stratified test split + 5-fold CV",
+      "test_accuracy": 0.993182,
+      "test_precision_macro": 0.993506,
+      "test_recall_macro": 0.993182,
+      "cv_accuracy_mean": 0.992614,
+      "generalization_status": "good",
+      "generalization_train_test_gap": 0.006818,
+      "registry_timestamp_latest": "2026-10-08 00:33:41",
+      "registry_file": "SeedIQ/training_registry.json",
+      "comparison_to_client_claim": "verified number is 99.32%, client claimed 92%; no 92% measurement exists in registry"
+    },
+    "yield_xgb": {
+      "status": "VERIFIED_MEASURED_NUMBER_DOES_NOT_MATCH_client_94pct_or_0.95",
+      "artifact": "SeedIQ/models/xgb_model.pkl (live registry entry)",
+      "task": "yield regression",
+      "algorithm": "Gradient Boosting Regressor (XGBoost unavailable on host; HistGradientBoosting used)",
+      "dataset_provenance": "provided (ICRISAT — ICRISAT-District Level Data.csv)",
+      "records": 5585,
+      "features_count": 23,
+      "classes": null,
+      "evaluation_method": "grouped (District, Year) train/test split; held-out test; target Yield_Tonnes via LogPerHaRegressor (per-hectare via exp(pred)*area)",
+      "test_r2": 0.903461,
+      "cv_r2_mean": 0.911088,
+      "generalization_status": "moderate",
+      "generalization_train_test_gap": 0.055673,
+      "registry_timestamp_latest": "2026-10-08 00:33:59",
+      "registry_file": "SeedIQ/training_registry.json",
+      "mse_0.05_found": false,
+      "rmse_0.22_found": false,
+      "comparison_to_client_claim": "verified R2 ~0.90, client claimed 94% R2 / 0.95; MSE 0.05 and RMSE 0.22 not found anywhere"
+    },
+    "yield_f3_improved_dataset_track": {
+      "status": "VERIFIED_ON_ITS_OWN_TRACK_ONLY",
+      "track": "Lineage B: experiments/improved_dataset/",
+      "baseline_model": "F3 (0.8*HistGBR(base) + 0.2*HistGBR(base+dynamic-rainfall), per crop; Chickpea RF specialist)",
+      "dataset": "experiments/improved_dataset/data/enriched_yield_karnataka.csv",
+      "source_dataset": "SeedIQ/data/yield_icrisat_karnataka.csv (ICRISAT district-level, real; 5,585 rows matched 5,585/5,585)",
+      "districts": 19,
+      "crops": 22,
+      "years": [2000, 2017],
+      "target": "yield_per_hectare (t/ha) = Yield_Tonnes / Area_Hectares",
+      "metric_definition": "relative_error = |pred-true| / max(|true|, 1e-12); within_25pct = relative_error <= 0.25",
+      "oof": {
+        "rows": 4497,
+        "within_25pct": 3127,
+        "pct_25": 69.5352,
+        "within_10pct": 1621,
+        "pct_10": 36.0463,
+        "mae_t_ha": 0.237308,
+        "mse_t_ha": 0.198042,
+        "rmse_t_ha": 0.445019,
+        "r2": 0.947486,
+        "bias": -0.006869
+      },
+      "frozen_holdout": {
+        "rows": 1088,
+        "within_25pct": 742,
+        "pct_25": 68.1985,
+        "within_10pct": 395,
+        "pct_10": 36.3051,
+        "mae_t_ha": 0.237763,
+        "mse_t_ha": 0.163658,
+        "rmse_t_ha": 0.404546,
+        "r2": 0.958949,
+        "bias": -0.011872
+      },
+      "evaluation_method": "GroupKFold(5) OOF on (District, Year) + frozen holdout via GroupShuffleSplit(0.2, random_state=42); grouped by District|Year",
+      "environment_under_which_reproduced": {
+        "python": "3.14.6",
+        "sklearn": "1.9.1",
+        "numpy": "2.5.3",
+        "pandas": "3.0.6",
+        "executable": "/usr/local/opt/python@3.14/bin/python3.14"
+      },
+      "results_file": "experiments/improved_dataset/phase12/results/phase12_results.json",
+      "comparison_to_client_claim": "different metric (tolerance rate on t/ha, not R2 on total tonnes) and different dataset; not comparable to client R2 0.95 / MSE 0.05 / RMSE 0.22"
+    },
+    "seed_viability_improvement_real_labels": {
+      "status": "VERIFIED_GAIN_ACCURATE_FOR_THAT_EXPERIMENT",
+      "experiment_dir": "experiments/meta_model_improvement/",
+      "task": "seed viability classification, 3-class, real labels (UCI Seeds wheat kernel measurements)",
+      "dataset": "SeedIQ/data/Seed_Data.csv",
+      "n_rows": 210,
+      "n_features": 7,
+      "split": "stratified 80/20, random_state=42",
+      "holdout_rows": 42,
+      "leakage_check": {
+        "test_rows_in_train": 0,
+        "leakage_detected": false
+      },
+      "label_source": "UCI Seeds dataset (real wheat kernel measurements; NOT synthetic)",
+      "baseline": {
+        "name": "RF50 (baseline)",
+        "test_accuracy": 0.904762,
+        "test_correct": 38,
+        "test_total": 42,
+        "test_macro_f1": 0.900692,
+        "test_macro_precision": 0.918954,
+        "test_macro_recall": 0.904762,
+        "confusion_matrix": [[10, 1, 3], [0, 14, 0], [0, 0, 14]]
+      },
+      "candidate": {
+        "name": "GBM200 (candidate)",
+        "test_accuracy": 0.928571,
+        "test_correct": 39,
+        "test_total": 42,
+        "test_macro_f1": 0.926284,
+        "test_macro_precision": 0.936111,
+        "test_macro_recall": 0.928571,
+        "confusion_matrix": [[11, 1, 2], [0, 14, 0], [0, 0, 14]],
+        "cv_accuracy_mean": 0.92852,
+        "cv_accuracy_std": 0.030887,
+        "train_accuracy": 1.0
+      },
+      "delta_accuracy_pp": 2.3809,
+      "delta_f1_pp": 2.5592,
+      "all_errors_candidate": "3 class-0 -> class-2 (over-compactness misread)",
+      "results_file": "experiments/meta_model_improvement/metrics.json",
+      "outlier_filtering_bug_note": "legacy clean_dataset() applied 1%-99% mask column-by-column with index shrinkage, dropping 29 rows (210->181) on older paths including legacy train_final_meta_and_compare.py; corrected experiment uses all 210 rows (UCI Seeds is already clean); the 42-row holdout numbers above are from the corrected pipeline and are internally consistent",
+      "production_relevance_note": "this is 3-class real-label seed viability; it is NOT the registry 'svm_model.pkl' seed entry (2-class, 100 synthetic records, 85%)",
+      "comparison_to_client_claim": "does not map to client SVM 89%; this is the strongest real-label seed result in the repo"
+    },
+    "meta_model_production_artifact_inspected": {
+      "status": "VERIFIED_ARTIFACT_TYPE_CONFIRMED",
+      "artifact": "SeedIQ/models/meta_model.pkl",
+      "artifact_type": "RandomForestClassifier",
+      "sklearn_class": "sklearn.ensemble._forest.RandomForestClassifier",
+      "n_estimators": 100,
+      "max_depth": 3,
+      "min_samples_leaf": 5,
+      "n_features_in_": 6,
+      "classes_": [0, 1],
+      "feature_names_stored": null,
+      "is_stacking_classifier": false,
+      "has_predict_proba": true,
+      "loaded_by_app_line": "SeedIQ/app.py line 3017 (load_helper('meta_model.pkl'))",
+      "used_by_app_line": "SeedIQ/app.py lines 3105-3117 (prob_success = predict_proba(...)[0,1]*100; threshold 50%)",
+      "input_features_at_serve_time": [
+        "pred_rf_val",
+        "pred_qml_val",
+        "pred_xgb_val",
+        "pred_qml_yield_val",
+        "pred_svm_val",
+        "pred_qml_seed_val"
+      ],
+      "input_construct_note": "6-element vector built at request time in POST /api/quantum-ml from base models' normalized predictions; not a fixed dataset row",
+      "output_semantics": "binary 0/1 -> prob_success %; decision = Optimal vs Suboptimal Performance",
+      "label_source": "constructed / rule-derived binary success label; no independent ground-truth outcome observed in repository",
+      "artifact_file_reference": "SeedIQ/models/meta_model.pkl"
+    },
+    "meta_model_training_script": {
+      "status": "VERIFIED_SCRIPT_BEHAVIOR_CONFIRMED_MISMATCH",
+      "script": "SeedIQ/train_final_meta_and_compare.py",
+      "meta_model_built_line": 250,
+      "meta_model_type_built": "StackingClassifier (classification) / StackingRegressor (yield)",
+      "base_learners": ["Random Forest", "XGBoost", "SVM", "Quantum ML (Simulated Quantum)"],
+      "final_estimator_classification": "LogisticRegression(C=1.0, max_iter=1000)",
+      "final_estimator_regression": "Ridge(alpha=10.0)",
+      "cv_strategy": "5-fold (out-of-fold base predictions for meta-learner)",
+      "global_meta_model_pkl_saved": {
+        "line": "315-317",
+        "condition": "only when ds_key == 'seed'",
+        "object_saved": "meta_pipe (Pipeline with preprocessor + StackingClassifier/StackingRegressor)",
+        "note": "so the global meta_model.pkl written by this script is a StackingClassifier from the seed task branch, which is a DIFFERENT object from the production RandomForestClassifier"
+      },
+      "per_dataset_save": "models/<crop|yield|seed>/meta_model/model.pkl",
+      "composite_formula": "(Crop Macro-F1 + Yield R2 + Seed Macro-F1) / 3",
+      "script_file_reference": "SeedIQ/train_final_meta_and_compare.py"
+    },
+    "meta_model_registry_entries": {
+      "status": "VERIFIED_NO_96PCT_MEASUREMENT_EXISTS",
+      "registry_file": "SeedIQ/training_registry.json",
+      "latest_entry_timestamp": "2026-10-08 00:35:32",
+      "latest_entry_algorithm": "Stacking meta model (RandomForestClassifier(n_estimators=100, max_depth=3, min_samples_leaf=5))",
+      "latest_entry_test_accuracy": 0.586364,
+      "latest_entry_cv_accuracy_mean": 0.574432,
+      "latest_entry_test_precision_macro": 0.578453,
+      "latest_entry_test_recall_macro": 0.569789,
+      "older_entry_test_accuracy": 0.572727,
+      "older_entry_cv_accuracy_mean": 0.573864,
+      "dataset_provenance": "Stacked OOF/TEST predictions from base models trained on: crop=provided, yield=provided (ICRISAT), seed=synthetic-generated",
+      "any_96pct_entry": false,
+      "app_previous_hardcoded_claim": {
+        "value": "meta 96%",
+        "where": "legacy dashboard placeholder",
+        "app acknowledgement": "SeedIQ/app.py line 922 acknowledges the app previously fell back to hardcoded percentages (rf 92% / xgb 94% / svm 89% / meta 96%) and now uses registry-fed metrics"
+      }
+    }
+  },
+  "verification_status_summary": {
+    "random_forest_92pct": "INCOMPARABLE_UNVERIFIED",
+    "xgboost_94pct_r2": "UNVERIFIED_NO_MATCHING_MEASUREMENT",
+    "svm_89pct": "UNVERIFIED_NO_MATCHING_MEASUREMENT",
+    "hybrid_meta_model_96pct": "UNREPRODUCIBLE",
+    "classification_92_91_90_91": "UNVERIFIED_NO_MATCHING_AGGREGATE",
+    "yield_mse_0.05": "UNVERIFIED_NO_MATCHING_MEASUREMENT",
+    "yield_rmse_0.22": "UNVERIFIED_NO_MATCHING_MEASUREMENT",
+    "yield_r2_0.95": "UNVERIFIED_NO_MATCHING_MEASUREMENT"
+  },
+  "model_by_model_comparison": [
+    {
+      "model_component": "Random Forest (crop)",
+      "client_reported_result": "92%",
+      "our_verified_result": "99.32% test accuracy, 99.35% macro-precision, 99.32% macro-recall (22 classes, 2,200 records); older 5-crop production RF is a different artifact",
+      "evaluation_dataset_and_sample_count": "Crop_recommendation.csv-based task, 2,200 records, 22 classes (registry); older 5-crop production RF trained on soil/weather schema with 5 classes",
+      "evaluation_method": "80/20 stratified test split + 5-fold CV",
+      "status": "VERIFIED — actual number 99.32%, not 92%"
+    },
+    {
+      "model_component": "XGBoost (yield)",
+      "client_reported_result": "94% R2",
+      "our_verified_result": "R2 0.9035 test, CV R2 0.9111 (5,585 ICRISAT records, 23 features)",
+      "evaluation_dataset_and_sample_count": "yield_icrisat_karnataka.csv, 5,585 records",
+      "evaluation_method": "grouped (District, Year) train/test split; held-out test; target Yield_Tonnes via LogPerHaRegressor",
+      "status": "VERIFIED — actual number ~0.90, not 0.94 or 0.95"
+    },
+    {
+      "model_component": "SVM (seed)",
+      "client_reported_result": "89%",
+      "our_verified_result": "85% test accuracy, 84.52% macro-precision, 81.87% macro-recall (2-class, 100 synthetic records); plus real-label 3-class seed viability GBM 92.86% (39/42) from separate experiment",
+      "evaluation_dataset_and_sample_count": "registry SVM seed: 100 records, 2 classes, synthetic-generated; real-seed experiment: Seed_Data.csv, 210 rows, 3 classes, UCI Seeds",
+      "evaluation_method": "80/20 stratified + 5-fold CV (registry); stratified 80/20 rs=42, one 42-row holdout, leakage-checked (real-seed experiment)",
+      "status": "VERIFIED — registry SVM is 85% on synthetic 2-class; real-label 3-class seed viability is 92.86% (GBM), not an SVM"
+    },
+    {
+      "model_component": "Hybrid Meta Model",
+      "client_reported_result": "96%",
+      "our_verified_result": "production artifact is RandomForestClassifier(n_estimators=100, max_depth=3, min_samples_leaf=5, 6 features, binary) with constructed success label; training script builds StackingClassifier (different object); registry best test accuracy 58.64%, CV 57.44%",
+      "evaluation_dataset_and_sample_count": "meta label built at request time from base-model outputs; seed leg synthetic-generated; no independent ground-truth outcome in repository",
+      "evaluation_method": "per-request inference for production RF; 80/20 test + 5-fold CV for stacking model; no standalone real-outcome test set for the success label",
+      "status": "UNREPRODUCIBLE — no 96% measurement exists; production model and training-script model mismatch; label is synthetic/rule-derived"
+    },
+    {
+      "model_component": "Crop classification (aggregate)",
+      "client_reported_result": "92% accuracy / 91% precision / 90% recall / 91% F1",
+      "our_verified_result": "crop RF 99.32% acc/prec/recall (22-class); seed viability GBM 92.86% acc, macro-F1 0.9263 (3-class real); SVM seed 85% (2-class synthetic) — no single model produces 92/91/90/91",
+      "evaluation_dataset_and_sample_count": "multiple (see components)",
+      "evaluation_method": "multiple (see components)",
+      "status": "UNVERIFIED — no single model/task produces that exact aggregate"
+    },
+    {
+      "model_component": "Yield regression (MSE/RMSE/R2)",
+      "client_reported_result": "MSE 0.05, RMSE 0.22, R2 0.95",
+      "our_verified_result": "no MSE 0.05 / RMSE 0.22 found; R2 exists (0.9035 yield XGB; 0.9475/0.9589 F3) but on different targets/splits/metric definitions, none paired with those MSE/RMSE values",
+      "evaluation_dataset_and_sample_count": "n/a (no matching result)",
+      "evaluation_method": "n/a",
+      "status": "NOT VERIFIED — no matching measurement in repository"
+    }
+  ],
+  "discrepancies_and_risks": [
+    {
+      "id": "train_serve_mismatch",
+      "severity": "high",
+      "description": "Production meta_model.pkl is a plain RandomForestClassifier; train_final_meta_and_compare.py builds a StackingClassifier/StackingRegressor. They are different objects, feature spaces, and training data.",
+      "evidence": [
+        "SeedIQ/models/meta_model.pkl inspected: RandomForestClassifier(n_estimators=100, max_depth=3, min_samples_leaf=5, n_features_in_=6, classes=[0,1])",
+        "SeedIQ/train_final_meta_and_compare.py line 250 builds StackingClassifier",
+        "SeedIQ/train_final_meta_and_compare.py lines 315-317 save global meta_model.pkl only from the seed branch",
+        "SeedIQ/app.py line 3017 loads meta_model.pkl; lines 3105-3117 use it for prob_success"
+      ]
+    },
+    {
+      "id": "synthetic_meta_label",
+      "severity": "high",
+      "description": "The meta model predicts a constructed 'Optimal vs Suboptimal Performance' label from base-model outputs and a 50% threshold; the seed leg is synthetic-generated per the registry. There is no independent ground-truth outcome, so a 96% accuracy figure cannot be established as real-world performance.",
+      "evidence": [
+        "SeedIQ/app.py lines 3105-3117 build prob_success from base-model predictions and threshold at 50%",
+        "SeedIQ/training_registry.json meta entry dataset_provenance: 'seed=synthetic-generated'",
+        "SeedIQ/models/meta_model.pkl is a 6-feature binary RF with no stored feature names and no associated real-outcome test set"
+      ]
+    },
+    {
+      "id": "legacy_hardcoded_numbers",
+      "severity": "high",
+      "description": "The app previously surfaced hardcoded RF 92% / XGB 94% / SVM 89% / meta 96% as if measured; app.py line 922 acknowledges this fallback was replaced with registry-fed metrics. The registry does not contain these numbers.",
+      "evidence": [
+        "SeedIQ/app.py line 922: 'fell back to hardcoded percentages (rf 92% / xgb 94% / svm 89% / meta 96%)'",
+        "SeedIQ/training_registry.json: latest entries show crop RF 99.32%, yield XGB R2 0.9035, SVM seed 85%, meta 58.64%"
+      ]
+    },
+    {
+      "id": "two_yield_lineages",
+      "severity": "medium",
+      "description": "Two yield lineages coexist: (a) live app stack yield model on yield_icrisat_karnataka.csv (R2 0.9035 test, 23 features, grouped split, total tonnes target); (b) improved-dataset F3 on enriched_yield_karnataka.csv (68.20% within +/-25% holdout, 1,088 rows, per-hectare target). Different datasets, targets, features, and metrics; not interchangeable.",
+      "evidence": [
+        "SeedIQ/training_registry.json xgb_model.pkl: 5,585 records, 23 features, test_r2 0.903461, dataset_provenance ICRISAT",
+        "experiments/improved_dataset/phase12/results/phase12_results.json: 1,088 holdout rows, 68.1985% within +/-25%, r2 0.958949, target yield_per_hectare"
+      ]
+    },
+    {
+      "id": "svm_seed_is_synthetic_2class",
+      "severity": "medium",
+      "description": "The registry SVM seed entry is a 2-class model on 100 synthetic records (85%). It is not the real-label 3-class seed viability task (210 rows, UCI Seeds), which is evaluated only in the meta_model_improvement experiment.",
+      "evidence": [
+        "SeedIQ/training_registry.json svm_model.pkl latest: records=100, classes=2, dataset_provenance=synthetic-generated, test_accuracy=0.85",
+        "experiments/meta_model_improvement/metrics.json: 210 rows, 3 classes, real UCI Seeds labels, GBM 92.86%"
+      ]
+    },
+    {
+      "id": "outlier_filtering_bug_legacy_path",
+      "severity": "medium",
+      "description": "Legacy clean_dataset() applied a 1%-99% mask column-by-column with index shrinkage, dropping 29 rows (210->181) and producing non-reproducible splits on older paths including train_final_meta_and_compare.py. The corrected meta_model_improvement experiment uses all 210 rows and is internally consistent.",
+      "evidence": [
+        "experiments/meta_model_improvement/REPORT.md section 2",
+        "experiments/meta_model_improvement/metrics.json production_mismatch_findings[3]"
+      ]
+    },
+    {
+      "id": "meta_model_no_independent_outcome",
+      "severity": "high",
+      "description": "No independently observed 'overall success' outcome exists in the repository for the meta model's binary label, so its real-world accuracy cannot be established; the 96% claim is unsubstantiated.",
+      "evidence": [
+        "SeedIQ/models/meta_model.pkl: binary RF, constructed label, no real-outcome test set",
+        "SeedIQ/training_registry.json: no entry with test_accuracy near 0.96; best is 0.586364",
+        "SeedIQ/app.py: prob_success derived from base-model outputs"
+      ]
+    }
+  ],
+  "actual_improvement_quantified": {
+    "yield": {
+      "baseline_f3_holdout_within_25pct_pct": 68.1985,
+      "baseline_f3_holdout_rows": 1088,
+      "phase12_candidate_within_25pct_pct": 68.3824,
+      "phase12_candidate_delta_pp_holdout": 0.1839,
+      "phase12_candidate_delta_pp_oof": 0.2669,
+      "meaningful_improvement_threshold_pp": 1.0,
+      "meaningful_improvement_achieved": false,
+      "decision": "RETAIN_F3"
+    },
+    "seed_viability_real_labels": {
+      "baseline_rf_accuracy_pct": 90.48,
+      "baseline_rf_correct_of": "38/42",
+      "candidate_gbm_accuracy_pct": 92.86,
+      "candidate_gbm_correct_of": "39/42",
+      "delta_pp": 2.38,
+      "same_task_target_metric_rows": true,
+      "verified_gain": true
+    },
+    "crop_classification": {
+      "measured_rf_test_accuracy_pct": 99.32,
+      "note": "strong result, but not 92% and on a different task/scale than client claim"
+    },
+    "meta_model": {
+      "verified_improvement_to_real_accuracy": "none",
+      "reason": "no independent ground-truth outcome; label is synthetic/rule-derived; production artifact != training-script artifact"
+    }
+  },
+  "strongest_reproducible_result_per_task": {
+    "crop_classification": {
+      "result": "99.32% test accuracy (22 classes, 2,200 records)",
+      "source": "SeedIQ/training_registry.json latest rf_model.pkl entry",
+      "metric": "test_accuracy",
+      "reproducible_from": "SeedIQ/training_registry.json"
+    },
+    "yield_regression": {
+      "result_options": {
+        "live_stack_xgb_r2_test": {
+          "value": 0.903461,
+          "source": "SeedIQ/training_registry.json latest xgb_model.pkl entry",
+          "dataset": "yield_icrisat_karnataka.csv, 5,585 records",
+          "metric": "R2 on total tonnes (per-hectare via LogPerHaRegressor)"
+        },
+        "improved_dataset_f3_holdout_within_25pct": {
+          "value_pct": 68.1985,
+          "source": "experiments/improved_dataset/phase12/results/phase12_results.json",
+          "dataset": "enriched_yield_karnataka.csv, 1,088 holdout rows",
+          "metric": "within +/-25% relative tolerance on yield_per_hectare (t/ha)"
+        }
+      },
+      "note": "choose the number that matches the task/metric being reported; these are not the same measurement"
+    },
+    "seed_viability_real_labels": {
+      "result": "92.86% accuracy (39/42), macro-F1 0.9263",
+      "source": "experiments/meta_model_improvement/metrics.json",
+      "dataset": "Seed_Data.csv, 210 rows, 3-class UCI Seeds real labels",
+      "metric": "accuracy on identical 42-row holdout"
+    }
+  },
+  "meta_model_96pct_verdict": {
+    "reproducible": false,
+    "reason": "no 96% measurement exists in repository; production artifact is a synthetic-label 6-feature binary RF; training script builds a different StackingClassifier; registry best meta accuracy is 58.64%",
+    "production_artifact_actual_type": "RandomForestClassifier(n_estimators=100, max_depth=3, min_samples_leaf=5, n_features_in_=6, classes=[0,1])",
+    "training_script_actual_type": "StackingClassifier/StackingRegressor",
+    "label_source": "constructed heuristic success label; seed leg synthetic-generated; no independent ground-truth outcome",
+    "real_world_accuracy_establishable": false,
+    "evidence_files": [
+      "SeedIQ/models/meta_model.pkl (artifact inspection)",
+      "SeedIQ/train_final_meta_and_compare.py (lines 250, 315-317)",
+      "SeedIQ/app.py (lines 3017, 3105-3117, 922)",
+      "SeedIQ/training_registry.json (meta entries)"
+    ]
+  },
+  "file_references": {
+    "registry": "SeedIQ/training_registry.json",
+    "app": "SeedIQ/app.py",
+    "training_script_legacy_meta": "SeedIQ/train_final_meta_and_compare.py",
+    "production_yield_artifact": "SeedIQ/models/yield_prediction/randomforest_model.pkl",
+    "production_meta_artifact": "SeedIQ/models/meta_model.pkl",
+    "production_crop_artifact": "SeedIQ/models/crop_recommendation/randomforest_model.pkl",
+    "production_seed_artifact": "SeedIQ/models/seed_viability/randomforest_model.pkl",
+    "phase12_results": "experiments/improved_dataset/phase12/results/phase12_results.json",
+    "seed_viability_improvement_metrics": "experiments/meta_model_improvement/metrics.json",
+    "seed_viability_improvement_report": "experiments/meta_model_improvement/REPORT.md",
+    "this_audit_report": "experiments/client_model_audit/CLIENT_MODEL_AUDIT_REPORT.md",
+    "this_audit_json": "experiments/client_model_audit/client_model_audit.json"
+  },
+  "highest_priority_next_action": {
+    "primary": "Fix the Meta Model's evidentiary basis before claiming any accuracy for it: either (1) define and collect a real 'overall success' outcome and retrain/evaluate the meta model against it, or (2) stop presenting prob_success as a measured 96% accuracy and relabel it explicitly as a heuristic confidence score with the synthetic seed leg disclosed.",
+    "secondary": [
+      "Reconcile the train-serve mismatch: make production meta_model.pkl be the model actually trained/evaluated, or document why they legitimately differ.",
+      "Align dashboard/narrative with actual measured numbers (crop 99.32%, yield R2 0.9035 / F3 68.20% +/-25%, seed viability 92.86%) instead of legacy 92/94/89/96% placeholders.",
+      "If the client's yield figures (MSE 0.05 / RMSE 0.22 / R2 0.95) come from a specific script/dataset/split, obtain that exact evaluation for apples-to-apples comparison."
+    ]
+  }
+}
