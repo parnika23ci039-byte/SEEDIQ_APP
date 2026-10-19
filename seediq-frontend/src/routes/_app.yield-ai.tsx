@@ -183,7 +183,7 @@ function YieldAI() {
             <div className="flex items-center gap-3 p-3 rounded-2xl bg-white/5 border border-white/10">
               <div className="h-12 w-12 rounded-xl overflow-hidden bg-black border border-white/10 shrink-0">
                 <img 
-                  src={getCropImage(crop) || "/crops/wheat/crop.webp"} 
+                  src={getCropImage(crop) || "/crops/placeholder.svg"} 
                   alt={crop} 
                   className="h-full w-full object-cover"
                 />

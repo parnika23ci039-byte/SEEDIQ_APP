@@ -293,8 +293,8 @@ const STORAGE_PROFILES = [
 
 const getStorageProfile = (crop: string) => {
   const profile = STORAGE_PROFILES.find(p => p.regex.test(crop)) || STORAGE_PROFILES[0];
-  const cropImg = getCropImage(crop) || "/crops/wheat/crop.webp";
-  const storageImg = getStorageImage(crop) || "/crops/wheat/storage.webp";
+  const cropImg = getCropImage(crop) || "/crops/placeholder.svg";
+  const storageImg = getStorageImage(crop) || "/crops/placeholder.svg";
   
   return {
     ...profile,
@@ -395,7 +395,7 @@ function StorageAI() {
             <div className="flex items-center gap-3 p-3 rounded-2xl bg-white/5 border border-white/10">
               <div className="h-12 w-12 rounded-xl overflow-hidden bg-black border border-white/10 shrink-0">
                 <img 
-                  src={activeCropAsset.cropImage || "/crops/wheat/crop.webp"} 
+                  src={activeCropAsset.cropImage || "/crops/placeholder.svg"} 
                   alt={selectedCrop} 
                   className="h-full w-full object-cover"
                 />

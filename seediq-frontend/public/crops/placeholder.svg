@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-label="Crop image not available">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b2a1b"/>
+      <stop offset="1" stop-color="#04110a"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="640" fill="url(#bg)"/>
+  <g fill="none" stroke="#34d399" stroke-opacity="0.55" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M320 470V250"/>
+    <path d="M320 330c-70 0-120-44-120-108 66 0 120 38 120 108z"/>
+    <path d="M320 400c70 0 120-44 120-108-66 0-120 38-120 108z"/>
+  </g>
+  <text x="320" y="540" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="30" fill="#a7f3d0" fill-opacity="0.75">Image coming soon</text>
+</svg>

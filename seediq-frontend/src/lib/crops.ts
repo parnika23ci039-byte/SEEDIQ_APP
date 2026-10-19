@@ -63,7 +63,8 @@ export const CROP_ASSETS: Record<string, { name: string; cropImage?: string; sto
   "cauliflower": {
     "name": "Cauliflower",
     "slug": "cauliflower",
-    "cropImage": "/crops/cauliflower/crop.webp",
+    // No crop photo is published for cauliflower yet; omitting cropImage makes
+    // the UI show the neutral placeholder instead of a broken or unrelated image.
     "storageImage": "/crops/cauliflower/storage.webp"
   },
   "coconut": {
