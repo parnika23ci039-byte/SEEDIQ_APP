@@ -1,0 +1,117 @@
+{
+  "baseline_f3": {
+    "correct_25": 3127,
+    "total": 4497,
+    "pct_25": 69.5352,
+    "correct_10": 1621,
+    "pct_10": 36.0463,
+    "mae": 0.237308,
+    "mse": 0.198042,
+    "rmse": 0.445019,
+    "r2": 0.947486,
+    "bias": -0.006869
+  },
+  "candidate_f3_log": {
+    "correct_25": 3097,
+    "total": 4497,
+    "pct_25": 68.8681,
+    "correct_10": 1601,
+    "pct_10": 35.6015,
+    "mae": 0.237554,
+    "mse": 0.197426,
+    "rmse": 0.444326,
+    "r2": 0.94765,
+    "bias": -0.018628
+  },
+  "delta": {
+    "pct_25_pp": -0.6671,
+    "pct_10_pp": -0.4448,
+    "mae_t_ha": 0.000246,
+    "r2": 0.000164
+  },
+  "fold_results": {
+    "base": [
+      66.5927,
+      68.0401,
+      69.4444,
+      74.3875,
+      69.2222
+    ],
+    "log": [
+      66.3707,
+      66.0356,
+      70.5556,
+      72.8285,
+      68.5556
+    ],
+    "base_mean": 69.5374,
+    "base_std": 2.6285,
+    "log_mean": 68.8692,
+    "log_std": 2.5648
+  },
+  "subgroup_analysis": {
+    "yield < 0.5 t/ha": {
+      "n": 1249,
+      "base_pct_25": 54.68,
+      "log_pct_25": 54.2,
+      "delta_pp": -0.48
+    },
+    "year 2003": {
+      "n": 189,
+      "base_pct_25": 51.85,
+      "log_pct_25": 50.79,
+      "delta_pp": -1.06
+    },
+    "year 2016": {
+      "n": 227,
+      "base_pct_25": 49.78,
+      "log_pct_25": 48.9,
+      "delta_pp": -0.88
+    },
+    "crop=Sesamum": {
+      "n": 227,
+      "base_pct_25": 58.59,
+      "log_pct_25": 57.71,
+      "delta_pp": -0.88
+    },
+    "crop=Pigeonpea": {
+      "n": 246,
+      "base_pct_25": 59.35,
+      "log_pct_25": 58.13,
+      "delta_pp": -1.22
+    },
+    "crop=Minor Pulses": {
+      "n": 269,
+      "base_pct_25": 59.85,
+      "log_pct_25": 57.99,
+      "delta_pp": -1.86
+    },
+    "crop=Sugarcane": {
+      "n": 252,
+      "base_pct_25": 85.32,
+      "log_pct_25": 83.33,
+      "delta_pp": -1.98
+    },
+    "crop=Rice": {
+      "n": 273,
+      "base_pct_25": 84.98,
+      "log_pct_25": 84.98,
+      "delta_pp": 0.0
+    }
+  },
+  "decision": "RETAIN_F3",
+  "acceptance_criteria": {
+    "meaningful_delta_pp": 1.0,
+    "consistent_across_folds": false,
+    "no_unacceptable_regression": true
+  },
+  "data_limitations": [
+    "IMD rainfall covers only 1901-2015; years 2016-2017 are clipped to 2015 (stale rainfall features).",
+    "Rainfall is at subdivision level (3 Karnataka subdivisions), not district level.",
+    "District-level IMD gridded rainfall was unavailable (Kaggle dataset requires authentication).",
+    "Open-Meteo ERA5 reanalysis exists for all 18 years but Phase 9 showed it does not improve the metric."
+  ],
+  "n_rows_train": 4497,
+  "n_features_A": 56,
+  "n_features_B": 63
+}

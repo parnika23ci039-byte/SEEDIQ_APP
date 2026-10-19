@@ -1,0 +1,846 @@
+{
+  "phase": 12,
+  "script": "phase12_audit_and_metric_aligned_centering.py",
+  "baseline": {
+    "model": "F3 (0.8*HistGBR(base) + 0.2*HistGBR(base+dynamic-rainfall), per crop; Chickpea RF specialist)",
+    "oof": {
+      "correct_25": 3127,
+      "total": 4497,
+      "pct_25": 69.5352,
+      "correct_10": 1621,
+      "pct_10": 36.0463,
+      "mae": 0.237308,
+      "mse": 0.198042,
+      "rmse": 0.445019,
+      "r2": 0.947486,
+      "bias": -0.006869
+    },
+    "frozen_holdout": {
+      "correct_25": 742,
+      "total": 1088,
+      "pct_25": 68.1985,
+      "correct_10": 395,
+      "pct_10": 36.3051,
+      "mae": 0.237763,
+      "mse": 0.163658,
+      "rmse": 0.404546,
+      "r2": 0.958949,
+      "bias": -0.011872
+    },
+    "recomputed_oof_matches_phase10_artifact": true,
+    "holdout_matches_published_742": true,
+    "environment": {
+      "python": "3.14.6",
+      "executable": "/usr/local/opt/python@3.14/bin/python3.14",
+      "sklearn": "1.9.1",
+      "numpy": "2.5.3",
+      "pandas": "3.0.6",
+      "platform": "macOS-15.7.9-x86_64-i386-64bit-Mach-O"
+    }
+  },
+  "audit": {
+    "target_identity": {
+      "definition": "yield_per_hectare == Yield_Tonnes / Area_Hectares",
+      "max_abs_deviation": 1.7763568394002505e-15,
+      "verified": true,
+      "units": "t/ha (ICRISAT source stores AREA in 1000 ha, PRODUCTION in 1000 t)",
+      "yield_min": 0.0181041268413358,
+      "yield_max": 14.231884057971014,
+      "yield_median": 0.741044776119403
+    },
+    "provenance": {
+      "dataset": "data/enriched_yield_karnataka.csv",
+      "source": "SeedIQ/data/yield_icrisat_karnataka.csv (ICRISAT district-level, real)",
+      "rows": 5585,
+      "source_rows": 5585,
+      "rows_matched_to_source": 5585,
+      "source_rows_present_in_enriched": "5585/5585",
+      "area_identical": true,
+      "production_identical": true,
+      "districts": 19,
+      "crops": 22,
+      "years": [
+        2000,
+        2017
+      ],
+      "synthetic_rows": 0,
+      "verified": true
+    },
+    "duplicates_and_missing": {
+      "exact_duplicate_rows": 0,
+      "duplicate_(District,Year,Crop)": 0,
+      "missing_in_features_or_target": 0,
+      "zero_actual_yields": 0,
+      "negative_yields": 0,
+      "near_zero_actuals_lt_0.05": 10,
+      "min_area_ha": 10.0,
+      "verified": true
+    },
+    "leakage": {
+      "target_derived_features_in_base": [],
+      "static_features_distinct_per_district_max": {
+        "soil_N": 1,
+        "rain_jan": 1,
+        "rain_annual": 1
+      },
+      "note": "district statics (soil/rain normals) are constant within district, so they carry no year-specific target information; the target and its logs are excluded from the feature list",
+      "verified": true
+    },
+    "dynamic_rainfall": {
+      "source": "IMD subdivision rainfall, 1901-2015 (SeedIQ/data/rainfall in india 1901-2015.csv)",
+      "join": "district -> subdivision, year clipped at 2015",
+      "join_year_range": {
+        "min": 2000,
+        "max": 2015
+      },
+      "stale_rows_2016_2017": {
+        "2016": 278,
+        "2017": 283
+      },
+      "stale_share_of_rows": 0.1004,
+      "note": "2016 and 2017 have no IMD observation and are served the 2015 subdivision values; a documented limitation, not silent corruption, and the audit cannot correct it without new weather observations"
+    },
+    "production_contract": {
+      "served_artifact": "models/yield_prediction/randomforest_model.pkl",
+      "served_class": "yield_model.LogPerHaRegressor: fits log(Yield_Tonnes/Area_Hectares), returns exp(pred)*Area_Hectares -> total tonnes",
+      "endpoint": "POST /api/yield-prediction returns units='tonnes per hectare' and total_tonnes = per_hectare * area explicitly labelled an extrapolation",
+      "experiment_target": "yield_per_hectare (t/ha)",
+      "alignment": "consistent: same quantity (t/ha) on both sides; relative error is invariant to the area factor, so the \u00b125% metric is comparable",
+      "mismatch_documented": "F3 is district-conditioned (soil/rain/year features) while the served contract accepts only Crop + Area_Hectares; the served model is a different artifact trained on that constrained contract",
+      "verified": true
+    },
+    "metric_definition": {
+      "relative_error": "|pred-true| / max(|true|, 1e-12)",
+      "floor": 1e-12,
+      "rows_with_zero_actual": 0,
+      "rows_near_zero_lt_0.05": 10,
+      "note": "no zero actuals exist; near-zero actuals cannot pass by construction (any positive prediction exceeds \u00b125% of e.g. 0.03 t/ha) and are counted as failures, consistently with Phase 10/11",
+      "verified": true
+    },
+    "environment": {
+      "python": "3.14.6",
+      "executable": "/usr/local/opt/python@3.14/bin/python3.14",
+      "sklearn": "1.9.1",
+      "numpy": "2.5.3",
+      "pandas": "3.0.6",
+      "platform": "macOS-15.7.9-x86_64-i386-64bit-Mach-O"
+    },
+    "environment_sensitivity": {
+      "primary_run_environment": {
+        "python": "3.14.6",
+        "executable": "/usr/local/opt/python@3.14/bin/python3.14",
+        "sklearn": "1.9.1",
+        "numpy": "2.5.3",
+        "pandas": "3.0.6",
+        "platform": "macOS-15.7.9-x86_64-i386-64bit-Mach-O"
+      },
+      "note": "the published F3 baseline is reproduced under the Homebrew python3 stack; the repository pins scikit-learn 1.6.1 for production and that stack yields a different baseline, measured here rather than assumed",
+      "other_stacks": [
+        {
+          "python": "3.9.6",
+          "sklearn": "1.6.1",
+          "numpy": "2.0.2",
+          "pandas": "2.3.3",
+          "oof_base": {
+            "correct_25": 3079,
+            "total": 4497,
+            "pct_25": 68.4679,
+            "correct_10": 1606,
+            "pct_10": 35.7127,
+            "mae": 0.243649,
+            "mse": 0.213202,
+            "rmse": 0.461738,
+            "r2": 0.943466,
+            "bias": -0.005511
+          },
+          "oof_candidate": {
+            "correct_25": 3089,
+            "total": 4497,
+            "pct_25": 68.6902,
+            "correct_10": 1539,
+            "pct_10": 34.2228,
+            "mae": 0.247636,
+            "mse": 0.219658,
+            "rmse": 0.468677,
+            "r2": 0.941754,
+            "bias": -0.049638
+          },
+          "holdout_base": {
+            "correct_25": 740,
+            "total": 1088,
+            "pct_25": 68.0147,
+            "correct_10": 399,
+            "pct_10": 36.6728,
+            "mae": 0.238545,
+            "mse": 0.166196,
+            "rmse": 0.407671,
+            "r2": 0.958313,
+            "bias": -0.012377
+          },
+          "interpreter": "/Users/apple/SeedIQ/.freebuff/venv/bin/python",
+          "ok": true
+        }
+      ]
+    }
+  },
+  "error_analysis": {
+    "overall": {
+      "correct_25": 3127,
+      "total": 4497,
+      "pct_25": 69.5352,
+      "correct_10": 1621,
+      "pct_10": 36.0463,
+      "mae": 0.237308,
+      "mse": 0.198042,
+      "rmse": 0.445019,
+      "r2": 0.947486,
+      "bias": -0.006869
+    },
+    "reproduction_check": {
+      "phase10_csv_rows": 4497,
+      "same_rows": true,
+      "max_prediction_deviation": 1.7763568394002505e-15,
+      "reproduced_exactly": false,
+      "reproduced_within_1e-9": true
+    },
+    "by_yield_band": {
+      "0-0.5": {
+        "n": 1315,
+        "pct_25": 54.2966,
+        "failures": 601,
+        "bias": 0.08673,
+        "overpred_pct": 69.96
+      },
+      "0.5-1.0": {
+        "n": 1635,
+        "pct_25": 73.3945,
+        "failures": 435,
+        "bias": 0.0038,
+        "overpred_pct": 45.99
+      },
+      "1.0-2.0": {
+        "n": 793,
+        "pct_25": 72.6356,
+        "failures": 217,
+        "bias": -0.06355,
+        "overpred_pct": 35.56
+      },
+      "2.0-3.0": {
+        "n": 311,
+        "pct_25": 82.9582,
+        "failures": 53,
+        "bias": -0.02238,
+        "overpred_pct": 47.91
+      },
+      "3.0-5.0": {
+        "n": 211,
+        "pct_25": 81.5166,
+        "failures": 39,
+        "bias": -0.13,
+        "overpred_pct": 30.81
+      },
+      "5.0+": {
+        "n": 232,
+        "pct_25": 89.2241,
+        "failures": 25,
+        "bias": -0.28602,
+        "overpred_pct": 41.38
+      }
+    },
+    "by_crop": {
+      "Castor": {
+        "n": 207,
+        "pct_25": 75.3623,
+        "failures": 51,
+        "bias": -0.01858,
+        "overpred_pct": 49.76
+      },
+      "Chickpea": {
+        "n": 228,
+        "pct_25": 70.614,
+        "failures": 67,
+        "bias": -0.00609,
+        "overpred_pct": 48.25
+      },
+      "Cotton": {
+        "n": 211,
+        "pct_25": 65.8768,
+        "failures": 72,
+        "bias": -0.01432,
+        "overpred_pct": 50.71
+      },
+      "Finger Millet": {
+        "n": 202,
+        "pct_25": 70.297,
+        "failures": 60,
+        "bias": 0.00328,
+        "overpred_pct": 52.48
+      },
+      "Groundnut": {
+        "n": 268,
+        "pct_25": 68.2836,
+        "failures": 85,
+        "bias": -0.01146,
+        "overpred_pct": 51.49
+      },
+      "Kharif Sorghum": {
+        "n": 215,
+        "pct_25": 65.1163,
+        "failures": 75,
+        "bias": -0.0107,
+        "overpred_pct": 49.3
+      },
+      "Linseed": {
+        "n": 98,
+        "pct_25": 64.2857,
+        "failures": 35,
+        "bias": -0.00371,
+        "overpred_pct": 42.86
+      },
+      "Maize": {
+        "n": 269,
+        "pct_25": 73.6059,
+        "failures": 71,
+        "bias": 0.00268,
+        "overpred_pct": 52.04
+      },
+      "Minor Pulses": {
+        "n": 269,
+        "pct_25": 59.8513,
+        "failures": 108,
+        "bias": -0.00547,
+        "overpred_pct": 50.19
+      },
+      "Oilseeds": {
+        "n": 222,
+        "pct_25": 72.0721,
+        "failures": 62,
+        "bias": -0.00597,
+        "overpred_pct": 47.75
+      },
+      "Pearl Millet": {
+        "n": 167,
+        "pct_25": 67.0659,
+        "failures": 55,
+        "bias": -0.01536,
+        "overpred_pct": 48.5
+      },
+      "Pigeonpea": {
+        "n": 246,
+        "pct_25": 59.3496,
+        "failures": 100,
+        "bias": -0.00868,
+        "overpred_pct": 51.22
+      },
+      "Rabi Sorghum": {
+        "n": 197,
+        "pct_25": 65.9898,
+        "failures": 67,
+        "bias": -0.01505,
+        "overpred_pct": 54.31
+      },
+      "Rapeseed and Mustard": {
+        "n": 134,
+        "pct_25": 79.8507,
+        "failures": 27,
+        "bias": -0.00495,
+        "overpred_pct": 50.0
+      },
+      "Rice": {
+        "n": 273,
+        "pct_25": 84.9817,
+        "failures": 41,
+        "bias": 0.01135,
+        "overpred_pct": 50.55
+      },
+      "Safflower": {
+        "n": 130,
+        "pct_25": 61.5385,
+        "failures": 50,
+        "bias": -0.01425,
+        "overpred_pct": 42.31
+      },
+      "Sesamum": {
+        "n": 227,
+        "pct_25": 58.5903,
+        "failures": 94,
+        "bias": -0.00473,
+        "overpred_pct": 51.54
+      },
+      "Sorghum": {
+        "n": 219,
+        "pct_25": 66.21,
+        "failures": 74,
+        "bias": -0.00747,
+        "overpred_pct": 49.77
+      },
+      "Soyabean": {
+        "n": 105,
+        "pct_25": 69.5238,
+        "failures": 32,
+        "bias": -0.00639,
+        "overpred_pct": 53.33
+      },
+      "Sugarcane": {
+        "n": 252,
+        "pct_25": 85.3175,
+        "failures": 37,
+        "bias": -0.01007,
+        "overpred_pct": 48.41
+      },
+      "Sunflower": {
+        "n": 230,
+        "pct_25": 69.1304,
+        "failures": 71,
+        "bias": -0.00689,
+        "overpred_pct": 53.04
+      },
+      "Wheat": {
+        "n": 128,
+        "pct_25": 71.875,
+        "failures": 36,
+        "bias": -0.00707,
+        "overpred_pct": 55.47
+      }
+    },
+    "by_year": {
+      "2000": {
+        "n": 190,
+        "pct_25": 75.2632,
+        "failures": 47,
+        "bias": -0.10886,
+        "overpred_pct": 42.63
+      },
+      "2001": {
+        "n": 226,
+        "pct_25": 71.6814,
+        "failures": 64,
+        "bias": -0.01143,
+        "overpred_pct": 52.65
+      },
+      "2002": {
+        "n": 265,
+        "pct_25": 62.6415,
+        "failures": 99,
+        "bias": 0.0272,
+        "overpred_pct": 56.98
+      },
+      "2003": {
+        "n": 189,
+        "pct_25": 51.8519,
+        "failures": 91,
+        "bias": 0.14892,
+        "overpred_pct": 70.37
+      },
+      "2004": {
+        "n": 304,
+        "pct_25": 71.7105,
+        "failures": 86,
+        "bias": -0.05278,
+        "overpred_pct": 45.07
+      },
+      "2005": {
+        "n": 273,
+        "pct_25": 75.0916,
+        "failures": 68,
+        "bias": -0.06851,
+        "overpred_pct": 40.29
+      },
+      "2006": {
+        "n": 271,
+        "pct_25": 70.4797,
+        "failures": 80,
+        "bias": 0.02925,
+        "overpred_pct": 62.36
+      },
+      "2007": {
+        "n": 245,
+        "pct_25": 72.6531,
+        "failures": 67,
+        "bias": -0.00738,
+        "overpred_pct": 39.18
+      },
+      "2008": {
+        "n": 296,
+        "pct_25": 75.0,
+        "failures": 74,
+        "bias": 0.0325,
+        "overpred_pct": 54.73
+      },
+      "2009": {
+        "n": 261,
+        "pct_25": 66.6667,
+        "failures": 87,
+        "bias": 0.13418,
+        "overpred_pct": 68.2
+      },
+      "2010": {
+        "n": 223,
+        "pct_25": 78.9238,
+        "failures": 47,
+        "bias": -0.13652,
+        "overpred_pct": 27.35
+      },
+      "2011": {
+        "n": 266,
+        "pct_25": 78.1955,
+        "failures": 58,
+        "bias": 0.00209,
+        "overpred_pct": 56.39
+      },
+      "2012": {
+        "n": 277,
+        "pct_25": 67.148,
+        "failures": 91,
+        "bias": 0.05264,
+        "overpred_pct": 63.9
+      },
+      "2013": {
+        "n": 250,
+        "pct_25": 79.6,
+        "failures": 51,
+        "bias": -0.06228,
+        "overpred_pct": 33.6
+      },
+      "2014": {
+        "n": 270,
+        "pct_25": 74.0741,
+        "failures": 70,
+        "bias": -0.05011,
+        "overpred_pct": 44.07
+      },
+      "2015": {
+        "n": 211,
+        "pct_25": 62.0853,
+        "failures": 80,
+        "bias": 0.04068,
+        "overpred_pct": 59.72
+      },
+      "2016": {
+        "n": 227,
+        "pct_25": 49.7797,
+        "failures": 114,
+        "bias": 0.11694,
+        "overpred_pct": 59.91
+      },
+      "2017": {
+        "n": 253,
+        "pct_25": 62.0553,
+        "failures": 96,
+        "bias": -0.19648,
+        "overpred_pct": 29.64
+      }
+    },
+    "by_district": {
+      "Ballari": {
+        "n": 271,
+        "pct_25": 70.1107,
+        "failures": 81,
+        "bias": -0.03203,
+        "overpred_pct": 50.92
+      },
+      "Belagavi": {
+        "n": 344,
+        "pct_25": 68.8953,
+        "failures": 107,
+        "bias": 0.00274,
+        "overpred_pct": 50.58
+      },
+      "Bengaluru Urban": {
+        "n": 195,
+        "pct_25": 73.3333,
+        "failures": 52,
+        "bias": -0.03742,
+        "overpred_pct": 45.64
+      },
+      "Bidar": {
+        "n": 272,
+        "pct_25": 65.0735,
+        "failures": 95,
+        "bias": 0.01504,
+        "overpred_pct": 54.04
+      },
+      "Chikkamagaluru": {
+        "n": 190,
+        "pct_25": 72.6316,
+        "failures": 52,
+        "bias": 0.01644,
+        "overpred_pct": 56.32
+      },
+      "Chitradurga": {
+        "n": 317,
+        "pct_25": 69.7161,
+        "failures": 96,
+        "bias": -0.02361,
+        "overpred_pct": 48.26
+      },
+      "Dakshina Kannada": {
+        "n": 63,
+        "pct_25": 79.3651,
+        "failures": 13,
+        "bias": 0.03847,
+        "overpred_pct": 46.03
+      },
+      "Dharwad": {
+        "n": 347,
+        "pct_25": 61.0951,
+        "failures": 135,
+        "bias": 0.03668,
+        "overpred_pct": 52.45
+      },
+      "Hassan": {
+        "n": 234,
+        "pct_25": 61.9658,
+        "failures": 89,
+        "bias": -0.03154,
+        "overpred_pct": 50.0
+      },
+      "Kalaburagi": {
+        "n": 285,
+        "pct_25": 72.9825,
+        "failures": 77,
+        "bias": -0.01107,
+        "overpred_pct": 48.42
+      },
+      "Kodagu": {
+        "n": 82,
+        "pct_25": 78.0488,
+        "failures": 18,
+        "bias": -0.03518,
+        "overpred_pct": 48.78
+      },
+      "Kolar": {
+        "n": 199,
+        "pct_25": 68.3417,
+        "failures": 63,
+        "bias": 0.00972,
+        "overpred_pct": 51.26
+      },
+      "Mandya": {
+        "n": 199,
+        "pct_25": 67.3367,
+        "failures": 65,
+        "bias": -0.00829,
+        "overpred_pct": 48.74
+      },
+      "Mysuru": {
+        "n": 277,
+        "pct_25": 66.065,
+        "failures": 94,
+        "bias": -0.01539,
+        "overpred_pct": 48.74
+      },
+      "Raichur": {
+        "n": 246,
+        "pct_25": 70.7317,
+        "failures": 72,
+        "bias": 0.00938,
+        "overpred_pct": 50.41
+      },
+      "Shivamogga": {
+        "n": 235,
+        "pct_25": 81.7021,
+        "failures": 43,
+        "bias": -0.06912,
+        "overpred_pct": 42.98
+      },
+      "Tumakuru": {
+        "n": 278,
+        "pct_25": 66.1871,
+        "failures": 94,
+        "bias": 0.02048,
+        "overpred_pct": 54.32
+      },
+      "Uttara Kannada": {
+        "n": 189,
+        "pct_25": 67.1958,
+        "failures": 62,
+        "bias": -0.01996,
+        "overpred_pct": 51.32
+      },
+      "Vijayapura": {
+        "n": 274,
+        "pct_25": 77.3723,
+        "failures": 62,
+        "bias": -0.00483,
+        "overpred_pct": 52.19
+      }
+    },
+    "largest_failure_subgroup": {
+      "band": "0-0.5",
+      "n": 1315,
+      "failures": 601,
+      "pass_pct": 54.2966,
+      "overpred_pct": 69.96,
+      "mean_bias_t_ha": 0.08673,
+      "share_of_all_failures_pct": 43.87,
+      "total_failures": 1370
+    },
+    "dispersion_context": {
+      "low_band_constant_(district,crop)_median_miss_rate": 49.56,
+      "low_yield_district_crop_year_to_year_cv_median": 0.3435,
+      "n_low_yield_series": 139,
+      "near_miss_failures_0.25_0.30": 297,
+      "near_miss_failures_0.25_0.35": 516,
+      "interpretation": "the year-to-year relative spread of low-yield district-crop series (median ~30-35%) is wider than the \u00b125% tolerance band, so a large part of the residual is dispersion the district-year features cannot resolve; one third of failures are within 5 pp of the boundary"
+    }
+  },
+  "experiment": {
+    "candidate": "metric-aligned log-space centering",
+    "k_derivation": "K = exp((ln0.75 + ln1.25)/2) = sqrt(0.75*1.25)",
+    "k": 0.9682458365518543,
+    "fitted_on_data": false,
+    "same_folds": true,
+    "same_rows": true,
+    "oof": {
+      "correct_25": 3139,
+      "total": 4497,
+      "pct_25": 69.8021,
+      "correct_10": 1532,
+      "pct_10": 34.0672,
+      "mae": 0.240809,
+      "mse": 0.205434,
+      "rmse": 0.453248,
+      "r2": 0.945526,
+      "bias": -0.050953
+    },
+    "delta_oof": {
+      "pct_25_pp": 0.2669,
+      "pct_10_pp": -1.9791,
+      "mae_t_ha": 0.003501,
+      "rmse_t_ha": 0.008229,
+      "r2": -0.00196
+    },
+    "frozen_holdout": {
+      "correct_25": 744,
+      "total": 1088,
+      "pct_25": 68.3824,
+      "correct_10": 379,
+      "pct_10": 34.8346,
+      "mae": 0.24403,
+      "mse": 0.174409,
+      "rmse": 0.417624,
+      "r2": 0.956253,
+      "bias": -0.057162
+    },
+    "fold_pct_25": {
+      "base": [
+        66.5927,
+        68.0401,
+        69.4444,
+        74.3875,
+        69.2222
+      ],
+      "candidate": [
+        68.1465,
+        67.0379,
+        70.7778,
+        73.2739,
+        69.7778
+      ],
+      "folds_improved": 3
+    },
+    "subgroups": {
+      "yield<0.5": {
+        "n": 1249,
+        "base_pct_25": 54.68,
+        "candidate_pct_25": 56.69,
+        "delta_pp": 2.01
+      },
+      "yield>=5": {
+        "n": 233,
+        "base_pct_25": 88.84,
+        "candidate_pct_25": 87.98,
+        "delta_pp": -0.86
+      },
+      "year=2003": {
+        "n": 189,
+        "base_pct_25": 51.85,
+        "candidate_pct_25": 52.38,
+        "delta_pp": 0.53
+      },
+      "year=2016": {
+        "n": 227,
+        "base_pct_25": 49.78,
+        "candidate_pct_25": 48.9,
+        "delta_pp": -0.88
+      },
+      "crop=Sesamum": {
+        "n": 227,
+        "base_pct_25": 58.59,
+        "candidate_pct_25": 57.71,
+        "delta_pp": -0.88
+      },
+      "crop=Pigeonpea": {
+        "n": 246,
+        "base_pct_25": 59.35,
+        "candidate_pct_25": 56.5,
+        "delta_pp": -2.85
+      },
+      "crop=Minor Pulses": {
+        "n": 269,
+        "base_pct_25": 59.85,
+        "candidate_pct_25": 59.11,
+        "delta_pp": -0.74
+      },
+      "crop=Sugarcane": {
+        "n": 252,
+        "base_pct_25": 85.32,
+        "candidate_pct_25": 84.52,
+        "delta_pp": -0.8
+      },
+      "crop=Rice": {
+        "n": 273,
+        "base_pct_25": 84.98,
+        "candidate_pct_25": 85.71,
+        "delta_pp": 0.73
+      }
+    },
+    "rows_entering_band": 112,
+    "rows_leaving_band": 100
+  },
+  "diagnostics_not_used_for_selection": {
+    "global_empirical_optimum_k": {
+      "k": 0.966,
+      "pct_25": 70.0022,
+      "gain_pp": 0.467
+    },
+    "per_crop_oracle_ceiling": {
+      "pct_25_in_sample": 71.2253,
+      "ceiling_gain_pp": 1.69,
+      "note": "in-sample oracle upper bound on any per-crop multiplicative correction"
+    },
+    "per_crop_cross_fitted": {
+      "pct_25": 68.8014,
+      "delta_pp": -0.7338,
+      "note": "honest, cross-fitted per-crop multiplicative correction (diagnostic)"
+    },
+    "base_pct_25": 69.5352
+  },
+  "acceptance_criteria": {
+    "meaningful_delta_pp_required": 1.0,
+    "meaningful_delta_achieved": false,
+    "consistent_across_folds": false,
+    "no_unacceptable_regression": true
+  },
+  "decision": "RETAIN_F3",
+  "exploratory_screening_disclosure": {
+    "note": "Two further candidates were screened during the audit, on the grouped-OOF selection metric only (the frozen holdout was never used): (a) causal persistence features (lag-1/lag-2 district-crop yield) and (b) a pooled low-yield specialist (one HistGBR over the six weakest crops). Both were measured WORSE and were not adopted as the pre-registered experiment.",
+    "persistence_features_oof_pct_25": 66.3998,
+    "persistence_features_delta_pp": -3.1354,
+    "pooled_low_yield_specialist_oof_pct_25": 68.53,
+    "pooled_low_yield_specialist_delta_pp": -1.0
+  },
+  "root_cause": {
+    "verified_defect": "none found in target definition, units, provenance, duplicates, leakage or fold construction",
+    "dominant_error_structure": "44% of all failures sit in the <0.5 t/ha band (29% of rows, 45.7% fail, 70% overpredicted). Low-yield district-crop series move \u00b1~34% year to year, wider than the \u00b125% tolerance band; the available features (district statics, subdivision annual rainfall, year, area) cannot resolve that dispersion. Placement corrections are near-exhausted: the empirical optimal global factor gains <0.5 pp and the in-sample oracle ceiling for ANY per-crop multiplicative correction is +1.69 pp, while an honest cross-fitted per-crop correction loses 0.8 pp.",
+    "environment_mismatch": "the experiment track reproduces F3's published numbers only under the Homebrew python3 stack (sklearn 1.9.1); the production pin is scikit-learn 1.6.1 and the identical code scores lower there \u2014 the headline baseline is stack-dependent, so phase 9-11 deltas that are smaller than the stack gap are not trustworthy until re-measured under one pinned stack",
+    "conclusion": "RETAIN F3 \u2014 residual error is dispersion/information-limited, not a fixable placement or pipeline defect"
+  },
+  "next_data_requirement": "To move beyond ~70% within \u00b125%: (1) field-/block-level yield observations (the target is a district aggregate whose year-to-year dispersion exceeds the tolerance band); (2) district-resolution observed (ground-station) rainfall for the target year, including 2016-2017, plus crop calendars to align weather with growing windows; (3) irrigation/soil-moisture covariates for the low-yield rainfed crops (Sesamum, Pigeonpea, Minor Pulses, Safflower, Linseed) that hold 28% of all failures.",
+  "artifacts": {
+    "json": "experiments/improved_dataset/phase12/results/phase12_results.json",
+    "oof_rows": 4497,
+    "holdout_rows": 1088
+  }
+}

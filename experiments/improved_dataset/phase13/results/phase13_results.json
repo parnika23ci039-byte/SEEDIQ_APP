@@ -1,0 +1,406 @@
+{
+  "phase": 13,
+  "script": "phase13_reproducible_baseline.py",
+  "objective": "reproducible production baseline before further improvement",
+  "chosen_environment": {
+    "label": "pinned serving stack (.freebuff/venv: py3.9.6 / sklearn 1.6.1)",
+    "why": "the pinned serving stack in SeedIQ/requirements.txt (scikit-learn 1.6.1 / numpy 2.0.2 / pandas 2.3.3 / scipy 1.13.1) \u2014 the only local stack under which the committed production artifact unpickles; already installed, so no package change",
+    "recorded_versions": {
+      "executable": "/Users/apple/SeedIQ/.freebuff/venv/bin/python",
+      "python": "3.9.6",
+      "scikit_learn": "1.6.1",
+      "numpy": "2.0.2",
+      "pandas": "2.3.3",
+      "scipy": "1.13.1",
+      "platform": "macOS-15.7.9-x86_64-i386-64bit",
+      "is_the_pinned_serving_interpreter": true,
+      "matches_pin_sklearn_1_6_1": true
+    },
+    "dependency_files": {
+      "SeedIQ/requirements.txt": {
+        "present": true,
+        "numeric_stack_pins": {
+          "numpy": "2.0.2",
+          "pandas": "2.3.3",
+          "scipy": "1.13.1",
+          "scikit-learn": "1.6.1",
+          "xgboost": "2.1.4",
+          "joblib": "1.5.3"
+        },
+        "comment": "pins the numeric stack because every committed model artifact was serialized with scikit-learn 1.6.1 (sklearn>=1.7 removed the private `_loss` module the yield pickle references)"
+      },
+      "root .python-version": "3.11.17",
+      "root requirements.txt": "-r SeedIQ/requirements.txt"
+    },
+    "deployment_note": ".python-version pins 3.11.17 for Railway; the local venv is Python 3.9.6 with the SAME pinned numeric stack (same sklearn/numpy/pandas/scipy, different Python minor) \u2014 recorded as residual risk, not ignored"
+  },
+  "other_local_environment": {
+    "python": "3.14.6",
+    "scikit_learn": "1.9.1",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "executable": "/usr/local/opt/python@3.14/bin/python3.14",
+    "interpreter": "/usr/local/bin/python3",
+    "ok": true
+  },
+  "task1_environment_discrepancy": {
+    "artifact_compatibility": {
+      "artifact": "SeedIQ/models/yield_prediction/randomforest_model.pkl",
+      "sha256": "2ab7377c8e97fe4bcdbdf7205425947c2d961fbb729aa1bc7dab7d756413906b",
+      "embedded_sklearn_version": [
+        "1.6.1"
+      ],
+      "load_under_chosen_env": {
+        "ok": true,
+        "error": null,
+        "warnings": []
+      },
+      "chosen_env_details": {
+        "class": "yield_model.LogPerHaRegressor",
+        "wrapper_n_features": 23,
+        "inner_regressor": "HistGradientBoostingRegressor",
+        "inner_params": {
+          "loss": "squared_error",
+          "max_iter": 400,
+          "learning_rate": 0.08,
+          "random_state": 42
+        },
+        "smoke_predict_1000ha_rice_total_tonnes": 1999.8604300247437,
+        "smoke_predict_ok": true
+      },
+      "load_under_other_env": {
+        "ok": false,
+        "error": "ModuleNotFoundError: No module named '_loss'",
+        "interpreter": "/usr/local/bin/python3"
+      },
+      "compatible_environment": "artifact loads only under the pinned scikit-learn 1.6.1 stack; the evaluation stack (sklearn 1.9.1) fails to unpickle it (private `_loss` module removed in sklearn >= 1.7), so evaluation and serving CANNOT share an environment until the artifact is re-serialized or the stack is unified"
+    },
+    "production_vs_f3": {
+      "identical": false,
+      "aspect": {
+        "training_code": {
+          "production": "SeedIQ/train_all_models.py::train_yield -> make_yield_model() (yield_model.LogPerHaRegressor)",
+          "f3_evaluation": "experiments/improved_dataset/phase10/phase10_error_analysis.py::f3_oof (per-crop models, 0.8*A + 0.2*B blend, Chickpea RF specialist)",
+          "same": false
+        },
+        "model_class_and_loss": {
+          "production": "HistGradientBoostingRegressor(loss=squared_error, max_iter=400, lr=0.08) on log(Yield_Tonnes/Area_Hectares)",
+          "f3_evaluation": "HistGradientBoostingRegressor(loss=absolute_error, max_iter=200, lr=0.05, depth=6) per crop, blended; target yield_per_hectare (raw t/ha)",
+          "same": false
+        },
+        "data": {
+          "production": "SeedIQ/data/yield_icrisat_karnataka.csv (5,585 rows; ICRISAT district names)",
+          "f3_evaluation": "experiments/improved_dataset/data/enriched_yield_karnataka.csv (5,585 rows; renamed districts + soil/rain/year features)",
+          "same_source_rows": true,
+          "same_file": false
+        },
+        "feature_schema": {
+          "production_features_count": 23,
+          "production_target": "Yield_Tonnes",
+          "production_columns_head": [
+            "Area_Hectares",
+            "Crop_Castor",
+            "Crop_Chickpea"
+          ],
+          "f3_features_count": 56,
+          "f3_target": "yield_per_hectare (from log fit, exp inverse)",
+          "f3_branch_b_features_added": "7 dyn_rain_* features",
+          "same": false,
+          "note": "23 columns (Area + 22 crop dummies, no District/Year/soil/rain) vs 56 base (63 with dynamic rainfall) district-conditioned features"
+        },
+        "evaluation_protocol": {
+          "production": "GroupShuffleSplit(0.2, rs=42) district-year groups; GroupKFold(5) CV on TRAIN only; metrics are on district TOTALS in tonnes (R2)",
+          "f3_evaluation": "same splitter family but different label set (renamed districts change sort order -> different groups selected); grouped OOF on train split + frozen holdout; metrics are within-+/-25% on t/ha",
+          "same_rows": false,
+          "different_holdout_rows_reason": "district label spellings differ between the two tables, so the same seed selects different district-year groups"
+        },
+        "registry_metrics_not_comparable": {
+          "production_test_r2_on_tonnes": 0.908842,
+          "f3_holdout_within_25_on_t_per_ha": 68.1985,
+          "note": "different target scale, different rows, different loss \u2014 the production artifact has never been scored with the F3 within-+/-25% per-hectare protocol"
+        }
+      },
+      "registry_entry": {
+        "timestamp": "2026-10-08 00:33:56",
+        "algorithm": "HistGradientBoostingRegressor on log(Yield_Tonnes / Area_Hectares) (Model M; exp(pred) * area)",
+        "dataset_path": "data/yield_icrisat_karnataka.csv",
+        "records": 5585,
+        "features_count": 23,
+        "target": "Yield_Tonnes (district total)",
+        "sample_counts": {
+          "train": 4423,
+          "test": 1162,
+          "train_groups": 273,
+          "test_groups": 69
+        },
+        "random_state": 42,
+        "dataset_synthetic": false
+      },
+      "verdict": "NOT trained with the same code, data file, feature schema, target transform or evaluation rows as the evaluated F3 \u2014 the Phase 9-12 numbers describe an experimental per-crop model, not the served artifact"
+    },
+    "evaluation_splits": {
+      "splitter": "GroupShuffleSplit(test_size=0.2, random_state=42) on District|Year",
+      "f3_experiment_split": {
+        "rows_train": 4497,
+        "rows_test": 1088,
+        "groups_test": 69
+      },
+      "production_split": {
+        "rows_train": 4423,
+        "rows_test": 1162,
+        "groups_test": 69,
+        "matches_registry_4423_1162": true
+      },
+      "test_group_overlap": 10,
+      "same_holdout_rows": false,
+      "note": "identical splitter parameters select different district-year groups because district label spellings differ between the enriched table (renamed) and the ICRISAT table (source names) \u2014 np.unique sorts by label, so the seeded permutation lands on different groups"
+    },
+    "phase_9_11_claim_check": {
+      "scanned_result_files": {
+        "experiments/improved_dataset/phase9/results/phase9_consolidated_results.json": {
+          "records_environment": false,
+          "baseline_69_5352_present": true,
+          "holdout_742_present": true,
+          "pinned_stack_value_68_4679_present": false
+        },
+        "experiments/improved_dataset/phase10/results/phase10_hypothesis_results.json": {
+          "records_environment": false,
+          "baseline_69_5352_present": true,
+          "holdout_742_present": true,
+          "pinned_stack_value_68_4679_present": false
+        },
+        "experiments/improved_dataset/phase10/results/phase10_error_analysis.json": {
+          "records_environment": false,
+          "baseline_69_5352_present": true,
+          "holdout_742_present": true,
+          "pinned_stack_value_68_4679_present": false
+        },
+        "experiments/improved_dataset/phase11/results/phase11_results.json": {
+          "records_environment": false,
+          "baseline_69_5352_present": true,
+          "holdout_742_present": true,
+          "pinned_stack_value_68_4679_present": false
+        }
+      },
+      "environment_recorded_by_any_phase_9_11": false,
+      "assessment": "Phase 9-11 never recorded an interpreter/library version. Their shared baseline constants (69.5352% OOF, 742/1088 holdout) reproduce ONLY on the evaluation stack (py3.14.6/sklearn 1.9.1), so all three phases ran there \u2014 internally one consistent environment. Their retain-F3 decisions are deltas measured within that single stack and are therefore internally valid. What does NOT transfer: the absolute metrics (the pinned serving stack scores 68.4679%/740 on the identical code) and any delta smaller than the measured 1.07 pp level gap. Phase 12 measured one candidate under both stacks (+0.267 vs +0.222 pp) suggesting deltas are stabler than levels, but n=1 \u2014 no Phase 9-11 claim can be certified under the serving stack without re-measurement, which this phase deliberately does NOT do (no new model experiments)",
+      "claims_rem_valid_single_env": "YES for internal consistency (all three ran on one stack); NOT ESTABLISHED for the serving stack (untested there); absolute values are stack-specific"
+    },
+    "training_env": {
+      "artifact_serialized_with_sklearn": [
+        "1.6.1"
+      ],
+      "training_python": "not recorded by train_all_models.py or the registry \u2014 provenance gap",
+      "note": "neither training_registry.json nor training_history.txt records interpreter/library versions; the pickle's embedded sklearn version is the only machine-readable provenance"
+    },
+    "evaluation_env": {
+      "stack": "Homebrew python3: py3.14.6 / sklearn 1.9.1 / numpy 2.5.3 / pandas 3.0.6",
+      "evidence": "Phase 12 reproduced 69.5352%/742 only on this stack; the pinned stack gives 68.4679%/740"
+    },
+    "serving_env": {
+      "deployment": "Railway py3.11.17 + scikit-learn 1.6.1 (requirements pin)",
+      "local_dev": "venv py3.9.6 + sklearn 1.6.1 \u2014 compatible, smoke predict OK"
+    }
+  },
+  "task2_reproducible_baseline": {
+    "environment": {
+      "executable": "/Users/apple/SeedIQ/.freebuff/venv/bin/python",
+      "python": "3.9.6",
+      "scikit_learn": "1.6.1",
+      "numpy": "2.0.2",
+      "pandas": "2.3.3",
+      "scipy": "1.13.1",
+      "platform": "macOS-15.7.9-x86_64-i386-64bit"
+    },
+    "data": "experiments/improved_dataset/data/enriched_yield_karnataka.csv",
+    "seed": 42,
+    "folds": "GroupKFold(5) District|Year (OOF) + GroupShuffleSplit(0.2, rs=42) holdout",
+    "evaluation_code": "phase10_error_analysis.f3_oof / f3_predict (read-only import)",
+    "grouped_oof": {
+      "note": "80% training split, 5-fold grouped out-of-fold \u2014 kept separate from the holdout",
+      "comparison": {
+        "label": "grouped_oof",
+        "n_rows": 4497,
+        "max_abs_prediction_deviation": 2.220446049250313e-16,
+        "mean_abs_prediction_deviation": 2.086142885942311e-18,
+        "predictions_identical_within_1e_12": true,
+        "metrics_identical": true,
+        "run1_metrics": {
+          "correct_25": 3079,
+          "total": 4497,
+          "pct_25": 68.4679,
+          "correct_10": 1606,
+          "pct_10": 35.7127,
+          "mae": 0.243649,
+          "mse": 0.213202,
+          "rmse": 0.461738,
+          "r2": 0.943466,
+          "bias": -0.005511
+        },
+        "run2_metrics": {
+          "correct_25": 3079,
+          "total": 4497,
+          "pct_25": 68.4679,
+          "correct_10": 1606,
+          "pct_10": 35.7127,
+          "mae": 0.243649,
+          "mse": 0.213202,
+          "rmse": 0.461738,
+          "r2": 0.943466,
+          "bias": -0.005511
+        }
+      }
+    },
+    "frozen_holdout": {
+      "note": "fit on the 80% split, evaluate the untouched 20% district-year holdout \u2014 kept separate from the OOF",
+      "comparison": {
+        "label": "frozen_holdout",
+        "n_rows": 1088,
+        "max_abs_prediction_deviation": 2.220446049250313e-16,
+        "mean_abs_prediction_deviation": 1.6837021972716069e-18,
+        "predictions_identical_within_1e_12": true,
+        "metrics_identical": true,
+        "run1_metrics": {
+          "correct_25": 740,
+          "total": 1088,
+          "pct_25": 68.0147,
+          "correct_10": 399,
+          "pct_10": 36.6728,
+          "mae": 0.238545,
+          "mse": 0.166196,
+          "rmse": 0.407671,
+          "r2": 0.958313,
+          "bias": -0.012377
+        },
+        "run2_metrics": {
+          "correct_25": 740,
+          "total": 1088,
+          "pct_25": 68.0147,
+          "correct_10": 399,
+          "pct_10": 36.6728,
+          "mae": 0.238545,
+          "mse": 0.166196,
+          "rmse": 0.407671,
+          "r2": 0.958313,
+          "bias": -0.012377
+        }
+      }
+    },
+    "pass": true
+  },
+  "task3_data_improvement": {
+    "source": "Phase 12 results, read-only: experiments/improved_dataset/phase12/results/phase12_results.json",
+    "total_oof_rows": 4497,
+    "total_failures": 1370,
+    "overall_pass_rate_pct": 69.5352,
+    "opportunity_bounds": [
+      {
+        "subgroup": "actual yield < 0.5 t/ha (largest failure cluster)",
+        "rows": 1315,
+        "current_passes": 714,
+        "failures": 601,
+        "fail_share_of_all_pct": 43.9,
+        "upper_bound_if_subgroup_reached_overall_rate_rows": 200,
+        "upper_bound_pp": 4.45,
+        "why": "44% of all failures; dominated by year-to-year dispersion (median CV 0.34 > the 0.25 band) that district statics + subdivision rainfall cannot explain"
+      },
+      {
+        "subgroup": "drought/shock years 2003+2016+2017",
+        "rows": 669,
+        "current_passes": 368,
+        "failures": 301,
+        "fail_share_of_all_pct": 22.0,
+        "upper_bound_if_subgroup_reached_overall_rate_rows": 97,
+        "upper_bound_pp": 2.16,
+        "why": "worst years (49.8-62.1% pass); 2016-2017 also carry forward-filled 2015 rainfall \u2014 a demonstrated data defect",
+        "stale_rainfall_subset_2016_2017": {
+          "rows_in_oof": 480,
+          "failures": 210,
+          "note": "IMD series ends 2015; Phase 12 measured 10.04% of ALL rows served 2015 subdivision rainfall for 2016-2017 via Year.clip(upper=2015)"
+        }
+      },
+      {
+        "subgroup": "five weakest rainfed crops (Sesamum, Pigeonpea, Minor Pulses, Safflower, Linseed)",
+        "rows": 970,
+        "current_passes": 583,
+        "failures": 387,
+        "fail_share_of_all_pct": 28.2,
+        "upper_bound_if_subgroup_reached_overall_rate_rows": 91,
+        "upper_bound_pp": 2.02,
+        "why": "28% of all failures; candidate variables: irrigation, soil moisture, sowing windows"
+      }
+    ],
+    "bounds_are_upper_limits_not_predictions": true,
+    "overlap_caveat": "the three subgroups overlap (drought years and weak crops sit inside the <0.5 t/ha band), so bounds must not be summed",
+    "already_available_data": [
+      {
+        "dataset": "experiments/improved_dataset/phase9/data/openmeteo_daily_weather_karnataka.csv",
+        "content": "ERA5 district daily rainfall+temperature, 19 districts, 2000-2017, 124,925 rows",
+        "status": "ON DISK; already MEASURED in Phase 9 \u2014 candidates B/C/D/E/F all regressed the holdout (-1.10 to -4.69 pp). Not a new source of value as-is (reanalysis, not observed ground truth)"
+      },
+      {
+        "dataset": "SeedIQ/data/rainfall in india 1901-2015.csv",
+        "content": "IMD subdivision rainfall 1901-2015 (3 Karnataka subdivisions)",
+        "status": "ON DISK; already used by F3 branch B (20% weight); ends 2015"
+      },
+      {
+        "dataset": "SeedIQ/data/district wise rainfall normal.csv",
+        "content": "district long-term rainfall normals (static)",
+        "status": "ON DISK; already the static rain_* features in F3"
+      },
+      {
+        "dataset": "soil CSV + ICRISAT area/production tables",
+        "content": "static soil properties; district-year-crop area/production 2000-2017",
+        "status": "ON DISK; already the label + area feature. Same-year other-crop yields are target-derived (not pre-harvest usable); lagged own yields were screened in Phase 12 and measured -3.14 pp"
+      }
+    ],
+    "must_be_collected": [
+      {
+        "variable": "district-resolution OBSERVED monthly rainfall for the target year, including 2016-2017",
+        "exact_source": "India Meteorological Department district rainfall data; the convenience mirror identified in Phase 11: Kaggle dataset 'dhamur/monthly-district-avg-rainfall-19012017indiacsv' (1901-2017 monthly district averages)",
+        "dependency_requirement": "NONE new \u2014 CSV read with the already-pinned pandas; only prerequisite is Kaggle API credentials (Phase 11 blocker) or direct IMD open-data download",
+        "downloaded": false,
+        "addresses": "removes the Year.clip forward-fill defect (10.04% of rows) and feeds the three worst years"
+      },
+      {
+        "variable": "irrigation source/coverage and soil moisture",
+        "exact_source": "not identified in-repo; candidates: CGWB/IWMI groundwater levels, state irrigation department irrigated-area series",
+        "dependency_requirement": "TBD at sourcing \u2014 not assessed; no install planned",
+        "downloaded": false,
+        "addresses": "five weakest rainfed crops (387 failures, 28.2% of all)"
+      },
+      {
+        "variable": "crop calendar / sowing-harvest windows per district",
+        "exact_source": "ICAR / Directorate of Economics & Statistics crop calendars",
+        "dependency_requirement": "NONE expected (tabular CSV/PDF extract)",
+        "downloaded": false,
+        "addresses": "aligns weather with growing windows; enables seasonal rather than calendar-year rainfall sums"
+      },
+      {
+        "variable": "field- or block-level yield observations",
+        "exact_source": "state agriculture department / district statistical handbooks; no public machine-readable source identified",
+        "dependency_requirement": "N/A \u2014 institutional data sharing, not software",
+        "downloaded": false,
+        "addresses": "the dispersion itself \u2014 Phase 12's ceiling argument"
+      }
+    ],
+    "single_most_valuable_next_action": {
+      "action": "Collect district-resolution OBSERVED rainfall for 2000-2017 (minimum 2016-2017) and replace the Year.clip(upper=2015) forward-fill with real observations \u2014 before any further model work",
+      "why_first": "only demonstrated data defect in the pipeline (10.04% of rows carry 2015 rainfall for later years), targets the three worst years (669 rows / 301 failures = 22.0% of all failures), needs no new dependency and no code change beyond the join, and the only already-available alternative (ERA5) was measured to HURT in Phase 9",
+      "quantified_upper_bound_pp": 2.16,
+      "strategic_second": "field-/block-level yields address the largest cluster (bound 4.45 pp) but need institutional data sharing, not a download"
+    },
+    "no_downloads_no_installs_performed": true
+  },
+  "constraints_honored": {
+    "no_packages_installed_or_upgraded": true,
+    "production_model_not_overwritten": true,
+    "production_code_untouched": true,
+    "phase12_results_not_modified": true,
+    "phase12_sha256_before": "4264c85dcfe96660d38f73291e03068c793f4d130a9ab50bfabc4fe29416102a",
+    "phase12_sha256_after": "4264c85dcfe96660d38f73291e03068c793f4d130a9ab50bfabc4fe29416102a",
+    "no_model_experiments": "only F3 baseline determinism reruns; no candidates, no tuning, no accuracy claims",
+    "no_data_downloaded": true
+  }
+}
