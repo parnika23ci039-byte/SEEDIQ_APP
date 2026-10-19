@@ -1,0 +1,603 @@
+{
+  "overall": {
+    "correct_25": 3127,
+    "total": 4497,
+    "pct_25": 69.5352,
+    "correct_10": 1621,
+    "pct_10": 36.0463,
+    "mae": 0.237308,
+    "mse": 0.198042,
+    "rmse": 0.445019,
+    "r2": 0.947486,
+    "bias": -0.006869
+  },
+  "by_crop": {
+    "Castor": {
+      "n": 207,
+      "pct_25": 75.3623,
+      "pct_10": 41.0628,
+      "mae": 0.146935,
+      "bias": -0.018576,
+      "overpred_pct": 49.8,
+      "y_true_mean": 0.802,
+      "y_true_median": 0.754
+    },
+    "Chickpea": {
+      "n": 228,
+      "pct_25": 70.614,
+      "pct_10": 31.5789,
+      "mae": 0.120904,
+      "bias": -0.00609,
+      "overpred_pct": 48.2,
+      "y_true_mean": 0.578,
+      "y_true_median": 0.556
+    },
+    "Cotton": {
+      "n": 211,
+      "pct_25": 65.8768,
+      "pct_10": 30.3318,
+      "mae": 0.083428,
+      "bias": -0.014319,
+      "overpred_pct": 50.7,
+      "y_true_mean": 0.346,
+      "y_true_median": 0.322
+    },
+    "Finger Millet": {
+      "n": 202,
+      "pct_25": 70.297,
+      "pct_10": 32.6733,
+      "mae": 0.270226,
+      "bias": 0.003284,
+      "overpred_pct": 52.5,
+      "y_true_mean": 1.358,
+      "y_true_median": 1.346
+    },
+    "Groundnut": {
+      "n": 268,
+      "pct_25": 68.2836,
+      "pct_10": 33.9552,
+      "mae": 0.17018,
+      "bias": -0.011465,
+      "overpred_pct": 51.5,
+      "y_true_mean": 0.849,
+      "y_true_median": 0.755
+    },
+    "Kharif Sorghum": {
+      "n": 215,
+      "pct_25": 65.1163,
+      "pct_10": 28.8372,
+      "mae": 0.280593,
+      "bias": -0.010701,
+      "overpred_pct": 49.3,
+      "y_true_mean": 1.286,
+      "y_true_median": 1.236
+    },
+    "Linseed": {
+      "n": 98,
+      "pct_25": 64.2857,
+      "pct_10": 32.6531,
+      "mae": 0.066703,
+      "bias": -0.003708,
+      "overpred_pct": 42.9,
+      "y_true_mean": 0.303,
+      "y_true_median": 0.313
+    },
+    "Maize": {
+      "n": 269,
+      "pct_25": 73.6059,
+      "pct_10": 40.5204,
+      "mae": 0.534427,
+      "bias": 0.002683,
+      "overpred_pct": 52.0,
+      "y_true_mean": 2.964,
+      "y_true_median": 2.929
+    },
+    "Minor Pulses": {
+      "n": 269,
+      "pct_25": 59.8513,
+      "pct_10": 26.0223,
+      "mae": 0.100582,
+      "bias": -0.00547,
+      "overpred_pct": 50.2,
+      "y_true_mean": 0.397,
+      "y_true_median": 0.366
+    },
+    "Oilseeds": {
+      "n": 222,
+      "pct_25": 72.0721,
+      "pct_10": 38.7387,
+      "mae": 0.129992,
+      "bias": -0.005965,
+      "overpred_pct": 47.7,
+      "y_true_mean": 0.74,
+      "y_true_median": 0.632
+    },
+    "Pearl Millet": {
+      "n": 167,
+      "pct_25": 67.0659,
+      "pct_10": 32.3353,
+      "mae": 0.161225,
+      "bias": -0.015356,
+      "overpred_pct": 48.5,
+      "y_true_mean": 0.802,
+      "y_true_median": 0.765
+    },
+    "Pigeonpea": {
+      "n": 246,
+      "pct_25": 59.3496,
+      "pct_10": 25.6098,
+      "mae": 0.143904,
+      "bias": -0.008681,
+      "overpred_pct": 51.2,
+      "y_true_mean": 0.553,
+      "y_true_median": 0.518
+    },
+    "Rabi Sorghum": {
+      "n": 197,
+      "pct_25": 65.9898,
+      "pct_10": 25.3807,
+      "mae": 0.206849,
+      "bias": -0.015046,
+      "overpred_pct": 54.3,
+      "y_true_mean": 0.881,
+      "y_true_median": 0.857
+    },
+    "Rapeseed and Mustard": {
+      "n": 134,
+      "pct_25": 79.8507,
+      "pct_10": 50.0,
+      "mae": 0.043461,
+      "bias": -0.004946,
+      "overpred_pct": 50.0,
+      "y_true_mean": 0.276,
+      "y_true_median": 0.267
+    },
+    "Rice": {
+      "n": 273,
+      "pct_25": 84.9817,
+      "pct_10": 66.3004,
+      "mae": 0.237572,
+      "bias": 0.011349,
+      "overpred_pct": 50.5,
+      "y_true_mean": 2.481,
+      "y_true_median": 2.558
+    },
+    "Safflower": {
+      "n": 130,
+      "pct_25": 61.5385,
+      "pct_10": 25.3846,
+      "mae": 0.166628,
+      "bias": -0.014249,
+      "overpred_pct": 42.3,
+      "y_true_mean": 0.668,
+      "y_true_median": 0.615
+    },
+    "Sesamum": {
+      "n": 227,
+      "pct_25": 58.5903,
+      "pct_10": 28.6344,
+      "mae": 0.142101,
+      "bias": -0.004731,
+      "overpred_pct": 51.5,
+      "y_true_mean": 0.534,
+      "y_true_median": 0.5
+    },
+    "Sorghum": {
+      "n": 219,
+      "pct_25": 66.21,
+      "pct_10": 31.5068,
+      "mae": 0.218287,
+      "bias": -0.007471,
+      "overpred_pct": 49.8,
+      "y_true_mean": 1.052,
+      "y_true_median": 1.0
+    },
+    "Soyabean": {
+      "n": 105,
+      "pct_25": 69.5238,
+      "pct_10": 40.9524,
+      "mae": 0.184002,
+      "bias": -0.006385,
+      "overpred_pct": 53.3,
+      "y_true_mean": 0.81,
+      "y_true_median": 0.778
+    },
+    "Sugarcane": {
+      "n": 252,
+      "pct_25": 85.3175,
+      "pct_10": 50.0,
+      "mae": 1.085312,
+      "bias": -0.010066,
+      "overpred_pct": 48.4,
+      "y_true_mean": 8.207,
+      "y_true_median": 8.365
+    },
+    "Sunflower": {
+      "n": 230,
+      "pct_25": 69.1304,
+      "pct_10": 36.5217,
+      "mae": 0.137682,
+      "bias": -0.006893,
+      "overpred_pct": 53.0,
+      "y_true_mean": 0.662,
+      "y_true_median": 0.55
+    },
+    "Wheat": {
+      "n": 128,
+      "pct_25": 71.875,
+      "pct_10": 38.2812,
+      "mae": 0.194446,
+      "bias": -0.007075,
+      "overpred_pct": 55.5,
+      "y_true_mean": 0.971,
+      "y_true_median": 1.0
+    }
+  },
+  "by_yield_range": {
+    "0-0.5": {
+      "n": 1249,
+      "pct_25": 54.6837,
+      "mae": 0.114398,
+      "bias": 0.084437,
+      "overpred_pct": 69.8
+    },
+    "0.5-1.0": {
+      "n": 1590,
+      "pct_25": 72.7044,
+      "mae": 0.140931,
+      "bias": 0.014241,
+      "overpred_pct": 48.2
+    },
+    "1.0-2.0": {
+      "n": 891,
+      "pct_25": 72.5028,
+      "mae": 0.272861,
+      "bias": -0.062963,
+      "overpred_pct": 34.9
+    },
+    "2.0-3.0": {
+      "n": 321,
+      "pct_25": 81.3084,
+      "mae": 0.34167,
+      "bias": -0.040414,
+      "overpred_pct": 47.0
+    },
+    "3.0-5.0": {
+      "n": 213,
+      "pct_25": 81.6901,
+      "mae": 0.518198,
+      "bias": -0.095407,
+      "overpred_pct": 31.5
+    },
+    "5.0+": {
+      "n": 233,
+      "pct_25": 88.8412,
+      "mae": 1.017328,
+      "bias": -0.298716,
+      "overpred_pct": 41.2
+    }
+  },
+  "by_district_worst10": {
+    "Dakshina Kannada": {
+      "n": 63,
+      "pct_25": 79.3651,
+      "mae": 0.387848,
+      "bias": 0.038472
+    },
+    "Bengaluru Urban": {
+      "n": 195,
+      "pct_25": 73.3333,
+      "mae": 0.35116,
+      "bias": -0.037418
+    },
+    "Uttara Kannada": {
+      "n": 189,
+      "pct_25": 67.1958,
+      "mae": 0.320074,
+      "bias": -0.019956
+    },
+    "Hassan": {
+      "n": 234,
+      "pct_25": 61.9658,
+      "mae": 0.311415,
+      "bias": -0.031544
+    },
+    "Kolar": {
+      "n": 199,
+      "pct_25": 68.3417,
+      "mae": 0.297857,
+      "bias": 0.009724
+    },
+    "Mandya": {
+      "n": 199,
+      "pct_25": 67.3367,
+      "mae": 0.282588,
+      "bias": -0.00829
+    },
+    "Kodagu": {
+      "n": 82,
+      "pct_25": 78.0488,
+      "mae": 0.263411,
+      "bias": -0.035183
+    },
+    "Shivamogga": {
+      "n": 235,
+      "pct_25": 81.7021,
+      "mae": 0.256284,
+      "bias": -0.069123
+    },
+    "Chikkamagaluru": {
+      "n": 190,
+      "pct_25": 72.6316,
+      "mae": 0.232863,
+      "bias": 0.01644
+    },
+    "Bidar": {
+      "n": 272,
+      "pct_25": 65.0735,
+      "mae": 0.227772,
+      "bias": 0.015035
+    }
+  },
+  "by_year": {
+    "2000": {
+      "n": 190,
+      "pct_25": 75.2632,
+      "mae": 0.233956,
+      "bias": -0.108859
+    },
+    "2001": {
+      "n": 226,
+      "pct_25": 71.6814,
+      "mae": 0.180356,
+      "bias": -0.011428
+    },
+    "2002": {
+      "n": 265,
+      "pct_25": 62.6415,
+      "mae": 0.220819,
+      "bias": 0.027198
+    },
+    "2003": {
+      "n": 189,
+      "pct_25": 51.8519,
+      "mae": 0.275651,
+      "bias": 0.148924
+    },
+    "2004": {
+      "n": 304,
+      "pct_25": 71.7105,
+      "mae": 0.203183,
+      "bias": -0.052784
+    },
+    "2005": {
+      "n": 273,
+      "pct_25": 75.0916,
+      "mae": 0.193961,
+      "bias": -0.068509
+    },
+    "2006": {
+      "n": 271,
+      "pct_25": 70.4797,
+      "mae": 0.197571,
+      "bias": 0.029246
+    },
+    "2007": {
+      "n": 245,
+      "pct_25": 72.6531,
+      "mae": 0.257359,
+      "bias": -0.007383
+    },
+    "2008": {
+      "n": 296,
+      "pct_25": 75.0,
+      "mae": 0.215502,
+      "bias": 0.032501
+    },
+    "2009": {
+      "n": 261,
+      "pct_25": 66.6667,
+      "mae": 0.231934,
+      "bias": 0.134178
+    },
+    "2010": {
+      "n": 223,
+      "pct_25": 78.9238,
+      "mae": 0.216344,
+      "bias": -0.136519
+    },
+    "2011": {
+      "n": 266,
+      "pct_25": 78.1955,
+      "mae": 0.193482,
+      "bias": 0.00209
+    },
+    "2012": {
+      "n": 277,
+      "pct_25": 67.148,
+      "mae": 0.226878,
+      "bias": 0.052642
+    },
+    "2013": {
+      "n": 250,
+      "pct_25": 79.6,
+      "mae": 0.203859,
+      "bias": -0.062284
+    },
+    "2014": {
+      "n": 270,
+      "pct_25": 74.0741,
+      "mae": 0.237991,
+      "bias": -0.05011
+    },
+    "2015": {
+      "n": 211,
+      "pct_25": 62.0853,
+      "mae": 0.312154,
+      "bias": 0.040678
+    },
+    "2016": {
+      "n": 227,
+      "pct_25": 49.7797,
+      "mae": 0.364027,
+      "bias": 0.116939
+    },
+    "2017": {
+      "n": 253,
+      "pct_25": 62.0553,
+      "mae": 0.353483,
+      "bias": -0.19648
+    }
+  },
+  "relative_error_distribution": {
+    "median": 0.149,
+    "p75": 0.2924,
+    "p90": 0.5218,
+    "p95": 0.823,
+    "p99": 1.9907,
+    "pct_above_0.5": 10.9,
+    "pct_above_1.0": 3.71
+  },
+  "top15_outliers": [
+    {
+      "District": "Bengaluru Urban",
+      "Year": 2007,
+      "Crop": "Sugarcane",
+      "yield_per_hectare": 1.0753424657534247,
+      "oof_pred": 7.41971286141861,
+      "abs_residual": 6.344370395665186,
+      "rel_error": 5.899860367943421
+    },
+    {
+      "District": "Hassan",
+      "Year": 2015,
+      "Crop": "Sugarcane",
+      "yield_per_hectare": 14.231884057971014,
+      "oof_pred": 8.768258706500031,
+      "abs_residual": 5.4636253514709825,
+      "rel_error": 0.3839003556532564
+    },
+    {
+      "District": "Kolar",
+      "Year": 2009,
+      "Crop": "Sugarcane",
+      "yield_per_hectare": 1.1470588235294117,
+      "oof_pred": 5.264755554149296,
+      "abs_residual": 4.117696730619885,
+      "rel_error": 3.589786893360926
+    },
+    {
+      "District": "Dakshina Kannada",
+      "Year": 2007,
+      "Crop": "Sugarcane",
+      "yield_per_hectare": 3.0,
+      "oof_pred": 7.038626297644182,
+      "abs_residual": 4.038626297644182,
+      "rel_error": 1.346208765881394
+    },
+    {
+      "District": "Hassan",
+      "Year": 2017,
+      "Crop": "Sugarcane",
+      "yield_per_hectare": 12.76036866359447,
+      "oof_pred": 8.814444239560203,
+      "abs_residual": 3.945924424034267,
+      "rel_error": 0.3092327916270986
+    },
+    {
+      "District": "Hassan",
+      "Year": 2016,
+      "Crop": "Sugarcane",
+      "yield_per_hectare": 7.072289156626506,
+      "oof_pred": 10.778457107272953,
+      "abs_residual": 3.7061679506464467,
+      "rel_error": 0.5240407834815248
+    },
+    {
+      "District": "Uttara Kannada",
+      "Year": 2000,
+      "Crop": "Maize",
+      "yield_per_hectare": 5.0,
+      "oof_pred": 1.7548191987199564,
+      "abs_residual": 3.2451808012800436,
+      "rel_error": 0.6490361602560087
+    },
+    {
+      "District": "Dharwad",
+      "Year": 2003,
+      "Crop": "Sugarcane",
+      "yield_per_hectare": 3.762081784386617,
+      "oof_pred": 6.941102178373068,
+      "abs_residual": 3.1790203939864514,
+      "rel_error": 0.8450162904963987
+    },
+    {
+      "District": "Dharwad",
+      "Year": 2009,
+      "Crop": "Sugarcane",
+      "yield_per_hectare": 1.647597254004577,
+      "oof_pred": 4.7796774021591855,
+      "abs_residual": 3.132080148154609,
+      "rel_error": 1.900998645477172
+    },
+    {
+      "District": "Uttara Kannada",
+      "Year": 2011,
+      "Crop": "Sugarcane",
+      "yield_per_hectare": 5.508196721311475,
+      "oof_pred": 8.592081539102928,
+      "abs_residual": 3.0838848177914526,
+      "rel_error": 0.5598719460871387
+    },
+    {
+      "District": "Shivamogga",
+      "Year": 2003,
+      "Crop": "Sugarcane",
+      "yield_per_hectare": 12.354141656662666,
+      "oof_pred": 9.41629487729489,
+      "abs_residual": 2.937846779367776,
+      "rel_error": 0.2378025815968669
+    },
+    {
+      "District": "Kolar",
+      "Year": 2007,
+      "Crop": "Sugarcane",
+      "yield_per_hectare": 1.6666666666666667,
+      "oof_pred": 4.583824356488781,
+      "abs_residual": 2.9171576898221137,
+      "rel_error": 1.750294613893268
+    },
+    {
+      "District": "Belagavi",
+      "Year": 2003,
+      "Crop": "Sugarcane",
+      "yield_per_hectare": 4.6548840744963895,
+      "oof_pred": 7.551323549037013,
+      "abs_residual": 2.8964394745406237,
+      "rel_error": 0.6222366504055181
+    },
+    {
+      "District": "Shivamogga",
+      "Year": 2002,
+      "Crop": "Sugarcane",
+      "yield_per_hectare": 13.11144578313253,
+      "oof_pred": 10.234872715155591,
+      "abs_residual": 2.8765730679769383,
+      "rel_error": 0.2193940405624497
+    },
+    {
+      "District": "Bengaluru Urban",
+      "Year": 2014,
+      "Crop": "Sugarcane",
+      "yield_per_hectare": 6.553398058252427,
+      "oof_pred": 9.314478196997424,
+      "abs_residual": 2.7610801387449966,
+      "rel_error": 0.4213203767270143
+    }
+  ],
+  "near_zero_targets": {
+    "count": 9,
+    "pct": 0.2001,
+    "within_25": 0
+  }
+}

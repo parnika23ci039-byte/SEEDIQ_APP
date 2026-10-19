@@ -1,0 +1,4 @@
+crop_species,crop_label_from_seediq_vocab,Weight_g_per_1000,Moisture_Level_pct,reference
+Zea mays,maize,280.0,12.5,ISTA 2024 / Genze et al. Plant Methods 2020 Table S1
+Secale cereale,Rye,36.0,12.0,ISTA 2024 / Genze et al. 2020
+Pennisetum glaucum,Pearl Millet,8.5,11.0,ICRISAT pearl millet seed quality bulletin 2023 / ISTA 2024

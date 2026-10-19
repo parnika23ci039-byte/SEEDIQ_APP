@@ -1,0 +1,126 @@
+{
+  "base_url": "https://seediq-api.onrender.com",
+  "endpoints": {
+    "crop": {
+      "http_status": 200,
+      "path": "/api/crop-recommendation",
+      "payload": {
+        "humidity": 82.0,
+        "nitrogen": 90,
+        "ph": 6.5,
+        "phosphorus": 42,
+        "potassium": 43,
+        "rainfall": 202.9,
+        "temperature": 20.9
+      },
+      "response": {
+        "disease_advisory": [],
+        "growth_plan": [
+          {
+            "action": "Sow seeds at recommended depth, keep soil moist and weed-free.",
+            "stage": "Sowing & Germination",
+            "week": "Weeks 1-4"
+          }
+        ],
+        "result": {
+          "classical": "rice",
+          "ensemble": "rice",
+          "quantum": "rice"
+        },
+        "soil_analysis": {
+          "nitrogen": {
+            "advice": "Maintain current organic matter levels. Standard maintenance dosing applies.",
+            "status": "Optimum Nitrogen"
+          },
+          "ph": {
+            "advice": "Ideal soil environment. High nutrient availability across all micro and macro plant elements.",
+            "status": "Neutral Soil (pH 6.0 - 7.5)"
+          },
+          "phosphorus": {
+            "advice": "Standard crop-specific maintenance application is sufficient.",
+            "status": "Optimum Phosphorus"
+          },
+          "potassium": {
+            "advice": "Standard dose is sufficient for cell walls strengthening and pest resistance.",
+            "status": "Optimum Potassium"
+          }
+        }
+      },
+      "sha256": "256a5bd975f297a6bc00ac6ce604dfb516d4210b5551093e2b3679097015edb1"
+    },
+    "quantum": {
+      "http_status": 200,
+      "path": "/api/quantum-ml",
+      "payload": {
+        "area_hectares": 10,
+        "crop": "Rice",
+        "humidity": 82.0,
+        "moisture": 12.5,
+        "nitrogen": 90,
+        "ph": 6.5,
+        "phosphorus": 42,
+        "potassium": 43,
+        "rainfall": 202.9,
+        "temperature": 20.9,
+        "weight": 45.0
+      },
+      "response": {
+        "inputs": {},
+        "result": {
+          "error": "Computation error: 'LabelEncoder' object has no attribute 'classes_'"
+        }
+      },
+      "sha256": "0fa0fd096d8dfb4fbcb86efcec367b4b7aca97035bd1f2ecfe6f7fdafd52f9ce"
+    },
+    "seed": {
+      "http_status": 200,
+      "path": "/api/seed-viability",
+      "payload": {
+        "moisture": 12.5,
+        "weight": 45.0
+      },
+      "response": {
+        "result": {
+          "classical": "Viable",
+          "ensemble": "Viable",
+          "error": "Model error: The feature names should match those that were passed during fit.\nFeature names unseen at fit time:\n- Moisture_Level\n- Weight_g\nFeature names seen at fit time, yet now missing:\n- A\n- A_Coef\n- C\n- LK\n- LKG\n- ...\n",
+          "quantum": "Viable"
+        }
+      },
+      "sha256": "b4b805d25ac5e69af2a6270f283847a41bc7e9deaae027e9052d35923e54548e"
+    },
+    "yield": {
+      "http_status": 200,
+      "path": "/api/yield-prediction",
+      "payload": {
+        "area_hectares": 10,
+        "crop": "Rice"
+      },
+      "response": {
+        "crops": [
+          "Rice",
+          "Wheat",
+          "Maize",
+          "Sugarcane",
+          "Cotton"
+        ],
+        "market_analysis": {
+          "demand": "High",
+          "gross_revenue": "\u20b9324,500",
+          "net_profit": "\u20b9299,500",
+          "price_per_tonne": "\u20b922,000",
+          "profit_sign": 1,
+          "total_cost": "\u20b925,000",
+          "trend": "Rising"
+        },
+        "result": {
+          "classical": 15.0,
+          "ensemble": 14.75,
+          "error": "Model error: 'LabelEncoder' object has no attribute 'classes_'",
+          "quantum": 14.5
+        }
+      },
+      "sha256": "c1f5e75380693423522b733cc7458d1b815073bdf491fd967a50755e10510cb9"
+    }
+  }
+}

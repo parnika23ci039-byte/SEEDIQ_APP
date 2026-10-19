@@ -1,0 +1,255 @@
+{
+  "baseline_f3_cv": {
+    "correct_25": 3127,
+    "total": 4497,
+    "pct_25": 69.5352,
+    "correct_10": 1621,
+    "pct_10": 36.0463,
+    "mae": 0.237308,
+    "mse": 0.198042,
+    "rmse": 0.445019,
+    "r2": 0.947486,
+    "bias": -0.006869
+  },
+  "baseline_f3_holdout_reference": {
+    "correct_25": 742,
+    "total": 1088,
+    "pct_25": 68.1985,
+    "correct_10": 395,
+    "pct_10": 36.3051,
+    "mae": 0.237763,
+    "mse": 0.163658,
+    "rmse": 0.404546,
+    "r2": 0.958949,
+    "bias": -0.011872
+  },
+  "hypotheses": {
+    "H1_variance_stretch": {
+      "description": "Per-crop variance-stretch: pred_corrected = mean_pred + k*(pred - mean_pred), k = std(y)/std(pred) from OOF",
+      "cv": {
+        "correct_25": 2921,
+        "total": 4497,
+        "pct_25": 64.9544,
+        "correct_10": 1443,
+        "pct_10": 32.0881,
+        "mae": 0.256331,
+        "mse": 0.221226,
+        "rmse": 0.470346,
+        "r2": 0.941339,
+        "bias": -0.006428
+      },
+      "holdout_reference": {
+        "correct_25": 697,
+        "total": 1088,
+        "pct_25": 64.0625,
+        "correct_10": 343,
+        "pct_10": 31.5257,
+        "mae": 0.258812,
+        "mse": 0.195516,
+        "rmse": 0.442172,
+        "r2": 0.950958,
+        "bias": -0.011466
+      }
+    },
+    "H2_isotonic": {
+      "description": "Per-crop isotonic regression calibration on OOF predictions",
+      "cv": {
+        "correct_25": 3030,
+        "total": 4497,
+        "pct_25": 67.3783,
+        "correct_10": 1503,
+        "pct_10": 33.4223,
+        "mae": 0.247349,
+        "mse": 0.213387,
+        "rmse": 0.461938,
+        "r2": 0.943417,
+        "bias": 0.000108
+      },
+      "holdout_reference": {
+        "correct_25": 734,
+        "total": 1088,
+        "pct_25": 67.4632,
+        "correct_10": 365,
+        "pct_10": 33.5478,
+        "mae": 0.242701,
+        "mse": 0.16407,
+        "rmse": 0.405056,
+        "r2": 0.958846,
+        "bias": -0.003538
+      }
+    },
+    "H3_linear_recalibration": {
+      "description": "Per-crop linear recalibration: pred \u2192 a*pred + b from OOF least squares",
+      "cv": {
+        "correct_25": 3070,
+        "total": 4497,
+        "pct_25": 68.2677,
+        "correct_10": 1574,
+        "pct_10": 35.0011,
+        "mae": 0.240354,
+        "mse": 0.199206,
+        "rmse": 0.446325,
+        "r2": 0.947178,
+        "bias": 1.8e-05
+      },
+      "holdout_reference": {
+        "correct_25": 725,
+        "total": 1088,
+        "pct_25": 66.636,
+        "correct_10": 380,
+        "pct_10": 34.9265,
+        "mae": 0.241108,
+        "mse": 0.16531,
+        "rmse": 0.406583,
+        "r2": 0.958535,
+        "bias": -0.005715
+      }
+    },
+    "H4_squared_error_loss": {
+      "description": "HistGBR loss changed from absolute_error to squared_error (root-cause fix for range compression). Chickpea RF specialist unchanged.",
+      "cv": {
+        "correct_25": 3101,
+        "total": 4497,
+        "pct_25": 68.9593,
+        "pct_10": 35.3147,
+        "mae": 0.2401,
+        "rmse": 0.4482,
+        "r2": 0.9458,
+        "bias": -0.0024
+      },
+      "range_compression_improvement": {
+        "Sugarcane": "1.377 -> 1.172",
+        "Rice": "1.146 -> 1.066",
+        "Maize": "1.449 -> 1.243",
+        "Cotton": "1.908 -> 1.425",
+        "Groundnut": "1.221 -> 1.147"
+      },
+      "note": "Range compression reduced, but within-25% slightly worse (-0.58pp, within CV noise). Compressed predictions serve the narrow tolerance band for low yields better."
+    }
+  },
+  "cv_winner": "F3_baseline",
+  "cv_winner_pct_25": 69.5352,
+  "cv_delta_pp_vs_base": 0.0,
+  "per_crop_delta_best": {
+    "Castor": {
+      "base_pct": 75.36,
+      "best_pct": 75.36,
+      "delta_pp": 0.0
+    },
+    "Chickpea": {
+      "base_pct": 70.61,
+      "best_pct": 70.61,
+      "delta_pp": 0.0
+    },
+    "Cotton": {
+      "base_pct": 65.88,
+      "best_pct": 65.88,
+      "delta_pp": 0.0
+    },
+    "Finger Millet": {
+      "base_pct": 70.3,
+      "best_pct": 70.3,
+      "delta_pp": 0.0
+    },
+    "Groundnut": {
+      "base_pct": 68.28,
+      "best_pct": 68.28,
+      "delta_pp": 0.0
+    },
+    "Kharif Sorghum": {
+      "base_pct": 65.12,
+      "best_pct": 65.12,
+      "delta_pp": 0.0
+    },
+    "Linseed": {
+      "base_pct": 64.29,
+      "best_pct": 64.29,
+      "delta_pp": 0.0
+    },
+    "Maize": {
+      "base_pct": 73.61,
+      "best_pct": 73.61,
+      "delta_pp": 0.0
+    },
+    "Minor Pulses": {
+      "base_pct": 59.85,
+      "best_pct": 59.85,
+      "delta_pp": 0.0
+    },
+    "Oilseeds": {
+      "base_pct": 72.07,
+      "best_pct": 72.07,
+      "delta_pp": 0.0
+    },
+    "Pearl Millet": {
+      "base_pct": 67.07,
+      "best_pct": 67.07,
+      "delta_pp": 0.0
+    },
+    "Pigeonpea": {
+      "base_pct": 59.35,
+      "best_pct": 59.35,
+      "delta_pp": 0.0
+    },
+    "Rabi Sorghum": {
+      "base_pct": 65.99,
+      "best_pct": 65.99,
+      "delta_pp": 0.0
+    },
+    "Rapeseed and Mustard": {
+      "base_pct": 79.85,
+      "best_pct": 79.85,
+      "delta_pp": 0.0
+    },
+    "Rice": {
+      "base_pct": 84.98,
+      "best_pct": 84.98,
+      "delta_pp": 0.0
+    },
+    "Safflower": {
+      "base_pct": 61.54,
+      "best_pct": 61.54,
+      "delta_pp": 0.0
+    },
+    "Sesamum": {
+      "base_pct": 58.59,
+      "best_pct": 58.59,
+      "delta_pp": 0.0
+    },
+    "Sorghum": {
+      "base_pct": 66.21,
+      "best_pct": 66.21,
+      "delta_pp": 0.0
+    },
+    "Soyabean": {
+      "base_pct": 69.52,
+      "best_pct": 69.52,
+      "delta_pp": 0.0
+    },
+    "Sugarcane": {
+      "base_pct": 85.32,
+      "best_pct": 85.32,
+      "delta_pp": 0.0
+    },
+    "Sunflower": {
+      "base_pct": 69.13,
+      "best_pct": 69.13,
+      "delta_pp": 0.0
+    },
+    "Wheat": {
+      "base_pct": 71.88,
+      "best_pct": 71.88,
+      "delta_pp": 0.0
+    }
+  },
+  "selection_note": "Model selection based on grouped OOF (GroupKFold 5) CV only. Frozen holdout shown for reference only \u2014 not used for selection.",
+  "all_cv_results": {
+    "F3_baseline": 69.5352,
+    "H1_variance_stretch": 64.9544,
+    "H2_isotonic": 67.3783,
+    "H3_linear_recalibration": 68.2677,
+    "H4_squared_error_loss": 68.9593
+  },
+  "final_decision": "RETAIN_F3",
+  "decision_rationale": "None of the 4 tested hypotheses (variance stretch, isotonic calibration, linear recalibration, squared_error loss) improved the within-25% metric on grouped CV. The F3 baseline (69.54% CV) remains the best validated model. The range-compression failure mode is inherent to the absolute_error loss, but fixing it (squared_error) trades range coverage for tolerance accuracy without net gain. The dominant limitation is the data: district-level aggregate yields with static climate normals cannot support higher accuracy."
+}

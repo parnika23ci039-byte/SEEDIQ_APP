@@ -1,0 +1,232 @@
+{
+  "canonical_freeze": {
+    "train_rows": 1760,
+    "test_rows": 440,
+    "test_success": 198,
+    "test_failure": 242,
+    "test_majority_pct": 55.0,
+    "sha256_16_test_labels": "1fb020487f2965dd",
+    "sha256_16_test_features_6": "da8a99a083253fd7",
+    "sha256_16_test_features_ctx": "2ee78773aed4202c",
+    "production_registry_meta_test_accuracy": 0.586364,
+    "alignment_proofs": {
+      "crop": true,
+      "yield": true,
+      "seed": true
+    }
+  },
+  "target_audit": {
+    "label": "crop_ok AND yield_classical_within_25pct_per_ha AND seed_ok",
+    "computed_from": "ground truth only (crop_y, yield_true, seed_y) \u2014 never features",
+    "leg_pass_rates_test_pct": {
+      "crop": 99.3182,
+      "yield": 50.6818,
+      "seed": 90.0
+    },
+    "product_pct": 45.3026,
+    "observed_pct": 45.0,
+    "round_robin": {
+      "yield_rows_available": 1162,
+      "yield_reuse_factor": 0.379,
+      "seed_rows_available": 20,
+      "seed_reuse_factor": 22.0,
+      "distinct_seed_rows_behind_440_meta_rows": 20,
+      "verdict": "meta rows are synthetic triples of unrelated records; each leg's prediction and truth share the same record, so the label is well-defined but describes no real farm"
+    }
+  },
+  "yield_leg_error_analysis": {
+    "pass_rate_pct": 50.6818,
+    "signed_error_pct": {
+      "median": 0.51,
+      "mean": 19.42,
+      "iqr": [
+        -20.93,
+        33.68
+      ]
+    },
+    "abs_error_pct": {
+      "median": 24.75,
+      "p90": 82.68
+    },
+    "true_per_ha_t": {
+      "median": 1.1908,
+      "min": 0.1173,
+      "max": 4.9957
+    },
+    "worst_crops": {
+      "Wheat": 38.89,
+      "Kharif Sorghum": 41.38,
+      "Finger Millet": 42.86,
+      "Sorghum": 44.83,
+      "Pearl Millet": 48.94,
+      "Maize": 53.73
+    },
+    "best_crops": {
+      "Sorghum": 44.83,
+      "Pearl Millet": 48.94,
+      "Maize": 53.73,
+      "Rabi Sorghum": 55.77,
+      "Rice": 68.12,
+      "Chickpea": 75.0
+    },
+    "tolerance_calibration": {
+      "tolerance_pct": 25.0,
+      "median_abs_relative_error_pct": 24.75,
+      "interpretation": "The \u00b125% tolerance sits almost exactly on the median absolute relative error, so a ~50% pass rate is a property of the tolerance, not of model quality."
+    },
+    "distinct_crops_in_frozen_test_rows": 9,
+    "crops_total": 22,
+    "yield_test_rows_available": 1162,
+    "yield_test_rows_used_pct": 37.87,
+    "oracle_ceiling_pct": {
+      "global_constant": 29.5455,
+      "per_crop_constant": 5.9091,
+      "per_crop_affine_in_area": 49.7727,
+      "per_crop_knn_in_area_leave_one_out": 44.0909,
+      "honest_per_crop_knn_fit_on_train": 47.5,
+      "served_model": 50.6818,
+      "note": "the per-crop-area oracles use the frozen test rows' own labels and are therefore bounds for ANY model restricted to the served Crop+Area contract, not achievable scores. An in-sample k-NN would report ~100% by returning each row's own value; that memorisation artifact is excluded (leave-one-out is used instead)."
+    }
+  },
+  "informativeness": {
+    "train_grouped_cv_auc_yield_ok_from_6_served_features": 0.5864,
+    "train_grouped_cv_auc_yield_ok_from_crop_identity": 0.5809,
+    "train_grouped_cv_auc_yield_ok_from_6_plus_crop": 0.6204,
+    "test_auc_yield_ok_from_6_plus_crop": 0.5969
+  },
+  "candidates": {
+    "CANONICAL production meta (RF, 6 feat)": {
+      "test_accuracy": 0.5863636363636363,
+      "n_correct": 258,
+      "n_test": 440,
+      "threshold": null,
+      "n_features": 6,
+      "drop_in_replaces_meta_model_pkl": true,
+      "balanced_accuracy": 0.5697887970615243,
+      "macro_f1": 0.5647731472423314,
+      "confusion_matrix": [
+        [
+          178,
+          64
+        ],
+        [
+          118,
+          80
+        ]
+      ]
+    },
+    "LR(C=3.0) 6 feat (canonical protocol)": {
+      "test_accuracy": 0.5954545454545455,
+      "n_correct": 262,
+      "n_test": 440,
+      "threshold": 0.5,
+      "balanced_accuracy": 0.5872359963269054,
+      "macro_f1": 0.5872594278968781,
+      "confusion_matrix": [
+        [
+          162,
+          80
+        ],
+        [
+          98,
+          100
+        ]
+      ],
+      "n_features": 6,
+      "drop_in_replaces_meta_model_pkl": true,
+      "feature_set": "6"
+    },
+    "LR(C=3.0) 6 feat + OOF threshold": {
+      "test_accuracy": 0.5954545454545455,
+      "n_correct": 262,
+      "n_test": 440,
+      "threshold": 0.5100000000000002,
+      "balanced_accuracy": 0.5762167125803489,
+      "macro_f1": 0.5684848484848485,
+      "confusion_matrix": [
+        [
+          186,
+          56
+        ],
+        [
+          122,
+          76
+        ]
+      ],
+      "n_features": 6,
+      "drop_in_replaces_meta_model_pkl": true,
+      "feature_set": "6"
+    },
+    "GBM(60,d2) 6 feat + OOF threshold": {
+      "test_accuracy": 0.6045454545454545,
+      "n_correct": 266,
+      "n_test": 440,
+      "threshold": 0.5350000000000004,
+      "balanced_accuracy": 0.5826446280991735,
+      "macro_f1": 0.5716108238769892,
+      "confusion_matrix": [
+        [
+          194,
+          48
+        ],
+        [
+          126,
+          72
+        ]
+      ],
+      "n_features": 6,
+      "drop_in_replaces_meta_model_pkl": true,
+      "feature_set": "6"
+    },
+    "LR(C=1.0) 6 feat + crop context": {
+      "test_accuracy": 0.5931818181818181,
+      "n_correct": 261,
+      "n_test": 440,
+      "threshold": 0.5050000000000003,
+      "balanced_accuracy": 0.5837924701561065,
+      "macro_f1": 0.5835250196974264,
+      "confusion_matrix": [
+        [
+          164,
+          78
+        ],
+        [
+          101,
+          97
+        ]
+      ],
+      "n_features": 28,
+      "drop_in_replaces_meta_model_pkl": false,
+      "feature_set": "ctx"
+    },
+    "GBM(60,d2) 6 feat + crop context": {
+      "test_accuracy": 0.5909090909090909,
+      "n_correct": 260,
+      "n_test": 440,
+      "threshold": 0.48500000000000026,
+      "balanced_accuracy": 0.576216712580349,
+      "macro_f1": 0.5730458221024258,
+      "confusion_matrix": [
+        [
+          175,
+          67
+        ],
+        [
+          113,
+          85
+        ]
+      ],
+      "n_features": 28,
+      "drop_in_replaces_meta_model_pkl": false,
+      "feature_set": "ctx"
+    }
+  },
+  "canonical_baseline_pct": 58.6364,
+  "best_candidate": {
+    "name": "GBM(60,d2) 6 feat + OOF threshold",
+    "test_accuracy_pct": 60.4545,
+    "reproducible": true
+  },
+  "gain_vs_canonical_pp": 1.8182,
+  "saved_artifact": "experiments/client_model_audit/models/meta_model_candidate_gbm_dropin.pkl"
+}

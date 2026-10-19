@@ -1,0 +1,619 @@
+{
+  "generated": "2026-10-09 18:16:51",
+  "dataset": "SeedIQ/data/yield_icrisat_karnataka.csv",
+  "dataset_provenance": "real ICRISAT Karnataka district-level annual statistics",
+  "dataset_synthetic": false,
+  "contract": {
+    "inputs": [
+      "crop",
+      "district"
+    ],
+    "target": "yield per hectare (tonnes/hectare)",
+    "area_is_a_feature": false,
+    "season_supported": false,
+    "basis": "district_aggregate_annual_statistics",
+    "units": "tonnes per hectare"
+  },
+  "rows": 5585,
+  "crops": [
+    "Castor",
+    "Chickpea",
+    "Cotton",
+    "Finger Millet",
+    "Groundnut",
+    "Kharif Sorghum",
+    "Linseed",
+    "Maize",
+    "Minor Pulses",
+    "Oilseeds",
+    "Pearl Millet",
+    "Pigeonpea",
+    "Rabi Sorghum",
+    "Rapeseed and Mustard",
+    "Rice",
+    "Safflower",
+    "Sesamum",
+    "Sorghum",
+    "Soyabean",
+    "Sugarcane",
+    "Sunflower",
+    "Wheat"
+  ],
+  "districts": [
+    "Bangalore",
+    "Belgaum",
+    "Bellary",
+    "Bidar",
+    "Bijapur / Vijayapura",
+    "Chickmagalur",
+    "Chitradurga",
+    "Dakshina Kannada",
+    "Dharwad",
+    "Gulbarga / Kalaburagi",
+    "Hassan",
+    "Kodagu / Coorg",
+    "Kolar",
+    "Mandya",
+    "Mysore",
+    "Raichur",
+    "Shimoge",
+    "Tumkur",
+    "Uttara Kannada"
+  ],
+  "feature_count": 41,
+  "tolerance": 0.25,
+  "regimes": {
+    "unseen_district_years": {
+      "groups_total": 342,
+      "groups_train": 273,
+      "groups_test": 69,
+      "rows_train": 4423,
+      "rows_test": 1162,
+      "test": {
+        "n": 1162,
+        "r2": 0.911536,
+        "mae_per_ha": 0.317086,
+        "within_25pct": 0.54389
+      },
+      "train_fit": {
+        "n": 4423,
+        "r2": 0.914626,
+        "mae_per_ha": 0.29566,
+        "within_25pct": 0.622428
+      },
+      "crop_constant_median_baseline_test": {
+        "n": 1162,
+        "r2": 0.861072,
+        "mae_per_ha": 0.400783,
+        "within_25pct": 0.464716
+      },
+      "split_disjoint": true,
+      "served_model_test": {
+        "n": 1162,
+        "r2": 0.860981,
+        "mae_per_ha": 0.382627,
+        "within_25pct": 0.497418
+      },
+      "served_model_contract": {
+        "inputs": [
+          "Crop",
+          "Area_Hectares"
+        ],
+        "area_is_a_feature": true,
+        "artifact": "models/yield_prediction/randomforest_model.pkl"
+      },
+      "crop_only_no_area_test": {
+        "n": 1162,
+        "r2": 0.854214,
+        "mae_per_ha": 0.408684,
+        "within_25pct": 0.454389
+      }
+    },
+    "unseen_districts": {
+      "groups_total": 19,
+      "groups_train": 15,
+      "groups_test": 4,
+      "rows_train": 4535,
+      "rows_test": 1050,
+      "test": {
+        "n": 1050,
+        "r2": 0.860357,
+        "mae_per_ha": 0.363167,
+        "within_25pct": 0.51619
+      },
+      "train_fit": {
+        "n": 4535,
+        "r2": 0.916552,
+        "mae_per_ha": 0.299768,
+        "within_25pct": 0.601103
+      },
+      "crop_constant_median_baseline_test": {
+        "n": 1050,
+        "r2": 0.855584,
+        "mae_per_ha": 0.365655,
+        "within_25pct": 0.524762
+      },
+      "split_disjoint": true
+    }
+  },
+  "served_model_area_sensitivity": {
+    "question": "Does the served per-hectare figure depend on the area the client sends?",
+    "areas_hectares": [
+      10.0,
+      100.0,
+      1000.0,
+      9100.0,
+      100000.0,
+      612300.0
+    ],
+    "per_crop": {
+      "Castor": {
+        "areas_hectares": [
+          10.0,
+          100.0,
+          1000.0,
+          9100.0,
+          100000.0,
+          612300.0
+        ],
+        "per_hectare": [
+          1.013105,
+          0.758602,
+          0.736014,
+          0.673527,
+          0.703645,
+          0.688236
+        ],
+        "min": 0.673527,
+        "max": 1.013105,
+        "relative_spread": 0.335185
+      },
+      "Chickpea": {
+        "areas_hectares": [
+          10.0,
+          100.0,
+          1000.0,
+          9100.0,
+          100000.0,
+          612300.0
+        ],
+        "per_hectare": [
+          0.922264,
+          0.581153,
+          0.586146,
+          0.452145,
+          0.464518,
+          0.557265
+        ],
+        "min": 0.452145,
+        "max": 0.922264,
+        "relative_spread": 0.509745
+      },
+      "Cotton": {
+        "areas_hectares": [
+          10.0,
+          100.0,
+          1000.0,
+          9100.0,
+          100000.0,
+          612300.0
+        ],
+        "per_hectare": [
+          0.469033,
+          0.436765,
+          0.324723,
+          0.269241,
+          0.343272,
+          0.353215
+        ],
+        "min": 0.269241,
+        "max": 0.469033,
+        "relative_spread": 0.425965
+      },
+      "Finger Millet": {
+        "areas_hectares": [
+          10.0,
+          100.0,
+          1000.0,
+          9100.0,
+          100000.0,
+          612300.0
+        ],
+        "per_hectare": [
+          1.266339,
+          1.244041,
+          1.085183,
+          0.926399,
+          1.404971,
+          1.643685
+        ],
+        "min": 0.926399,
+        "max": 1.643685,
+        "relative_spread": 0.436389
+      },
+      "Groundnut": {
+        "areas_hectares": [
+          10.0,
+          100.0,
+          1000.0,
+          9100.0,
+          100000.0,
+          612300.0
+        ],
+        "per_hectare": [
+          1.16751,
+          0.772484,
+          0.774541,
+          0.674675,
+          0.537737,
+          0.62345
+        ],
+        "min": 0.537737,
+        "max": 1.16751,
+        "relative_spread": 0.539415
+      },
+      "Kharif Sorghum": {
+        "areas_hectares": [
+          10.0,
+          100.0,
+          1000.0,
+          9100.0,
+          100000.0,
+          612300.0
+        ],
+        "per_hectare": [
+          1.254941,
+          1.495299,
+          1.12068,
+          1.24104,
+          1.296553,
+          1.453824
+        ],
+        "min": 1.12068,
+        "max": 1.495299,
+        "relative_spread": 0.250532
+      },
+      "Linseed": {
+        "areas_hectares": [
+          10.0,
+          100.0,
+          1000.0,
+          9100.0,
+          100000.0,
+          612300.0
+        ],
+        "per_hectare": [
+          0.420094,
+          0.285252,
+          0.342557,
+          0.253311,
+          0.263359,
+          0.288082
+        ],
+        "min": 0.253311,
+        "max": 0.420094,
+        "relative_spread": 0.397012
+      },
+      "Maize": {
+        "areas_hectares": [
+          10.0,
+          100.0,
+          1000.0,
+          9100.0,
+          100000.0,
+          612300.0
+        ],
+        "per_hectare": [
+          2.625543,
+          2.796445,
+          2.286188,
+          2.680157,
+          2.62032,
+          2.978533
+        ],
+        "min": 2.286188,
+        "max": 2.978533,
+        "relative_spread": 0.232445
+      },
+      "Minor Pulses": {
+        "areas_hectares": [
+          10.0,
+          100.0,
+          1000.0,
+          9100.0,
+          100000.0,
+          612300.0
+        ],
+        "per_hectare": [
+          0.442386,
+          0.401572,
+          0.35292,
+          0.336425,
+          0.191135,
+          0.29803
+        ],
+        "min": 0.191135,
+        "max": 0.442386,
+        "relative_spread": 0.567945
+      },
+      "Oilseeds": {
+        "areas_hectares": [
+          10.0,
+          100.0,
+          1000.0,
+          9100.0,
+          100000.0,
+          612300.0
+        ],
+        "per_hectare": [
+          1.134368,
+          0.702397,
+          0.725168,
+          0.516988,
+          0.512253,
+          0.448542
+        ],
+        "min": 0.448542,
+        "max": 1.134368,
+        "relative_spread": 0.604588
+      },
+      "Pearl Millet": {
+        "areas_hectares": [
+          10.0,
+          100.0,
+          1000.0,
+          9100.0,
+          100000.0,
+          612300.0
+        ],
+        "per_hectare": [
+          1.28161,
+          0.638041,
+          0.852414,
+          0.607991,
+          0.682833,
+          0.626845
+        ],
+        "min": 0.607991,
+        "max": 1.28161,
+        "relative_spread": 0.525603
+      },
+      "Pigeonpea": {
+        "areas_hectares": [
+          10.0,
+          100.0,
+          1000.0,
+          9100.0,
+          100000.0,
+          612300.0
+        ],
+        "per_hectare": [
+          0.757015,
+          0.588695,
+          0.504114,
+          0.444167,
+          0.497141,
+          0.591827
+        ],
+        "min": 0.444167,
+        "max": 0.757015,
+        "relative_spread": 0.413265
+      },
+      "Rabi Sorghum": {
+        "areas_hectares": [
+          10.0,
+          100.0,
+          1000.0,
+          9100.0,
+          100000.0,
+          612300.0
+        ],
+        "per_hectare": [
+          1.087995,
+          1.482154,
+          0.721123,
+          0.666123,
+          0.776218,
+          0.944651
+        ],
+        "min": 0.666123,
+        "max": 1.482154,
+        "relative_spread": 0.550571
+      },
+      "Rapeseed and Mustard": {
+        "areas_hectares": [
+          10.0,
+          100.0,
+          1000.0,
+          9100.0,
+          100000.0,
+          612300.0
+        ],
+        "per_hectare": [
+          0.472007,
+          0.292608,
+          0.309579,
+          0.317975,
+          0.331385,
+          0.371382
+        ],
+        "min": 0.292608,
+        "max": 0.472007,
+        "relative_spread": 0.380078
+      },
+      "Rice": {
+        "areas_hectares": [
+          10.0,
+          100.0,
+          1000.0,
+          9100.0,
+          100000.0,
+          612300.0
+        ],
+        "per_hectare": [
+          2.425985,
+          2.615579,
+          1.99986,
+          1.781945,
+          2.691864,
+          3.104631
+        ],
+        "min": 1.781945,
+        "max": 3.104631,
+        "relative_spread": 0.426036
+      },
+      "Safflower": {
+        "areas_hectares": [
+          10.0,
+          100.0,
+          1000.0,
+          9100.0,
+          100000.0,
+          612300.0
+        ],
+        "per_hectare": [
+          1.040621,
+          0.705685,
+          0.492701,
+          0.639307,
+          0.536455,
+          0.540075
+        ],
+        "min": 0.492701,
+        "max": 1.040621,
+        "relative_spread": 0.526532
+      },
+      "Sesamum": {
+        "areas_hectares": [
+          10.0,
+          100.0,
+          1000.0,
+          9100.0,
+          100000.0,
+          612300.0
+        ],
+        "per_hectare": [
+          0.774275,
+          0.608393,
+          0.43022,
+          0.454196,
+          0.398019,
+          0.438989
+        ],
+        "min": 0.398019,
+        "max": 0.774275,
+        "relative_spread": 0.485947
+      },
+      "Sorghum": {
+        "areas_hectares": [
+          10.0,
+          100.0,
+          1000.0,
+          9100.0,
+          100000.0,
+          612300.0
+        ],
+        "per_hectare": [
+          1.165522,
+          1.35933,
+          1.041634,
+          0.720622,
+          1.045191,
+          0.948076
+        ],
+        "min": 0.720622,
+        "max": 1.35933,
+        "relative_spread": 0.46987
+      },
+      "Soyabean": {
+        "areas_hectares": [
+          10.0,
+          100.0,
+          1000.0,
+          9100.0,
+          100000.0,
+          612300.0
+        ],
+        "per_hectare": [
+          1.075595,
+          0.8238,
+          0.722625,
+          0.693738,
+          0.694122,
+          0.664039
+        ],
+        "min": 0.664039,
+        "max": 1.075595,
+        "relative_spread": 0.382631
+      },
+      "Sugarcane": {
+        "areas_hectares": [
+          10.0,
+          100.0,
+          1000.0,
+          9100.0,
+          100000.0,
+          612300.0
+        ],
+        "per_hectare": [
+          7.944837,
+          8.493433,
+          7.310636,
+          7.832663,
+          7.228307,
+          8.203636
+        ],
+        "min": 7.228307,
+        "max": 8.493433,
+        "relative_spread": 0.148953
+      },
+      "Sunflower": {
+        "areas_hectares": [
+          10.0,
+          100.0,
+          1000.0,
+          9100.0,
+          100000.0,
+          612300.0
+        ],
+        "per_hectare": [
+          1.009563,
+          0.685852,
+          1.063647,
+          0.471847,
+          0.401546,
+          0.402477
+        ],
+        "min": 0.401546,
+        "max": 1.063647,
+        "relative_spread": 0.622482
+      },
+      "Wheat": {
+        "areas_hectares": [
+          10.0,
+          100.0,
+          1000.0,
+          9100.0,
+          100000.0,
+          612300.0
+        ],
+        "per_hectare": [
+          1.184863,
+          1.104862,
+          1.044435,
+          0.663767,
+          0.730208,
+          0.789951
+        ],
+        "min": 0.663767,
+        "max": 1.184863,
+        "relative_spread": 0.439795
+      }
+    },
+    "max_relative_spread": 0.622482,
+    "max_relative_spread_crop": "Sunflower",
+    "interpretation": "The served contract treats the area as a model feature trained on district aggregates, so the reported tonnes/hectare moves with the requested area for the same crop. The experimental district model fixes this: its per-hectare estimate is a function of Crop + District only."
+  },
+  "artifact": "SeedIQ/models/experimental/district_yield_model.pkl",
+  "manifest": "SeedIQ/models/experimental/district_yield_manifest.json"
+}

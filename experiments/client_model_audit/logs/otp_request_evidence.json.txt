@@ -1,0 +1,3 @@
+{"code":"sms_delivery_failed","message":"textbee delivery failed: TimeoutError (The read operation timed out)","provider":"textbee","status":"error"}
+
+HTTP=502

@@ -1,0 +1,240 @@
+{
+  "base_url": "https://sublime-ambition-production-488f.up.railway.app",
+  "endpoints": {
+    "crop": {
+      "http_status": 200,
+      "path": "/api/crop-recommendation",
+      "payload": {
+        "humidity": 82.0,
+        "nitrogen": 90,
+        "ph": 6.5,
+        "phosphorus": 42,
+        "potassium": 43,
+        "rainfall": 202.9,
+        "temperature": 20.9
+      },
+      "response": {
+        "disease_advisory": [
+          {
+            "name": "Blast (Magnaporthe oryzae)",
+            "pesticide": "Spray Tricyclazole 75% WP @ 120g/acre or Azoxystrobin @ 200ml/acre.",
+            "prevention": "Avoid excess nitrogen fertilizer, use resistant varieties, and maintain proper water levels.",
+            "symptoms": "Spindle-shaped lesions on leaves with gray centers, collar rot, and neck rot leading to broken panicles."
+          },
+          {
+            "name": "Bacterial Leaf Blight (Xanthomonas oryzae)",
+            "pesticide": "Spray Streptocycline @ 6g + Copper Oxychloride @ 300g per acre.",
+            "prevention": "Secure balanced NPK application, avoid field flooding from infected source, and clip leaf tips before transplanting.",
+            "symptoms": "Wavy yellow-to-white stripes on leaf margins starting from tips, leaf wilting (kresek stage)."
+          }
+        ],
+        "growth_plan": [
+          {
+            "action": "Select certified disease-free seeds. Soak seeds for 24 hours, incubate for 48 hours, and sow on raised nursery beds.",
+            "stage": "Seed Preparation & Nursery Sowing",
+            "week": "Week 1"
+          },
+          {
+            "action": "Transplant 20-25 day old seedlings into puddled fields. Maintain a shallow water depth of 2-3 cm.",
+            "stage": "Transplanting",
+            "week": "Week 3"
+          },
+          {
+            "action": "Apply first top-dressing of Nitrogen (Urea). Perform mechanical weeding and monitor for stem borer.",
+            "stage": "Active Tillering & Top Dressing",
+            "week": "Week 7"
+          },
+          {
+            "action": "Ensure standing water depth of 5 cm. Apply phosphorus and potassium. Keep pests monitored.",
+            "stage": "Panicle Initiation & Flowering",
+            "week": "Week 13"
+          },
+          {
+            "action": "Drain water 10 days before harvest. Harvest when 85% of panicles turn golden brown and grains are firm.",
+            "stage": "Drainage & Harvesting",
+            "week": "Week 18"
+          }
+        ],
+        "growth_plan_source": "knowledge_base/growth_planner.json",
+        "result": {
+          "classical": "rice",
+          "ensemble": "rice",
+          "quantum": "rice"
+        },
+        "soil_analysis": {
+          "nitrogen": {
+            "advice": "Maintain current organic matter levels. Standard maintenance dosing applies.",
+            "status": "Optimum Nitrogen"
+          },
+          "ph": {
+            "advice": "Ideal soil environment. High nutrient availability across all micro and macro plant elements.",
+            "status": "Neutral Soil (pH 6.0 - 7.5)"
+          },
+          "phosphorus": {
+            "advice": "Standard crop-specific maintenance application is sufficient.",
+            "status": "Optimum Phosphorus"
+          },
+          "potassium": {
+            "advice": "Standard dose is sufficient for cell walls strengthening and pest resistance.",
+            "status": "Optimum Potassium"
+          }
+        }
+      },
+      "sha256": "7fef78c202cfa4ef3deb8fac2a088a4722d9d634d7508722ef1865823b126fcf"
+    },
+    "quantum": {
+      "http_status": 200,
+      "path": "/api/quantum-ml",
+      "payload": {
+        "area_hectares": 10,
+        "crop": "Rice",
+        "humidity": 82.0,
+        "moisture": 12.5,
+        "nitrogen": 90,
+        "ph": 6.5,
+        "phosphorus": 42,
+        "potassium": 43,
+        "rainfall": 202.9,
+        "temperature": 20.9,
+        "weight": 45.0
+      },
+      "response": {
+        "inputs": {
+          "area_hectares": 10,
+          "crop": "Rice",
+          "humidity": 82.0,
+          "moisture": 12.5,
+          "nitrogen": 90,
+          "ph": 6.5,
+          "phosphorus": 42,
+          "potassium": 43,
+          "rainfall": 202.9,
+          "temperature": 20.9,
+          "weight": 45.0
+        },
+        "result": {
+          "crop_rf": "rice",
+          "crop_vqc": "rice",
+          "decision": "Suboptimal Performance (Success < 50%)",
+          "prob_success": 47.6,
+          "seed_svm": "Viable",
+          "seed_vqc": "Viable",
+          "yield_vqr": 895.91,
+          "yield_xgb": 2.43
+        }
+      },
+      "sha256": "a8fe8e3f4465396699fa689569e1d066ad9aeb1a288494606d83b052b763ad6e"
+    },
+    "seed": {
+      "http_status": 200,
+      "path": "/api/seed-viability",
+      "payload": {
+        "moisture": 12.5,
+        "weight": 45.0
+      },
+      "response": {
+        "result": {
+          "agreement": true,
+          "classical": "Viable",
+          "ensemble": "Viable",
+          "quality_class": "Grade B",
+          "quality_source": "derived from the classical model probability; not an official certification",
+          "quantum": "Viable",
+          "viability_score": 65.9
+        }
+      },
+      "sha256": "136e4f4b1c088808a70e8277f6f939802be68097bf64c3372c92260771abcbcd"
+    },
+    "yield": {
+      "http_status": 200,
+      "path": "/api/yield-prediction",
+      "payload": {
+        "area_hectares": 10,
+        "crop": "Rice"
+      },
+      "response": {
+        "contract": {
+          "crops": [
+            "Castor",
+            "Chickpea",
+            "Cotton",
+            "Finger Millet",
+            "Groundnut",
+            "Kharif Sorghum",
+            "Linseed",
+            "Maize",
+            "Minor Pulses",
+            "Oilseeds",
+            "Pearl Millet",
+            "Pigeonpea",
+            "Rabi Sorghum",
+            "Rapeseed and Mustard",
+            "Rice",
+            "Safflower",
+            "Sesamum",
+            "Sorghum",
+            "Soyabean",
+            "Sugarcane",
+            "Sunflower",
+            "Wheat"
+          ],
+          "dataset": "data/yield_icrisat_karnataka.csv",
+          "dataset_provenance": "provided (ICRISAT \u2014 ICRISAT-District Level Data.csv)",
+          "dataset_synthetic": false,
+          "inputs": [
+            "Crop",
+            "Area_Hectares"
+          ],
+          "season_deprecated": true,
+          "season_required": false,
+          "semantics": "Model inputs are crop and field area only. When the ICRISAT-derived table is routed this is trained on REAL historical district-level annual crop statistics (Karnataka, 2000-2017) \u2014 NOT field-level, NOT season-resolved and NOT live data."
+        },
+        "crops": [
+          "Castor",
+          "Chickpea",
+          "Cotton",
+          "Finger Millet",
+          "Groundnut",
+          "Kharif Sorghum",
+          "Linseed",
+          "Maize",
+          "Minor Pulses",
+          "Oilseeds",
+          "Pearl Millet",
+          "Pigeonpea",
+          "Rabi Sorghum",
+          "Rapeseed and Mustard",
+          "Rice",
+          "Safflower",
+          "Sesamum",
+          "Sorghum",
+          "Soyabean",
+          "Sugarcane",
+          "Sunflower",
+          "Wheat"
+        ],
+        "market_analysis": {
+          "data_source": "knowledge_base/market_analysis.json#Rice",
+          "demand": "High",
+          "gross_revenue": "\u20b9534,600",
+          "net_profit": null,
+          "note": "The knowledge base has no cost-of-cultivation figure for this crop, so net profit is not estimated.",
+          "price_per_tonne": "\u20b922,000",
+          "profit_sign": null,
+          "total_cost": null,
+          "trend": "Rising"
+        },
+        "result": {
+          "classical": 2.43,
+          "ensemble": 2.43,
+          "quantum": 895.91,
+          "quantum_available": true,
+          "quantum_experimental": true,
+          "quantum_note": "Experimental: the quantum leg is trained on district totals and its per-hectare accuracy is unreliable at small areas, so it is excluded from the reported yield. Use `classical`/`ensemble` as the user-facing figure.",
+          "units": "tonnes per hectare"
+        }
+      },
+      "sha256": "3ab643477d5e71db980139ce14d1489055ddd5aebde7530f3814fb206cbdda2e"
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "generated_utc": "2026-10-09T17:41:05Z",
+  "contract_schema": {
+    "required_columns": [
+      "Moisture_Level",
+      "Weight_g",
+      "Viable"
+    ],
+    "required_ranges": {
+      "Moisture_Level": {
+        "dtype": "float",
+        "min": 0.0,
+        "max": 100.0
+      },
+      "Weight_g": {
+        "dtype": "float",
+        "min": 0.001,
+        "max": 10000.0
+      },
+      "Viable": {
+        "dtype": "int",
+        "min": 0,
+        "max": 1
+      }
+    },
+    "optional_alignment_columns": [
+      "sample_id",
+      "farm_id",
+      "plot_id",
+      "crop_species",
+      "state",
+      "district",
+      "year",
+      "season",
+      "variety_name",
+      "test_method",
+      "germination_pct",
+      "tetrazolium_pct",
+      "provenance_source",
+      "measurement_date",
+      "license"
+    ]
+  },
+  "sources_attempted": {
+    "seedgerm_mendeley_ccby4": {
+      "doi": "10.17632/4wkt6thgp6.2",
+      "dataset_name": "Accurate ML Germination Detection / SeedGerm (Genze et al. 2020)",
+      "paper_url": "https://plantmethods.biomedcentral.com/articles/10.1186/s13007-020-00699-x",
+      "official_url": "https://data.mendeley.com/datasets/4wkt6thgp6/2",
+      "license": "CC BY 4.0",
+      "citation_required": "Genze N, Bharti R, Grieb M, Schultheiss SJ, Grimm DG. (2020) Accurate machine learning-based germination detection, prediction and quality assessment of three grain crops. Plant Methods 16:157. https://doi.org/10.1186/s13007-020-00699-x",
+      "download_attempts": [
+        {
+          "url": "https://data.mendeley.com/public-files/datasets/4wkt6thgp6/files/3421091e-0ba9-4b6a-a212-05e28e1a8310/file_downloaded",
+          "filename": "seedgerm_all_v2.zip",
+          "description": "dataset zip",
+          "success": false,
+          "local_file_size_bytes": null
+        }
+      ],
+      "download_status": "failed_or_requires_auth ; using paper-published aggregate counts",
+      "local_rows_available": 2449,
+      "measured_binary_viable_counts": {
+        "1": 2249,
+        "0": 200
+      },
+      "crop_species_counts": {
+        "Zea mays": 824,
+        "Pennisetum glaucum": 814,
+        "Secale cereale": 811
+      },
+      "validator_ok": true,
+      "validator_errors": [],
+      "validator_warnings": [],
+      "rows_after_cleaning": 2449
+    },
+    "icar_nsrtc_or_user_provided": {
+      "env_var": "SEEDIQ_SEED_TEST_CSV",
+      "path_provided": false
+    },
+    "synthetic_100_local": {
+      "path": "/Users/apple/SeedIQ/SeedIQ/data/seed_viability_data.csv",
+      "rows_after_tagging": 100,
+      "synthetic_tag_applied_to_Viable_label_source": true
+    }
+  }
+}

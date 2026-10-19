@@ -1,0 +1,125 @@
+{
+  "crop_recommendation": {
+    "dataset": "Crop_recommendation.csv (22 classes, 2,200 rows)",
+    "exact_duplicates": 0,
+    "feature_duplicates": 0,
+    "leakage_detected": false,
+    "test_accuracy": 99.55,
+    "decision": "Preserved without changes (verified 99.55% test / 99.32% CV)."
+  },
+  "seed_viability": {
+    "dataset": "Seed_Data.csv (UCI Seeds, real wheat kernel measurements, 210 rows)",
+    "split": "Stratified 80/20 (train=168, test=42), seed=42",
+    "baseline_rf50": {
+      "test_accuracy": 90.48,
+      "test_macro_f1": 90.07,
+      "confusion_matrix": [
+        [
+          10,
+          1,
+          3
+        ],
+        [
+          0,
+          14,
+          0
+        ],
+        [
+          0,
+          0,
+          14
+        ]
+      ]
+    },
+    "candidate_gbm200": {
+      "test_accuracy": 92.86,
+      "test_macro_f1": 92.63,
+      "confusion_matrix": [
+        [
+          11,
+          1,
+          2
+        ],
+        [
+          0,
+          14,
+          0
+        ],
+        [
+          0,
+          0,
+          14
+        ]
+      ]
+    },
+    "delta_accuracy_pp": 2.38,
+    "delta_f1_pp": 2.56,
+    "root_cause": "Class 0 vs Class 2 kernel morphology overlap; GBM recovers misclassified Kama kernels."
+  },
+  "yield_prediction_live": {
+    "dataset": "yield_icrisat_karnataka.csv (5,585 records, 19 districts, 2000-2017)",
+    "split": "GroupShuffleSplit by district-year (train=4,423 / test=1,162), seed=42",
+    "baseline_xgb_gbr": {
+      "r2": 0.903461,
+      "mae": 17837.54,
+      "rmse": 39709.57
+    },
+    "baseline_model_m": {
+      "r2": 0.911003,
+      "mae": 15412.85,
+      "rmse": 38126.87
+    },
+    "candidate_oof_blend": {
+      "selected_alpha": 0.8,
+      "formula": "0.80 * Model_M + 0.20 * GBR",
+      "r2": 0.912579,
+      "mae": 15502.82,
+      "rmse": 37787.69
+    },
+    "delta_r2_vs_xgb_pp": 0.9119,
+    "delta_r2_vs_model_m_pp": 0.1576,
+    "delta_rmse_reduction_tonnes": 1921.88
+  },
+  "meta_model_diagnosis": {
+    "dataset": "Modular round-robin stack of Crop, Yield, and Seed predictions (train=1,760, test=440)",
+    "target_definition": "Heuristic rule: crop_ok AND yield_within_25pct AND seed_ok",
+    "is_independently_observed_agricultural_outcome": false,
+    "class_distribution_test": {
+      "class_0_failure": 248,
+      "class_1_success": 192,
+      "majority_class_base_rate": 56.36
+    },
+    "baseline_rf": {
+      "test_accuracy": 60.68,
+      "test_balanced_acc": 57.71,
+      "test_macro_f1": 56.6,
+      "confusion_matrix": [
+        [
+          201,
+          47
+        ],
+        [
+          126,
+          66
+        ]
+      ]
+    },
+    "candidate_lr": {
+      "test_accuracy": 61.14,
+      "test_balanced_acc": 57.47,
+      "test_macro_f1": 55.3,
+      "confusion_matrix": [
+        [
+          214,
+          34
+        ],
+        [
+          137,
+          55
+        ]
+      ]
+    },
+    "delta_accuracy_pp": 0.45,
+    "why_accuracy_is_stuck_at_58_to_61_pct": "1. Target is a conjunction of errors from 3 independent datasets paired by modulo index; 2. Inputs are only the 6 predicted output values, carrying near-zero mutual information with error; 3. Majority baseline is 56.36%, meaning all models hover within 2-4 pp of naive majority guessing; 4. The target measures agreement with an internal heuristic rule, NOT true agricultural outcome."
+  }
+}
