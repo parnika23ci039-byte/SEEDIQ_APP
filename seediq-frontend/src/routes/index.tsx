@@ -595,7 +595,7 @@ function SeedIQHomepage() {
             <div>
               <div className="relative h-48 w-full rounded-2xl overflow-hidden border border-white/10 mb-6 bg-black/40">
                 <img
-                  src="/crops/rice/crop.webp"
+                  src="/crops/rice/crop.jpg"
                   alt="Crop AI Recommendation"
                   loading="lazy"
                   decoding="async"
@@ -705,7 +705,7 @@ function SeedIQHomepage() {
             <div>
               <div className="relative h-48 w-full rounded-2xl overflow-hidden border border-white/10 mb-6 bg-black/40">
                 <img
-                  src="/crops/tomato/storage.webp"
+                  src="/crops/tomato/storage.jpg"
                   alt="Seed AI Storage & Regeneration"
                   loading="lazy"
                   decoding="async"
