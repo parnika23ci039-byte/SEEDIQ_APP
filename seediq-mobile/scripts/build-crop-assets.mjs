@@ -1,0 +1,165 @@
+// Reuse the ORIGINAL SeedIQ crop/storage imagery inside the Android app.
+//
+// Reads the canonical asset map from the existing web frontend
+// (seediq-frontend/src/lib/crops.ts) — the repository stays the source of truth —
+// and copies each referenced image into seediq-mobile/assets/crops/<slug>/,
+// downscaling it to a phone-appropriate size with macOS `sips` (no new artwork
+// is generated; these are the exact same photos the web app serves).
+//
+// Output:
+//   assets/crops/<slug>/crop.jpg
+//   assets/crops/<slug>/storage.jpg
+//   src/lib/crop-assets.ts   (static require() map for Metro)
+//
+// Run from seediq-mobile/:  node scripts/build-crop-assets.mjs
+
+import { execFileSync } from "node:child_process";
+import { existsSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
+import { dirname, join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const here = dirname(fileURLToPath(import.meta.url));
+const appRoot = resolve(here, "..");
+const repoRoot = resolve(appRoot, "..");
+
+const WEB_CROPS_TS = join(repoRoot, "seediq-frontend", "src", "lib", "crops.ts");
+const WEB_PUBLIC = join(repoRoot, "seediq-frontend", "public");
+const OUT_IMAGES = join(appRoot, "assets", "crops");
+const OUT_MAP = join(appRoot, "src", "lib", "crop-assets.ts");
+
+// Phone-appropriate: longest edge 720px, JPEG quality ~78.
+const MAX_EDGE = 720;
+const JPEG_QUALITY = 78;
+
+const source = readFileSync(WEB_CROPS_TS, "utf8");
+
+// --- Parse the canonical CROP_ASSETS map straight out of the web source -----
+// Each CROP_ASSETS entry is a flat object ({ name, slug, cropImage?, storageImage? })
+// with NO nested braces, so we can safely match one entry block at a time. This is
+// order-independent: some web entries list storageImage before cropImage, and a few
+// have cropImage only, storageImage only, or a .png crop source.
+const entries = [];
+const blockRe = /"([^"]+)":\s*\{([^{}]*?)\}/g;
+
+let m;
+while ((m = blockRe.exec(source)) !== null) {
+  const key = m[1];
+  const body = m[2];
+  const field = (name) => {
+    const f = body.match(new RegExp(`"${name}":\\s*"([^"]*)"`));
+    return f ? f[1] : null;
+  };
+  const name = field("name");
+  // Only treat blocks that actually describe a crop asset.
+  if (!name || !body.includes("slug")) continue;
+  entries.push({
+    key,
+    name,
+    slug: field("slug") || key,
+    cropImage: field("cropImage"),
+    storageImage: field("storageImage"),
+  });
+}
+
+if (entries.length === 0) {
+  console.error("Could not parse CROP_ASSETS from", WEB_CROPS_TS);
+  process.exit(1);
+}
+console.log(`Parsed ${entries.length} crop assets from the web frontend.`);
+
+rmSync(OUT_IMAGES, { recursive: true, force: true });
+
+/** Resolve a web public path ("/crops/x/crop.webp") to an absolute file path. */
+function resolvePublic(publicPath) {
+  if (!publicPath) return null;
+  const abs = join(WEB_PUBLIC, publicPath.replace(/^\//, ""));
+  if (!existsSync(abs)) return null;
+  // Some web assets are 0-byte placeholders — treat them as absent, exactly
+  // as a browser would render a broken image, rather than generating junk.
+  if (statSync(abs).size === 0) return null;
+  return abs;
+}
+
+/** Downscale + normalise to JPEG using the OS image tool. Returns true on success. */
+function convert(srcFile, destFile) {
+  mkdirSync(dirname(destFile), { recursive: true });
+  try {
+    execFileSync(
+      "sips",
+      ["-s", "format", "jpeg", "-s", "formatOptions", String(JPEG_QUALITY), "-Z", String(MAX_EDGE), srcFile, "--out", destFile],
+      { stdio: "ignore" },
+    );
+  } catch {
+    return false;
+  }
+  // Guard against silent failures that leave no usable output.
+  return existsSync(destFile) && statSync(destFile).size > 0;
+}
+
+const requireLines = [];
+const metaLines = [];
+let converted = 0;
+const skipped = [];
+
+for (const entry of entries) {
+  const slug = entry.slug || entry.key;
+  const cropSrc = resolvePublic(entry.cropImage);
+  const storageSrc = resolvePublic(entry.storageImage);
+  let hasCrop = false;
+  let hasStorage = false;
+
+  if (cropSrc && convert(cropSrc, join(OUT_IMAGES, slug, "crop.jpg"))) {
+    requireLines.push(`  "${slug}/crop": require("../../assets/crops/${slug}/crop.jpg"),`);
+    hasCrop = true;
+    converted++;
+  } else {
+    skipped.push(`${slug}/crop`);
+  }
+
+  if (storageSrc && convert(storageSrc, join(OUT_IMAGES, slug, "storage.jpg"))) {
+    requireLines.push(`  "${slug}/storage": require("../../assets/crops/${slug}/storage.jpg"),`);
+    hasStorage = true;
+    converted++;
+  } else {
+    skipped.push(`${slug}/storage`);
+  }
+
+  // Metadata mirrors the web CROP_ASSETS keys/names 1:1 so the mobile lookup
+  // helpers can reproduce the exact same key + fuzzy + alias resolution.
+  metaLines.push(
+    `  "${entry.key}": { name: ${JSON.stringify(entry.name)}, slug: ${JSON.stringify(slug)}, hasCrop: ${hasCrop}, hasStorage: ${hasStorage} },`,
+  );
+}
+
+const banner = `// AUTO-GENERATED by scripts/build-crop-assets.mjs — do not edit by hand.
+//
+// These images are the ORIGINAL SeedIQ crop/storage photos taken from
+// seediq-frontend/public/crops/, downscaled for mobile. The metadata below is
+// extracted from seediq-frontend/src/lib/crops.ts so the mobile app resolves
+// crops to imagery exactly like the web app does. Regenerate with:
+//   node scripts/build-crop-assets.mjs
+
+/* eslint-disable @typescript-eslint/no-require-imports */
+export const CROP_IMAGE_MODULES: Record<string, number> = {
+${requireLines.join("\n")}
+};
+
+export interface CropAssetMeta {
+  name: string;
+  slug: string;
+  hasCrop: boolean;
+  hasStorage: boolean;
+}
+
+export const CROP_ASSET_META: Record<string, CropAssetMeta> = {
+${metaLines.join("\n")}
+};
+`;
+
+writeFileSync(OUT_MAP, banner, "utf8");
+
+console.log(`Converted ${converted} images -> assets/crops/`);
+if (skipped.length) {
+  console.log(`Missing source files (${skipped.length}): ${skipped.join(", ")}`);
+}
+console.log(`Wrote ${OUT_MAP}`);
