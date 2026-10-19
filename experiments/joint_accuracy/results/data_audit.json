@@ -1,0 +1,163 @@
+{
+  "captured": "2026-10-09 19:26:41",
+  "datasets": {
+    "crop": {
+      "path": "SeedIQ/data/crop_recommendation.csv",
+      "sha256": "808e1d84a544647f1ab2fdae04f434b1842692d6be09eee18a5c2d43eb78d77c",
+      "rows": 2200,
+      "columns": [
+        "Nitrogen",
+        "Phosphorus",
+        "Potassium",
+        "Temperature",
+        "Humidity",
+        "pH",
+        "Rainfall",
+        "Crop"
+      ],
+      "columns_in_file": [
+        "N",
+        "P",
+        "K",
+        "temperature",
+        "humidity",
+        "ph",
+        "rainfall",
+        "label"
+      ],
+      "feature_columns": [
+        "Nitrogen",
+        "Phosphorus",
+        "Potassium",
+        "Temperature",
+        "Humidity",
+        "pH",
+        "Rainfall"
+      ],
+      "target_column": "Crop",
+      "missing_values": {},
+      "missing_total": 0,
+      "duplicate_full_rows": 0,
+      "duplicate_feature_rows": 0,
+      "class_balance": {
+        "apple": 100,
+        "banana": 100,
+        "blackgram": 100,
+        "chickpea": 100,
+        "coconut": 100,
+        "coffee": 100,
+        "cotton": 100,
+        "grapes": 100,
+        "jute": 100,
+        "kidneybeans": 100,
+        "lentil": 100,
+        "maize": 100,
+        "mango": 100,
+        "mothbeans": 100,
+        "mungbean": 100,
+        "muskmelon": 100,
+        "orange": 100,
+        "papaya": 100,
+        "pigeonpeas": 100,
+        "pomegranate": 100,
+        "rice": 100,
+        "watermelon": 100
+      },
+      "n_classes": 22
+    },
+    "yield": {
+      "path": "SeedIQ/data/yield_icrisat_karnataka.csv",
+      "sha256": "ab26727463a3390dbce8928ecb48ff804571e49622766809b161075e58c37f36",
+      "rows": 5585,
+      "columns": [
+        "Crop",
+        "District",
+        "Year",
+        "Area_Hectares",
+        "Yield_Tonnes"
+      ],
+      "columns_in_file": [
+        "Crop",
+        "District",
+        "Year",
+        "Area_Hectares",
+        "Yield_Tonnes"
+      ],
+      "feature_columns": [
+        "Crop",
+        "Area_Hectares"
+      ],
+      "target_column": "Yield_Tonnes",
+      "missing_values": {},
+      "missing_total": 0,
+      "duplicate_full_rows": 0,
+      "duplicate_feature_rows": 668,
+      "target_summary": {
+        "min": 10.0,
+        "p25": 840.0,
+        "median": 7290.0,
+        "p75": 51490.0,
+        "max": 3252900.0,
+        "non_positive_rows": 0
+      },
+      "n_district": 19,
+      "n_year": 18
+    },
+    "seed": {
+      "path": "SeedIQ/data/seed_viability_data.csv",
+      "sha256": "7bf4c361926b49a63e8098a9fc78cb9e6328ba4ce6853c483cec650e620412a9",
+      "rows": 100,
+      "columns": [
+        "Moisture_Level",
+        "Weight_g",
+        "Viable"
+      ],
+      "columns_in_file": [
+        "Moisture_Level",
+        "Weight_g",
+        "Viable"
+      ],
+      "feature_columns": [
+        "Moisture_Level",
+        "Weight_g"
+      ],
+      "target_column": "Viable",
+      "missing_values": {},
+      "missing_total": 0,
+      "duplicate_full_rows": 0,
+      "duplicate_feature_rows": 0,
+      "class_balance": {
+        "0": 63,
+        "1": 37
+      },
+      "n_classes": 2,
+      "minority_class_share": 0.37
+    }
+  },
+  "splits": {
+    "crop": {
+      "train_rows": 1760,
+      "test_rows": 440,
+      "test_fraction": 0.2
+    },
+    "yield": {
+      "train_rows": 4423,
+      "test_rows": 1162,
+      "test_fraction": 0.208057,
+      "train_groups": 273,
+      "test_groups": 69,
+      "group_definition": "District|Year (a district-year never spans train and test)",
+      "train_test_groups_disjoint": true
+    },
+    "seed": {
+      "train_rows": 80,
+      "test_rows": 20,
+      "test_fraction": 0.2
+    }
+  },
+  "notes": [
+    "No imputation is performed: every loader drops rows with missing required fields (crop/seed) or required columns (yield), and the audit records how many values were missing so the effect is visible.",
+    "Duplicate feature rows are reported, not removed. In the crop table they are genuine repeated measurements that can straddle the train/test boundary and inflate crop accuracy; this is a property of the source data, not a modelling choice made here.",
+    "The split indices are the pipeline's own (train_all_models constants: RANDOM_STATE=42, TEST_SPLIT=0.2), rebuilt here without fitting so every stage sees identical rows."
+  ]
+}

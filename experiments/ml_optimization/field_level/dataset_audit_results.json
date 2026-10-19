@@ -1,0 +1,284 @@
+{
+  "ICRISAT-District Level Data.csv": {
+    "file": "ICRISAT-District Level Data.csv",
+    "size_kb": 202,
+    "n_rows": 342,
+    "columns": [
+      "Dist Code",
+      "Year",
+      "State Code",
+      "State Name",
+      "Dist Name",
+      "RICE AREA (1000 ha)",
+      "RICE PRODUCTION (1000 tons)",
+      "RICE YIELD (Kg per ha)",
+      "WHEAT AREA (1000 ha)",
+      "WHEAT PRODUCTION (1000 tons)",
+      "WHEAT YIELD (Kg per ha)",
+      "KHARIF SORGHUM AREA (1000 ha)",
+      "KHARIF SORGHUM PRODUCTION (1000 tons)",
+      "KHARIF SORGHUM YIELD (Kg per ha)",
+      "RABI SORGHUM AREA (1000 ha)",
+      "RABI SORGHUM PRODUCTION (1000 tons)",
+      "RABI SORGHUM YIELD (Kg per ha)",
+      "SORGHUM AREA (1000 ha)",
+      "SORGHUM PRODUCTION (1000 tons)",
+      "SORGHUM YIELD (Kg per ha)",
+      "PEARL MILLET AREA (1000 ha)",
+      "PEARL MILLET PRODUCTION (1000 tons)",
+      "PEARL MILLET YIELD (Kg per ha)",
+      "MAIZE AREA (1000 ha)",
+      "MAIZE PRODUCTION (1000 tons)",
+      "MAIZE YIELD (Kg per ha)",
+      "FINGER MILLET AREA (1000 ha)",
+      "FINGER MILLET PRODUCTION (1000 tons)",
+      "FINGER MILLET YIELD (Kg per ha)",
+      "BARLEY AREA (1000 ha)",
+      "BARLEY PRODUCTION (1000 tons)",
+      "BARLEY YIELD (Kg per ha)",
+      "CHICKPEA AREA (1000 ha)",
+      "CHICKPEA PRODUCTION (1000 tons)",
+      "CHICKPEA YIELD (Kg per ha)",
+      "PIGEONPEA AREA (1000 ha)",
+      "PIGEONPEA PRODUCTION (1000 tons)",
+      "PIGEONPEA YIELD (Kg per ha)",
+      "MINOR PULSES AREA (1000 ha)",
+      "MINOR PULSES PRODUCTION (1000 tons)",
+      "MINOR PULSES YIELD (Kg per ha)",
+      "GROUNDNUT AREA (1000 ha)",
+      "GROUNDNUT PRODUCTION (1000 tons)",
+      "GROUNDNUT YIELD (Kg per ha)",
+      "SESAMUM AREA (1000 ha)",
+      "SESAMUM PRODUCTION (1000 tons)",
+      "SESAMUM YIELD (Kg per ha)",
+      "RAPESEED AND MUSTARD AREA (1000 ha)",
+      "RAPESEED AND MUSTARD PRODUCTION (1000 tons)",
+      "RAPESEED AND MUSTARD YIELD (Kg per ha)",
+      "SAFFLOWER AREA (1000 ha)",
+      "SAFFLOWER PRODUCTION (1000 tons)",
+      "SAFFLOWER YIELD (Kg per ha)",
+      "CASTOR AREA (1000 ha)",
+      "CASTOR PRODUCTION (1000 tons)",
+      "CASTOR YIELD (Kg per ha)",
+      "LINSEED AREA (1000 ha)",
+      "LINSEED PRODUCTION (1000 tons)",
+      "LINSEED YIELD (Kg per ha)",
+      "SUNFLOWER AREA (1000 ha)",
+      "SUNFLOWER PRODUCTION (1000 tons)",
+      "SUNFLOWER YIELD (Kg per ha)",
+      "SOYABEAN AREA (1000 ha)",
+      "SOYABEAN PRODUCTION (1000 tons)",
+      "SOYABEAN YIELD (Kg per ha)",
+      "OILSEEDS AREA (1000 ha)",
+      "OILSEEDS PRODUCTION (1000 tons)",
+      "OILSEEDS YIELD (Kg per ha)",
+      "SUGARCANE AREA (1000 ha)",
+      "SUGARCANE PRODUCTION (1000 tons)",
+      "SUGARCANE YIELD (Kg per ha)",
+      "COTTON AREA (1000 ha)",
+      "COTTON PRODUCTION (1000 tons)",
+      "COTTON YIELD (Kg per ha)",
+      "FRUITS AREA (1000 ha)",
+      "VEGETABLES AREA (1000 ha)",
+      "FRUITS AND VEGETABLES AREA (1000 ha)",
+      "POTATOES AREA (1000 ha)",
+      "ONION AREA (1000 ha)",
+      "FODDER AREA (1000 ha)"
+    ],
+    "expected_granularity": "DISTRICT_LEVEL",
+    "notes": "District-level annual totals for Karnataka 2000-2017. Area in 1000-ha, production in 1000-tons. Not usable for individual field prediction.",
+    "synthetic_check": {
+      "first_row_max_decimal_places": 2,
+      "last_row_max_decimal_places": 2,
+      "likely_augmented": false
+    }
+  },
+  "yield_icrisat_karnataka.csv": {
+    "file": "yield_icrisat_karnataka.csv",
+    "size_kb": 219,
+    "n_rows": 5585,
+    "columns": [
+      "Crop",
+      "District",
+      "Year",
+      "Area_Hectares",
+      "Yield_Tonnes"
+    ],
+    "expected_granularity": "DISTRICT_LEVEL",
+    "notes": "Derived from ICRISAT-DLD: one row = one district \u00d7 crop \u00d7 year. Yield_Tonnes is total district production (tens of thousands of tonnes). NOT per-hectare field yield. Current production model uses this.",
+    "yield_stats": {
+      "col": "Yield_Tonnes",
+      "n_valid": 5585,
+      "min": 10.0,
+      "max": 3252900.0,
+      "mean": 56681.0403,
+      "stdev": 140459.8255,
+      "n_unique": 3078
+    },
+    "synthetic_check": {
+      "first_row_max_decimal_places": 1,
+      "last_row_max_decimal_places": 1,
+      "likely_augmented": false
+    }
+  },
+  "Crop Yiled with Soil and Weather.csv": {
+    "file": "Crop Yiled with Soil and Weather.csv",
+    "size_kb": 270,
+    "n_rows": 2596,
+    "columns": [
+      "Fertilizer",
+      "temp",
+      "N",
+      "P",
+      "K",
+      "yeild"
+    ],
+    "expected_granularity": "FIELD_CANDIDATE",
+    "notes": "Has N, P, K, Fertilizer, temp, yield. No crop type, no location, no date. Yield 5-12 range suggests t/ha for a single unnamed crop. Partially real data (first ~1000 rows) + GAN/augmentation artifacts visible.",
+    "yield_stats": {
+      "col": "yeild",
+      "n_valid": 2596,
+      "min": 5.1507,
+      "max": 12.3377,
+      "mean": 8.5338,
+      "stdev": 1.9388,
+      "n_unique": 2514
+    },
+    "synthetic_check": {
+      "first_row_max_decimal_places": 1,
+      "last_row_max_decimal_places": 15,
+      "likely_augmented": true
+    }
+  },
+  "Soil-Climate-data.csv": {
+    "file": "Soil-Climate-data.csv",
+    "size_kb": 1509,
+    "n_rows": 10000,
+    "columns": [
+      "Crop_Type",
+      "Soil_Type",
+      "Farm_Size_Acres",
+      "Irrigation_Available",
+      "Soil_pH",
+      "Soil_Nitrogen",
+      "Soil_Organic_Matter",
+      "Temperature",
+      "Rainfall",
+      "Humidity",
+      "Compatible"
+    ],
+    "expected_granularity": "INCOMPATIBLE",
+    "notes": "Binary classification target 'Compatible'. No yield in t/ha. 10,000 rows with farm-level soil and climate inputs. Usable for crop-soil suitability, not yield prediction.",
+    "synthetic_check": {
+      "first_row_max_decimal_places": 16,
+      "last_row_max_decimal_places": 16,
+      "likely_augmented": false
+    }
+  },
+  "Train Dataset.csv": {
+    "file": "Train Dataset.csv",
+    "size_kb": 763,
+    "n_rows": 18079,
+    "columns": [
+      "Unnamed: 0",
+      "Crop",
+      "N",
+      "P",
+      "K",
+      "pH",
+      "rainfall",
+      "temperature"
+    ],
+    "expected_granularity": "INCOMPATIBLE",
+    "notes": "NPK + pH + rainfall + temperature \u2192 Crop class. Same schema as Crop_recommendation.csv but 18,079 rows (duplicated). Crop recommendation dataset, no yield.",
+    "synthetic_check": {
+      "first_row_max_decimal_places": 3,
+      "last_row_max_decimal_places": 8,
+      "likely_augmented": false
+    }
+  },
+  "Test Dataset.csv": {
+    "file": "Test Dataset.csv",
+    "size_kb": 764,
+    "n_rows": 18079,
+    "columns": [
+      "Unnamed: 0",
+      "Crop",
+      "N",
+      "P",
+      "K",
+      "pH",
+      "rainfall",
+      "temperature"
+    ],
+    "expected_granularity": "INCOMPATIBLE",
+    "notes": "Identical schema to Train Dataset.csv (18,079 rows). Likely same dataset split \u2013 or same file entirely. No yield target.",
+    "synthetic_check": {
+      "first_row_max_decimal_places": 3,
+      "last_row_max_decimal_places": 8,
+      "likely_augmented": false
+    }
+  },
+  "Crop_recommendation.csv": {
+    "file": "Crop_recommendation.csv",
+    "size_kb": 144,
+    "n_rows": 2200,
+    "columns": [
+      "N",
+      "P",
+      "K",
+      "temperature",
+      "humidity",
+      "ph",
+      "rainfall",
+      "label"
+    ],
+    "expected_granularity": "INCOMPATIBLE",
+    "notes": "2,200 rows, NPK/pH/rainfall/temp \u2192 crop label. Standard Kaggle crop recommendation dataset. No yield.",
+    "synthetic_check": {
+      "first_row_max_decimal_places": 15,
+      "last_row_max_decimal_places": 15,
+      "likely_augmented": false
+    }
+  },
+  "merged_ml_dataset.csv": {
+    "file": "merged_ml_dataset.csv",
+    "size_kb": 0,
+    "n_rows": 2,
+    "columns": [
+      "N",
+      "P",
+      "K",
+      "temperature",
+      "humidity",
+      "ph",
+      "rainfall",
+      "label"
+    ],
+    "expected_granularity": "INCOMPATIBLE",
+    "notes": "Only 2 data rows. Same NPK schema. Not usable.",
+    "synthetic_check": {
+      "first_row_max_decimal_places": 1,
+      "last_row_max_decimal_places": 1,
+      "likely_augmented": false
+    }
+  },
+  "crop_production_karnataka.csv": {
+    "file": "crop_production_karnataka.csv",
+    "size_kb": 4,
+    "n_rows": 100,
+    "columns": [
+      "Crop",
+      "Season",
+      "Area_Hectares",
+      "Yield_Tonnes"
+    ],
+    "expected_granularity": "DISTRICT_LEVEL",
+    "notes": "Karnataka crop production totals. Likely district-level aggregate.",
+    "synthetic_check": {
+      "first_row_max_decimal_places": 16,
+      "last_row_max_decimal_places": 15,
+      "likely_augmented": false
+    }
+  }
+}

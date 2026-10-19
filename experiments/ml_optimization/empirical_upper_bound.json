@@ -1,0 +1,13 @@
+{
+  "crop_accuracy_meta": 0.9954545454545455,
+  "seed_accuracy_meta": 0.9,
+  "yield_accuracy_meta": 0.5454545454545454,
+  "empirical_upper_bound_perfect_yield": 0.8954545454545455,
+  "empirical_upper_bound_perfect_both": 0.9954545454545455,
+  "required_yield_for_90_empirical": 1.004566210045662,
+  "reported_8959_verification": {
+    "reported": 0.8959,
+    "actual_theoretical": 0.895909090909091,
+    "difference": 9.090909090958554e-06
+  }
+}

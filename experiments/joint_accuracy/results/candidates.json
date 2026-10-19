@@ -1,0 +1,1033 @@
+{
+  "crop": {
+    "selected": "RandomForest(600, depth=None, leaf=1, max_features=0.5, balanced)",
+    "selection_metric": "mean StratifiedKFold(5) accuracy on TRAIN",
+    "candidates": [
+      {
+        "name": "RandomForest(400, depth=None, leaf=1, sqrt, balanced)",
+        "cv_accuracy": 0.993182,
+        "cv_f1_macro": 0.993172,
+        "seconds": 7.9
+      },
+      {
+        "name": "RandomForest(400, depth=15, leaf=1, sqrt, balanced)",
+        "cv_accuracy": 0.993182,
+        "cv_f1_macro": 0.993172,
+        "seconds": 8.7
+      },
+      {
+        "name": "RandomForest(400, depth=None, leaf=2, sqrt, balanced)",
+        "cv_accuracy": 0.992614,
+        "cv_f1_macro": 0.992599,
+        "seconds": 10.2
+      },
+      {
+        "name": "RandomForest(600, depth=None, leaf=1, max_features=0.5, balanced)",
+        "cv_accuracy": 0.99375,
+        "cv_f1_macro": 0.993735,
+        "seconds": 18.3
+      },
+      {
+        "name": "ExtraTrees(600, depth=None, leaf=1, sqrt, balanced)",
+        "cv_accuracy": 0.992614,
+        "cv_f1_macro": 0.992599,
+        "seconds": 14.4
+      },
+      {
+        "name": "HistGradientBoosting(400, lr=0.08)",
+        "cv_accuracy": 0.992614,
+        "cv_f1_macro": 0.99262,
+        "seconds": 70.3
+      },
+      {
+        "name": "SVC(rbf, C=10, gamma=scale)",
+        "cv_accuracy": 0.982386,
+        "cv_f1_macro": 0.982388,
+        "seconds": 0.6
+      },
+      {
+        "name": "KNN(5, distance)",
+        "cv_accuracy": 0.968182,
+        "cv_f1_macro": 0.968136,
+        "seconds": 0.1
+      }
+    ],
+    "train_cv_per_class": [
+      {
+        "class": "apple",
+        "support": 80,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class": "banana",
+        "support": 80,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class": "blackgram",
+        "support": 80,
+        "precision": 0.9877,
+        "recall": 1.0,
+        "f1": 0.9938
+      },
+      {
+        "class": "chickpea",
+        "support": 80,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class": "coconut",
+        "support": 80,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class": "coffee",
+        "support": 80,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class": "cotton",
+        "support": 80,
+        "precision": 0.9877,
+        "recall": 1.0,
+        "f1": 0.9938
+      },
+      {
+        "class": "grapes",
+        "support": 80,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class": "jute",
+        "support": 80,
+        "precision": 0.9195,
+        "recall": 1.0,
+        "f1": 0.9581
+      },
+      {
+        "class": "kidneybeans",
+        "support": 80,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class": "lentil",
+        "support": 80,
+        "precision": 0.9756,
+        "recall": 1.0,
+        "f1": 0.9877
+      },
+      {
+        "class": "maize",
+        "support": 80,
+        "precision": 1.0,
+        "recall": 0.9875,
+        "f1": 0.9937
+      },
+      {
+        "class": "mango",
+        "support": 80,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class": "mothbeans",
+        "support": 80,
+        "precision": 1.0,
+        "recall": 0.9625,
+        "f1": 0.9809
+      },
+      {
+        "class": "mungbean",
+        "support": 80,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class": "muskmelon",
+        "support": 80,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class": "orange",
+        "support": 80,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class": "papaya",
+        "support": 80,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class": "pigeonpeas",
+        "support": 80,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class": "pomegranate",
+        "support": 80,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class": "rice",
+        "support": 80,
+        "precision": 1.0,
+        "recall": 0.9125,
+        "f1": 0.9542
+      },
+      {
+        "class": "watermelon",
+        "support": 80,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    ],
+    "train_cv_confusion_matrix": [
+      [
+        80,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        80,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        80,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        80,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        80,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        80,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        80,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        80,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        80,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        80,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        80,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        79,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        80,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        77,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        80,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        80,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        80,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        80,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        80,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        80,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        73,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        80
+      ]
+    ],
+    "train_fit_accuracy": 1.0,
+    "artifact": "artifacts/crop_candidate.pkl",
+    "artifact_interface": "expects crop_scaler.pkl-transformed 7-feature matrix (unchanged scaler, train-fit); drop-in for models/rf_model.pkl"
+  },
+  "yield": {
+    "selected": "quantile tau=0.5634 on log-per-ha, +per-crop area rank feature shrunk toward the crop train geomean (w=0.85)",
+    "selection_metric": "OOF +/-25% hit rate (GroupKFold(5) by district-year on TRAIN)",
+    "candidates": [
+      {
+        "name": "squared_error on log-per-ha, base contract features",
+        "family": "base",
+        "oof_within_25pct": 0.519783,
+        "oof_r2": 0.923205,
+        "oof_mae": 13473.9398,
+        "seconds": 14.5
+      },
+      {
+        "name": "absolute_error (median) on log-per-ha, base contract features",
+        "family": "base",
+        "oof_within_25pct": 0.542844,
+        "oof_r2": 0.930722,
+        "oof_mae": 13139.5522,
+        "seconds": 24.4
+      },
+      {
+        "name": "quantile tau=0.5000 on log-per-ha, base contract features",
+        "family": "base",
+        "oof_within_25pct": 0.542844,
+        "oof_r2": 0.930722,
+        "oof_mae": 13139.5522,
+        "seconds": 37.6
+      },
+      {
+        "name": "quantile tau=0.5634 (+/-25% optimal) on log-per-ha, base contract features",
+        "family": "base",
+        "oof_within_25pct": 0.539453,
+        "oof_r2": 0.932996,
+        "oof_mae": 13148.6856,
+        "seconds": 39.4
+      },
+      {
+        "name": "quantile tau=0.6000 on log-per-ha, base contract features",
+        "family": "base",
+        "oof_within_25pct": 0.541488,
+        "oof_r2": 0.93053,
+        "oof_mae": 13303.3179,
+        "seconds": 35.8
+      },
+      {
+        "name": "squared_error on log-per-ha, +log(area) feature",
+        "family": "log_area",
+        "oof_within_25pct": 0.519783,
+        "oof_r2": 0.923205,
+        "oof_mae": 13473.9398,
+        "seconds": 14.6
+      },
+      {
+        "name": "quantile tau=0.5634 on log-per-ha, +log(area) feature",
+        "family": "log_area",
+        "oof_within_25pct": 0.539453,
+        "oof_r2": 0.932996,
+        "oof_mae": 13148.6856,
+        "seconds": 36.8
+      },
+      {
+        "name": "quantile tau=0.5634 on log-per-ha, +per-crop area rank feature",
+        "family": "crop_rank",
+        "oof_within_25pct": 0.545783,
+        "oof_r2": 0.936697,
+        "oof_mae": 12941.1525,
+        "seconds": 35.1
+      },
+      {
+        "name": "crop-constant train log-geomean (reference, no area response)",
+        "family": "reference",
+        "oof_within_25pct": 0.507348,
+        "oof_r2": 0.931337,
+        "oof_mae": 13984.024,
+        "seconds": 0.0
+      }
+    ],
+    "shrinkage_sweep": [
+      {
+        "weight_on_base": 0.85,
+        "oof_within_25pct": 0.548044,
+        "oof_r2": 0.939123
+      },
+      {
+        "weight_on_base": 1.0,
+        "oof_within_25pct": 0.545783,
+        "oof_r2": 0.936697
+      },
+      {
+        "weight_on_base": 0.7,
+        "oof_within_25pct": 0.543749,
+        "oof_r2": 0.940255
+      },
+      {
+        "weight_on_base": 0.5,
+        "oof_within_25pct": 0.538322,
+        "oof_r2": 0.939939
+      },
+      {
+        "weight_on_base": 0.3,
+        "oof_within_25pct": 0.529279,
+        "oof_r2": 0.937746
+      },
+      {
+        "weight_on_base": 0.0,
+        "oof_within_25pct": 0.507348,
+        "oof_r2": 0.931337
+      }
+    ],
+    "train_fit": {
+      "r2": 0.954241,
+      "mae": 10603.4411,
+      "within_25pct": 0.624689
+    },
+    "reference_crop_constant": {
+      "name": "crop-constant train log-geomean (reference, no area response)",
+      "family": "reference",
+      "oof_within_25pct": 0.507348,
+      "oof_r2": 0.931337,
+      "oof_mae": 13984.024,
+      "seconds": 0.0
+    },
+    "significance_note": "+/-25% tolerance is asymmetric in log space: an actual may be 25% above or 20% below the prediction, so the point prediction that maximises coverage is the tau = ln(1.25)/(ln(1.25)+ln(1/0.8)) = 0.5634 quantile of log(yield per hectare).",
+    "artifact": "artifacts/yield_candidate.pkl",
+    "artifact_interface": "LogPerHaRegressor over the published 23-column contract frame (Area_Hectares first, then crop dummies) -> total Yield_Tonnes; drop-in for models/yield_prediction/randomforest_model.pkl"
+  },
+  "seed": {
+    "selected": "RandomForest(300, depth=None, balanced)",
+    "selection_metric": "mean StratifiedKFold(5) accuracy on TRAIN",
+    "candidates": [
+      {
+        "name": "RandomForest(300, depth=None, balanced)",
+        "family": "raw",
+        "cv_accuracy": 0.95,
+        "cv_f1_macro": 0.945055
+      },
+      {
+        "name": "RandomForest(300, max_depth=4, leaf=2)",
+        "family": "raw",
+        "cv_accuracy": 0.95,
+        "cv_f1_macro": 0.945055
+      },
+      {
+        "name": "ExtraTrees(300, min_samples_leaf=2)",
+        "family": "raw",
+        "cv_accuracy": 0.9375,
+        "cv_f1_macro": 0.930736
+      },
+      {
+        "name": "GradientBoosting(150, depth=2, lr=0.05)",
+        "family": "raw",
+        "cv_accuracy": 0.9,
+        "cv_f1_macro": 0.891819
+      },
+      {
+        "name": "HistGradientBoosting(200, lr=0.05)",
+        "family": "raw",
+        "cv_accuracy": 0.825,
+        "cv_f1_macro": 0.804333
+      },
+      {
+        "name": "DecisionTree(max_depth=3)",
+        "family": "raw",
+        "cv_accuracy": 0.9,
+        "cv_f1_macro": 0.88819
+      },
+      {
+        "name": "SVC(rbf, C=1, gamma=scale)",
+        "family": "scaled",
+        "cv_accuracy": 0.925,
+        "cv_f1_macro": 0.918864
+      },
+      {
+        "name": "SVC(rbf, C=10, gamma=scale)",
+        "family": "scaled",
+        "cv_accuracy": 0.9375,
+        "cv_f1_macro": 0.931869
+      },
+      {
+        "name": "LogisticRegression on quadratic features (C=1)",
+        "family": "raw",
+        "cv_accuracy": 0.5875,
+        "cv_f1_macro": 0.396571
+      },
+      {
+        "name": "KNN(5, distance)",
+        "family": "scaled",
+        "cv_accuracy": 0.9125,
+        "cv_f1_macro": 0.906025
+      }
+    ],
+    "train_fit_accuracy": 1.0,
+    "train_class_counts": [
+      50,
+      30
+    ],
+    "artifact": "artifacts/seed_candidate.pkl",
+    "artifact_interface": "predict(DataFrame[Moisture_Level, Weight_g]) + predict_proba -> drop-in for models/seed_viability/randomforest_model.pkl",
+    "synthetic_warning": "The 100-row seed table carries GENERATED labels (logistic draw around a 12% moisture optimum with a weight term). Any score here measures how well the generator can be approximated, not real-world seed viability."
+  },
+  "meta": {
+    "evaluable": false,
+    "status": "NOT EVALUABLE",
+    "reason": "The meta-classifier's target IS the three-condition joint label, so scoring it requires the same genuinely aligned rows the joint metric requires. None exist in these separate test sets.",
+    "candidate_joint_reference": {
+      "per_source_test_rows": {
+        "crop": 440,
+        "yield": 1162,
+        "seed": 20
+      },
+      "sources": [
+        "crop",
+        "seed",
+        "yield"
+      ],
+      "key": null,
+      "key_search": {
+        "candidates": [
+          "sample_id",
+          "record_id",
+          "plot_id",
+          "field_id",
+          "farm_id",
+          "uid",
+          "id"
+        ],
+        "key_columns_found_per_source": {
+          "crop": [],
+          "yield": [],
+          "seed": []
+        },
+        "shared_key_columns": []
+      },
+      "status": "NOT EVALUABLE",
+      "aligned_rows": 0,
+      "reason": "The crop, yield and seed test sets share no sample identifier (no common key column). No row of one set is the same sample as a row of another, so a joint-success rate cannot be computed from these separate test sets. Reporting a paired/round-robin figure would fabricate rows that exist nowhere in the data.",
+      "evaluable": false,
+      "definition": "crop prediction correct AND yield prediction within +/-25% of actual per-hectare yield AND seed-viability prediction correct, evaluated on rows genuinely aligned by a shared sample key",
+      "note": "Pairing separate test sets by position is not a joint evaluation; this report deliberately withholds a rate rather than fabricate one."
+    },
+    "features": [
+      "crop_rf",
+      "crop_vqc",
+      "yield_classical_per_ha/50",
+      "yield_vqc_per_ha/50",
+      "seed_classical",
+      "seed_vqc"
+    ],
+    "label_definition": "crop classical correct AND yield classical within +/-25% per hectare AND seed classical correct (unchanged)",
+    "artifact": null,
+    "note": "No meta artifact is written: fitting one would require joint training rows that do not exist. The previously written meta_candidate.pkl was produced from round-robin triples and has been removed from this experiment's artifacts."
+  },
+  "candidate_joint_test_reference": {
+    "per_source_test_rows": {
+      "crop": 440,
+      "yield": 1162,
+      "seed": 20
+    },
+    "sources": [
+      "crop",
+      "seed",
+      "yield"
+    ],
+    "key": null,
+    "key_search": {
+      "candidates": [
+        "sample_id",
+        "record_id",
+        "plot_id",
+        "field_id",
+        "farm_id",
+        "uid",
+        "id"
+      ],
+      "key_columns_found_per_source": {
+        "crop": [],
+        "yield": [],
+        "seed": []
+      },
+      "shared_key_columns": []
+    },
+    "status": "NOT EVALUABLE",
+    "aligned_rows": 0,
+    "reason": "The crop, yield and seed test sets share no sample identifier (no common key column). No row of one set is the same sample as a row of another, so a joint-success rate cannot be computed from these separate test sets. Reporting a paired/round-robin figure would fabricate rows that exist nowhere in the data.",
+    "evaluable": false,
+    "definition": "crop prediction correct AND yield prediction within +/-25% of actual per-hectare yield AND seed-viability prediction correct, evaluated on rows genuinely aligned by a shared sample key",
+    "note": "Pairing separate test sets by position is not a joint evaluation; this report deliberately withholds a rate rather than fabricate one."
+  }
+}

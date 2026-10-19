@@ -1,0 +1,8 @@
+{
+  "enhanced_yield_accuracy_25": 0.540447504302926,
+  "enhanced_yield_r2": 0.921401675949228,
+  "joint_success_enhanced": 0.5068181818181818,
+  "joint_success_numerator": 223,
+  "joint_success_denominator": 440,
+  "improvement_over_baseline": 0.03861818181818183
+}

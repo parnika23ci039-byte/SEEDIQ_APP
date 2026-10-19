@@ -1,0 +1,75 @@
+{
+  "best_combination": [
+    "RandomForest",
+    "ExtraTrees"
+  ],
+  "best_joint_success_rate": 0.4909090909090909,
+  "best_numerator": 216,
+  "best_denominator": 440,
+  "all_combinations": [
+    {
+      "crop": "RandomForest",
+      "seed": "RandomForest",
+      "numerator": 206,
+      "denominator": 440,
+      "rate": 0.4681818181818182
+    },
+    {
+      "crop": "RandomForest",
+      "seed": "ExtraTrees",
+      "numerator": 216,
+      "denominator": 440,
+      "rate": 0.4909090909090909
+    },
+    {
+      "crop": "RandomForest",
+      "seed": "GradientBoosting",
+      "numerator": 216,
+      "denominator": 440,
+      "rate": 0.4909090909090909
+    },
+    {
+      "crop": "RandomForest",
+      "seed": "HistGB",
+      "numerator": 216,
+      "denominator": 440,
+      "rate": 0.4909090909090909
+    },
+    {
+      "crop": "ExtraTrees",
+      "seed": "RandomForest",
+      "numerator": 206,
+      "denominator": 440,
+      "rate": 0.4681818181818182
+    },
+    {
+      "crop": "ExtraTrees",
+      "seed": "ExtraTrees",
+      "numerator": 216,
+      "denominator": 440,
+      "rate": 0.4909090909090909
+    },
+    {
+      "crop": "ExtraTrees",
+      "seed": "GradientBoosting",
+      "numerator": 216,
+      "denominator": 440,
+      "rate": 0.4909090909090909
+    },
+    {
+      "crop": "ExtraTrees",
+      "seed": "HistGB",
+      "numerator": 216,
+      "denominator": 440,
+      "rate": 0.4909090909090909
+    }
+  ],
+  "error_analysis": {
+    "crop_failures": 2,
+    "yield_failures": 200,
+    "seed_failures": 44,
+    "only_yield_fails": 178,
+    "only_seed_fails": 23
+  },
+  "empirical_ceiling_perfect_yield": 0.895909090909091
+}

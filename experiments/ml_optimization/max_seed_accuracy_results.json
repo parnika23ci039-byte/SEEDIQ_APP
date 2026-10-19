@@ -1,0 +1,9 @@
+{
+  "best_seed_accuracy": 0.9,
+  "yield_accuracy": 0.5004476275738585,
+  "crop_accuracy": 0.9954545454545455,
+  "joint_success": 0.4909090909090909,
+  "joint_success_numerator": 216,
+  "joint_success_denominator": 440,
+  "required_seed_for_90": 1.6575342465753427
+}

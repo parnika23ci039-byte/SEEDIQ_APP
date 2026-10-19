@@ -1,0 +1,809 @@
+SeedIQ joint-accuracy experiment | stage=baseline | python 3.9.6 | sklearn 1.6.1
+==============================================================================
+PREPARING DATA (pipeline splits, no fitting)
+==============================================================================
+  crop : crop_recommendation.csv | train/test = 1760/440
+  yield: yield_icrisat_karnataka.csv | train/test = 4423/1162
+  seed : seed_viability_data.csv | train/test = 80/20
+  yield split: 273 train district-years / 69 test district-years (disjoint by construction)
+baseline snapshot: git a23edef6, 57 modified/untracked paths, artifacts copied to experiments/joint_accuracy/baseline_artifacts
+
+==============================================================================
+STAGE baseline — deployed artifacts, rebuilt splits (read-only)
+==============================================================================
+  crop test accuracy       : 99.32%
+  crop train/test rows     : 1760/440
+  yield test R2            : 0.9088 | MAE 15415.7 t | within +/-25% 49.74%
+  seed test accuracy       : 90.00%
+  meta test accuracy       : 58.64% (base rate 45.00%)
+  JOINT success (baseline) : 198/440 = 45.00% (95% CI 40.41-49.67%)
+  component failures       : crop 3, yield 217, seed 44
+  registry cross-check     : {'crop_matches_registry': True, 'seed_matches_registry': True, 'yield_r2_matches_registry': True, 'meta_matches_registry': True}
+
+done in 0.8s
+SeedIQ joint-accuracy experiment | stage=all | python 3.9.6 | sklearn 1.6.1
+==============================================================================
+PREPARING DATA (pipeline splits, no fitting)
+==============================================================================
+  crop : crop_recommendation.csv | train/test = 1760/440
+  yield: yield_icrisat_karnataka.csv | train/test = 4423/1162
+  seed : seed_viability_data.csv | train/test = 80/20
+  yield split: 273 train district-years / 69 test district-years (disjoint by construction)
+baseline snapshot: git a23edef6, 57 modified/untracked paths, artifacts copied to experiments/joint_accuracy/baseline_artifacts
+
+==============================================================================
+STAGE baseline — deployed artifacts, rebuilt splits (read-only)
+==============================================================================
+  crop test accuracy       : 99.32%
+  crop train/test rows     : 1760/440
+  yield test R2            : 0.9088 | MAE 15415.7 t | within +/-25% 49.74%
+  seed test accuracy       : 90.00%
+  meta test accuracy       : 58.64% (base rate 45.00%)
+  JOINT success (baseline) : 198/440 = 45.00% (95% CI 40.41-49.67%)
+  component failures       : crop 3, yield 217, seed 44
+  registry cross-check     : {'crop_matches_registry': True, 'seed_matches_registry': True, 'yield_r2_matches_registry': True, 'meta_matches_registry': True}
+
+==============================================================================
+STAGE candidates — CROP (selection by StratifiedKFold CV on TRAIN only)
+==============================================================================
+SeedIQ joint-accuracy experiment | stage=all | python 3.9.6 | sklearn 1.6.1
+==============================================================================
+PREPARING DATA (pipeline splits, no fitting)
+==============================================================================
+  crop : crop_recommendation.csv | train/test = 1760/440
+  yield: yield_icrisat_karnataka.csv | train/test = 4423/1162
+  seed : seed_viability_data.csv | train/test = 80/20
+  yield split: 273 train district-years / 69 test district-years (disjoint by construction)
+baseline snapshot: git a23edef6, 57 modified/untracked paths, artifacts copied to experiments/joint_accuracy/baseline_artifacts
+
+==============================================================================
+STAGE baseline — deployed artifacts, rebuilt splits (read-only)
+==============================================================================
+  crop test accuracy       : 99.32%
+  crop train/test rows     : 1760/440
+  yield test R2            : 0.9088 | MAE 15415.7 t | within +/-25% 49.74%
+  seed test accuracy       : 90.00%
+  meta test accuracy       : 58.64% (base rate 45.00%)
+  JOINT success (baseline) : 198/440 = 45.00% (95% CI 40.41-49.67%)
+  component failures       : crop 3, yield 217, seed 44
+  registry cross-check     : {'crop_matches_registry': True, 'seed_matches_registry': True, 'yield_r2_matches_registry': True, 'meta_matches_registry': True}
+
+==============================================================================
+STAGE candidates — CROP (selection by StratifiedKFold CV on TRAIN only)
+==============================================================================
+SeedIQ joint-accuracy experiment | stage=all | python 3.9.6 | sklearn 1.6.1
+==============================================================================
+PREPARING DATA (pipeline splits, no fitting)
+==============================================================================
+  crop : crop_recommendation.csv | train/test = 1760/440
+  yield: yield_icrisat_karnataka.csv | train/test = 4423/1162
+  seed : seed_viability_data.csv | train/test = 80/20
+  yield split: 273 train district-years / 69 test district-years (disjoint by construction)
+baseline snapshot: git a23edef6, 57 modified/untracked paths, artifacts copied to experiments/joint_accuracy/baseline_artifacts
+
+==============================================================================
+STAGE baseline — deployed artifacts, rebuilt splits (read-only)
+==============================================================================
+  crop test accuracy       : 99.32%
+  crop train/test rows     : 1760/440
+  yield test R2            : 0.9088 | MAE 15415.7 t | within +/-25% 49.74%
+  seed test accuracy       : 90.00%
+  meta test accuracy       : 58.64% (base rate 45.00%)
+  JOINT success (baseline) : 198/440 = 45.00% (95% CI 40.41-49.67%)
+  component failures       : crop 3, yield 217, seed 44
+  registry cross-check     : {'crop_matches_registry': True, 'seed_matches_registry': True, 'yield_r2_matches_registry': True, 'meta_matches_registry': True}
+
+==============================================================================
+STAGE candidates — CROP (selection by StratifiedKFold CV on TRAIN only)
+==============================================================================
+  RandomForest(400, depth=None, leaf=1, sqrt, balanced)        CV  99.32% (F1 99.32%, 5.0s)
+  RandomForest(400, depth=15, leaf=1, sqrt, balanced)          CV  99.32% (F1 99.32%, 4.3s)
+  RandomForest(400, depth=None, leaf=2, sqrt, balanced)        CV  99.26% (F1 99.26%, 4.2s)
+  RandomForest(600, depth=None, leaf=1, max_features=0.5, balanced) CV  99.38% (F1 99.37%, 7.3s)
+  ExtraTrees(600, depth=None, leaf=1, sqrt, balanced)          CV  99.26% (F1 99.26%, 5.9s)
+  HistGradientBoosting(400, lr=0.08)                           CV  99.26% (F1 99.26%, 37.9s)
+  SVC(rbf, C=10, gamma=scale)                                  CV  98.24% (F1 98.24%, 0.4s)
+  KNN(5, distance)                                             CV  96.82% (F1 96.81%, 0.1s)
+  -> selected: RandomForest(600, depth=None, leaf=1, max_features=0.5, balanced) (CV 99.38%)
+
+==============================================================================
+STAGE candidates — YIELD (selection by GroupKFold(5) OOF on TRAIN only)
+==============================================================================
+  squared_error on log-per-ha, base contract features                OOF +/-25%  51.98% | R2 0.9232 | 8.6s
+SeedIQ joint-accuracy experiment | stage=all | python 3.9.6 | sklearn 1.6.1
+==============================================================================
+PREPARING DATA (pipeline splits, no fitting)
+==============================================================================
+  crop : crop_recommendation.csv | train/test = 1760/440
+  yield: yield_icrisat_karnataka.csv | train/test = 4423/1162
+  seed : seed_viability_data.csv | train/test = 80/20
+  yield split: 273 train district-years / 69 test district-years (disjoint by construction)
+baseline snapshot: git a23edef6, 57 modified/untracked paths, artifacts copied to experiments/joint_accuracy/baseline_artifacts
+
+==============================================================================
+STAGE baseline — deployed artifacts, rebuilt splits (read-only)
+==============================================================================
+  crop test accuracy       : 99.32%
+  crop train/test rows     : 1760/440
+  yield test R2            : 0.9088 | MAE 15415.7 t | within +/-25% 49.74%
+  seed test accuracy       : 90.00%
+  meta test accuracy       : 58.64% (base rate 45.00%)
+  JOINT success (baseline) : 198/440 = 45.00% (95% CI 40.41-49.67%)
+  component failures       : crop 3, yield 217, seed 44
+  registry cross-check     : {'crop_matches_registry': True, 'seed_matches_registry': True, 'yield_r2_matches_registry': True, 'meta_matches_registry': True}
+
+==============================================================================
+STAGE candidates — CROP (selection by StratifiedKFold CV on TRAIN only)
+==============================================================================
+  RandomForest(400, depth=None, leaf=1, sqrt, balanced)        CV  99.32% (F1 99.32%, 5.2s)
+  RandomForest(400, depth=15, leaf=1, sqrt, balanced)          CV  99.32% (F1 99.32%, 4.9s)
+  RandomForest(400, depth=None, leaf=2, sqrt, balanced)        CV  99.26% (F1 99.26%, 5.0s)
+  RandomForest(600, depth=None, leaf=1, max_features=0.5, balanced) CV  99.38% (F1 99.37%, 8.1s)
+  ExtraTrees(600, depth=None, leaf=1, sqrt, balanced)          CV  99.26% (F1 99.26%, 6.9s)
+  HistGradientBoosting(400, lr=0.08)                           CV  99.26% (F1 99.26%, 120.5s)
+  SVC(rbf, C=10, gamma=scale)                                  CV  98.24% (F1 98.24%, 1.5s)
+  KNN(5, distance)                                             CV  96.82% (F1 96.81%, 0.1s)
+  -> selected: RandomForest(600, depth=None, leaf=1, max_features=0.5, balanced) (CV 99.38%)
+
+==============================================================================
+STAGE candidates — YIELD (selection by GroupKFold(5) OOF on TRAIN only)
+==============================================================================
+  squared_error on log-per-ha, base contract features                OOF +/-25%  51.98% | R2 0.9232 | 9.6s
+  absolute_error (median) on log-per-ha, base contract features      OOF +/-25%  54.28% | R2 0.9307 | 13.5s
+  quantile tau=0.5000 on log-per-ha, base contract features          OOF +/-25%  54.28% | R2 0.9307 | 20.8s
+  quantile tau=0.5634 (+/-25% optimal) on log-per-ha, base contract features OOF +/-25%  53.95% | R2 0.9330 | 24.6s
+  quantile tau=0.6000 on log-per-ha, base contract features          OOF +/-25%  54.15% | R2 0.9305 | 27.7s
+  squared_error on log-per-ha, +log(area) feature                    OOF +/-25%  51.98% | R2 0.9232 | 12.4s
+  quantile tau=0.5634 on log-per-ha, +log(area) feature              OOF +/-25%  53.95% | R2 0.9330 | 25.2s
+  quantile tau=0.5634 on log-per-ha, +per-crop area rank feature     OOF +/-25%  54.58% | R2 0.9367 | 47.5s
+  crop-constant train log-geomean (reference, no area response)      TRAIN IN-SAMPLE +/-25%  50.73%
+  -> best fitted candidate: quantile tau=0.5634 on log-per-ha, +per-crop area rank feature (train OOF +/-25% 54.58%, R2 0.9367)
+  -> crop-geomean shrinkage sweep (train OOF): best weight 0.85 (54.80%)
+     shrinkage beats the plain base model on TRAIN OOF -> selected
+  -> selected yield candidate: quantile tau=0.5634 on log-per-ha, +per-crop area rank feature shrunk toward the crop train geomean (w=0.85)
+     train fit: R2 0.9542 | +/-25% 62.47%
+
+==============================================================================
+STAGE candidates — SEED VIABILITY (synthetic; CV on TRAIN only)
+==============================================================================
+  RandomForest(300, depth=None, balanced)              CV  95.00% (F1 94.51%)
+  RandomForest(300, max_depth=4, leaf=2)               CV  95.00% (F1 94.51%)
+  ExtraTrees(300, min_samples_leaf=2)                  CV  93.75% (F1 93.07%)
+  GradientBoosting(150, depth=2, lr=0.05)              CV  90.00% (F1 89.18%)
+  HistGradientBoosting(200, lr=0.05)                   CV  82.50% (F1 80.43%)
+  DecisionTree(max_depth=3)                            CV  90.00% (F1 88.82%)
+  SVC(rbf, C=1, gamma=scale)                           CV  92.50% (F1 91.89%)
+  SVC(rbf, C=10, gamma=scale)                          CV  93.75% (F1 93.19%)
+  LogisticRegression on quadratic features (C=1)       CV  58.75% (F1 39.66%)
+  KNN(5, distance)                                     CV  91.25% (F1 90.60%)
+  -> selected: RandomForest(300, depth=None, balanced) (CV 95.00%)
+
+==============================================================================
+STAGE candidates — META (OOF stacking, 6 inference-time features)
+==============================================================================
+  meta rows: 1760 train (OOF) / 440 test | success base rate 53.52% (train) / 46.59% (test)
+  selected meta learner: RandomForestClassifier(100, depth=3, leaf=5) (CV 53.92%, base rate 53.52%)
+     candidate RandomForestClassifier(100, depth=3, leaf=5): CV 53.92%
+     candidate LogisticRegression(C=0.05, class_weight=None): CV 53.52%
+     candidate GradientBoostingClassifier(60, depth=2, lr=0.05): CV 53.47%
+     candidate LogisticRegression(C=3.0, class_weight=None): CV 53.01%
+
+==============================================================================
+STAGE final — untouched TEST evaluation
+==============================================================================
+  crop test accuracy   : 99.32%  (train CV fit 100.00%)
+  yield test           : R2 0.8934 | MAE 16055.5 t | within +/-25% 51.46%
+  seed test accuracy   : 90.00%
+  meta test accuracy   : 51.36% (base rate 46.59%)
+  JOINT success        : 205/440 = 46.59% (95% CI 41.98-51.26%)
+  controls: shuffled-label crop test accuracy 3.64% (chance 4.55%), shuffled-target yield test +/-25% 7.49%
+  report written: experiments/joint_accuracy/SEEDIQ-JOINT-ACCURACY-RETRAIN-REPORT.md
+SeedIQ joint-accuracy experiment | stage=all | python 3.9.6 | sklearn 1.6.1
+==============================================================================
+PREPARING DATA (pipeline splits, no fitting)
+==============================================================================
+  crop : crop_recommendation.csv | train/test = 1760/440
+  yield: yield_icrisat_karnataka.csv | train/test = 4423/1162
+  seed : seed_viability_data.csv | train/test = 80/20
+  yield split: 273 train district-years / 69 test district-years (disjoint by construction)
+baseline snapshot: git a23edef6, 57 modified/untracked paths, artifacts copied to experiments/joint_accuracy/baseline_artifacts
+
+==============================================================================
+STAGE baseline — deployed artifacts, rebuilt splits (read-only)
+==============================================================================
+  crop test accuracy       : 99.32%
+  crop train/test rows     : 1760/440
+  yield test R2            : 0.9088 | MAE 15415.7 t | within +/-25% 49.74%
+  seed test accuracy       : 90.00%
+  meta test accuracy       : 58.64% (base rate 45.00%)
+  JOINT success (baseline) : 198/440 = 45.00% (95% CI 40.41-49.67%)
+  component failures       : crop 3, yield 217, seed 44
+  registry cross-check     : {'crop_matches_registry': True, 'seed_matches_registry': True, 'yield_r2_matches_registry': True, 'meta_matches_registry': True}
+
+==============================================================================
+STAGE candidates — CROP (selection by StratifiedKFold CV on TRAIN only)
+==============================================================================
+  RandomForest(400, depth=None, leaf=1, sqrt, balanced)        CV  99.32% (F1 99.32%, 4.1s)
+  RandomForest(400, depth=15, leaf=1, sqrt, balanced)          CV  99.32% (F1 99.32%, 4.8s)
+  RandomForest(400, depth=None, leaf=2, sqrt, balanced)        CV  99.26% (F1 99.26%, 4.4s)
+  RandomForest(600, depth=None, leaf=1, max_features=0.5, balanced) CV  99.38% (F1 99.37%, 7.1s)
+  ExtraTrees(600, depth=None, leaf=1, sqrt, balanced)          CV  99.26% (F1 99.26%, 6.1s)
+  HistGradientBoosting(400, lr=0.08)                           CV  99.26% (F1 99.26%, 33.9s)
+  SVC(rbf, C=10, gamma=scale)                                  CV  98.24% (F1 98.24%, 0.3s)
+  KNN(5, distance)                                             CV  96.82% (F1 96.81%, 0.0s)
+  -> selected: RandomForest(600, depth=None, leaf=1, max_features=0.5, balanced) (CV 99.38%)
+
+==============================================================================
+STAGE candidates — YIELD (selection by GroupKFold(5) OOF on TRAIN only)
+==============================================================================
+  squared_error on log-per-ha, base contract features                OOF +/-25%  51.98% | R2 0.9232 | 6.6s
+  report written: experiments/joint_accuracy/SEEDIQ-JOINT-ACCURACY-RETRAIN-REPORT.md
+SeedIQ joint-accuracy experiment | stage=all | python 3.9.6 | sklearn 1.6.1
+==============================================================================
+PREPARING DATA (pipeline splits, no fitting)
+==============================================================================
+  crop : crop_recommendation.csv | train/test = 1760/440
+  yield: yield_icrisat_karnataka.csv | train/test = 4423/1162
+  seed : seed_viability_data.csv | train/test = 80/20
+  yield split: 273 train district-years / 69 test district-years (disjoint by construction)
+baseline snapshot: git a23edef6, 57 modified/untracked paths, artifacts copied to experiments/joint_accuracy/baseline_artifacts
+
+==============================================================================
+STAGE baseline — deployed artifacts, rebuilt splits (read-only)
+==============================================================================
+  crop test accuracy       : 99.32%
+  crop train/test rows     : 1760/440
+  yield test R2            : 0.9088 | MAE 15415.7 t | within +/-25% 49.74%
+  seed test accuracy       : 90.00%
+  meta test accuracy       : 58.64% (base rate 45.00%)
+  JOINT success (baseline) : 198/440 = 45.00% (95% CI 40.41-49.67%)
+  component failures       : crop 3, yield 217, seed 44
+  registry cross-check     : {'crop_matches_registry': True, 'seed_matches_registry': True, 'yield_r2_matches_registry': True, 'meta_matches_registry': True}
+
+==============================================================================
+STAGE candidates — CROP (selection by StratifiedKFold CV on TRAIN only)
+==============================================================================
+  RandomForest(400, depth=None, leaf=1, sqrt, balanced)        CV  99.32% (F1 99.32%, 4.9s)
+  RandomForest(400, depth=15, leaf=1, sqrt, balanced)          CV  99.32% (F1 99.32%, 5.3s)
+  RandomForest(400, depth=None, leaf=2, sqrt, balanced)        CV  99.26% (F1 99.26%, 5.2s)
+  RandomForest(600, depth=None, leaf=1, max_features=0.5, balanced) CV  99.38% (F1 99.37%, 7.5s)
+  ExtraTrees(600, depth=None, leaf=1, sqrt, balanced)          CV  99.26% (F1 99.26%, 7.0s)
+  HistGradientBoosting(400, lr=0.08)                           CV  99.26% (F1 99.26%, 45.6s)
+  SVC(rbf, C=10, gamma=scale)                                  CV  98.24% (F1 98.24%, 0.6s)
+  KNN(5, distance)                                             CV  96.82% (F1 96.81%, 0.1s)
+  -> selected: RandomForest(600, depth=None, leaf=1, max_features=0.5, balanced) (CV 99.38%)
+
+==============================================================================
+STAGE candidates — YIELD (selection by GroupKFold(5) OOF on TRAIN only)
+==============================================================================
+  squared_error on log-per-ha, base contract features                OOF +/-25%  51.98% | R2 0.9232 | 9.7s
+SeedIQ joint-accuracy experiment | stage=baseline | python 3.9.6 | sklearn 1.6.1
+==============================================================================
+PREPARING DATA (pipeline splits, no fitting)
+==============================================================================
+  crop : crop_recommendation.csv | train/test = 1760/440
+  yield: yield_icrisat_karnataka.csv | train/test = 4423/1162
+  seed : seed_viability_data.csv | train/test = 80/20
+  yield split: 273 train district-years / 69 test district-years (disjoint by construction)
+baseline snapshot: git a23edef6, 57 modified/untracked paths, artifacts copied to experiments/joint_accuracy/baseline_artifacts
+
+==============================================================================
+DATA AUDIT (read-only -> results/data_audit.json)
+==============================================================================
+SeedIQ joint-accuracy experiment | stage=baseline | python 3.9.6 | sklearn 1.6.1
+==============================================================================
+PREPARING DATA (pipeline splits, no fitting)
+==============================================================================
+  crop : crop_recommendation.csv | train/test = 1760/440
+  yield: yield_icrisat_karnataka.csv | train/test = 4423/1162
+  seed : seed_viability_data.csv | train/test = 80/20
+  yield split: 273 train district-years / 69 test district-years (disjoint by construction)
+baseline snapshot: git a23edef6, 57 modified/untracked paths, artifacts copied to experiments/joint_accuracy/baseline_artifacts
+
+==============================================================================
+DATA AUDIT (read-only -> results/data_audit.json)
+==============================================================================
+  crop : 2200 rows x 8 cols | missing 0 | dup rows 0 | dup feature rows 0
+  yield: 5585 rows x 5 cols | missing 0 | dup rows 0 | dup feature rows 668
+  seed : 100 rows x 3 cols | missing 0 | dup rows 0 | dup feature rows 0
+
+==============================================================================
+STAGE baseline — deployed artifacts, rebuilt splits (read-only)
+==============================================================================
+  crop test accuracy       : 99.32%
+  crop train/test rows     : 1760/440
+  yield test R2            : 0.9088 | MAE 15415.7 t | within +/-25% 49.74%
+  seed test accuracy       : 90.00%
+  meta test accuracy       : 58.64% (base rate 45.00%)
+  JOINT success (baseline) : 198/440 = 45.00% (95% CI 40.41-49.67%)
+  component failures       : crop 3, yield 217, seed 44
+  registry cross-check     : {'crop_matches_registry': True, 'seed_matches_registry': True, 'yield_r2_matches_registry': True, 'meta_matches_registry': True}
+
+done in 0.7s
+==============================================================================
+PREPARING DATA (pipeline splits, no fitting)
+==============================================================================
+  crop : crop_recommendation.csv | train/test = 1760/440
+  yield: yield_icrisat_karnataka.csv | train/test = 4423/1162
+  seed : seed_viability_data.csv | train/test = 80/20
+  yield split: 273 train district-years / 69 test district-years (disjoint by construction)
+==============================================================================
+PREPARING DATA (pipeline splits, no fitting)
+==============================================================================
+  crop : crop_recommendation.csv | train/test = 1760/440
+  yield: yield_icrisat_karnataka.csv | train/test = 4423/1162
+  seed : seed_viability_data.csv | train/test = 80/20
+  yield split: 273 train district-years / 69 test district-years (disjoint by construction)
+==============================================================================
+PREPARING DATA (pipeline splits, no fitting)
+==============================================================================
+  crop : crop_recommendation.csv | train/test = 1760/440
+  yield: yield_icrisat_karnataka.csv | train/test = 4423/1162
+  seed : seed_viability_data.csv | train/test = 80/20
+  yield split: 273 train district-years / 69 test district-years (disjoint by construction)
+  report written: experiments/joint_accuracy/SEEDIQ-JOINT-ACCURACY-RETRAIN-REPORT.md
+SeedIQ joint-accuracy experiment | stage=all | python 3.9.6 | sklearn 1.6.1
+==============================================================================
+PREPARING DATA (pipeline splits, no fitting)
+==============================================================================
+  crop : crop_recommendation.csv | train/test = 1760/440
+  yield: yield_icrisat_karnataka.csv | train/test = 4423/1162
+  seed : seed_viability_data.csv | train/test = 80/20
+  yield split: 273 train district-years / 69 test district-years (disjoint by construction)
+baseline snapshot: git a23edef6, 57 modified/untracked paths, artifacts copied to experiments/joint_accuracy/baseline_artifacts
+
+==============================================================================
+DATA AUDIT (read-only -> results/data_audit.json)
+==============================================================================
+  crop : 2200 rows x 8 cols | missing 0 | dup rows 0 | dup feature rows 0
+  yield: 5585 rows x 5 cols | missing 0 | dup rows 0 | dup feature rows 668
+  seed : 100 rows x 3 cols | missing 0 | dup rows 0 | dup feature rows 0
+
+==============================================================================
+STAGE baseline — deployed artifacts, rebuilt splits (read-only)
+==============================================================================
+  crop test accuracy       : 99.32%
+  crop train/test rows     : 1760/440
+  yield test R2            : 0.9088 | MAE 15415.7 t | within +/-25% 49.74%
+  seed test accuracy       : 90.00%
+  meta test accuracy       : 58.64% (base rate 45.00%)
+  JOINT success (baseline) : 198/440 = 45.00% (95% CI 40.41-49.67%)
+  component failures       : crop 3, yield 217, seed 44
+  registry cross-check     : {'crop_matches_registry': True, 'seed_matches_registry': True, 'yield_r2_matches_registry': True, 'meta_matches_registry': True}
+
+==============================================================================
+STAGE candidates — CROP (selection by StratifiedKFold CV on TRAIN only)
+==============================================================================
+  RandomForest(400, depth=None, leaf=1, sqrt, balanced)        CV  99.32% (F1 99.32%, 4.1s)
+  RandomForest(400, depth=15, leaf=1, sqrt, balanced)          CV  99.32% (F1 99.32%, 4.1s)
+  RandomForest(400, depth=None, leaf=2, sqrt, balanced)        CV  99.26% (F1 99.26%, 5.4s)
+  RandomForest(600, depth=None, leaf=1, max_features=0.5, balanced) CV  99.38% (F1 99.37%, 11.3s)
+  ExtraTrees(600, depth=None, leaf=1, sqrt, balanced)          CV  99.26% (F1 99.26%, 8.4s)
+  HistGradientBoosting(400, lr=0.08)                           CV  99.26% (F1 99.26%, 45.2s)
+  SVC(rbf, C=10, gamma=scale)                                  CV  98.24% (F1 98.24%, 0.3s)
+  KNN(5, distance)                                             CV  96.82% (F1 96.81%, 0.0s)
+  -> selected: RandomForest(600, depth=None, leaf=1, max_features=0.5, balanced) (CV 99.38%)
+
+==============================================================================
+STAGE candidates — YIELD (selection by GroupKFold(5) OOF on TRAIN only)
+==============================================================================
+  squared_error on log-per-ha, base contract features                OOF +/-25%  51.98% | R2 0.9232 | 7.0s
+  absolute_error (median) on log-per-ha, base contract features      OOF +/-25%  54.28% | R2 0.9307 | 16.5s
+  quantile tau=0.5000 on log-per-ha, base contract features          OOF +/-25%  54.28% | R2 0.9307 | 27.1s
+  quantile tau=0.5634 (+/-25% optimal) on log-per-ha, base contract features OOF +/-25%  53.95% | R2 0.9330 | 28.2s
+  quantile tau=0.6000 on log-per-ha, base contract features          OOF +/-25%  54.15% | R2 0.9305 | 23.8s
+  squared_error on log-per-ha, +log(area) feature                    OOF +/-25%  51.98% | R2 0.9232 | 14.3s
+  quantile tau=0.5634 on log-per-ha, +log(area) feature              OOF +/-25%  53.95% | R2 0.9330 | 29.1s
+  quantile tau=0.5634 on log-per-ha, +per-crop area rank feature     OOF +/-25%  54.58% | R2 0.9367 | 24.7s
+  crop-constant train log-geomean (reference, no area response)      TRAIN IN-SAMPLE +/-25%  50.73%
+  -> best fitted candidate: quantile tau=0.5634 on log-per-ha, +per-crop area rank feature (train OOF +/-25% 54.58%, R2 0.9367)
+  -> crop-geomean shrinkage sweep (train OOF): best weight 0.85 (54.80%)
+     shrinkage beats the plain base model on TRAIN OOF -> selected
+  -> selected yield candidate: quantile tau=0.5634 on log-per-ha, +per-crop area rank feature shrunk toward the crop train geomean (w=0.85)
+     train fit: R2 0.9542 | +/-25% 62.47%
+
+==============================================================================
+STAGE candidates — SEED VIABILITY (synthetic; CV on TRAIN only)
+==============================================================================
+  RandomForest(300, depth=None, balanced)              CV  95.00% (F1 94.51%)
+  RandomForest(300, max_depth=4, leaf=2)               CV  95.00% (F1 94.51%)
+  ExtraTrees(300, min_samples_leaf=2)                  CV  93.75% (F1 93.07%)
+  GradientBoosting(150, depth=2, lr=0.05)              CV  90.00% (F1 89.18%)
+  HistGradientBoosting(200, lr=0.05)                   CV  82.50% (F1 80.43%)
+  DecisionTree(max_depth=3)                            CV  90.00% (F1 88.82%)
+  SVC(rbf, C=1, gamma=scale)                           CV  92.50% (F1 91.89%)
+  SVC(rbf, C=10, gamma=scale)                          CV  93.75% (F1 93.19%)
+  LogisticRegression on quadratic features (C=1)       CV  58.75% (F1 39.66%)
+  KNN(5, distance)                                     CV  91.25% (F1 90.60%)
+  -> selected: RandomForest(300, depth=None, balanced) (CV 95.00%)
+
+==============================================================================
+STAGE candidates — META (OOF stacking, 6 inference-time features)
+==============================================================================
+  meta rows: 1760 train (OOF) / 440 test | success base rate 53.52% (train) / 46.59% (test)
+  selected meta learner: RandomForestClassifier(100, depth=3, leaf=5) (CV 53.92%, base rate 53.52%)
+     candidate RandomForestClassifier(100, depth=3, leaf=5): CV 53.92%
+     candidate LogisticRegression(C=0.05, class_weight=None): CV 53.52%
+     candidate GradientBoostingClassifier(60, depth=2, lr=0.05): CV 53.47%
+     candidate LogisticRegression(C=3.0, class_weight=None): CV 53.01%
+
+==============================================================================
+STAGE final — untouched TEST evaluation
+==============================================================================
+  crop test accuracy   : 99.32%  (train CV fit 100.00%)
+  yield test           : R2 0.8934 | MAE 16055.5 t | within +/-25% 51.46%
+  seed test accuracy   : 90.00%
+  meta test accuracy   : 51.36% (base rate 46.59%)
+  JOINT success        : 205/440 = 46.59% (95% CI 41.98-51.26%)
+  controls: shuffled-label crop test accuracy 3.64% (chance 4.55%), shuffled-target yield test +/-25% 7.49%
+  report written: experiments/joint_accuracy/SEEDIQ-JOINT-ACCURACY-RETRAIN-REPORT.md
+
+done in 427.9s
+TARGET 90%: NOT ACHIEVED | joint 46.59% (baseline 45.00%)
+  report written: experiments/joint_accuracy/SEEDIQ-JOINT-ACCURACY-RETRAIN-REPORT.md
+SeedIQ joint-accuracy experiment | stage=all | python 3.9.6 | sklearn 1.6.1
+==============================================================================
+PREPARING DATA (pipeline splits, no fitting)
+==============================================================================
+  crop : crop_recommendation.csv | train/test = 1760/440
+  yield: yield_icrisat_karnataka.csv | train/test = 4423/1162
+  seed : seed_viability_data.csv | train/test = 80/20
+  yield split: 273 train district-years / 69 test district-years (disjoint by construction)
+baseline snapshot: git a23edef6, 57 modified/untracked paths, artifacts copied to experiments/joint_accuracy/baseline_artifacts
+
+==============================================================================
+DATA AUDIT (read-only -> results/data_audit.json)
+==============================================================================
+  crop : 2200 rows x 8 cols | missing 0 | dup rows 0 | dup feature rows 0
+  yield: 5585 rows x 5 cols | missing 0 | dup rows 0 | dup feature rows 668
+  seed : 100 rows x 3 cols | missing 0 | dup rows 0 | dup feature rows 0
+
+==============================================================================
+STAGE baseline — deployed artifacts, rebuilt splits (read-only)
+==============================================================================
+  crop test accuracy       : 99.32%
+  crop train/test rows     : 1760/440
+  yield test R2            : 0.9088 | MAE 15415.7 t | within +/-25% 49.74%
+  seed test accuracy       : 90.00%
+  meta test accuracy       : 58.64% (base rate 45.00%)
+  JOINT success (baseline) : 198/440 = 45.00% (95% CI 40.41-49.67%)
+  component failures       : crop 3, yield 217, seed 44
+  registry cross-check     : {'crop_matches_registry': True, 'seed_matches_registry': True, 'yield_r2_matches_registry': True, 'meta_matches_registry': True}
+
+==============================================================================
+STAGE candidates — CROP (selection by StratifiedKFold CV on TRAIN only)
+==============================================================================
+  RandomForest(400, depth=None, leaf=1, sqrt, balanced)        CV  99.32% (F1 99.32%, 10.4s)
+  RandomForest(400, depth=15, leaf=1, sqrt, balanced)          CV  99.32% (F1 99.32%, 10.5s)
+  RandomForest(400, depth=None, leaf=2, sqrt, balanced)        CV  99.26% (F1 99.26%, 10.3s)
+  RandomForest(600, depth=None, leaf=1, max_features=0.5, balanced) CV  99.38% (F1 99.37%, 16.2s)
+  ExtraTrees(600, depth=None, leaf=1, sqrt, balanced)          CV  99.26% (F1 99.26%, 13.1s)
+  HistGradientBoosting(400, lr=0.08)                           CV  99.26% (F1 99.26%, 64.3s)
+  SVC(rbf, C=10, gamma=scale)                                  CV  98.24% (F1 98.24%, 0.5s)
+  KNN(5, distance)                                             CV  96.82% (F1 96.81%, 0.1s)
+  -> selected: RandomForest(600, depth=None, leaf=1, max_features=0.5, balanced) (CV 99.38%)
+
+==============================================================================
+STAGE candidates — YIELD (selection by GroupKFold(5) OOF on TRAIN only)
+==============================================================================
+  squared_error on log-per-ha, base contract features                OOF +/-25%  51.98% | R2 0.9232 | 14.5s
+  absolute_error (median) on log-per-ha, base contract features      OOF +/-25%  54.28% | R2 0.9307 | 24.0s
+  quantile tau=0.5000 on log-per-ha, base contract features          OOF +/-25%  54.28% | R2 0.9307 | 35.5s
+  quantile tau=0.5634 (+/-25% optimal) on log-per-ha, base contract features OOF +/-25%  53.95% | R2 0.9330 | 35.1s
+  quantile tau=0.6000 on log-per-ha, base contract features          OOF +/-25%  54.15% | R2 0.9305 | 35.3s
+  squared_error on log-per-ha, +log(area) feature                    OOF +/-25%  51.98% | R2 0.9232 | 15.5s
+  quantile tau=0.5634 on log-per-ha, +log(area) feature              OOF +/-25%  53.95% | R2 0.9330 | 30.9s
+  quantile tau=0.5634 on log-per-ha, +per-crop area rank feature     OOF +/-25%  54.58% | R2 0.9367 | 652.6s
+  crop-constant train log-geomean (reference, no area response)      TRAIN IN-SAMPLE +/-25%  50.73%
+  -> best fitted candidate: quantile tau=0.5634 on log-per-ha, +per-crop area rank feature (train OOF +/-25% 54.58%, R2 0.9367)
+  -> crop-geomean shrinkage sweep (train OOF): best weight 0.85 (54.80%)
+     shrinkage beats the plain base model on TRAIN OOF -> selected
+  -> selected yield candidate: quantile tau=0.5634 on log-per-ha, +per-crop area rank feature shrunk toward the crop train geomean (w=0.85)
+     train fit: R2 0.9542 | +/-25% 62.47%
+
+==============================================================================
+STAGE candidates — SEED VIABILITY (synthetic; CV on TRAIN only)
+==============================================================================
+  RandomForest(300, depth=None, balanced)              CV  95.00% (F1 94.51%)
+  RandomForest(300, max_depth=4, leaf=2)               CV  95.00% (F1 94.51%)
+  ExtraTrees(300, min_samples_leaf=2)                  CV  93.75% (F1 93.07%)
+  GradientBoosting(150, depth=2, lr=0.05)              CV  90.00% (F1 89.18%)
+  HistGradientBoosting(200, lr=0.05)                   CV  82.50% (F1 80.43%)
+  DecisionTree(max_depth=3)                            CV  90.00% (F1 88.82%)
+  SVC(rbf, C=1, gamma=scale)                           CV  92.50% (F1 91.89%)
+  SVC(rbf, C=10, gamma=scale)                          CV  93.75% (F1 93.19%)
+  LogisticRegression on quadratic features (C=1)       CV  58.75% (F1 39.66%)
+  KNN(5, distance)                                     CV  91.25% (F1 90.60%)
+  -> selected: RandomForest(300, depth=None, balanced) (CV 95.00%)
+
+==============================================================================
+STAGE candidates — META (OOF stacking, 6 inference-time features)
+==============================================================================
+  meta rows: 1760 train (OOF) / 440 test | success base rate 53.52% (train) / 46.59% (test)
+  selected meta learner: RandomForestClassifier(100, depth=3, leaf=5) (CV 53.92%, base rate 53.52%)
+     candidate RandomForestClassifier(100, depth=3, leaf=5): CV 53.92%
+     candidate LogisticRegression(C=0.05, class_weight=None): CV 53.52%
+     candidate GradientBoostingClassifier(60, depth=2, lr=0.05): CV 53.47%
+     candidate LogisticRegression(C=3.0, class_weight=None): CV 53.01%
+
+==============================================================================
+STAGE final — untouched TEST evaluation
+==============================================================================
+  crop test accuracy   : 99.32%  (train CV fit 100.00%)
+  yield test           : R2 0.8934 | MAE 16055.5 t | within +/-25% 51.46%
+  seed test accuracy   : 90.00%
+  meta test accuracy   : 51.36% (base rate 46.59%)
+  JOINT success        : 205/440 = 46.59% (95% CI 41.98-51.26%)
+  controls: shuffled-label crop test accuracy 3.64% (chance 4.55%), shuffled-target yield test +/-25% 7.49%
+  report written: experiments/joint_accuracy/SEEDIQ-JOINT-ACCURACY-RETRAIN-REPORT.md
+
+done in 1089.4s
+TARGET 90%: NOT ACHIEVED | joint 46.59% (baseline 45.00%)
+SeedIQ joint-accuracy experiment | stage=baseline | python 3.9.6 | sklearn 1.6.1
+==============================================================================
+PREPARING DATA (pipeline splits, no fitting)
+==============================================================================
+  crop : crop_recommendation.csv | train/test = 1760/440
+  yield: yield_icrisat_karnataka.csv | train/test = 4423/1162
+  seed : seed_viability_data.csv | train/test = 80/20
+  yield split: 273 train district-years / 69 test district-years (disjoint by construction)
+baseline snapshot: git a23edef6, 63 modified/untracked paths, artifacts copied to experiments/joint_accuracy/baseline_artifacts
+
+==============================================================================
+DATA AUDIT (read-only -> results/data_audit.json)
+==============================================================================
+  crop : 2200 rows x 8 cols | missing 0 | dup rows 0 | dup feature rows 0
+  yield: 5585 rows x 5 cols | missing 0 | dup rows 0 | dup feature rows 668
+  seed : 100 rows x 3 cols | missing 0 | dup rows 0 | dup feature rows 0
+
+==============================================================================
+STAGE baseline — deployed artifacts, rebuilt splits (read-only)
+==============================================================================
+  crop test accuracy       : 99.32%
+  crop train/test rows     : 1760/440
+  yield test R2            : 0.9088 | MAE 15415.7 t | within +/-25% 49.74%
+  seed test accuracy       : 90.00%
+  meta test accuracy       : NOT EVALUABLE (joint labels require sample alignment)
+  JOINT success (baseline) : NOT EVALUABLE — The crop, yield and seed test sets share no sample identifier (no common key column). No row of one set is the same sample as a row of another, so a joint-success rate cannot be computed from these separate test sets. Reporting a paired/round-robin figure would fabricate rows that exist nowhere in the data.
+  per-source test rows     : {'crop': 440, 'yield': 1162, 'seed': 20}
+  registry cross-check     : {'crop_matches_registry': True, 'seed_matches_registry': True, 'yield_r2_matches_registry': True, 'meta_matches_registry': None}
+
+done in 2.4s
+SeedIQ joint-accuracy experiment | stage=all | python 3.9.6 | sklearn 1.6.1
+==============================================================================
+PREPARING DATA (pipeline splits, no fitting)
+==============================================================================
+  crop : crop_recommendation.csv | train/test = 1760/440
+  yield: yield_icrisat_karnataka.csv | train/test = 4423/1162
+  seed : seed_viability_data.csv | train/test = 80/20
+  yield split: 273 train district-years / 69 test district-years (disjoint by construction)
+baseline snapshot: git a23edef6, 63 modified/untracked paths, artifacts copied to experiments/joint_accuracy/baseline_artifacts
+
+==============================================================================
+DATA AUDIT (read-only -> results/data_audit.json)
+==============================================================================
+  crop : 2200 rows x 8 cols | missing 0 | dup rows 0 | dup feature rows 0
+  yield: 5585 rows x 5 cols | missing 0 | dup rows 0 | dup feature rows 668
+  seed : 100 rows x 3 cols | missing 0 | dup rows 0 | dup feature rows 0
+
+==============================================================================
+STAGE baseline — deployed artifacts, rebuilt splits (read-only)
+==============================================================================
+  crop test accuracy       : 99.32%
+  crop train/test rows     : 1760/440
+  yield test R2            : 0.9088 | MAE 15415.7 t | within +/-25% 49.74%
+  seed test accuracy       : 90.00%
+  meta test accuracy       : NOT EVALUABLE (joint labels require sample alignment)
+  JOINT success (baseline) : NOT EVALUABLE — The crop, yield and seed test sets share no sample identifier (no common key column). No row of one set is the same sample as a row of another, so a joint-success rate cannot be computed from these separate test sets. Reporting a paired/round-robin figure would fabricate rows that exist nowhere in the data.
+  per-source test rows     : {'crop': 440, 'yield': 1162, 'seed': 20}
+  registry cross-check     : {'crop_matches_registry': True, 'seed_matches_registry': True, 'yield_r2_matches_registry': True, 'meta_matches_registry': None}
+
+==============================================================================
+STAGE candidates — CROP (selection by StratifiedKFold CV on TRAIN only)
+==============================================================================
+  RandomForest(400, depth=None, leaf=1, sqrt, balanced)        CV  99.32% (F1 99.32%, 15.6s)
+  RandomForest(400, depth=15, leaf=1, sqrt, balanced)          CV  99.32% (F1 99.32%, 13.6s)
+  RandomForest(400, depth=None, leaf=2, sqrt, balanced)        CV  99.26% (F1 99.26%, 14.0s)
+  RandomForest(600, depth=None, leaf=1, max_features=0.5, balanced) CV  99.38% (F1 99.37%, 29.9s)
+  ExtraTrees(600, depth=None, leaf=1, sqrt, balanced)          CV  99.26% (F1 99.26%, 23.8s)
+  HistGradientBoosting(400, lr=0.08)                           CV  99.26% (F1 99.26%, 104.0s)
+  SVC(rbf, C=10, gamma=scale)                                  CV  98.24% (F1 98.24%, 0.7s)
+  KNN(5, distance)                                             CV  96.82% (F1 96.81%, 0.1s)
+  -> selected: RandomForest(600, depth=None, leaf=1, max_features=0.5, balanced) (CV 99.38%)
+
+==============================================================================
+STAGE candidates — YIELD (selection by GroupKFold(5) OOF on TRAIN only)
+==============================================================================
+  squared_error on log-per-ha, base contract features                OOF +/-25%  51.98% | R2 0.9232 | 19.8s
+  absolute_error (median) on log-per-ha, base contract features      OOF +/-25%  54.28% | R2 0.9307 | 39.7s
+SeedIQ joint-accuracy experiment | stage=all | python 3.9.6 | sklearn 1.6.1
+==============================================================================
+PREPARING DATA (pipeline splits, no fitting)
+==============================================================================
+  crop : crop_recommendation.csv | train/test = 1760/440
+  yield: yield_icrisat_karnataka.csv | train/test = 4423/1162
+  seed : seed_viability_data.csv | train/test = 80/20
+  yield split: 273 train district-years / 69 test district-years (disjoint by construction)
+baseline snapshot: git a23edef6, 64 modified/untracked paths, artifacts copied to experiments/joint_accuracy/baseline_artifacts
+
+==============================================================================
+DATA AUDIT (read-only -> results/data_audit.json)
+==============================================================================
+  crop : 2200 rows x 8 cols | missing 0 | dup rows 0 | dup feature rows 0
+  yield: 5585 rows x 5 cols | missing 0 | dup rows 0 | dup feature rows 668
+  seed : 100 rows x 3 cols | missing 0 | dup rows 0 | dup feature rows 0
+
+==============================================================================
+STAGE baseline — deployed artifacts, rebuilt splits (read-only)
+==============================================================================
+  crop test accuracy       : 99.32%
+  crop train/test rows     : 1760/440
+  yield test R2            : 0.9088 | MAE 15415.7 t | within +/-25% 49.74%
+  seed test accuracy       : 90.00%
+  meta test accuracy       : NOT EVALUABLE (joint labels require sample alignment)
+  JOINT success (baseline) : NOT EVALUABLE — The crop, yield and seed test sets share no sample identifier (no common key column). No row of one set is the same sample as a row of another, so a joint-success rate cannot be computed from these separate test sets. Reporting a paired/round-robin figure would fabricate rows that exist nowhere in the data.
+  per-source test rows     : {'crop': 440, 'yield': 1162, 'seed': 20}
+  registry cross-check     : {'crop_matches_registry': True, 'seed_matches_registry': True, 'yield_r2_matches_registry': True, 'meta_matches_registry': None}
+
+==============================================================================
+STAGE candidates — CROP (selection by StratifiedKFold CV on TRAIN only)
+==============================================================================
+  RandomForest(400, depth=None, leaf=1, sqrt, balanced)        CV  99.32% (F1 99.32%, 7.0s)
+  RandomForest(400, depth=15, leaf=1, sqrt, balanced)          CV  99.32% (F1 99.32%, 7.7s)
+  RandomForest(400, depth=None, leaf=2, sqrt, balanced)        CV  99.26% (F1 99.26%, 8.7s)
+  RandomForest(600, depth=None, leaf=1, max_features=0.5, balanced) CV  99.38% (F1 99.37%, 15.7s)
+  ExtraTrees(600, depth=None, leaf=1, sqrt, balanced)          CV  99.26% (F1 99.26%, 14.3s)
+  HistGradientBoosting(400, lr=0.08)                           CV  99.26% (F1 99.26%, 68.6s)
+  SVC(rbf, C=10, gamma=scale)                                  CV  98.24% (F1 98.24%, 0.6s)
+  KNN(5, distance)                                             CV  96.82% (F1 96.81%, 0.1s)
+  -> selected: RandomForest(600, depth=None, leaf=1, max_features=0.5, balanced) (CV 99.38%)
+
+==============================================================================
+STAGE candidates — YIELD (selection by GroupKFold(5) OOF on TRAIN only)
+==============================================================================
+  squared_error on log-per-ha, base contract features                OOF +/-25%  51.98% | R2 0.9232 | 14.5s
+  absolute_error (median) on log-per-ha, base contract features      OOF +/-25%  54.28% | R2 0.9307 | 24.2s
+  quantile tau=0.5000 on log-per-ha, base contract features          OOF +/-25%  54.28% | R2 0.9307 | 37.7s
+  quantile tau=0.5634 (+/-25% optimal) on log-per-ha, base contract features OOF +/-25%  53.95% | R2 0.9330 | 39.5s
+  quantile tau=0.6000 on log-per-ha, base contract features          OOF +/-25%  54.15% | R2 0.9305 | 38.0s
+  squared_error on log-per-ha, +log(area) feature                    OOF +/-25%  51.98% | R2 0.9232 | 14.4s
+  quantile tau=0.5634 on log-per-ha, +log(area) feature              OOF +/-25%  53.95% | R2 0.9330 | 37.1s
+  quantile tau=0.5634 on log-per-ha, +per-crop area rank feature     OOF +/-25%  54.58% | R2 0.9367 | 38.8s
+  crop-constant train log-geomean (reference, no area response)      TRAIN IN-SAMPLE +/-25%  50.73%
+  -> best fitted candidate: quantile tau=0.5634 on log-per-ha, +per-crop area rank feature (train OOF +/-25% 54.58%, R2 0.9367)
+  -> crop-geomean shrinkage sweep (train OOF): best weight 0.85 (54.80%)
+     shrinkage beats the plain base model on TRAIN OOF -> selected
+  -> selected yield candidate: quantile tau=0.5634 on log-per-ha, +per-crop area rank feature shrunk toward the crop train geomean (w=0.85)
+     train fit: R2 0.9542 | +/-25% 62.47%
+
+==============================================================================
+STAGE candidates — SEED VIABILITY (synthetic; CV on TRAIN only)
+==============================================================================
+  RandomForest(300, depth=None, balanced)              CV  95.00% (F1 94.51%)
+  RandomForest(300, max_depth=4, leaf=2)               CV  95.00% (F1 94.51%)
+  ExtraTrees(300, min_samples_leaf=2)                  CV  93.75% (F1 93.07%)
+  GradientBoosting(150, depth=2, lr=0.05)              CV  90.00% (F1 89.18%)
+  HistGradientBoosting(200, lr=0.05)                   CV  82.50% (F1 80.43%)
+  DecisionTree(max_depth=3)                            CV  90.00% (F1 88.82%)
+  SVC(rbf, C=1, gamma=scale)                           CV  92.50% (F1 91.89%)
+  SVC(rbf, C=10, gamma=scale)                          CV  93.75% (F1 93.19%)
+  LogisticRegression on quadratic features (C=1)       CV  58.75% (F1 39.66%)
+  KNN(5, distance)                                     CV  91.25% (F1 90.60%)
+  -> selected: RandomForest(300, depth=None, balanced) (CV 95.00%)
+
+==============================================================================
+STAGE candidates — META (OOF stacking, 6 inference-time features)
+==============================================================================
+  meta-classifier: NOT EVALUABLE — The meta-classifier's target IS the three-condition joint label, so scoring it requires the same genuinely aligned rows the joint metric requires. None exist in these separate test sets.
+  per-source test rows: {'crop': 440, 'yield': 1162, 'seed': 20} (no shared sample key, so no joint rows exist)
+  removed the round-robin-trained artifacts/meta_candidate.pkl
+
+==============================================================================
+STAGE final — untouched TEST evaluation
+==============================================================================
+  crop test accuracy   : 99.32%  (train CV fit 100.00%)
+  yield test           : R2 0.8934 | MAE 16055.5 t | within +/-25% 51.46%
+  seed test accuracy   : 90.00%
+  meta test accuracy   : NOT EVALUABLE (joint labels need aligned rows)
+  JOINT success        : NOT EVALUABLE — The crop, yield and seed test sets share no sample identifier (no common key column). No row of one set is the same sample as a row of another, so a joint-success rate cannot be computed from these separate test sets. Reporting a paired/round-robin figure would fabricate rows that exist nowhere in the data.
+  per-source test rows : {'crop': 440, 'yield': 1162, 'seed': 20}
+  component marginals  : crop 99.32% | yield +/-25% 51.46% | seed 90.00% (NOT a joint measurement)
+  controls: shuffled-label crop test accuracy 3.64% (chance 4.55%), shuffled-target yield test +/-25% 7.49%
+  report written: experiments/joint_accuracy/SEEDIQ-JOINT-ACCURACY-RETRAIN-REPORT.md
+SeedIQ joint-accuracy experiment | stage=all | python 3.9.6 | sklearn 1.6.1
+==============================================================================
+PREPARING DATA (pipeline splits, no fitting)
+==============================================================================
+  crop : crop_recommendation.csv | train/test = 1760/440
+  yield: yield_icrisat_karnataka.csv | train/test = 4423/1162
+  seed : seed_viability_data.csv | train/test = 80/20
+  yield split: 273 train district-years / 69 test district-years (disjoint by construction)
+baseline snapshot: git a23edef6, 65 modified/untracked paths, artifacts copied to experiments/joint_accuracy/baseline_artifacts
+
+==============================================================================
+DATA AUDIT (read-only -> results/data_audit.json)
+==============================================================================
+  crop : 2200 rows x 8 cols | missing 0 | dup rows 0 | dup feature rows 0
+  yield: 5585 rows x 5 cols | missing 0 | dup rows 0 | dup feature rows 668
+  seed : 100 rows x 3 cols | missing 0 | dup rows 0 | dup feature rows 0
+
+==============================================================================
+STAGE baseline — deployed artifacts, rebuilt splits (read-only)
+==============================================================================
+  crop test accuracy       : 99.32%
+  crop train/test rows     : 1760/440
+  yield test R2            : 0.9088 | MAE 15415.7 t | within +/-25% 49.74%
+  seed test accuracy       : 90.00%
+  meta test accuracy       : NOT EVALUABLE (joint labels require sample alignment)
+  JOINT success (baseline) : NOT EVALUABLE — The crop, yield and seed test sets share no sample identifier (no common key column). No row of one set is the same sample as a row of another, so a joint-success rate cannot be computed from these separate test sets. Reporting a paired/round-robin figure would fabricate rows that exist nowhere in the data.
+  per-source test rows     : {'crop': 440, 'yield': 1162, 'seed': 20}
+  registry cross-check     : {'crop_matches_registry': True, 'seed_matches_registry': True, 'yield_r2_matches_registry': True, 'meta_matches_registry': None}
+
+==============================================================================
+STAGE candidates — CROP (selection by StratifiedKFold CV on TRAIN only)
+==============================================================================
+  RandomForest(400, depth=None, leaf=1, sqrt, balanced)        CV  99.32% (F1 99.32%, 7.9s)
+  RandomForest(400, depth=15, leaf=1, sqrt, balanced)          CV  99.32% (F1 99.32%, 8.7s)
+  RandomForest(400, depth=None, leaf=2, sqrt, balanced)        CV  99.26% (F1 99.26%, 10.2s)
+  RandomForest(600, depth=None, leaf=1, max_features=0.5, balanced) CV  99.38% (F1 99.37%, 18.3s)
+  ExtraTrees(600, depth=None, leaf=1, sqrt, balanced)          CV  99.26% (F1 99.26%, 14.4s)
+  HistGradientBoosting(400, lr=0.08)                           CV  99.26% (F1 99.26%, 70.3s)
+  SVC(rbf, C=10, gamma=scale)                                  CV  98.24% (F1 98.24%, 0.6s)
+  KNN(5, distance)                                             CV  96.82% (F1 96.81%, 0.1s)
+  -> selected: RandomForest(600, depth=None, leaf=1, max_features=0.5, balanced) (CV 99.38%)
+
+==============================================================================
+STAGE candidates — YIELD (selection by GroupKFold(5) OOF on TRAIN only)
+==============================================================================
+  squared_error on log-per-ha, base contract features                OOF +/-25%  51.98% | R2 0.9232 | 14.5s
+  absolute_error (median) on log-per-ha, base contract features      OOF +/-25%  54.28% | R2 0.9307 | 24.4s
+  quantile tau=0.5000 on log-per-ha, base contract features          OOF +/-25%  54.28% | R2 0.9307 | 37.6s
+  quantile tau=0.5634 (+/-25% optimal) on log-per-ha, base contract features OOF +/-25%  53.95% | R2 0.9330 | 39.4s
+  quantile tau=0.6000 on log-per-ha, base contract features          OOF +/-25%  54.15% | R2 0.9305 | 35.8s
+  squared_error on log-per-ha, +log(area) feature                    OOF +/-25%  51.98% | R2 0.9232 | 14.6s
+  quantile tau=0.5634 on log-per-ha, +log(area) feature              OOF +/-25%  53.95% | R2 0.9330 | 36.8s
+  quantile tau=0.5634 on log-per-ha, +per-crop area rank feature     OOF +/-25%  54.58% | R2 0.9367 | 35.1s
+  crop-constant train log-geomean (reference, no area response)      TRAIN IN-SAMPLE +/-25%  50.73%
+  -> best fitted candidate: quantile tau=0.5634 on log-per-ha, +per-crop area rank feature (train OOF +/-25% 54.58%, R2 0.9367)
+  -> crop-geomean shrinkage sweep (train OOF): best weight 0.85 (54.80%)
+     shrinkage beats the plain base model on TRAIN OOF -> selected
+  -> selected yield candidate: quantile tau=0.5634 on log-per-ha, +per-crop area rank feature shrunk toward the crop train geomean (w=0.85)
+     train fit: R2 0.9542 | +/-25% 62.47%
+
+==============================================================================
+STAGE candidates — SEED VIABILITY (synthetic; CV on TRAIN only)
+==============================================================================
+  RandomForest(300, depth=None, balanced)              CV  95.00% (F1 94.51%)
+  RandomForest(300, max_depth=4, leaf=2)               CV  95.00% (F1 94.51%)
+  ExtraTrees(300, min_samples_leaf=2)                  CV  93.75% (F1 93.07%)
+  GradientBoosting(150, depth=2, lr=0.05)              CV  90.00% (F1 89.18%)
+  HistGradientBoosting(200, lr=0.05)                   CV  82.50% (F1 80.43%)
+  DecisionTree(max_depth=3)                            CV  90.00% (F1 88.82%)
+  SVC(rbf, C=1, gamma=scale)                           CV  92.50% (F1 91.89%)
+  SVC(rbf, C=10, gamma=scale)                          CV  93.75% (F1 93.19%)
+  LogisticRegression on quadratic features (C=1)       CV  58.75% (F1 39.66%)
+  KNN(5, distance)                                     CV  91.25% (F1 90.60%)
+  -> selected: RandomForest(300, depth=None, balanced) (CV 95.00%)
+
+==============================================================================
+STAGE candidates — META (OOF stacking, 6 inference-time features)
+==============================================================================
+  meta-classifier: NOT EVALUABLE — The meta-classifier's target IS the three-condition joint label, so scoring it requires the same genuinely aligned rows the joint metric requires. None exist in these separate test sets.
+  per-source test rows: {'crop': 440, 'yield': 1162, 'seed': 20} (no shared sample key, so no joint rows exist)
+
+==============================================================================
+STAGE final — untouched TEST evaluation
+==============================================================================
+  crop test accuracy   : 99.32%  (train CV fit 100.00%)
+  yield test           : R2 0.8934 | MAE 16055.5 t | within +/-25% 51.46%
+  seed test accuracy   : 90.00%
+  meta test accuracy   : NOT EVALUABLE (joint labels need aligned rows)
+  JOINT success        : NOT EVALUABLE — The crop, yield and seed test sets share no sample identifier (no common key column). No row of one set is the same sample as a row of another, so a joint-success rate cannot be computed from these separate test sets. Reporting a paired/round-robin figure would fabricate rows that exist nowhere in the data.
+  per-source test rows : {'crop': 440, 'yield': 1162, 'seed': 20}
+  component marginals  : crop 99.32% | yield +/-25% 51.46% | seed 90.00% (NOT a joint measurement)
+  controls: shuffled-label crop test accuracy 3.64% (chance 4.55%), shuffled-target yield test +/-25% 7.49%
+  report written: experiments/joint_accuracy/SEEDIQ-JOINT-ACCURACY-RETRAIN-REPORT.md
+
+done in 604.1s
+TARGET 90%: NOT ACHIEVED | joint success NOT EVALUABLE (no aligned rows across the three test sets)
+  component marginals: crop 99.32% | yield +/-25% 51.46% | seed 90.00% | independence product 46.00%

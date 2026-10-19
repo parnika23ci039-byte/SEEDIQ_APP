@@ -1,0 +1,16 @@
+{
+  "random_seed": 42,
+  "crop_accuracy": 0.9954545454545455,
+  "crop_f1": 0.9954517027687758,
+  "yield_accuracy_25": 0.5004476275738585,
+  "yield_r2": 0.9283557325746545,
+  "yield_mae": 14266.662037785192,
+  "seed_accuracy": 0.85,
+  "seed_f1": 0.829059829059829,
+  "joint_success_numerator": 206,
+  "joint_success_denominator": 440,
+  "joint_success_rate": 0.4681818181818182,
+  "crop_failures": 2,
+  "yield_failures": 200,
+  "seed_failures": 66
+}

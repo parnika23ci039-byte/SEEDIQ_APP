@@ -1,0 +1,79 @@
+{
+  "task": "seed_viability_3class",
+  "dataset": "/Users/apple/SeedIQ/SeedIQ/data/Seed_Data.csv",
+  "n_rows": 210,
+  "n_features": 7,
+  "split": "stratified 80/20, random_state=42",
+  "label_source": "UCI Seeds dataset (real wheat kernel measurements; NOT synthetic)",
+  "leakage_check": {
+    "test_rows_in_train": 0,
+    "leakage_detected": false
+  },
+  "baseline": {
+    "name": "RF50 (baseline)",
+    "train_accuracy": 1.0,
+    "test_accuracy": 0.904762,
+    "test_correct": 38,
+    "test_total": 42,
+    "test_macro_f1": 0.900692,
+    "test_macro_precision": 0.918954,
+    "test_macro_recall": 0.904762,
+    "confusion_matrix": [
+      [
+        10,
+        1,
+        3
+      ],
+      [
+        0,
+        14,
+        0
+      ],
+      [
+        0,
+        0,
+        14
+      ]
+    ]
+  },
+  "candidate": {
+    "name": "GBM200 (candidate)",
+    "train_accuracy": 1.0,
+    "test_accuracy": 0.928571,
+    "test_correct": 39,
+    "test_total": 42,
+    "test_macro_f1": 0.926284,
+    "test_macro_precision": 0.936111,
+    "test_macro_recall": 0.928571,
+    "confusion_matrix": [
+      [
+        11,
+        1,
+        2
+      ],
+      [
+        0,
+        14,
+        0
+      ],
+      [
+        0,
+        0,
+        14
+      ]
+    ],
+    "cv_accuracy_mean": 0.92852,
+    "cv_accuracy_std": 0.030887
+  },
+  "delta_accuracy_pp": 2.3809,
+  "delta_f1_pp": 2.5592,
+  "goal_85pct_achieved": true,
+  "production_mismatch_findings": [
+    "production meta_model.pkl = RandomForestClassifier(max_depth=3, min_samples_leaf=5, n_features=6) with SYNTHETIC binary labels \u2014 not improvable without real ground-truth",
+    "train_final_meta_and_compare.py trains a StackingClassifier on 3 separate datasets \u2014 this is NOT what app.py loads or calls",
+    "app.py builds a 6-feature hand-crafted vector [pred_rf_val, pred_qml_val, pred_xgb_val, pred_qml_yield_val, pred_svm_val, pred_qml_seed_val] and passes it to meta_model.pkl \u2014 no correspondence to any training dataset",
+    "clean_dataset() outlier clip has a sequential-index-shrinkage bug: applying mask column-by-column causes ValueError on smaller DataFrames and drops 29 rows (210\u2192181) when it does not crash"
+  ],
+  "single_most_valuable_next_action": "Replace the production meta_model.pkl (synthetic-label binary RF) with a real aggregated confidence score derived from validated per-leg probabilities \u2014 OR document explicitly that prob_success is a heuristic, not a measured metric. No model experiment can improve it without genuine ground-truth success labels.",
+  "reproducibility_command": "python3 experiments/meta_model_improvement/meta_model_improvement.py"
+}
