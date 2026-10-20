@@ -161,4 +161,8 @@ SeedIQ includes web, mobile, backend, and agricultural AI components. Developmen
 
 ## License
 
-Add the applicable license and ownership information before distributing or reusing this project.
+Contact and Authorization
+
+Requests for repository access, collaboration, licensing, or other permitted use must be directed to the project owner through an established, authorized communication channel.
+
+SeedIQ — Private Project. Confidential Materials. Authorized Access Only.
