@@ -49,8 +49,7 @@ sideloading via a file manager.
 
 Requires Android 7.0 (API 24) or newer. No Play Store account needed.
 
-## 4. IMPORTANT — this APK does not fix the OTP delay by itself
-
+## 4. IMPORTANT 
 The codes are generated and sent by the **backend**, not by the app. Every OTP
 change lives in `SeedIQ/phone_auth.py`, and that file is **not deployed**:
 
